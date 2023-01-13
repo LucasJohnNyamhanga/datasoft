@@ -30,186 +30,202 @@ function hero({ image }: dataHero) {
         <div className={styles.background}>
           <h1>
             <div className="title-glitch-top">
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="L"
-              >
-                L
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="e"
-              >
-                e
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="t"
-              >
-                t
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="'"
-              >
-                {`'`}
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="s"
-              >
-                s
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text=""
-              >
-                &nbsp;
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="b"
-              >
-                b
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="r"
-              >
-                r
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="i"
-              >
-                i
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="n"
-              >
-                n
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="g"
-              >
-                g
-              </span>
+              <div className={`${styles.block}`}>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="L"
+                >
+                  L
+                </span>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="e"
+                >
+                  e
+                </span>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="t"
+                >
+                  t
+                </span>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="'"
+                >
+                  {`'`}
+                </span>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="s"
+                >
+                  s
+                </span>
+              </div>
               <span
                 className={`${styles.glitch} ${styles.character}`}
                 data-text=""
               >
                 &nbsp;
               </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="y"
-              >
-                y
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="o"
-              >
-                o
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="u"
-              >
-                u
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="r"
-              >
-                r
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text=""
-              >
-                &nbsp;
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="i"
-              >
-                i
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="d"
-              >
-                d
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="e"
-              >
-                e
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="a"
-              >
-                a
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="s"
-              >
-                s
-              </span>
+
+              <div className={`${styles.block}`}>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="b"
+                >
+                  b
+                </span>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="r"
+                >
+                  r
+                </span>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="i"
+                >
+                  i
+                </span>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="n"
+                >
+                  n
+                </span>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="g"
+                >
+                  g
+                </span>
+              </div>
               <span
                 className={`${styles.glitch} ${styles.character}`}
                 data-text=""
               >
                 &nbsp;
               </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="t"
-              >
-                t
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="o"
-              >
-                o
-              </span>
+
+              <div className={`${styles.block}`}>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="y"
+                >
+                  y
+                </span>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="o"
+                >
+                  o
+                </span>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="u"
+                >
+                  u
+                </span>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="r"
+                >
+                  r
+                </span>
+              </div>
               <span
                 className={`${styles.glitch} ${styles.character}`}
                 data-text=""
               >
                 &nbsp;
               </span>
+
+              <div className={`${styles.block}`}>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="i"
+                >
+                  i
+                </span>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="d"
+                >
+                  d
+                </span>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="e"
+                >
+                  e
+                </span>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="a"
+                >
+                  a
+                </span>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="s"
+                >
+                  s
+                </span>
+              </div>
               <span
                 className={`${styles.glitch} ${styles.character}`}
-                data-text="l"
+                data-text=""
               >
-                l
+                &nbsp;
               </span>
+
+              <div className={`${styles.block}`}>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="t"
+                >
+                  t
+                </span>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="o"
+                >
+                  o
+                </span>
+              </div>
               <span
                 className={`${styles.glitch} ${styles.character}`}
-                data-text="i"
+                data-text=""
               >
-                i
+                &nbsp;
               </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="f"
-              >
-                f
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="e"
-              >
-                e
-              </span>
+              <div className={`${styles.block}`}>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="l"
+                >
+                  l
+                </span>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="i"
+                >
+                  i
+                </span>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="f"
+                >
+                  f
+                </span>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="e"
+                >
+                  e
+                </span>
+              </div>
             </div>
           </h1>
           <p>

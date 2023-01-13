@@ -63,6 +63,11 @@
       line-height: 1.5rem;
     }
 
+    .block {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
     $main-green: #53f765;
     $main-yellow: #fffd35;
     $main-orange: #ff9c00;
