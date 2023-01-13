@@ -16,7 +16,7 @@ const Nav = () => {
           <nav className={Styles.nav}>
             <Link passHref href="/">
               <div className={Styles.logo}>
-                <div className={Styles.icon}>DATASOFT</div>
+                <div className={Styles.icon}>DATASOFT TECHNOLOGIES</div>
               </div>
             </Link>
             <div className={Styles.links}>

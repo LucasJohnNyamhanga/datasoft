@@ -28,7 +28,14 @@ function hero({ image }: dataHero) {
           </div>
         </div>
         <div className={styles.background}>
-          WHERE CREATIVITY MEETS TECHNOLOGY
+          <h1>{`Let's bring your idea to life.`}</h1>
+          <p>
+            We are innovators, creators, technological makers. We turn ideas
+            into full effeciently working software, that are customized to meet
+            your company’s organizational needs, highlight its core
+            competencies, and further its success.
+          </p>
+          <p>Lets work together.</p>
         </div>
       </div>
     </div>
