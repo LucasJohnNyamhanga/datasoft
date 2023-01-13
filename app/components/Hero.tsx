@@ -28,12 +28,195 @@ function hero({ image }: dataHero) {
           </div>
         </div>
         <div className={styles.background}>
-          <h1>{`Let's bring your idea to life.`}</h1>
+          <h1>
+            <div className="title-glitch-top">
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text="L"
+              >
+                L
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text="e"
+              >
+                e
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text="t"
+              >
+                t
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text="'"
+              >
+                {`'`}
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text="s"
+              >
+                s
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text=""
+              >
+                &nbsp;
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text="b"
+              >
+                b
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text="r"
+              >
+                r
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text="i"
+              >
+                i
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text="n"
+              >
+                n
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text="g"
+              >
+                g
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text=""
+              >
+                &nbsp;
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text="y"
+              >
+                y
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text="o"
+              >
+                o
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text="u"
+              >
+                u
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text="r"
+              >
+                r
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text=""
+              >
+                &nbsp;
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text="i"
+              >
+                i
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text="d"
+              >
+                d
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text="e"
+              >
+                e
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text="a"
+              >
+                a
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text="s"
+              >
+                s
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text=""
+              >
+                &nbsp;
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text="t"
+              >
+                t
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text="o"
+              >
+                o
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text=""
+              >
+                &nbsp;
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text="l"
+              >
+                l
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text="i"
+              >
+                i
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text="f"
+              >
+                f
+              </span>
+              <span
+                className={`${styles.glitch} ${styles.character}`}
+                data-text="e"
+              >
+                e
+              </span>
+            </div>
+          </h1>
           <p>
             We are innovators, creators, technological makers. We turn ideas
-            into full effeciently working software, that are customized to meet
-            your company’s organizational needs, highlight its core
-            competencies, and further its success.
+            into full effecient working technological solution, that are
+            customized to meet your company’s organizational needs, highlight
+            its core competencies, and further its success.
           </p>
           <p>Lets work together.</p>
         </div>
@@ -43,3 +226,7 @@ function hero({ image }: dataHero) {
 }
 
 export default hero;
+
+// {
+//   `Let's bring your idea to life.`;
+// }
