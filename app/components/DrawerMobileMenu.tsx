@@ -45,21 +45,21 @@ export const MuiDrawer = ({}) => {
           <List>
             <Divider />
             <Link
-              href={"/"}
+              href={"#"}
               className={"Notes" == "Notes" ? Styles.active : Styles.setCenter}
             >
               Home
             </Link>
             <Divider />
             <Link
-              href={"/Review"}
+              href={"#"}
               className={false ? Styles.active : Styles.setCenter}
             >
               About
             </Link>
             <Divider />
             <Link
-              href={"/Exams"}
+              href={"#"}
               className={false ? Styles.active : Styles.setCenter}
             >
               Projects
