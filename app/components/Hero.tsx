@@ -2,7 +2,6 @@ import styles from "../styles/hero.module.scss";
 import Image from "next/image";
 
 type dataHero = {
-  header: string;
   image: string;
 };
 

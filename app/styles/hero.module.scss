@@ -65,7 +65,7 @@
       margin: 0rem;
       padding: 1rem;
       line-height: 35px;
-      border: 1px solid;
+      //border: 1px solid;
       border-radius: 5px;
       text-align: center;
       font-size: 16px;
@@ -145,7 +145,7 @@
     $main-red: #ff3368;
     $main-blue: #32f8ff;
     $main-darkblue: #324fff;
-    $margin: -0.11rem;
+    $margin: -0.01rem;
 
     .glitch {
       color: white;
@@ -376,7 +376,7 @@
       left: 50px;
       top: 30%;
       h1 {
-        font-size: 30px;
+        font-size: 35px;
       }
       p {
         font-size: 18px;
