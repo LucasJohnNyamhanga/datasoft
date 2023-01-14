@@ -24,6 +24,7 @@ function hero({ image }: dataHero) {
               }}
               quality={100}
               priority
+              unoptimized={true}
             />
           </div>
         </div>
