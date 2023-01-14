@@ -19,12 +19,6 @@ export const MuiDrawer = ({}) => {
     humberger.current.classList.toggle(Styles.isActive);
   };
 
-  const notes = useRef<HTMLDivElement>(null!);
-  const review = useRef<HTMLDivElement>(null!);
-  const exam = useRef<HTMLDivElement>(null!);
-  const reference = useRef<HTMLDivElement>(null!);
-  const admin = useRef<HTMLDivElement>(null!);
-
   return (
     <>
       <div

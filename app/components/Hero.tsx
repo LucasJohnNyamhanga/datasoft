@@ -22,7 +22,7 @@ function hero({ image }: dataHero) {
                 objectFit: "cover",
                 objectPosition: "right",
               }}
-              quality={100}
+              priority
             />
           </div>
         </div>
