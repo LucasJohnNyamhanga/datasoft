@@ -16,12 +16,11 @@ function hero({ image }: dataHero) {
               src={image}
               placeholder="blur"
               blurDataURL={image}
-              fill
-              sizes={"100vw"}
               style={{
                 objectFit: "cover",
                 objectPosition: "right",
               }}
+              fill
               quality={100}
               priority
               unoptimized={true}
