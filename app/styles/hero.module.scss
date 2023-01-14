@@ -19,9 +19,8 @@
     left: 100px;
     top: 30%;
     width: 50%;
-    padding: 15px;
     height: max-content;
-    padding: 20px;
+    padding: 40px;
     z-index: 10;
     color: $white;
     background: -webkit-linear-gradient(
@@ -46,6 +45,76 @@
     );
     border-radius: 15px;
 
+    @media only screen and (max-width: 1588px) {
+      background: -webkit-linear-gradient(
+        right,
+        $green 0%,
+        rgba(black, 1) 100%
+      );
+      background: -moz-linear-gradient(right, $green 0%, rgba(black, 1) 100%);
+      background: -ms-linear-gradient(right, $green 0%, rgba(black, 1) 100%);
+      background: linear-gradient(to right, $green 0%, rgba(black, 1) 100%);
+    }
+
+    .button {
+      display: flex;
+      width: fit-content;
+      height: 40px;
+      justify-content: center;
+      align-items: center;
+      margin: 0rem;
+      padding: 1rem;
+      line-height: 35px;
+      border: 1px solid;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 16px;
+      text-decoration: none;
+      transition: all 0.35s;
+      box-sizing: border-box;
+      background-color: $white;
+    }
+
+    .buttonStyle {
+      $btn-color: $black;
+      $btn-hover-color: $black;
+      position: relative;
+      border-color: $btn-color;
+      color: $black;
+      transition-delay: 0.3s;
+      overflow: hidden;
+      &:hover {
+        transform: translateY(-0.3em);
+        border-color: $btn-hover-color;
+        color: rgba(221, 99, 149, 0);
+        transition-delay: 0s;
+        &::before {
+          opacity: 1;
+          transform: translateX(0);
+          transition-delay: 0.15s;
+        }
+      }
+      &::before {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        content: attr(data-hover);
+        color: $btn-color;
+        text-align: center;
+        transform: translateX(-60%);
+        transition: all 0.4s;
+        z-index: 1;
+      }
+    }
+
+    .button:hover {
+      cursor: pointer;
+      scale: 1.1;
+    }
+
     h1 {
       font-family: $fontHeader;
       font-style: normal;
@@ -53,6 +122,8 @@
       font-size: 40px;
       // text-transform: uppercase;
       margin-bottom: 5px;
+      margin-top: 0px;
+      padding-top: 0px;
     }
 
     p {
@@ -74,7 +145,7 @@
     $main-red: #ff3368;
     $main-blue: #32f8ff;
     $main-darkblue: #324fff;
-    $margin: -0.005rem;
+    $margin: -0.11rem;
 
     .glitch {
       color: white;
@@ -297,6 +368,182 @@
       left: -2px;
       text-shadow: 5px 0 rgba(94, 38, 255, 0.5);
       animation: glitch-animation-before 3s infinite linear alternate-reverse;
+    }
+  }
+  @media only screen and (max-width: 1488px) {
+    .background {
+      padding: 20px;
+      left: 50px;
+      top: 30%;
+      h1 {
+        font-size: 30px;
+      }
+      p {
+        font-size: 18px;
+      }
+      .button {
+        font-size: 18px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1108px) {
+    .background {
+      // position: absolute;
+      left: 20px;
+      // top: 30%;
+      // width: 50%;
+      // height: max-content;
+      // padding: 20px;
+      // z-index: 10;
+      // color: $white;
+      h1 {
+        font-size: 27px;
+      }
+      p {
+        font-size: 15px;
+      }
+      .button {
+        font-size: 15px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 960px) {
+    .background {
+      left: 20px;
+      top: 300px;
+      width: 40%;
+
+      background: -webkit-linear-gradient(
+        right,
+        rgba($green, 0.7) 0%,
+        rgba(black, 1) 100%
+      );
+      background: -moz-linear-gradient(
+        right,
+        rgba($green, 0.7) 0%,
+        rgba(black, 1) 100%
+      );
+      background: -ms-linear-gradient(
+        right,
+        rgba($green, 0.7) 0%,
+        rgba(black, 1) 100%
+      );
+      background: linear-gradient(
+        to right,
+        rgba($green, 0.7) 0%,
+        rgba(black, 1) 100%
+      );
+
+      h1 {
+        font-size: 25px;
+        margin-bottom: 0px;
+      }
+      p {
+        font-size: 14px;
+        display: none;
+      }
+      .button {
+        font-size: 14px;
+        display: none;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 790px) {
+    .background {
+      // position: absolute;
+      left: 20px;
+      top: 300px;
+      width: 40%;
+      // height: max-content;
+      // padding: 20px;
+      // z-index: 10;
+      // color: $white;
+      h1 {
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+      p {
+        font-size: 14px;
+        display: none;
+      }
+      .button {
+        font-size: 12px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 640px) {
+    .background {
+      // position: absolute;
+      left: 10px;
+      top: 300px;
+      width: 40%;
+      // height: max-content;
+      // padding: 20px;
+      // z-index: 10;
+      // color: $white;
+      h1 {
+        font-size: 22px;
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 14px;
+        display: none;
+      }
+      .button {
+        font-size: 10px;
+      }
+    }
+  }
+  @media only screen and (max-width: 540px) {
+    .background {
+      // position: absolute;
+      left: 58%;
+      top: 80px;
+      max-width: 250px;
+      margin-right: 10px;
+      // height: max-content;
+      padding: 12px;
+      // z-index: 10;
+      // color: $white;
+      h1 {
+        font-size: 22px;
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 14px;
+        display: none;
+      }
+      .button {
+        font-size: 10px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 320px) {
+    .background {
+      // position: absolute;
+      left: 40%;
+      top: 80px;
+      max-width: 250px;
+      margin-right: 5px;
+      padding: 10px;
+      // z-index: 10;
+      // color: $white;
+      h1 {
+        font-size: 22px;
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 14px;
+        display: none;
+      }
+      .button {
+        font-size: 10px;
+      }
     }
   }
 }

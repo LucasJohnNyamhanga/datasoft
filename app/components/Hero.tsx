@@ -234,7 +234,14 @@ function hero({ image }: dataHero) {
             customized to meet your company’s organizational needs, highlight
             its core competencies, and further its success.
           </p>
-          <p>Lets work together.</p>
+          <div>
+            <a
+              className={`${styles.button} ${styles.buttonStyle}`}
+              data-hover="Okey, let's do this."
+            >
+              {`Let's work together.`}
+            </a>
+          </div>
         </div>
       </div>
     </div>

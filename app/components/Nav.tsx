@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import Styles from "../styles/navigation.module.scss";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 const Nav = () => {
   return (
@@ -14,13 +13,27 @@ const Nav = () => {
         </div>
         <div className={Styles.NavHeader}>
           <nav className={Styles.nav}>
-            <Link passHref href="/">
-              <div className={Styles.logo}>
-                <div className={Styles.icon}>DATASOFT TECHNOLOGIES</div>
+            <Link passHref href="/" className={Styles.logo}>
+              <div>
+                <div className={Styles.icon}>DataSoft</div>
               </div>
             </Link>
-            <div className={Styles.links}>
-              <Link href="/">Links</Link>
+            <div className={Styles.link}>
+              <Link href="/" className={Styles.links}>
+                Home
+              </Link>
+              <Link href="/" className={Styles.links}>
+                About
+              </Link>
+              <Link href="/" className={Styles.links}>
+                Services
+              </Link>
+              <Link href="/" className={Styles.links}>
+                Projects
+              </Link>
+              <Link href="/" className={Styles.links}>
+                Contact
+              </Link>
             </div>
           </nav>
         </div>
