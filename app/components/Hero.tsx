@@ -20,10 +20,10 @@ function hero({ image }: dataHero) {
                 objectFit: "cover",
                 objectPosition: "right",
               }}
-              fill
               quality={100}
               priority
               unoptimized={true}
+              fill
             />
           </div>
         </div>
