@@ -3,7 +3,7 @@
 .container {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   font-family: "Montserrat";
   margin: 0px;
@@ -390,7 +390,7 @@
   @media only screen and (max-width: 1108px) {
     .background {
       // position: absolute;
-      left: 20px;
+      left: 10px;
       // top: 30%;
       // width: 50%;
       // height: max-content;
@@ -409,7 +409,7 @@
     }
   }
 
-  @media only screen and (max-width: 960px) {
+  @media only screen and (max-width: 710px) {
     .background {
       left: 20px;
       top: 300px;
@@ -440,10 +440,7 @@
         font-size: 25px;
         margin-bottom: 0px;
       }
-      p {
-        font-size: 14px;
-        display: none;
-      }
+      p,
       .button {
         font-size: 14px;
         display: none;
@@ -465,12 +462,10 @@
         font-size: 24px;
         margin-bottom: 15px;
       }
-      p {
+      p,
+      .button {
         font-size: 14px;
         display: none;
-      }
-      .button {
-        font-size: 12px;
       }
     }
   }
@@ -489,12 +484,10 @@
         font-size: 22px;
         margin-bottom: 10px;
       }
-      p {
+      p,
+      .button {
         font-size: 14px;
         display: none;
-      }
-      .button {
-        font-size: 10px;
       }
     }
   }
@@ -557,7 +550,85 @@
   flex-direction: row;
   z-index: 999;
 }
+.descHolder {
+  @media only screen and (min-width: 790px) {
+    display: none;
+  }
+  @media only screen and (max-width: 790px) {
+    display: flex;
+  }
+  padding: 10px;
+  .desc {
+    background: -webkit-linear-gradient(right, $green 0%, rgba(black, 1) 100%);
+    background: -moz-linear-gradient(right, $green 0%, rgba(black, 1) 100%);
+    background: -ms-linear-gradient(right, $green 0%, rgba(black, 1) 100%);
+    background: linear-gradient(to right, $green 0%, rgba(black, 1) 100%);
+    padding: 15px;
+    font-weight: 500;
+    color: $white;
+    font-size: 16px;
+    border-radius: 10px;
 
+    .button {
+      display: flex;
+      width: fit-content;
+      height: 40px;
+      justify-content: center;
+      align-items: center;
+      margin: 0rem;
+      padding: 1rem;
+      line-height: 35px;
+      //border: 1px solid;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 16px;
+      text-decoration: none;
+      transition: all 0.35s;
+      box-sizing: border-box;
+      background-color: $white;
+    }
+
+    .buttonStyle {
+      $btn-color: $black;
+      $btn-hover-color: $black;
+      position: relative;
+      border-color: $btn-color;
+      color: $black;
+      transition-delay: 0.3s;
+      overflow: hidden;
+      &:hover {
+        transform: translateY(-0.3em);
+        border-color: $btn-hover-color;
+        color: rgba(221, 99, 149, 0);
+        transition-delay: 0s;
+        &::before {
+          opacity: 1;
+          transform: translateX(0);
+          transition-delay: 0.15s;
+        }
+      }
+      &::before {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        content: attr(data-hover);
+        color: $btn-color;
+        text-align: center;
+        transform: translateX(-60%);
+        transition: all 0.4s;
+        z-index: 1;
+      }
+    }
+
+    .button:hover {
+      cursor: pointer;
+      scale: 1.1;
+    }
+  }
+}
 .hero {
   width: 100%;
   margin: 0px 0px 0px 0px;

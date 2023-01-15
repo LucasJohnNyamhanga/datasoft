@@ -244,6 +244,24 @@ function hero({ image }: dataHero) {
           </div>
         </div>
       </div>
+      <div className={styles.descHolder}>
+        <div className={styles.desc}>
+          <p>
+            We are innovators, creators, technological makers. We turn ideas
+            into full effecient working technological solution, that are
+            customized to meet your company’s organizational needs, highlight
+            its core competencies, and further its success.
+          </p>
+          <div>
+            <a
+              className={`${styles.button} ${styles.buttonStyle}`}
+              data-hover="Okey, let's do this."
+            >
+              {`Let's work together.`}
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

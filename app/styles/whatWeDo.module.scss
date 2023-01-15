@@ -1,0 +1,49 @@
+@import "index";
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .subContainer {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      font-family: $fontHeader;
+      color: $green;
+      font-weight: 700;
+      font-size: 28px;
+      margin: 0px;
+      margin-top: 35px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.innerContainer {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-gap: 15px;
+
+  @media (min-width: 268px) {
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (min-width: 468px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 888px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
