@@ -34,8 +34,7 @@ export const MuiDrawer = ({}) => {
       </div>
       <Drawer anchor="left" open={isDrawerOpen} onClose={handleClose}>
         <Box p={2} width="250px" textAlign="center" role="presentation">
-          <ListItemText primary={`DataSoft Technologies`} />
-
+          <div className={Styles.header}>{`DataSoft Technologies`}</div>
           <List>
             <Divider />
             <Link

@@ -7,12 +7,12 @@
   justify-content: flex-start;
   padding: 15px;
   font-family: $fontHeader;
-  font-weight: 500;
+  font-weight: 600;
   color: $ugoro;
   cursor: pointer;
 
   &:hover {
-    background-color: $ugoro;
+    background-color: $green;
     color: $white;
   }
 }
@@ -24,17 +24,24 @@
   justify-content: flex-start;
   padding: 15px;
   font-family: $fontHeader;
-  font-weight: 500;
-  color: $ugoro;
+  font-weight: 600;
+  color: $black;
   cursor: pointer;
-  background-color: $lightblue;
-  color: $white;
+  background-color: $gold;
 }
 
-.active:hover {
-  background-color: $lightblue !important;
-  color: $white !important;
+.header {
+  font-family: $fontHeader;
+  font-weight: 800;
+  padding: 15px;
+  font-size: 20px;
+  color: $green;
 }
+
+// .active:hover {
+//   background-color: $lightblue !important;
+//   color: $white !important;
+// }
 
 .activeCredential {
   display: flex;
