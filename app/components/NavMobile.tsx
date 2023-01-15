@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import Image from "next/image";
 import Styles from "../styles/NavMobile.module.scss";
 import { useRef } from "react";
 import Link from "next/link";
@@ -15,9 +15,26 @@ export const NavMobile = () => {
         </div>
         <div className={Styles.NavHeader}>
           <nav className={Styles.nav}>
-            <Link passHref href="/">
-              <div className={Styles.logo}>
-                <div className={Styles.icon}>DataSoft</div>
+            <Link passHref href="/" className={Styles.logo}>
+              <div className={Styles.datasoft}>
+                <div className={Styles.icon}>
+                  <Image
+                    alt=""
+                    src={`/brainer.svg`}
+                    placeholder="blur"
+                    blurDataURL={`/brainer.svg`}
+                    style={{
+                      objectFit: "cover",
+                      objectPosition: "right",
+                    }}
+                    quality={100}
+                    priority
+                    unoptimized={true}
+                    width={50}
+                    height={50}
+                  />
+                </div>
+                <div className={Styles.name}>DataSoft</div>
               </div>
             </Link>
             <div className={Styles.links}></div>

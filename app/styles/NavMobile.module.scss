@@ -66,19 +66,36 @@
       justify-content: space-between;
 
       .logo {
-        font-family: "Montserrat";
+        font-family: $fontHeader;
         font-weight: 500;
-        font-size: 24px;
+        font-size: 27px;
         display: flex;
         flex-direction: row;
         cursor: pointer;
         color: $lightblue;
 
-        .icon {
-          padding-right: 10px;
-          padding-top: 2px;
+        .datasoft {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
           color: $green;
           font-weight: 800;
+          height: fit-content;
+          width: fit-content;
+          .icon {
+            padding: 0px;
+            margin: 0px;
+          }
+
+          .name {
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 5px;
+            padding-bottom: 10px;
+          }
         }
       }
 

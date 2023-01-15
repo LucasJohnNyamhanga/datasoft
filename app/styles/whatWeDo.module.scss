@@ -6,6 +6,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 15px;
 
   .subContainer {
     display: flex;
@@ -15,10 +16,11 @@
       font-family: $fontHeader;
       color: $green;
       font-weight: 700;
-      font-size: 28px;
+      font-size: 26px;
       margin: 0px;
-      margin-top: 35px;
+      margin-top: 25px;
       margin-bottom: 10px;
+      margin-left: 15px;
     }
   }
 }
@@ -27,7 +29,8 @@
   width: 100%;
   max-width: 1200px;
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 15px;
+  //padding: 10px;
 
   @media (min-width: 268px) {
     grid-template-columns: repeat(1, 1fr);

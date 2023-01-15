@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import Styles from "../styles/navigation.module.scss";
 import Link from "next/link";
+import Image from "next/image";
 
 const Nav = () => {
   return (
@@ -14,8 +15,25 @@ const Nav = () => {
         <div className={Styles.NavHeader}>
           <nav className={Styles.nav}>
             <Link passHref href="/" className={Styles.logo}>
-              <div>
-                <div className={Styles.icon}>DataSoft</div>
+              <div className={Styles.datasoft}>
+                <div className={Styles.icon}>
+                  <Image
+                    alt=""
+                    src={`/brainer.svg`}
+                    placeholder="blur"
+                    blurDataURL={`/brainer.svg`}
+                    style={{
+                      objectFit: "cover",
+                      objectPosition: "right",
+                    }}
+                    quality={100}
+                    priority
+                    unoptimized={true}
+                    width={50}
+                    height={50}
+                  />
+                </div>
+                <div className={Styles.name}>DataSoft</div>
               </div>
             </Link>
             <div className={Styles.link}>
