@@ -4,7 +4,7 @@ export default function Head() {
       <title>DataSoft</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta name="description" content="DataSoft Technologies Tanzania" />
-      <link rel="icon" href="/brainer.svg" />
+      <link rel="icon" href="/brainer.ico" />
     </>
   );
 }
