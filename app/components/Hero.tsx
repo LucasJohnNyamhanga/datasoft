@@ -21,7 +21,7 @@ function hero({ image }: dataHero) {
                 objectPosition: "right",
               }}
               quality={100}
-              priority
+              priority={true}
               unoptimized={true}
               fill
             />
