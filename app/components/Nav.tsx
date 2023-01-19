@@ -21,7 +21,7 @@ const Nav = () => {
                     alt=""
                     src={`/brainas.svg`}
                     placeholder="blur"
-                    blurDataURL={`/brainer.svg`}
+                    blurDataURL={`/brainas.svg`}
                     style={{
                       objectFit: "cover",
                       objectPosition: "right",
