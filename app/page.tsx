@@ -3,6 +3,7 @@ import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
 
 import WhatWeDo from "./components/WhatWeDo";
+import DoYouHaveAnIdea from "./components/DoYouHaveAnIdea";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Navigation />
       <Hero image={"/datasoft.gif"} />
       <WhatWeDo />
+      <DoYouHaveAnIdea />
     </main>
   );
 }
