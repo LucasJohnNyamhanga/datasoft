@@ -19,7 +19,7 @@ const Nav = () => {
                 <div className={Styles.icon}>
                   <Image
                     alt=""
-                    src={`/brainer.svg`}
+                    src={`/brainas.svg`}
                     placeholder="blur"
                     blurDataURL={`/brainer.svg`}
                     style={{
