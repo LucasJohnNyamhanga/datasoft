@@ -22,7 +22,7 @@ function hero({ image }: dataHero) {
               }}
               quality={100}
               priority={true}
-              //unoptimized={true}
+              unoptimized={true}
               fill
             />
           </div>
