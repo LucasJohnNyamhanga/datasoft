@@ -1,3 +1,50 @@
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 300;
+  src: url("/fonts/montserrat/montserrat_light_300-webfont.woff2")
+      format("woff2"),
+    url("/fonts/montserrat/montserrat_light_300-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 400;
+  src: url("/fonts/montserrat/montserrat_regular_400-webfont.woff2")
+      format("woff2"),
+    url("/fonts/montserrat/montserrat_regular_400-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 500;
+  src: url("/fonts/montserrat/montserrat_medium_500-webfont.woff2")
+      format("woff2"),
+    url("/fonts/montserrat/montserrat_medium_500-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 600;
+  src: url("/fonts/montserrat/montserrat_semibold_600-webfont.woff2")
+      format("woff2"),
+    url("/fonts/montserrat/montserrat_semibold_600-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 700;
+  src: url("/fonts/montserrat_bold_700-webfont.woff2") format("woff2"),
+    url("/fonts/montserrat_bold_700-webfont.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 800;
+  src: url("/fonts/montserrat/montserrat_extrabold_800-webfont.woff2")
+      format("woff2"),
+    url("/fonts/montserrat/montserrat_extrabold_800-webfont.woff")
+      format("woff");
+}
+
 $fontHeader: "Montserrat";
 $fontBody: "roboto";
 $white: #ffffff;
