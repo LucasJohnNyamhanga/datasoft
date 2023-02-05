@@ -147,7 +147,12 @@ const DoYouHaveAnIdea = () => {
             </div>
           </div>
         </h2>
-        <div className={styles.innerContainer}></div>
+      </div>
+      <div className={styles.innerContainer}>
+        <p className={styles.details}>
+          Brief us and we can bring your idea to life within days and together
+          we may celebrate your success.
+        </p>
       </div>
     </div>
   );

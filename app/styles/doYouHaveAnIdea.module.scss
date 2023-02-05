@@ -13,6 +13,8 @@
   .subContainer {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     h2 {
       font-family: $fontHeader;
@@ -262,30 +264,18 @@
       }
     }
   }
-}
+  .innerContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: flex-start;
+    align-items: flex-start;
 
-.innerContainer {
-  width: 100%;
-  max-width: 1200px;
-  display: grid;
-  grid-gap: 15px;
-  //padding: 10px;
-
-  @media (min-width: 268px) {
-    grid-template-columns: repeat(1, 1fr);
-    align-items: center;
-    justify-content: center;
-  }
-
-  @media (min-width: 468px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (min-width: 888px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media (min-width: 1200px) {
-    grid-template-columns: repeat(4, 1fr);
+    .details {
+      font-size: 20px;
+      color: $white;
+      font-weight: 400;
+    }
   }
 }

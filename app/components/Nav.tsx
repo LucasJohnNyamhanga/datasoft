@@ -9,7 +9,13 @@ const Nav = () => {
       <div className={Styles.innerContainerTop}>
         <div className={Styles.NavDetails}>
           <div className={Styles.topAdvatisment}>
-            <p>contact : +255 784 477 999 | contact@datasoft.co.tz</p>
+            <p>
+              contact : <a href="tel:+255784477999">+255 784 477 999</a> |
+              <a href="mailto:contact@datasoft.co.tz">
+                {" "}
+                contact@datasoft.co.tz
+              </a>
+            </p>
           </div>
         </div>
         <div className={Styles.NavHeader}>
