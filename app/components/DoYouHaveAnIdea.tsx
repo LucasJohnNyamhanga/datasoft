@@ -150,8 +150,8 @@ const DoYouHaveAnIdea = () => {
       </div>
       <div className={styles.innerContainer}>
         <p className={styles.details}>
-          Brief us and we can bring your idea to life within days and together
-          we may celebrate your success.
+          Brief us, we can bring your idea to life within days!. And together we
+          may celebrate your success.
         </p>
       </div>
     </div>
