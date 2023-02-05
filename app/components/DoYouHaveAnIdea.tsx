@@ -3,7 +3,7 @@ import styles from "../styles/doYouHaveAnIdea.module.scss";
 
 const DoYouHaveAnIdea = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="idea">
       <div className={styles.subContainer}>
         <h2>
           <div className="title-glitch-top">

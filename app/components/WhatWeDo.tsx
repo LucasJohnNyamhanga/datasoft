@@ -29,7 +29,7 @@ const dataPoint = [
     link: `#`,
   },
   {
-    id: 2,
+    id: 3,
     header: "Computer System Development",
     icon: <FaDesktop />,
     description: `Mauris volutpat urna tristique finibus iaculis. Morbi facilisis,
@@ -38,7 +38,7 @@ const dataPoint = [
     link: `#`,
   },
   {
-    id: 3,
+    id: 4,
     header: "Mobile Applications Development",
     icon: <FaGooglePlay />,
     description: `Mauris volutpat urna tristique finibus iaculis. Morbi facilisis,
@@ -47,7 +47,7 @@ const dataPoint = [
     link: `#`,
   },
   {
-    id: 4,
+    id: 5,
     header: "Database Development",
     icon: <FaDatabase />,
     description: `Mauris volutpat urna tristique finibus iaculis. Morbi facilisis,
@@ -56,7 +56,7 @@ const dataPoint = [
     link: `#`,
   },
   {
-    id: 5,
+    id: 6,
     header: "Website Hosting",
     icon: <FaGlobeAfrica />,
     description: `Mauris volutpat urna tristique finibus iaculis. Morbi facilisis,
@@ -65,7 +65,7 @@ const dataPoint = [
     link: `#`,
   },
   {
-    id: 6,
+    id: 7,
     header: "Computer Networking",
     icon: <FaNetworkWired />,
     description: `Mauris volutpat urna tristique finibus iaculis. Morbi facilisis,
@@ -74,7 +74,7 @@ const dataPoint = [
     link: `#`,
   },
   {
-    id: 6,
+    id: 8,
     header: "Software Installations",
     icon: <FaMicrosoft />,
     description: `Mauris volutpat urna tristique finibus iaculis. Morbi facilisis,

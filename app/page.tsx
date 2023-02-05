@@ -6,6 +6,9 @@ import WhatWeDo from "./components/WhatWeDo";
 import DoYouHaveAnIdea from "./components/DoYouHaveAnIdea";
 
 export default function Home() {
+  const handleHeroButton = () => {
+    console.log("Button Clicked!");
+  };
   return (
     <main className={styles.main}>
       <Navigation />

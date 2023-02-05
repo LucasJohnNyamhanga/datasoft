@@ -1,5 +1,6 @@
 import styles from "../styles/hero.module.scss";
 import Image from "next/image";
+import Link from "next/link";
 
 type dataHero = {
   image: string;
@@ -236,6 +237,7 @@ function hero({ image }: dataHero) {
           </p>
           <div>
             <a
+              href={`#idea`}
               className={`${styles.button} ${styles.buttonStyle}`}
               data-hover="Okey, let's do this."
             >
