@@ -256,6 +256,7 @@ function hero({ image }: dataHero) {
           </p>
           <div>
             <a
+              href={`#idea`}
               className={`${styles.button} ${styles.buttonStyle}`}
               data-hover="Okey, let's do this."
             >
