@@ -1,6 +1,7 @@
 "use client";
 import { useRef } from "react";
 import styles from "../styles/doYouHaveAnIdea.module.scss";
+import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 const DoYouHaveAnIdea = () => {
   const fullName = useRef<HTMLInputElement>(null!);
@@ -170,6 +171,17 @@ const DoYouHaveAnIdea = () => {
               We can bring your idea to life within hours!. And together we may
               celebrate your success.
             </p>
+            <div className={styles.quotation}>
+              <div className={styles.quoteLeft}>
+                <FaQuoteLeft />
+              </div>
+              <div className={styles.qouteText}>
+                Right Idea + Right Product + Right Market = Magic
+              </div>
+              <div className={styles.quoteRight}>
+                <FaQuoteRight />
+              </div>
+            </div>
           </div>
           <div className={styles.contactForm}>
             <div className={styles.inputBox}>

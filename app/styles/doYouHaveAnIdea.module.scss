@@ -274,7 +274,7 @@
     align-items: flex-start;
 
     .details {
-      font-size: 20px;
+      font-size: 22px;
       color: $white;
       font-weight: 400;
       padding: 0px 15px;
@@ -377,6 +377,43 @@
 
           span {
             color: $gold;
+          }
+        }
+
+        .quotation {
+          display: flex;
+          flex-direction: row;
+          color: $gold;
+          font-weight: 400;
+          padding: 15px 15px;
+          padding-right: 45px;
+
+          .quoteLeft {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            text-align: start;
+            font-size: 30px;
+          }
+
+          .qouteText {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            text-align: center;
+            width: fit-content;
+            font-size: 28px;
+          }
+
+          .quoteRight {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            text-align: start;
+            font-size: 30px;
           }
         }
       }
