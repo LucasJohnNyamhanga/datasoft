@@ -325,7 +325,7 @@ const DoYouHaveAnIdea = () => {
               ) : (
                 <input
                   type="submit"
-                  value="Send"
+                  value="Send Mail"
                   className={`${styles.button} ${styles.light}`}
                 />
               )}

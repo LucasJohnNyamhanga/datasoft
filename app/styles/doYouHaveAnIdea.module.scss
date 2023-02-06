@@ -9,8 +9,8 @@
   padding: 15px;
   background-color: $ugoro;
   font-family: $fontHeader;
-  font-weight: 400;
-  font-size: 16px;
+  font-weight: 500;
+  font-size: 18px;
 
   //min-height: 90vh;
 
@@ -327,7 +327,7 @@
         width: 30px;
         height: 100%;
         background-color: #fff;
-        animation: shiny-btn1 3s ease-in-out infinite;
+        animation: shiny 3s ease-in-out infinite;
       }
 
       .light:hover {
@@ -339,28 +339,6 @@
           -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
           inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
           inset 4px 4px 6px 0 rgba(0, 0, 0, 0.2);
-      }
-
-      @keyframes shiny-btn1 {
-        0% {
-          -webkit-transform: scale(0) rotate(45deg);
-          opacity: 0;
-        }
-
-        80% {
-          -webkit-transform: scale(0) rotate(45deg);
-          opacity: 0.5;
-        }
-
-        81% {
-          -webkit-transform: scale(4) rotate(45deg);
-          opacity: 1;
-        }
-
-        100% {
-          -webkit-transform: scale(50) rotate(45deg);
-          opacity: 0;
-        }
       }
 
       .dark {
@@ -381,7 +359,7 @@
         width: 30px;
         height: 100%;
         background-color: #fff;
-        animation: shiny-btn1 3s ease-in-out infinite;
+        animation: shiny 3s ease-in-out infinite;
       }
 
       .dark:active {
@@ -391,24 +369,24 @@
           inset 4px 4px 6px 0 rgba(0, 0, 0, 0.2);
       }
 
-      @keyframes shiny-btn1 {
+      @keyframes shiny {
         0% {
-          -webkit-transform: scale(0) rotate(45deg);
+          transform: scale(0) rotate(45deg);
           opacity: 0;
         }
 
         80% {
-          -webkit-transform: scale(0) rotate(45deg);
+          transform: scale(0) rotate(45deg);
           opacity: 0.5;
         }
 
         81% {
-          -webkit-transform: scale(4) rotate(45deg);
+          transform: scale(4) rotate(45deg);
           opacity: 1;
         }
 
         100% {
-          -webkit-transform: scale(50) rotate(45deg);
+          transform: scale(50) rotate(45deg);
           opacity: 0;
         }
       }
