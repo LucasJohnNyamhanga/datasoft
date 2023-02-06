@@ -3,6 +3,8 @@ import { useRef, useState } from "react";
 import styles from "../styles/doYouHaveAnIdea.module.scss";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
+import Loader from "../components/loaderWait";
 
 const DoYouHaveAnIdea = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +13,10 @@ const DoYouHaveAnIdea = () => {
     orgName: "",
     project: "",
   });
+  const [loading, setLoad] = useState(false);
+  const notify = (message: string) => toast(message);
+  const notifySuccess = (message: string) => toast.success(message);
+  const notifyError = (message: string) => toast.error(message);
 
   const fullName = useRef<HTMLInputElement>(null!);
   const email = useRef<HTMLInputElement>(null!);
@@ -32,35 +38,43 @@ const DoYouHaveAnIdea = () => {
   };
 
   const onSubmit = async () => {
-    console.log(formData);
+    if (!loading) {
+      setLoad(true);
 
-    const config = {
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-    };
-    const url = "/api/email";
-    const data = formData;
+      const config = {
+        headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "application/json",
+        },
+      };
+      const url = "/api/email";
+      const data = formData;
 
-    axios
-      .post(url, data, config)
-      .then(function (response) {
-        // const topics: [] = JSON.parse(JSON.stringify(response.data));
-        // handle success
-        console.log(response.data.message);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      })
-      .then(function () {
-        // always executed
-      });
+      axios
+        .post(url, data, config)
+        .then(function (response) {
+          // const topics: [] = JSON.parse(JSON.stringify(response.data));
+          // handle success
+          if (response.data.success) {
+            notifySuccess(response.data.message);
+          } else {
+            notifyError(response.data.message);
+          }
+        })
+        .catch(function (error) {
+          // handle error
+          notifyError("Sending Failed, Try Later.");
+        })
+        .then(function () {
+          // always executed
+          setLoad(false);
+        });
+    }
   };
 
   return (
     <div className={styles.container} id="idea">
+      <Toaster position="top-center" />
       <div className={styles.subContainer}>
         <h2>
           <div className="title-glitch-top">
@@ -304,11 +318,17 @@ const DoYouHaveAnIdea = () => {
                 />
                 <span>Project Details</span>
               </div>
-              <input
-                type="submit"
-                value="Send"
-                className={`${styles.button} ${styles.light}`}
-              />
+              {loading ? (
+                <div className={`${styles.button} ${styles.light}`}>
+                  <Loader sms={"Sending Mail"} />
+                </div>
+              ) : (
+                <input
+                  type="submit"
+                  value="Send"
+                  className={`${styles.button} ${styles.light}`}
+                />
+              )}
             </form>
           </div>
         </div>
