@@ -1,9 +1,17 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import styles from "../styles/doYouHaveAnIdea.module.scss";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+import axios from "axios";
 
 const DoYouHaveAnIdea = () => {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    orgName: "",
+    project: "",
+  });
+
   const fullName = useRef<HTMLInputElement>(null!);
   const email = useRef<HTMLInputElement>(null!);
   const orgName = useRef<HTMLInputElement>(null!);
@@ -12,6 +20,43 @@ const DoYouHaveAnIdea = () => {
   let handletext = (e: React.ChangeEvent<HTMLInputElement>) => {
     let value = e.target.value;
     let name = e.target.name;
+
+    setFormData({ ...formData, [name]: value });
+  };
+
+  let handletextArea = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    let value = e.target.value;
+    let name = e.target.name;
+
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const onSubmit = async () => {
+    console.log(formData);
+
+    const config = {
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+    };
+    const url = "/api/email";
+    const data = formData;
+
+    axios
+      .post(url, data, config)
+      .then(function (response) {
+        // const topics: [] = JSON.parse(JSON.stringify(response.data));
+        // handle success
+        console.log(response.data.message);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .then(function () {
+        // always executed
+      });
   };
 
   return (
@@ -184,73 +229,87 @@ const DoYouHaveAnIdea = () => {
             </div>
           </div>
           <div className={styles.contactForm}>
-            <div className={styles.inputBox}>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                onSubmit();
+              }}
+            >
+              <div className={styles.inputBox}>
+                <input
+                  ref={fullName}
+                  required
+                  type="text"
+                  value={formData.fullName}
+                  placeholder={``}
+                  name={`fullName`}
+                  onChange={(event) => {
+                    handletext(event);
+                  }}
+                  autoComplete="off"
+                  autoCorrect="off"
+                  spellCheck={false}
+                />
+                <span>Full Name</span>
+              </div>
+              <div className={styles.inputBox}>
+                <input
+                  ref={email}
+                  required
+                  type="text"
+                  value={formData.email}
+                  placeholder={``}
+                  name={`email`}
+                  onChange={(event) => {
+                    handletext(event);
+                  }}
+                  autoComplete="off"
+                  autoCorrect="off"
+                  spellCheck={false}
+                />
+                <span>Phone Number | Email</span>
+              </div>
+              <div className={styles.inputBox}>
+                <input
+                  ref={orgName}
+                  required
+                  type="text"
+                  value={formData.orgName}
+                  placeholder={``}
+                  name={`orgName`}
+                  onChange={(event) => {
+                    handletext(event);
+                  }}
+                  autoComplete="off"
+                  autoCorrect="off"
+                  spellCheck={false}
+                />
+                <span>Organisation Name</span>
+              </div>
+              <div className={styles.inputBox}>
+                <textarea
+                  name="project"
+                  cols={40}
+                  rows={5}
+                  ref={project}
+                  required
+                  value={formData.project}
+                  placeholder={``}
+                  autoComplete="off"
+                  autoCorrect="off"
+                  spellCheck={false}
+                  onChange={(event) => {
+                    handletextArea(event);
+                  }}
+                />
+                <span>Project Details</span>
+              </div>
               <input
-                ref={fullName}
-                required
-                type="text"
-                value={""}
-                placeholder={``}
-                name={`password`}
-                onChange={(event) => {
-                  handletext(event);
-                }}
-                autoComplete="off"
-                autoCorrect="off"
-                spellCheck={false}
+                type="submit"
+                value="Send"
+                className={`${styles.button} ${styles.light}`}
               />
-              <span>Full Name</span>
-            </div>
-            <div className={styles.inputBox}>
-              <input
-                ref={email}
-                required
-                type="text"
-                value={""}
-                placeholder={``}
-                name={`password`}
-                onChange={(event) => {
-                  handletext(event);
-                }}
-                autoComplete="off"
-                autoCorrect="off"
-                spellCheck={false}
-              />
-              <span>Phone Number | Email</span>
-            </div>
-            <div className={styles.inputBox}>
-              <input
-                ref={orgName}
-                required
-                type="text"
-                value={""}
-                placeholder={``}
-                name={`password`}
-                onChange={(event) => {
-                  handletext(event);
-                }}
-                autoComplete="off"
-                autoCorrect="off"
-                spellCheck={false}
-              />
-              <span>Organisation Name</span>
-            </div>
-            <div className={styles.inputBox}>
-              <textarea
-                name="Text1"
-                cols={40}
-                rows={5}
-                ref={project}
-                required
-                value={""}
-                placeholder={``}
-                autoComplete="off"
-                autoCorrect="off"
-                spellCheck={false}
-              />
-              <span>Project Details</span>
-            </div>
-            <button className={`${styles.button} ${styles.light}`}>Send</button>
+            </form>
           </div>
         </div>
       </div>
