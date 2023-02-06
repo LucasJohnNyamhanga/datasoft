@@ -319,7 +319,7 @@ const DoYouHaveAnIdea = () => {
                 <span>Project Details</span>
               </div>
               {loading ? (
-                <div className={`${styles.button} ${styles.light}`}>
+                <div className={`${styles.button} ${styles.dark}`}>
                   <Loader sms={"Sending Mail"} />
                 </div>
               ) : (
