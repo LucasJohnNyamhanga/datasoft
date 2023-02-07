@@ -1,9 +1,9 @@
 import styles from "./styles/page.module.scss";
 import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
-
 import WhatWeDo from "./components/WhatWeDo";
-import DoYouHaveAnIdea from "./components/DoYouHaveAnIdea";
+import Contact from "./components/contactUs";
+import WhatWeHaveDone from "./components/WhatWeHaveDone";
 
 export default function Home() {
   const handleHeroButton = () => {
@@ -14,7 +14,8 @@ export default function Home() {
       <Navigation />
       <Hero image={"/datasoft.gif"} />
       <WhatWeDo />
-      <DoYouHaveAnIdea />
+      <WhatWeHaveDone />
+      <Contact />
     </main>
   );
 }

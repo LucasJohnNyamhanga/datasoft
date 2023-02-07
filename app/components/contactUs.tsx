@@ -4,7 +4,7 @@ import styles from "../styles/doYouHaveAnIdea.module.scss";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
-import Loader from "../components/loaderWait";
+import Loader from "./loaderWait";
 
 const DoYouHaveAnIdea = () => {
   const [formData, setFormData] = useState({

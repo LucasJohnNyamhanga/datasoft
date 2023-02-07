@@ -1,0 +1,157 @@
+@import "index";
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px;
+  font-family: $fontHeader;
+  font-weight: 500;
+  font-size: 18px;
+
+  //min-height: 90vh;
+
+  .subContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin-bottom: 50px;
+
+    h2 {
+      font-family: $fontHeader;
+      font-weight: 700;
+      font-size: 36px;
+      margin: 0px;
+      margin-bottom: 0px;
+      padding-bottom: 35px;
+      margin-left: 15px;
+      margin-top: 10px;
+      color: $green;
+    }
+
+    .innerContainer {
+      width: 100%;
+      max-width: 1200px;
+      display: grid;
+      grid-gap: 15px;
+      //padding: 10px;
+
+      @media (min-width: 268px) {
+        grid-template-columns: repeat(1, 1fr);
+        align-items: center;
+        justify-content: center;
+      }
+
+      @media (min-width: 568px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (min-width: 888px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media (min-width: 1200px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+
+  .line {
+    height: 5px;
+    background-color: $gold;
+    width: 100px;
+    margin-left: 3px;
+  }
+
+  .inputBox {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+
+    input {
+      border: 2px solid $ugoro;
+      padding: 10px;
+      font-size: 18px;
+      font-weight: 500;
+      border-radius: 5px;
+      width: 100%;
+      outline: none;
+      font-family: $fontHeader;
+      margin-bottom: 10px;
+      color: $black;
+      z-index: 1;
+
+      &:valid ~ span,
+      &:focus ~ span {
+        color: $lightblue;
+        transform: translateX(10px) translateY(-15px);
+        font-size: 16px;
+        padding: 4px 10px 0px 10px;
+        background-color: $white;
+        font-weight: 600;
+        border-radius: 2px;
+        z-index: 0;
+        left: 0px;
+      }
+
+      &:valid,
+      &:focus {
+        border: 2px solid $lightblue;
+        z-index: 0;
+      }
+    }
+
+    textarea {
+      border: 2px solid $ugoro;
+      padding: 10px;
+      font-size: 18px;
+      font-weight: 500;
+      border-radius: 5px;
+      width: 100%;
+      outline: none;
+      font-family: $fontHeader;
+      margin-bottom: 10px;
+      color: $black;
+      z-index: 1;
+
+      &:valid ~ span,
+      &:focus ~ span {
+        color: $lightblue;
+        transform: translateX(10px) translateY(-15px);
+        font-size: 16px;
+        padding: 4px 10px 0px 10px;
+        background-color: $white;
+        font-weight: 600;
+        border-radius: 2px;
+        z-index: 0;
+        left: 0px;
+      }
+
+      &:valid,
+      &:focus {
+        border: 2px solid $lightblue;
+        z-index: 0;
+      }
+    }
+
+    span {
+      position: absolute;
+      left: 10px;
+      top: 3px;
+      padding: 10px;
+      pointer-events: none;
+      font-size: 18px;
+      font-weight: 400;
+      color: $gray;
+      // text-transform: uppercase;
+      font-family: $fontHeader;
+      transition: 0.5s;
+      z-index: 0;
+    }
+  }
+}

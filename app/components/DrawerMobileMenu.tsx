@@ -51,12 +51,19 @@ export const MuiDrawer = ({}) => {
               About
             </Link>
             <Divider />
-            <Link
-              href={"#"}
+            <a
+              href={"#projects"}
               className={false ? Styles.active : Styles.setCenter}
             >
               Projects
-            </Link>
+            </a>
+            <Divider />
+            <a
+              href={"#idea"}
+              className={false ? Styles.active : Styles.setCenter}
+            >
+              Contact Us
+            </a>
             <Divider />
           </List>
         </Box>

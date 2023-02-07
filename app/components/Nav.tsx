@@ -49,15 +49,15 @@ const Nav = () => {
               <Link href="/" className={Styles.links}>
                 About
               </Link>
-              <Link href="/" className={Styles.links}>
+              <a href="#services" className={Styles.links}>
                 Services
-              </Link>
-              <Link href="/" className={Styles.links}>
+              </a>
+              <a href="#projects" className={Styles.links}>
                 Projects
-              </Link>
-              <Link href="/" className={Styles.links}>
+              </a>
+              <a href="#idea" className={Styles.links}>
                 Contact
-              </Link>
+              </a>
             </div>
           </nav>
         </div>
