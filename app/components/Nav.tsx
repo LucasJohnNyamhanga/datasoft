@@ -44,9 +44,6 @@ const Nav = () => {
             </Link>
             <div className={Styles.link}>
               <Link href="/" className={Styles.links}>
-                Home
-              </Link>
-              <Link href="/" className={Styles.links}>
                 About
               </Link>
               <a href="#services" className={Styles.links}>
