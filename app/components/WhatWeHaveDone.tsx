@@ -25,7 +25,7 @@ const whatWeHaveDone = () => {
       type: "Dynamic",
       database: "MySql",
       cost: "3 weeks",
-      active: true,
+      active: false,
     },
     {
       image: "/assets/data3.webp",
@@ -37,7 +37,7 @@ const whatWeHaveDone = () => {
       type: "Dynamic",
       database: "MySQL",
       cost: "1 month",
-      active: false,
+      active: true,
     },
     {
       image: "/assets/data4.webp",
