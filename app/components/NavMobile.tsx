@@ -37,7 +37,7 @@ export const NavMobile = () => {
                 <div className={Styles.name}>DataSoft</div>
               </div>
             </Link>
-            <div className={Styles.links}></div>
+            {/* <div className={Styles.links}>Hello</div> */}
             <DrawerMobile />
           </nav>
         </div>

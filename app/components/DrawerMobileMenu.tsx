@@ -39,6 +39,13 @@ export const MuiDrawer = ({}) => {
             <Divider />
             <Link
               href={"#"}
+              className={"Notes" == "Notes" ? Styles.active : Styles.setCenter}
+            >
+              Home
+            </Link>
+            <Divider />
+            <Link
+              href={"#"}
               className={false ? Styles.active : Styles.setCenter}
               onClick={() => {
                 handleMenuClick("");
