@@ -59,7 +59,7 @@ const whatWeHaveDone = () => {
       pages: 3,
       type: "Static",
       database: "No",
-      cost: "7 days",
+      cost: "4 days",
       active: false,
     },
   ];
