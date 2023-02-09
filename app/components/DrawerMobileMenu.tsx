@@ -40,6 +40,9 @@ export const MuiDrawer = ({}) => {
             <a
               href={"#top"}
               className={"Notes" == "Notes" ? Styles.active : Styles.setCenter}
+              onClick={() => {
+                handleMenuClick("");
+              }}
             >
               Home
             </a>
