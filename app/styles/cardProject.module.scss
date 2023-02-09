@@ -271,21 +271,28 @@ $borderviewcolor: $gold;
 
 .icon span {
   vertical-align: middle;
+  margin-left: 5px;
 }
 
 /* price style */
 
 .price {
+  width: 100%;
   text-transform: capitalize;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   font-weight: 600;
   font-size: 14px;
+  color: $green;
+  margin-top: 10px;
 }
 
 .price span:last-of-type {
   color: $pricetextcolor;
   font-size: 18px;
+  margin-left: 8px;
 }
 
 // /* media screen style */

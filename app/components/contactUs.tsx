@@ -57,6 +57,12 @@ const DoYouHaveAnIdea = () => {
           // handle success
           if (response.data.success) {
             notifySuccess(response.data.message);
+            setFormData({
+              fullName: "",
+              email: "",
+              orgName: "",
+              project: "",
+            });
           } else {
             notifyError(response.data.message);
           }
