@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Nav = () => {
   return (
-    <div className={Styles.container}>
+    <div className={Styles.container} id={"top"}>
       <div className={Styles.innerContainerTop}>
         <div className={Styles.NavDetails}>
           <div className={Styles.topAdvatisment}>
@@ -43,9 +43,9 @@ const Nav = () => {
               </div>
             </Link>
             <div className={Styles.link}>
-              <Link href="/" className={Styles.links}>
+              <a href="#top" className={Styles.links}>
                 Home
-              </Link>
+              </a>
               <Link href="/" className={Styles.links}>
                 About
               </Link>

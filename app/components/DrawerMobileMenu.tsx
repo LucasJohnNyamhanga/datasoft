@@ -37,12 +37,12 @@ export const MuiDrawer = ({}) => {
           <div className={Styles.header}>{`DataSoft Technologies`}</div>
           <List>
             <Divider />
-            <Link
-              href={"#"}
+            <a
+              href={"#top"}
               className={"Notes" == "Notes" ? Styles.active : Styles.setCenter}
             >
               Home
-            </Link>
+            </a>
             <Divider />
             <Link
               href={"#"}

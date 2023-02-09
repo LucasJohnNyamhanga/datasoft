@@ -6,7 +6,7 @@ import DrawerMobile from "./DrawerMobileMenu";
 
 export const NavMobile = () => {
   return (
-    <div className={Styles.container}>
+    <div className={Styles.container} id={"top"}>
       <div className={Styles.innerContainerTop}>
         <div className={Styles.NavDetails}>
           <div className={Styles.topAdvatisment}>
