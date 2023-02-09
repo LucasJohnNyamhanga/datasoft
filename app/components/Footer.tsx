@@ -9,9 +9,9 @@ const Footer = () => {
       <div className={Styles.innerContainer}>
         <div className={Styles.footerDetails}>
           <div className={Styles.header}>MEET US</div>
-          <div className={Styles.body}>House No 13</div>
-          <div className={Styles.body}>Medical Research Road</div>
-          <div className={Styles.body}>Kitangiri, Ilemela</div>
+          <div className={Styles.body}>House No 13,</div>
+          <div className={Styles.body}>Medical Research Road,</div>
+          <div className={Styles.body}>Kitangiri Ilemela,</div>
           <div className={Styles.body}>Mwanza, Tanzania.</div>
         </div>
         <div className={Styles.footerDetails}>
