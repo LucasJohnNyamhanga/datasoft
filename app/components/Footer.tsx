@@ -12,11 +12,13 @@ const Footer = () => {
           <div className={Styles.body}>House No 13</div>
           <div className={Styles.body}>Medical Research Road</div>
           <div className={Styles.body}>Kitangiri, Ilemela</div>
-          <div className={Styles.body}>Mwanza, Tanzania</div>
+          <div className={Styles.body}>Mwanza, Tanzania.</div>
         </div>
         <div className={Styles.footerDetails}>
           <div className={Styles.header}>BRIEF US</div>
-          <div className={Styles.body}>{`Let's Talk Business`}</div>
+          <div
+            className={`${Styles.body} ${Styles.buziness}`}
+          >{`Let's Talk Business`}</div>
           <div className={Styles.body}>
             <a href="tel:+255784477999">+255 784 477 999</a>
           </div>
