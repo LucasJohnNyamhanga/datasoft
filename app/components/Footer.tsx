@@ -30,7 +30,10 @@ const Footer = () => {
           <div className={Styles.header}>SOCIAL MEDIA</div>
           <div className={Styles.body}>
             <div className={Styles.socialmenu}>
-              <FaInstagram className={Styles.media} />
+              <Link href={"https://www.instagram.com/datasofttanzania/"}>
+                <FaInstagram className={Styles.media} />
+              </Link>
+
               <FaFacebookF className={Styles.media} />
             </div>
           </div>
