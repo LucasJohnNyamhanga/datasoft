@@ -229,7 +229,7 @@ const DoYouHaveAnIdea = () => {
         <div className={styles.contact}>
           <div className={styles.contactHeder}>
             <h2>
-              BRIEF US<span>!</span>{" "}
+              BRIEF US<span>!.</span>{" "}
             </h2>
             <div className={styles.line} />
             <p className={styles.details}>
