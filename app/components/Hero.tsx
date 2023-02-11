@@ -231,7 +231,7 @@ function hero({ image }: dataHero) {
           </h1>
           <p>
             We are innovators, creators, technological makers. We turn ideas
-            into full effecient working technological solution, that are
+            into full efficient working technological solution, that are
             customized to meet your company’s organizational needs, highlight
             its core competencies, and further its success.
           </p>
