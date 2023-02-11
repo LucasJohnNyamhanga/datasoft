@@ -13,14 +13,34 @@
   font-weight: 500;
   font-size: 18px;
   padding-bottom: 20px;
+  position: relative;
 
-  //min-height: 90vh;
+  &::before {
+    content: "";
+    background-color: $ugoro;
+    position: absolute;
+    inset: 0;
+    transform: skewY(5deg);
+    z-index: 1;
+    height: 50%;
+  }
+
+  &::after {
+    content: "";
+    background-color: $ugoro;
+    position: absolute;
+    inset: 0;
+    transform: skewY(-5deg);
+    z-index: 1;
+    height: 50%;
+  }
 
   .subContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 999;
 
     h2 {
       font-family: $fontHeader;
@@ -277,6 +297,7 @@
     max-width: 1200px;
     justify-content: flex-start;
     align-items: flex-start;
+    z-index: 999;
 
     .details {
       font-size: 22px;

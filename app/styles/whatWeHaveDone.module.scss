@@ -10,8 +10,17 @@
   font-family: $fontHeader;
   font-weight: 500;
   font-size: 18px;
+  position: relative;
+  //isolation: isolate;
 
-  //min-height: 90vh;
+  &::after {
+    content: "";
+    background-color: $mainBackGround;
+    position: absolute;
+    inset: 0;
+    transform: skewY(2deg);
+    z-index: 1;
+  }
 
   .subContainer {
     width: 100%;
@@ -21,6 +30,7 @@
     align-items: flex-start;
     max-width: 1200px;
     margin-bottom: 50px;
+    z-index: 99;
 
     h2 {
       font-family: $fontHeader;
@@ -83,7 +93,7 @@
       outline: none;
       font-family: $fontHeader;
       margin-bottom: 10px;
-      color: $black;
+      color: $gold;
       z-index: 1;
 
       &:valid ~ span,
@@ -116,7 +126,7 @@
       outline: none;
       font-family: $fontHeader;
       margin-bottom: 10px;
-      color: $black;
+      color: $gold;
       z-index: 1;
 
       &:valid ~ span,
