@@ -10,7 +10,7 @@ export default function Head() {
       <meta
         key="desc"
         name="description"
-        content={`We are innovators, creators, technological makers. We turn ideas into full effecient working technological solution, that are customized to meet your company’s organizational needs, highlight its core competencies, and further its success.`}
+        content={`Get a technological solution from the ideas you have, evolved into full effecient working solution, that are customized to meet your company’s organizational needs, highlight its core competencies, and further its success.`}
       />
       {/* //!add keywords */}
       <meta
@@ -19,7 +19,7 @@ export default function Head() {
       />
       <meta
         property="og:description"
-        content="We are innovators, creators, technological makers. We turn ideas into full effecient working technological solution, that are customized to meet your company’s organizational needs, highlight its core competencies, and further its success."
+        content="Get a technological solution from the ideas you have, evolved into full effecient working solution, that are customized to meet your company’s organizational needs, highlight its core competencies, and further its success."
       />
       <meta property="og:image" content="/brainas.svg" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
