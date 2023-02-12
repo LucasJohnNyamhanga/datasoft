@@ -81,6 +81,7 @@ const DoYouHaveAnIdea = () => {
   return (
     <div className={styles.container} id="idea">
       <Toaster position="top-center" />
+      <div className={styles.border}></div>
       <div className={styles.subContainer}>
         <h2>
           <div className="title-glitch-top">

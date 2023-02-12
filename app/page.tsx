@@ -5,10 +5,10 @@ import WhatWeDo from "./components/WhatWeDo";
 import Contact from "./components/contactUs";
 import WhatWeHaveDone from "./components/WhatWeHaveDone";
 
+import Footer from "./components/Footer";
+import GoToTop from "./components/GoToTop";
+
 export default function Home() {
-  const handleHeroButton = () => {
-    console.log("Button Clicked!");
-  };
   return (
     <main className={styles.main}>
       <Navigation />
@@ -16,6 +16,8 @@ export default function Home() {
       <WhatWeDo />
       <WhatWeHaveDone />
       <Contact />
+      <Footer />
+      <GoToTop />
     </main>
   );
 }

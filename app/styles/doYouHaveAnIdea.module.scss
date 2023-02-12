@@ -25,11 +25,12 @@
     height: 50%;
   }
 
-  &::after {
-    content: "";
+  .border {
+    width: 100%;
     background-color: $ugoro;
     position: absolute;
-    inset: 0;
+    top: -200;
+    left: 0;
     transform: skewY(-5deg);
     z-index: 1;
     height: 50%;
