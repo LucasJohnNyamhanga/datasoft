@@ -43,8 +43,11 @@ const GoToTop = () => {
         <RiRocketLine size={50} />
         <GiFireBowl size={30} className={styles.fire} />
       </div>
-      <a href="https://wa.me/+255784477999" className={`${styles.whatsaap}`}>
-        <BsWhatsapp size={30} />
+
+      <a href="https://wa.me/+255784477999">
+        <div className={`${styles.whatsaap}`}>
+          <BsWhatsapp size={30} />
+        </div>
       </a>
     </div>
   );
