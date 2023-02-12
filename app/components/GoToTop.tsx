@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import { RiRocketLine } from "react-icons/ri";
 import { GiFireBowl } from "react-icons/gi";
+import { BsWhatsapp } from "react-icons/bs";
 import styles from "../styles/goToTop.module.scss";
 import Link from "next/link";
 
@@ -33,13 +34,18 @@ const GoToTop = () => {
     };
   }, []);
   return (
-    <div
-      ref={rocket}
-      className={`${styles.backToTop} ${styles.vibrater}`}
-      onClick={smoothScroll}
-    >
-      <RiRocketLine size={50} />
-      <GiFireBowl size={30} className={styles.fire} />
+    <div>
+      <div
+        ref={rocket}
+        className={`${styles.backToTop} ${styles.vibrater}`}
+        onClick={smoothScroll}
+      >
+        <RiRocketLine size={50} />
+        <GiFireBowl size={30} className={styles.fire} />
+      </div>
+      <a href="https://wa.me/+255784477999" className={`${styles.whatsaap}`}>
+        <BsWhatsapp size={30} />
+      </a>
     </div>
   );
 };
