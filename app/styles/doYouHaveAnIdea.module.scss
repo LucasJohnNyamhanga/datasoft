@@ -25,16 +25,16 @@
     height: 50%;
   }
 
-  // .border {
-  //   width: 100%;
-  //   background-color: $ugoro;
-  //   position: absolute;
-  //   top: -200;
-  //   left: 0;
-  //   transform: skewY(-5deg);
-  //   z-index: 1;
-  //   height: 50%;
-  // }
+  .border {
+    width: 100%;
+    background-color: $ugoro;
+    position: absolute;
+    top: -200;
+    left: 0;
+    transform: skewY(-5deg);
+    z-index: 1;
+    height: 50%;
+  }
 
   .subContainer {
     display: flex;

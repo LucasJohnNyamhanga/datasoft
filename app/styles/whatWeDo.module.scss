@@ -8,6 +8,9 @@
   align-items: center;
   padding: 15px;
   margin-bottom: 25px;
+  font-family: $fontHeader;
+  font-weight: 500;
+  font-size: 18px;
 
   .subContainer {
     display: flex;
@@ -30,7 +33,7 @@
   width: 100%;
   max-width: 1200px;
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 15px;
   //margin-top: 20px;
 
   @media (min-width: 268px) {
