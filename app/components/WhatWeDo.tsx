@@ -14,7 +14,7 @@ const dataPoint = [
     id: 1,
     header: "Graphics Designing",
     icon: <FaImages />,
-    description: `We create artistic graphics works that intends to communicate your intended messages and objectives.`,
+    description: `We create artistic graphics works that communicates your intended messages and objectives.`,
     link: `#`,
   },
   {
