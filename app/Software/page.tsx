@@ -8,7 +8,7 @@ const Software = () => {
   return (
     <div className={styles.main}>
       <Navigation />
-      <Hero image={"/datasoftsoftware.gif"} />
+      <Hero image={"/datasoft.gif"} />
       <div>software</div>
       <Footer />
       <GoToTop />

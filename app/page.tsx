@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Navigation />
-      <Hero image={"/datasoft.gif"} />
+      <Hero image={"/datasoftsoftware.gif"} />
       <WhatWeDo />
       <WhatWeHaveDone />
       <Contact />
