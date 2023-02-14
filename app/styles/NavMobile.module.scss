@@ -6,6 +6,7 @@
   flex-direction: column;
   position: relative;
   z-index: 10;
+  isolation: isolate;
 }
 
 .innerContainerTop {
