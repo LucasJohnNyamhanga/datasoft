@@ -39,7 +39,7 @@ export const MuiDrawer = ({}) => {
         className={Styles.drawer}
       >
         <Box p={2} width="250px" textAlign="center" role="presentation">
-          <div className={Styles.header}>{`DataSoft Tanzania`}</div>
+          {/* <div className={Styles.header}>{`DataSoft Tanzania`}</div> */}
           <List>
             <Divider />
             <a
