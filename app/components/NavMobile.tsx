@@ -38,7 +38,9 @@ export const NavMobile = () => {
               </div>
             </Link>
             {/* <div className={Styles.links}>Hello</div> */}
-            <DrawerMobile />
+            <div className={Styles.drawer}>
+              <DrawerMobile />
+            </div>
           </nav>
         </div>
       </div>

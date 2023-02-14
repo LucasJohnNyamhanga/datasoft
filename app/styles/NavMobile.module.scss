@@ -6,7 +6,6 @@
   flex-direction: column;
   position: relative;
   z-index: 10;
-  isolation: isolate;
 }
 
 .innerContainerTop {
@@ -66,6 +65,10 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+
+      .drawer {
+        z-index: 999999999;
+      }
 
       .logo {
         font-family: $fontHeader;
