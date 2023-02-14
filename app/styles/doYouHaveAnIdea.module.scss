@@ -16,6 +16,9 @@
   position: relative;
 
   &::before {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     content: "";
     background-color: $ugoro;
     position: absolute;
@@ -26,32 +29,36 @@
   }
 
   .border {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     background-color: $ugoro;
     position: absolute;
-    top: -200;
+    top: 0;
     left: 0;
     transform: skewY(-5deg);
-    z-index: 1;
+    z-index: 999;
     height: 50%;
   }
 
   .subContainer {
+    width: 100%;
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 999;
+    padding: 0px 10px;
+    text-align: center;
 
     h2 {
       font-family: $fontHeader;
-
+      display: flex;
+      flex-direction: column;
+      width: 100%;
       font-weight: 700;
       font-size: 46px;
-      margin: 0px;
-      margin-top: 35px;
-      margin-bottom: 20px;
-      margin-left: 15px;
       width: 100%;
 
       .block {
@@ -416,6 +423,9 @@
       }
 
       .contactHeder {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
         flex: 1;
         padding: 10px;
 

@@ -10,12 +10,15 @@
 }
 
 .fixed {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   position: fixed;
-  //margin-top: calc(100vh + $height);
   top: 0;
   left: 0;
   z-index: 9999;
+  margin: 0;
+  padding: 0;
   background: -webkit-linear-gradient(right, rgba(#f1f1f1, 1) 0%, gold 100%);
   background: -moz-linear-gradient(right, rgba(#f1f1f1, 1) 0%, gold 100%);
   background: -ms-linear-gradient(right, rgba(#f1f1f1, 1) 0%, gold 100%);
