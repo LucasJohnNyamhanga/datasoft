@@ -8,3 +8,16 @@
     display: none;
   }
 }
+
+.fixed {
+  width: 100%;
+  position: fixed;
+  //margin-top: calc(100vh + $height);
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background: -webkit-linear-gradient(right, rgba(#f1f1f1, 1) 0%, gold 100%);
+  background: -moz-linear-gradient(right, rgba(#f1f1f1, 1) 0%, gold 100%);
+  background: -ms-linear-gradient(right, rgba(#f1f1f1, 1) 0%, gold 100%);
+  background: linear-gradient(to right, rgba(#f1f1f1, 1) 0%, gold 100%);
+}

@@ -32,9 +32,14 @@ export const MuiDrawer = ({}) => {
         <span></span>
         <span></span>
       </div>
-      <Drawer anchor="left" open={isDrawerOpen} onClose={handleClose}>
+      <Drawer
+        anchor="left"
+        open={isDrawerOpen}
+        onClose={handleClose}
+        className={Styles.drawer}
+      >
         <Box p={2} width="250px" textAlign="center" role="presentation">
-          <div className={Styles.header}>{`DataSoft Technologies`}</div>
+          <div className={Styles.header}>{`DataSoft Tanzania`}</div>
           <List>
             <Divider />
             <a

@@ -8,11 +8,9 @@
   font-family: "Montserrat";
   margin: 0px;
   padding: 0px;
-
-  * {
-    transition: 0.1s linear;
-  }
+  transition: 0.1s linear;
   position: relative;
+  margin-top: 100px;
 
   .background {
     position: absolute;
