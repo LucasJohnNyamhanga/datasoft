@@ -43,7 +43,7 @@ export const MuiDrawer = ({}) => {
           <List>
             <Divider />
             <a
-              href={"#top"}
+              href={"/"}
               className={"Notes" == "Notes" ? Styles.active : Styles.setCenter}
               onClick={() => {
                 handleMenuClick("");

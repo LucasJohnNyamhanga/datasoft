@@ -43,7 +43,7 @@ const Nav = () => {
               </div>
             </Link>
             <div className={Styles.link}>
-              <a href="#top" className={Styles.links}>
+              <a href="/" className={Styles.links}>
                 Home
               </a>
               <Link href="/" className={Styles.links}>
