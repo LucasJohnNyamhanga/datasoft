@@ -78,7 +78,7 @@ const dataPoint = [
 
 const what = () => {
   return (
-    <div className={styles.container} id="services">
+    <div id="services" className={styles.container}>
       <div className={styles.subContainer}>
         <h2>What We Do</h2>
         <div className={styles.innerContainer}>
