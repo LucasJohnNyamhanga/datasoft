@@ -14,23 +14,23 @@ const Service = ({ header, icon, description, link }: dataType) => {
   return (
     <div className={styles.container}>
       {/* <!-- START SECTION SERVICES --> */}
-      <div className={styles.sectionservices}>
-        {/* <!-- Single Service --> */}
-        <div className={styles.cover}>
-          <div className={styles.singleservice}>
-            <div className={styles.content}>
-              <span className={styles.icon}>{icon}</span>
-              <h3 className={styles.title}>{header}</h3>
-              <p className={styles.description}>{description}</p>
-              <Link href={link} className={styles.learnmore}>
-                Learn More
-              </Link>
+      <Link href={link}>
+        <div className={styles.sectionservices}>
+          {/* <!-- Single Service --> */}
+          <div className={styles.cover}>
+            <div className={styles.singleservice}>
+              <div className={styles.content}>
+                <span className={styles.icon}>{icon}</span>
+                <h3 className={styles.title}>{header}</h3>
+                <p className={styles.description}>{description}</p>
+                <a className={styles.learnmore}>Learn More</a>
+              </div>
+              <span className={styles.circlebefore}></span>
             </div>
-            <span className={styles.circlebefore}></span>
           </div>
+          {/* <!-- / End Single Service --> */}
         </div>
-        {/* <!-- / End Single Service --> */}
-      </div>
+      </Link>
     </div>
   );
 };
