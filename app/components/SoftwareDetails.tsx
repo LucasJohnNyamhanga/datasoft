@@ -66,27 +66,22 @@ const whatWeHaveDone = () => {
   return (
     <div className={styles.container} id="projects">
       <div className={styles.subContainer}>
-        <h2
-          style={{
-            marginTop: 20,
-            marginBottom: 10,
-            marginLeft: 0,
-            paddingBottom: 10,
-          }}
-        >
-          Software Development Process
-        </h2>
+        <div className={styles.header}>
+          <h2 style={{}}>Software Development Process</h2>
+        </div>
         <div>
           <p>
             The software development process consists of four major steps. Each
             of these steps is detailed below.
           </p>{" "}
-          <ul>
-            <li>Step 1: Planning </li>
-            <li>Step 2: Implementing</li>
-            <li>Step 3: Testing</li>
-            <li>Step 4: Deployment and Maintenance</li>
-          </ul>
+          <div className={styles.list}>
+            <ol>
+              <li>Planning </li>
+              <li>Implementing</li>
+              <li>Testing</li>
+              <li>Deployment and Maintenance</li>
+            </ol>
+          </div>
           <h3>Step #1: Planning</h3>
           <p>
             An important task in creating a software program is Requirements

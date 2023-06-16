@@ -1,10 +1,15 @@
 "use client";
 import { Drawer, Box, List, ListItemText, Divider } from "@mui/material";
 import Link from "next/link";
+import { useSelectedLayoutSegment } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import Styles from "../styles/drawerMobile.module.scss";
 
 export const MuiDrawer = ({}) => {
+  let segment = useSelectedLayoutSegment();
+
+  console.log(segment);
+
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const humberger = useRef<HTMLDivElement>(null!);
 

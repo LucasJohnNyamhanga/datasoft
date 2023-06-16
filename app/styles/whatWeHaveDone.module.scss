@@ -36,13 +36,17 @@
     h2 {
       font-family: $fontHeader;
       font-weight: 700;
-      font-size: 36px;
+      font-size: 30px;
       margin: 0px;
       margin-bottom: 0px;
-      padding-bottom: 35px;
-      margin-left: 15px;
-      margin-top: 10px;
+      padding-bottom: 10px;
+      margin-left: 0px;
+      margin-top: 15px;
       color: $green;
+    }
+
+    h3 {
+      color: $ugoro;
     }
 
     .innerContainer {
@@ -163,6 +167,25 @@
       font-family: $fontHeader;
       transition: 0.5s;
       z-index: 0;
+    }
+  }
+}
+
+.list {
+  ol {
+    list-style-position: inside;
+    counter-reset: list;
+
+    li {
+      counter-increment: list;
+      font-weight: 600;
+    }
+
+    li::marker {
+      font-family: "Sigmar One", cursive;
+      content: "Step " counter(list) ". ";
+      font-weight: 600;
+      color: $ugoro;
     }
   }
 }
