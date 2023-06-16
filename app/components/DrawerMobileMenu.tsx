@@ -52,7 +52,7 @@ export const MuiDrawer = ({}) => {
               Home
             </a>
             <Divider />
-            <Link
+            {/* <Link
               href={"#"}
               className={false ? Styles.active : Styles.setCenter}
               onClick={() => {
@@ -61,7 +61,7 @@ export const MuiDrawer = ({}) => {
             >
               About
             </Link>
-            <Divider />
+            <Divider /> */}
             <a
               href={"#projects"}
               className={false ? Styles.active : Styles.setCenter}

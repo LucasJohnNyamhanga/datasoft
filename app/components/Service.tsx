@@ -1,7 +1,7 @@
+"use client";
 import Link from "next/link";
 import styles from "../styles/section.module.scss";
-
-import { type } from "os";
+import { useRouter } from "next/navigation";
 
 type dataType = {
   header: string;
@@ -11,26 +11,36 @@ type dataType = {
 };
 
 const Service = ({ header, icon, description, link }: dataType) => {
+  const router = useRouter();
+
+  const handleNavigation = (nav: string) => {
+    router.push(nav);
+  };
+
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      style={{ cursor: "pointer" }}
+      onClick={(e) => {
+        handleNavigation(link);
+      }}
+    >
       {/* <!-- START SECTION SERVICES --> */}
-      <Link href={link}>
-        <div className={styles.sectionservices}>
-          {/* <!-- Single Service --> */}
-          <div className={styles.cover}>
-            <div className={styles.singleservice}>
-              <div className={styles.content}>
-                <span className={styles.icon}>{icon}</span>
-                <h3 className={styles.title}>{header}</h3>
-                <p className={styles.description}>{description}</p>
-                <a className={styles.learnmore}>Learn More</a>
-              </div>
-              <span className={styles.circlebefore}></span>
+      <div className={styles.sectionservices}>
+        {/* <!-- Single Service --> */}
+        <div className={styles.cover}>
+          <div className={styles.singleservice}>
+            <div className={styles.content}>
+              <span className={styles.icon}>{icon}</span>
+              <h3 className={styles.title}>{header}</h3>
+              <p className={styles.description}>{description}</p>
+              <a className={styles.learnmore}>Learn More</a>
             </div>
+            <span className={styles.circlebefore}></span>
           </div>
-          {/* <!-- / End Single Service --> */}
         </div>
-      </Link>
+        {/* <!-- / End Single Service --> */}
+      </div>
     </div>
   );
 };
