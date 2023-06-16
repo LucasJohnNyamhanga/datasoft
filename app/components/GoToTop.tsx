@@ -15,7 +15,9 @@ const GoToTop = () => {
     if (scrollPosition > 450) {
       rocket.current.classList.add(styles.Show);
     } else {
-      rocket.current.classList.remove(styles.Show);
+      if (rocket.current != null) {
+        rocket.current.classList.remove(styles.Show);
+      }
     }
   };
 
