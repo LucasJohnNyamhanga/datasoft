@@ -20,7 +20,7 @@ const Nav = () => {
         </div>
         <div className={Styles.NavHeader}>
           <nav className={Styles.nav}>
-            <Link passHref href="/" className={Styles.logo}>
+            <Link passHref href="/" className={Styles.logo} as={"image"}>
               <div className={Styles.datasoft}>
                 <div className={Styles.icon}>
                   <Image

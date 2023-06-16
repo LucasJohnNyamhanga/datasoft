@@ -39,7 +39,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className={Styles.copyrights}>DataSoft Tanzania &copy; 2022</div>
+      <div className={Styles.copyrights}>DataSoft Tanzania &copy; 2023</div>
     </div>
   );
 };
