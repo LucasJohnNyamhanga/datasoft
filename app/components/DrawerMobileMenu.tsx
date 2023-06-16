@@ -42,7 +42,7 @@ export const MuiDrawer = ({}) => {
           <div className={Styles.header}>{/* {`DataSoft Tanzania`} */}</div>
           <List>
             <Divider />
-            <a
+            <Link
               href={"/"}
               className={"Notes" == "Notes" ? Styles.active : Styles.setCenter}
               onClick={() => {
@@ -50,18 +50,18 @@ export const MuiDrawer = ({}) => {
               }}
             >
               Home
-            </a>
+            </Link>
             <Divider />
-            {/* <Link
-              href={"#"}
+            <a
+              href={"#services"}
               className={false ? Styles.active : Styles.setCenter}
               onClick={() => {
                 handleMenuClick("");
               }}
             >
-              About
-            </Link>
-            <Divider /> */}
+              Services
+            </a>
+            <Divider />
             <a
               href={"#projects"}
               className={false ? Styles.active : Styles.setCenter}
