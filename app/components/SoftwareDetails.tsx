@@ -137,6 +137,7 @@ const whatWeHaveDone = () => {
             as easy as possible for you, so the outcome results will be as
             desired and with complete transparency.
           </p>
+          <h3>{`Let's bring your ideas to life.`}</h3>
         </div>
       </div>
     </div>
