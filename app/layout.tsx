@@ -2,7 +2,6 @@ import "./styles/globals.scss";
 import Navigation from "./components/Navigation";
 
 import type { Metadata } from "next";
-import Check from "./components/Check";
 
 export const metadata: Metadata = {
   title: "DataSoft Tanzania",
