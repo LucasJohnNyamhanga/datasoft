@@ -46,7 +46,7 @@ export const MuiDrawer = ({}) => {
         <Box p={2} width="250px" textAlign="center" role="presentation">
           <div className={Styles.header}>{/* {`DataSoft Tanzania`} */}</div>
           <List>
-            {segment === "Software" ? (
+            {segment != null ? (
               <>
                 <Divider />
                 <Link
@@ -79,7 +79,7 @@ export const MuiDrawer = ({}) => {
                 <Divider />
               </>
             )}
-            {segment != "Software" && (
+            {segment == null && (
               <>
                 <a
                   href={"#services"}

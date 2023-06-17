@@ -31,7 +31,11 @@ const Nav = () => {
             <div
               className={Styles.logo}
               onClick={(e) => {
-                handleNavigation("/");
+                if (segment != null) {
+                  handleNavigation("/");
+                } else {
+                  handleNavigation("#home");
+                }
               }}
             >
               <div className={Styles.datasoft}>
@@ -56,7 +60,7 @@ const Nav = () => {
               </div>
             </div>
             <div className={Styles.link}>
-              {segment === "Software" ? (
+              {segment != null ? (
                 <Link href="/" className={Styles.links}>
                   Home
                 </Link>
@@ -65,7 +69,7 @@ const Nav = () => {
                   Home
                 </a>
               )}
-              {segment != "Software" && (
+              {segment == null && (
                 <>
                   <a href="#services" className={Styles.links}>
                     Services

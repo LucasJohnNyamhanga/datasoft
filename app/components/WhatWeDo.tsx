@@ -22,7 +22,7 @@ const dataPoint = [
     header: "Software Development",
     icon: <FaLaptopCode />,
     description: `We design and build fully efficient working software solutions, that are customized to meet organizational needs.`,
-    link: `/software`,
+    link: `/Software`,
   },
   // {
   //   id: 3,
