@@ -10,7 +10,7 @@ export const NavMobile = () => {
         <div className={Styles.NavDetails}>
           <div className={Styles.topAdvatisment}>
             <div>
-              contact : <a href="tel:+255784477999">+255 784 477 999</a>
+              Call : <a href="tel:+255784477999">+255 784 477 999</a>
             </div>
             <div>
               or <a href="#idea"> Fill Form Now</a>
