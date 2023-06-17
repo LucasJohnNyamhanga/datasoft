@@ -3,7 +3,7 @@ import GoToTop from "../components/GoToTop";
 import Hero from "../components/SoftwareHero";
 import styles from "../styles/page.module.scss";
 import SoftwareDetails from "../components/SoftwareDetails";
-import ContactUs from "../components/ContactUs";
+import ContactUs from "../components/Contact";
 
 const Software = () => {
   return (

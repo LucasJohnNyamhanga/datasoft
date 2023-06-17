@@ -5,7 +5,7 @@ import WhatWeDo from "./components/WhatWeDo";
 import WhatWeHaveDone from "./components/WhatWeHaveDone";
 import Footer from "./components/Footer";
 import GoToTop from "./components/GoToTop";
-import ContactUs from "./components/ContactUs";
+import ContactUs from "./components/Contact";
 
 export default function Home() {
   return (
