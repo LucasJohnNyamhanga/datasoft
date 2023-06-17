@@ -77,11 +77,11 @@ const Nav = () => {
                   <a href="#projects" className={Styles.links}>
                     Projects
                   </a>
-                  <a href="#idea" className={Styles.links}>
-                    Contact
-                  </a>
                 </>
               )}
+              <a href="#idea" className={Styles.links}>
+                Contact Us
+              </a>
             </div>
           </nav>
         </div>

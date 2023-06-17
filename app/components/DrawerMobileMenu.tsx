@@ -101,18 +101,18 @@ export const MuiDrawer = ({}) => {
                   Projects
                 </a>
                 <Divider />
-                <a
-                  href="#idea"
-                  className={false ? Styles.active : Styles.setCenter}
-                  onClick={() => {
-                    handleMenuClick("");
-                  }}
-                >
-                  Contact Us
-                </a>
-                <Divider />
               </>
             )}
+            <a
+              href="#idea"
+              className={false ? Styles.active : Styles.setCenter}
+              onClick={() => {
+                handleMenuClick("");
+              }}
+            >
+              Contact Us
+            </a>
+            <Divider />
           </List>
         </Box>
       </Drawer>
