@@ -8,7 +8,7 @@ type dataHero = {
 
 function hero({ image }: dataHero) {
   return (
-    <div className={styles.container}>
+    <div id="home" className={styles.container}>
       <div className={styles.section}>
         <div className={styles.hero}>
           <div className={styles.image}>

@@ -1,9 +1,20 @@
+"use client";
 import React, { useContext, useEffect, useState } from "react";
 import Styles from "../styles/navigation.module.scss";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter, useSelectedLayoutSegment } from "next/navigation";
 
 const Nav = () => {
+  const segment = useSelectedLayoutSegment();
+
+  console.log(segment);
+  const router = useRouter();
+
+  const handleNavigation = (nav: string) => {
+    router.push(nav);
+  };
+
   return (
     <div className={Styles.container} id={"top"}>
       <div className={Styles.innerContainerTop}>
@@ -20,7 +31,12 @@ const Nav = () => {
         </div>
         <div className={Styles.NavHeader}>
           <nav className={Styles.nav}>
-            <Link passHref href="/" className={Styles.logo}>
+            <div
+              className={Styles.logo}
+              onClick={(e) => {
+                handleNavigation("/");
+              }}
+            >
               <div className={Styles.datasoft}>
                 <div className={Styles.icon}>
                   <Image
@@ -41,23 +57,30 @@ const Nav = () => {
                 </div>
                 <div className={Styles.name}>DataSoft</div>
               </div>
-            </Link>
+            </div>
             <div className={Styles.link}>
-              <Link href="/" className={Styles.links}>
-                Home
-              </Link>
-              {/* <Link href="/" className={Styles.links}>
-                About
-              </Link> */}
-              <a href="#services" className={Styles.links}>
-                Services
-              </a>
-              <a href="#projects" className={Styles.links}>
-                Projects
-              </a>
-              <a href="#idea" className={Styles.links}>
-                Contact
-              </a>
+              {segment === "Software" ? (
+                <Link href="/" className={Styles.links}>
+                  Home
+                </Link>
+              ) : (
+                <a href="#home" className={Styles.links}>
+                  Home
+                </a>
+              )}
+              {segment != "Software" && (
+                <>
+                  <a href="#services" className={Styles.links}>
+                    Services
+                  </a>
+                  <a href="#projects" className={Styles.links}>
+                    Projects
+                  </a>
+                  <a href="#idea" className={Styles.links}>
+                    Contact
+                  </a>
+                </>
+              )}
             </div>
           </nav>
         </div>

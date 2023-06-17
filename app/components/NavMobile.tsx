@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Styles from "../styles/NavMobile.module.scss";
-import { useRef } from "react";
 import Link from "next/link";
 import DrawerMobile from "./DrawerMobileMenu";
 
@@ -37,7 +36,6 @@ export const NavMobile = () => {
                 <div className={Styles.name}>DataSoft</div>
               </div>
             </Link>
-            {/* <div className={Styles.links}>Hello</div> */}
             <div className={Styles.drawer}>
               <DrawerMobile />
             </div>

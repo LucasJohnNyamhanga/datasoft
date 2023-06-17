@@ -46,47 +46,73 @@ export const MuiDrawer = ({}) => {
         <Box p={2} width="250px" textAlign="center" role="presentation">
           <div className={Styles.header}>{/* {`DataSoft Tanzania`} */}</div>
           <List>
-            <Divider />
-            <Link
-              href={"/"}
-              className={"Notes" == "Notes" ? Styles.active : Styles.setCenter}
-              onClick={() => {
-                handleMenuClick("");
-              }}
-            >
-              Home
-            </Link>
-            <Divider />
-            <a
-              href={"#services"}
-              className={false ? Styles.active : Styles.setCenter}
-              onClick={() => {
-                handleMenuClick("");
-              }}
-            >
-              Services
-            </a>
-            <Divider />
-            <a
-              href={"#projects"}
-              className={false ? Styles.active : Styles.setCenter}
-              onClick={() => {
-                handleMenuClick("");
-              }}
-            >
-              Projects
-            </a>
-            <Divider />
-            <a
-              href="#idea"
-              className={false ? Styles.active : Styles.setCenter}
-              onClick={() => {
-                handleMenuClick("");
-              }}
-            >
-              Contact Us
-            </a>
-            <Divider />
+            {segment === "Software" ? (
+              <>
+                <Divider />
+                <Link
+                  href={"/"}
+                  className={
+                    "Notes" == "Notes" ? Styles.active : Styles.setCenter
+                  }
+                  onClick={() => {
+                    handleMenuClick("");
+                  }}
+                >
+                  Home
+                </Link>
+                <Divider />
+              </>
+            ) : (
+              <>
+                <Divider />
+                <a
+                  href="#home"
+                  className={
+                    "Notes" == "Notes" ? Styles.active : Styles.setCenter
+                  }
+                  onClick={() => {
+                    handleMenuClick("");
+                  }}
+                >
+                  Home
+                </a>
+                <Divider />
+              </>
+            )}
+            {segment != "Software" && (
+              <>
+                <a
+                  href={"#services"}
+                  className={false ? Styles.active : Styles.setCenter}
+                  onClick={() => {
+                    handleMenuClick("");
+                  }}
+                >
+                  Services
+                </a>
+                <Divider />
+                <a
+                  href={"#projects"}
+                  className={false ? Styles.active : Styles.setCenter}
+                  onClick={() => {
+                    handleMenuClick("");
+                  }}
+                >
+                  Projects
+                </a>
+                <Divider />
+                <a
+                  href="#idea"
+                  className={false ? Styles.active : Styles.setCenter}
+                  onClick={() => {
+                    handleMenuClick("");
+                  }}
+                >
+                  Contact Us
+                </a>
+                <Divider />
+              </>
+            )}
           </List>
         </Box>
       </Drawer>

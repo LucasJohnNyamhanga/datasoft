@@ -67,7 +67,9 @@ const whatWeHaveDone = () => {
     <div className={styles.container} id="projects">
       <div className={styles.subContainer}>
         <div className={styles.header}>
-          <h2 style={{}}>Software Development Process</h2>
+          <h2 style={{ marginBottom: 0, paddingBottom: 0 }}>
+            Software Development Process
+          </h2>
         </div>
         <div>
           <p>

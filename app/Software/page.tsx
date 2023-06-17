@@ -1,4 +1,3 @@
-import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import GoToTop from "../components/GoToTop";
 import Hero from "../components/SoftwareHero";
@@ -8,7 +7,6 @@ import SoftwareDetails from "../components/SoftwareDetails";
 const Software = () => {
   return (
     <div className={styles.main}>
-      <Navigation />
       <Hero image={"/software.png"} />
       <SoftwareDetails />
       <Footer />

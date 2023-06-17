@@ -1,4 +1,3 @@
-import React from "react";
 import NavPc from "./Nav";
 import NavMob from "./NavMobile";
 import styles from "../styles/navigationControl.module.scss";
