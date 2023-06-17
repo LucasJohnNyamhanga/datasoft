@@ -9,7 +9,12 @@ export const NavMobile = () => {
       <div className={Styles.innerContainerTop}>
         <div className={Styles.NavDetails}>
           <div className={Styles.topAdvatisment}>
-            <p>contact : +255 784 477 999 | contact@datasoft.co.tz</p>
+            <div>
+              contact : <a href="tel:+255784477999">+255 784 477 999</a>
+            </div>
+            <div>
+              or <a href="#idea"> Fill Form Now</a>
+            </div>
           </div>
         </div>
         <div className={Styles.NavHeader}>

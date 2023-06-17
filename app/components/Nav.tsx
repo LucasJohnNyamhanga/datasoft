@@ -21,11 +21,8 @@ const Nav = () => {
         <div className={Styles.NavDetails}>
           <div className={Styles.topAdvatisment}>
             <p>
-              contact : <a href="tel:+255784477999">+255 784 477 999</a> |
-              <a href="mailto:contact@datasoft.co.tz">
-                {" "}
-                contact@datasoft.co.tz
-              </a>
+              contact : <a href="tel:+255784477999">+255 784 477 999</a> or
+              <a href="#idea"> Fill Form Now</a>
             </p>
           </div>
         </div>
