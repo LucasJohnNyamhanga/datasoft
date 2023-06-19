@@ -129,6 +129,38 @@ function hero({ image }: dataHero) {
                   n
                 </span>
               </div>
+              <div className={`${styles.block}`}>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text={` `}
+                >
+                  &nbsp;
+                </span>
+              </div>
+              <div className={`${styles.block}`}>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="a"
+                >
+                  a
+                </span>
+              </div>
+              <div className={`${styles.block}`}>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="n"
+                >
+                  n
+                </span>
+              </div>
+              <div className={`${styles.block}`}>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="d"
+                >
+                  d
+                </span>
+              </div>
             </div>
           </h1>
           <h1>
