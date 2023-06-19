@@ -103,6 +103,83 @@ function hero({ image }: dataHero) {
                 </span>
                 <span
                   className={`${styles.glitch} ${styles.character}`}
+                  data-text="s"
+                >
+                  s
+                </span>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="i"
+                >
+                  i
+                </span>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="g"
+                >
+                  g
+                </span>
+              </div>
+
+              <div className={`${styles.block}`}>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="n"
+                >
+                  n
+                </span>
+              </div>
+              <div className={`${styles.block}`}>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text={` `}
+                >
+                  &nbsp;
+                </span>
+              </div>
+              <div className={`${styles.block}`}>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="a"
+                >
+                  a
+                </span>
+              </div>
+              <div className={`${styles.block}`}>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="n"
+                >
+                  n
+                </span>
+              </div>
+              <div className={`${styles.block}`}>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="d"
+                >
+                  d
+                </span>
+              </div>
+            </div>
+          </h1>
+          <h1>
+            <div className="title-glitch-top">
+              <div className={`${styles.block}`}>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="D"
+                >
+                  D
+                </span>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
+                  data-text="e"
+                >
+                  e
+                </span>
+                <span
+                  className={`${styles.glitch} ${styles.character}`}
                   data-text="v"
                 >
                   v
