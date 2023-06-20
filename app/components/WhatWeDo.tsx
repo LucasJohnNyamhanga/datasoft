@@ -53,7 +53,7 @@ const dataPoint = [
   // },
   {
     id: 6,
-    header: "Hosting",
+    header: "Web Design and Hosting",
     icon: <FaGlobeAfrica />,
     description: `We provide hosting services to systems, mobile applications and websites that have been built by our company. hosting services are free to our customers.`,
     link: `/Hosting`,

@@ -34,54 +34,21 @@ function hero({ image }: dataHero) {
               <div className={`${styles.block}`}>
                 <span
                   className={`${styles.glitch} ${styles.character}`}
-                  data-text="G"
+                  data-text="W"
                 >
-                  G
+                  W
                 </span>
                 <span
                   className={`${styles.glitch} ${styles.character}`}
-                  data-text="r"
+                  data-text="e"
                 >
-                  r
+                  e
                 </span>
                 <span
                   className={`${styles.glitch} ${styles.character}`}
-                  data-text="a"
+                  data-text="b"
                 >
-                  a
-                </span>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="p"
-                >
-                  p
-                </span>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="h"
-                >
-                  h
-                </span>
-              </div>
-
-              <div className={`${styles.block}`}>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="i"
-                >
-                  i
-                </span>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="c"
-                >
-                  c
-                </span>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="s"
-                >
-                  s
+                  b
                 </span>
               </div>
             </div>
@@ -168,33 +135,9 @@ function hero({ image }: dataHero) {
               <div className={`${styles.block}`}>
                 <span
                   className={`${styles.glitch} ${styles.character}`}
-                  data-text="D"
+                  data-text="H"
                 >
-                  D
-                </span>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="e"
-                >
-                  e
-                </span>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="v"
-                >
-                  v
-                </span>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="e"
-                >
-                  e
-                </span>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="l"
-                >
-                  l
+                  H
                 </span>
                 <span
                   className={`${styles.glitch} ${styles.character}`}
@@ -204,21 +147,21 @@ function hero({ image }: dataHero) {
                 </span>
                 <span
                   className={`${styles.glitch} ${styles.character}`}
-                  data-text="p"
+                  data-text="s"
                 >
-                  p
+                  s
                 </span>
                 <span
                   className={`${styles.glitch} ${styles.character}`}
-                  data-text="m"
+                  data-text="t"
                 >
-                  m
+                  t
                 </span>
                 <span
                   className={`${styles.glitch} ${styles.character}`}
-                  data-text="e"
+                  data-text="i"
                 >
-                  e
+                  i
                 </span>
                 <span
                   className={`${styles.glitch} ${styles.character}`}
@@ -228,9 +171,9 @@ function hero({ image }: dataHero) {
                 </span>
                 <span
                   className={`${styles.glitch} ${styles.character}`}
-                  data-text="t"
+                  data-text="g"
                 >
-                  t
+                  g
                 </span>
               </div>
             </div>
