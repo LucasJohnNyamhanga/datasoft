@@ -10,7 +10,7 @@ const Footer = () => {
           <div className={Styles.header}>MEET US</div>
           <div className={Styles.body}>House No 640,</div>
           <div className={Styles.body}>Medical Research Road,</div>
-          <div className={Styles.body}>Kitangiri Ilemela,</div>
+          <div className={Styles.body}>Kitangiri, Ilemela,</div>
           <div className={Styles.body}>Mwanza, Tanzania.</div>
         </div>
         <div className={Styles.footerDetails}>
