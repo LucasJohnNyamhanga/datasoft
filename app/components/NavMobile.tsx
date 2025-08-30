@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Styles from "../styles/NavMobile.module.scss";
 import Link from "next/link";
+import Styles from "../styles/NavMobile.module.scss";
 import DrawerMobile from "./DrawerMobileMenu";
 
 export const NavMobile = () => {
@@ -10,7 +10,7 @@ export const NavMobile = () => {
         <div className={Styles.NavDetails}>
           <div className={Styles.topAdvatisment}>
             <div>
-              Call Us: <a href="tel:+255784477999">+255 784 477 999</a>
+              Call Us: <a href="tel:+255767887999">+255 767 887 999</a>
             </div>
             <div>
               or <a href="#idea"> Fill Form Now</a>

@@ -1,9 +1,8 @@
 "use client";
-import React, { useContext, useEffect, useState } from "react";
-import Styles from "../styles/navigation.module.scss";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter, useSelectedLayoutSegment } from "next/navigation";
+import Styles from "../styles/navigation.module.scss";
 
 const Nav = () => {
   const segment = useSelectedLayoutSegment();
@@ -21,7 +20,7 @@ const Nav = () => {
         <div className={Styles.NavDetails}>
           <div className={Styles.topAdvatisment}>
             <p>
-              Call Us: <a href="tel:+255784477999">+255 784 477 999</a> or
+              Call Us: <a href="tel:+255767887999">+255 767 887 999</a> or
               <a href="#idea"> Fill Form Now</a>
             </p>
           </div>
