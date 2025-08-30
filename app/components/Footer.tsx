@@ -19,10 +19,13 @@ const Footer = () => {
             className={`${Styles.body} ${Styles.buziness}`}
           >{`Let's Talk Business`}</div>
           <div className={Styles.body}>
-            <a href="tel:+255784477999">+255 784 477 999</a>
+            <a href="tel:+255784477999">+255 767 887 999</a>
           </div>
           <div className={Styles.body}>
-            <a href="mailto:contact@datasoft.co.tz"> contact@datasoft.co.tz</a>
+            <a href="mailto:datasofttanzania@gmail.com">
+              {" "}
+              contact@datasoft.co.tz
+            </a>
           </div>
         </div>
         <div className={Styles.footerDetails}>
