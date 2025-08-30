@@ -1,7 +1,6 @@
 import Link from "next/link";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import Styles from "../styles/footer.module.scss";
-import { FaInstagram, FaFacebookF } from "react-icons/fa";
-import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -9,7 +8,7 @@ const Footer = () => {
       <div className={Styles.innerContainer}>
         <div className={Styles.footerDetails}>
           <div className={Styles.header}>MEET US</div>
-          <div className={Styles.body}>House No 13,</div>
+          <div className={Styles.body}>House No 640,</div>
           <div className={Styles.body}>Medical Research Road,</div>
           <div className={Styles.body}>Kitangiri Ilemela,</div>
           <div className={Styles.body}>Mwanza, Tanzania.</div>
@@ -39,7 +38,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className={Styles.copyrights}>DataSoft Tanzania &copy; 2023</div>
+      <div className={Styles.copyrights}>DataSoft Tanzania &copy; 2025</div>
     </div>
   );
 };
