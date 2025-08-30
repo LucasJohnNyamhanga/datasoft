@@ -24,7 +24,7 @@ const Footer = () => {
           <div className={Styles.body}>
             <a href="mailto:datasofttanzania@gmail.com">
               {" "}
-              contact@datasoft.co.tz
+              datasofttanzania@gmail.com
             </a>
           </div>
         </div>
