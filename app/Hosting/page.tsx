@@ -1,15 +1,15 @@
 import Footer from "../components/Footer";
 import GoToTop from "../components/GoToTop";
-import Hero from "../components/HostingHero";
+import ServiceHero from "../components/ServiceHero";
+import ServiceDetail from "../components/ServiceDetail";
 import styles from "../styles/page.module.scss";
-import SoftwareDetails from "../components/SoftwareDetails";
 import ContactUs from "../components/Contact";
 
-const Software = () => {
+const Hosting = () => {
   return (
     <div className={styles.main}>
-      <Hero image={"/hosting.png"} />
-      <SoftwareDetails />
+      <ServiceHero serviceKey="hosting" image="/hosting.png" />
+      <ServiceDetail serviceKey="hosting" />
       <ContactUs />
       <Footer />
       <GoToTop />
@@ -17,4 +17,4 @@ const Software = () => {
   );
 };
 
-export default Software;
+export default Hosting;

@@ -1,85 +1,72 @@
 @import "index";
-.backToTop {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  place-self: end;
-  position: fixed;
-  //margin-top: calc(100vh + $height);
-  bottom: 60px;
-  right: 40px;
-  z-index: 9999;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-  color: $green;
-}
 
-.whatsaap {
+.backToTop {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  place-self: end;
+  width: 3rem;
+  height: 3rem;
   position: fixed;
-  //margin-top: calc(100vh + $height);
-  bottom: 49px;
-  left: 35px;
-  z-index: 9999;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-  color: $white;
-  background-color: $green;
+  bottom: 2.25rem;
+  right: 2rem;
+  z-index: 900;
+  background-color: $espresso-deep;
+  border: 1px solid $brass-dim;
   border-radius: 50%;
-  padding: 10px;
+  color: $brass;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.25s $ease-standard, transform 0.25s $ease-standard,
+    border-color 0.25s $ease-standard, visibility 0.25s;
+
+  &:hover {
+    border-color: $brass;
+    box-shadow: $glow-brass;
+  }
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
 }
 
-.whatsaap:hover {
-  scale: 1.3;
-}
-
-.backToTop:hover {
-  scale: 1.3;
-}
-
-.Show {
+.whatsapp {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  position: fixed;
+  bottom: 2.25rem;
+  left: 2rem;
+  z-index: 900;
+  background-color: $forest;
+  border-radius: 50%;
+  color: $ivory;
+  transition: transform 0.2s $ease-standard, background-color 0.2s $ease-standard;
+
+  &:hover {
+    background-color: $forest-bright;
+    transform: translateY(-2px);
+  }
 }
 
-.vibrater {
-  animation: vibrate 0.3s linear infinite both;
-}
+@media (max-width: 640px) {
+  .backToTop,
+  .whatsapp {
+    width: 2.75rem;
+    height: 2.75rem;
+    bottom: 1.5rem;
+  }
 
-.fire {
-  transform: rotateX(180deg);
-  color: $lightblue;
-  position: absolute;
-  top: 43px;
-}
+  .backToTop {
+    right: 1.25rem;
+  }
 
-@keyframes vibrate {
-  0% {
-    -webkit-transform: translate(0);
-    transform: translate(0);
-  }
-  20% {
-    -webkit-transform: translate(-2px, 2px);
-    transform: translate(-2px, 2px);
-  }
-  40% {
-    -webkit-transform: translate(-2px, -2px);
-    transform: translate(-2px, -2px);
-  }
-  60% {
-    -webkit-transform: translate(2px, 2px);
-    transform: translate(2px, 2px);
-  }
-  80% {
-    -webkit-transform: translate(2px, -2px);
-    transform: translate(2px, -2px);
-  }
-  100% {
-    -webkit-transform: translate(0);
-    transform: translate(0);
+  .whatsapp {
+    left: 1.25rem;
   }
 }

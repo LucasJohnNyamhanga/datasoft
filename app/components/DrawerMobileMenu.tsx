@@ -1,120 +1,78 @@
 "use client";
-import { Drawer, Box, List, ListItemText, Divider } from "@mui/material";
+import { Drawer } from "@mui/material";
 import Link from "next/link";
 import { useSelectedLayoutSegment } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Styles from "../styles/drawerMobile.module.scss";
+import { useLanguage } from "../i18n/LanguageContext";
+import LanguageToggle from "./LanguageToggle";
 
-export const MuiDrawer = ({}) => {
-  let segment = useSelectedLayoutSegment();
-
-  console.log(segment);
-
+export const MuiDrawer = () => {
+  const segment = useSelectedLayoutSegment();
+  const { t } = useLanguage();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const humberger = useRef<HTMLDivElement>(null!);
+  const hamburger = useRef<HTMLButtonElement>(null!);
 
-  let handleMenuClick = (linkValue: string) => {
-    humberger.current.classList.toggle(Styles.isActive);
-
-    setIsDrawerOpen(!isDrawerOpen);
+  const handleMenuClick = () => {
+    hamburger.current.classList.toggle(Styles.isActive);
+    setIsDrawerOpen((prev) => !prev);
   };
 
-  let handleClose = () => {
-    setIsDrawerOpen(!isDrawerOpen);
-    humberger.current.classList.toggle(Styles.isActive);
+  const handleClose = () => {
+    setIsDrawerOpen(false);
+    hamburger.current.classList.remove(Styles.isActive);
   };
 
   return (
     <>
-      <div
-        ref={humberger}
-        onClick={() => {
-          handleMenuClick("");
-        }}
-        className={`${Styles.buttonsNav}`}
+      <button
+        ref={hamburger}
+        type="button"
+        aria-label={t.nav.services}
+        onClick={handleMenuClick}
+        className={Styles.hamburger}
       >
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </button>
       <Drawer
-        anchor="left"
+        anchor="right"
         open={isDrawerOpen}
         onClose={handleClose}
-        className={Styles.drawer}
+        PaperProps={{ className: Styles.paper }}
       >
-        <Box p={2} width="250px" textAlign="center" role="presentation">
-          <div className={Styles.header}>{/* {`DataSoft Tanzania`} */}</div>
-          <List>
-            {segment != null ? (
-              <>
-                <Divider />
-                <Link
-                  href={"/"}
-                  className={
-                    "Notes" == "Notes" ? Styles.active : Styles.setCenter
-                  }
-                  onClick={() => {
-                    handleMenuClick("");
-                  }}
-                >
-                  Home
-                </Link>
-                <Divider />
-              </>
-            ) : (
-              <>
-                <Divider />
-                <a
-                  href="#home"
-                  className={
-                    "Notes" == "Notes" ? Styles.active : Styles.setCenter
-                  }
-                  onClick={() => {
-                    handleMenuClick("");
-                  }}
-                >
-                  Home
-                </a>
-                <Divider />
-              </>
-            )}
-            {segment == null && (
-              <>
-                <a
-                  href={"#services"}
-                  className={false ? Styles.active : Styles.setCenter}
-                  onClick={() => {
-                    handleMenuClick("");
-                  }}
-                >
-                  Services
-                </a>
-                <Divider />
-                <a
-                  href={"#projects"}
-                  className={false ? Styles.active : Styles.setCenter}
-                  onClick={() => {
-                    handleMenuClick("");
-                  }}
-                >
-                  Projects
-                </a>
-                <Divider />
-              </>
-            )}
-            <a
-              href="#idea"
-              className={false ? Styles.active : Styles.setCenter}
-              onClick={() => {
-                handleMenuClick("");
-              }}
-            >
-              Contact Us
+        <div className={Styles.panel} role="presentation">
+          {segment != null ? (
+            <Link href="/" className={Styles.link} onClick={handleClose}>
+              {t.nav.home}
+            </Link>
+          ) : (
+            <a href="#home" className={Styles.link} onClick={handleClose}>
+              {t.nav.home}
             </a>
-            <Divider />
-          </List>
-        </Box>
+          )}
+          {segment == null && (
+            <>
+              <a href="#services" className={Styles.link} onClick={handleClose}>
+                {t.nav.services}
+              </a>
+              <a href="#process" className={Styles.link} onClick={handleClose}>
+                {t.nav.process}
+              </a>
+            </>
+          )}
+          <a href="#idea" className={Styles.link} onClick={handleClose}>
+            {t.nav.contact}
+          </a>
+
+          <div className={Styles.footer}>
+            <div className={Styles.callLine}>
+              {t.nav.callUs}: <a href="tel:+255767887999">+255 767 887 999</a>
+            </div>
+            <LanguageToggle />
+          </div>
+        </div>
       </Drawer>
     </>
   );

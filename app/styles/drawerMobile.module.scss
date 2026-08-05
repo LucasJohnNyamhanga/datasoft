@@ -1,110 +1,82 @@
 @import "index";
 
-// .drawer {
-//   z-index: 1;
-// }
-
-.setCenter {
+.hamburger {
   display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 15px;
-  font-family: $fontHeader;
-  font-weight: 600;
-  color: $ugoro;
-  cursor: pointer;
-
-  &:hover {
-    background-color: $green;
-    color: $white;
-  }
-}
-
-.active {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 15px;
-  font-family: $fontHeader;
-  font-weight: 600;
-  color: $black;
-  cursor: pointer;
-  background-color: $gold;
-}
-
-.header {
-  font-family: $fontHeader;
-  font-weight: 800;
-  padding: 15px;
-  font-size: 20px;
-  color: $green;
-  padding-top: 80px;
-}
-
-// .active:hover {
-//   background-color: $lightblue !important;
-//   color: $white !important;
-// }
-
-.activeCredential {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 15px;
-  font-family: $fontHeader;
-  font-weight: 500;
-  color: $lightblue;
-  cursor: pointer;
-  background-color: $white;
-}
-
-.buttonsNav {
-  display: block;
-  position: relative;
-  z-index: 1;
-  user-select: none;
+  flex-direction: column;
+  gap: 5px;
+  width: 28px;
   appearance: none;
   border: none;
-  outline: none;
   background: none;
   cursor: pointer;
-  padding: 10px;
+  padding: 6px;
 
   span {
     display: block;
-    width: 33px;
-    height: 4px;
-    margin-bottom: 5px;
-    position: relative;
-    background-color: $green;
-    border-radius: 6px;
-    z-index: 1;
-    transform-origin: 0 0;
-    transition: 0.7s;
+    width: 100%;
+    height: 2px;
+    background-color: $brass;
+    transition: transform 0.35s $ease-standard, opacity 0.35s $ease-standard;
+    transform-origin: center;
   }
 
-  &.isActive span {
-    background-color: $ugoro;
+  &.isActive {
+    span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    span:nth-child(2) {
+      opacity: 0;
+    }
+    span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
   }
+}
 
-  &.isactive span:nth-child(2) {
-    background-color: $lightkahawa;
-    transform: translateX(10px);
+.paper {
+  background-color: $espresso-deep !important;
+  color: $ivory !important;
+  width: 82vw !important;
+  max-width: 340px !important;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 3rem 1.75rem 2rem;
+}
+
+.link {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $bone;
+  padding: 1rem 0;
+  border-bottom: 1px solid $espresso-line;
+  transition: color 0.2s $ease-standard, padding-left 0.2s $ease-standard;
+
+  &:hover {
+    color: $brass;
+    padding-left: 0.4rem;
   }
+}
 
-  &.isActive span:nth-child(1) {
-    transform: translate(0px, -2px) rotate(45deg);
-  }
+.footer {
+  margin-top: auto;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 
-  &.isActive span:nth-child(2) {
-    opacity: 0;
-    transform: translate(15px);
-  }
+  .callLine {
+    font-size: 0.85rem;
+    color: $bone;
 
-  &.isActive span:nth-child(3) {
-    transform: translate(-3px, 3px) rotate(-45deg);
+    a {
+      color: $brass;
+    }
   }
 }

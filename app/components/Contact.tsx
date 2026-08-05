@@ -5,8 +5,11 @@ import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import Loader from "./loaderWait";
+import Reveal from "./Reveal";
+import { useLanguage } from "../i18n/LanguageContext";
 
-const DoYouHaveAnIdea = () => {
+const Contact = () => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -14,7 +17,6 @@ const DoYouHaveAnIdea = () => {
     project: "",
   });
   const [loading, setLoad] = useState(false);
-  const notify = (message: string) => toast(message);
   const notifySuccess = (message: string) => toast.success(message);
   const notifyError = (message: string) => toast.error(message);
 
@@ -23,325 +25,140 @@ const DoYouHaveAnIdea = () => {
   const orgName = useRef<HTMLInputElement>(null!);
   const project = useRef<HTMLTextAreaElement>(null!);
 
-  let handletext = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let value = e.target.value;
-    let name = e.target.name;
-
-    setFormData({ ...formData, [name]: value });
+  const handleText = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  let handletextArea = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    let value = e.target.value;
-    let name = e.target.name;
-
-    setFormData({ ...formData, [name]: value });
+  const handleTextArea = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const onSubmit = async () => {
-    if (!loading) {
-      setLoad(true);
+    if (loading) return;
+    setLoad(true);
 
-      const config = {
-        headers: {
-          Accept: "application/json, text/plain, */*",
-          "Content-Type": "application/json",
-        },
-      };
-      const url = "/api/email";
-      const data = formData;
+    const config = {
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+    };
 
-      axios
-        .post(url, data, config)
-        .then(function (response) {
-          // const topics: [] = JSON.parse(JSON.stringify(response.data));
-          // handle success
-          if (response.data.success) {
-            notifySuccess(response.data.message);
-            setFormData({
-              fullName: "",
-              email: "",
-              orgName: "",
-              project: "",
-            });
-          } else {
-            notifyError(response.data.message);
-          }
-        })
-        .catch(function (error) {
-          // handle error
-          notifyError("Sending Failed, Try Later.");
-        })
-        .then(function () {
-          // always executed
-          setLoad(false);
-        });
+    try {
+      const response = await axios.post("/api/email", formData, config);
+      if (response.data.success) {
+        notifySuccess(t.contact.successMessage);
+        setFormData({ fullName: "", email: "", orgName: "", project: "" });
+      } else {
+        notifyError(t.contact.errorMessage);
+      }
+    } catch (error) {
+      notifyError(t.contact.errorMessage);
+    } finally {
+      setLoad(false);
     }
   };
 
   return (
     <div className={styles.container} id="idea">
       <Toaster position="top-center" />
-      <div className={styles.border}></div>
       <div className={styles.subContainer}>
-        <h2>
-          <div className="title-glitch-top">
-            <div className={`${styles.block}`}>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="D"
-              >
-                D
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="o"
-              >
-                o
-              </span>
-            </div>
-            <div className={`${styles.block}`}>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text=""
-              >
-                &nbsp;
-              </span>
-            </div>
-            <div className={`${styles.block}`}>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="y"
-              >
-                y
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="o"
-              >
-                o
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="u"
-              >
-                u
-              </span>
-            </div>
-            <div className={`${styles.block}`}>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text=""
-              >
-                &nbsp;
-              </span>
-            </div>
-            <div className={`${styles.block}`}>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="h"
-              >
-                h
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="a"
-              >
-                a
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="v"
-              >
-                v
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="e"
-              >
-                e
-              </span>
-            </div>
-            <div className={`${styles.block}`}>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text=""
-              >
-                &nbsp;
-              </span>
-            </div>
-            <div className={`${styles.block}`}>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="a"
-              >
-                a
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="n"
-              >
-                n
-              </span>
-            </div>
-            <div className={`${styles.block}`}>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text=""
-              >
-                &nbsp;
-              </span>
-            </div>
-            <div className={`${styles.block}`}>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="i"
-              >
-                i
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="d"
-              >
-                d
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="e"
-              >
-                e
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="a"
-              >
-                a
-              </span>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text="?"
-              >
-                ?
-              </span>
-            </div>
-          </div>
-        </h2>
-      </div>
-      <div className={styles.innerContainer}>
-        <div className={styles.contact}>
-          <div className={styles.contactHeder}>
-            <h2>
-              BRIEF US<span>!.</span>{" "}
-            </h2>
-            <div className={styles.line} />
-            <p className={styles.details}>
-              We can bring your idea to life within hours!. And together we may
-              celebrate your success.
-            </p>
-            <div className={styles.quotation}>
-              <div className={styles.quoteLeft}>
-                <FaQuoteLeft />
-              </div>
-              <div className={styles.qouteText}>
-                Right Idea + Right Product + Right Market = Magic
-              </div>
-              <div className={styles.quoteRight}>
-                <FaQuoteRight />
-              </div>
-            </div>
-          </div>
-          <div className={styles.contactForm}>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                onSubmit();
-              }}
-            >
-              <div className={styles.inputBox}>
-                <input
-                  ref={fullName}
-                  required
-                  type="text"
-                  value={formData.fullName}
-                  placeholder={``}
-                  name={`fullName`}
-                  onChange={(event) => {
-                    handletext(event);
-                  }}
-                  autoComplete="off"
-                  autoCorrect="off"
-                  spellCheck={false}
-                />
-                <span>Full Name</span>
-              </div>
-              <div className={styles.inputBox}>
-                <input
-                  ref={email}
-                  required
-                  type="text"
-                  value={formData.email}
-                  placeholder={``}
-                  name={`email`}
-                  onChange={(event) => {
-                    handletext(event);
-                  }}
-                  autoComplete="off"
-                  autoCorrect="off"
-                  spellCheck={false}
-                />
-                <span>Phone Number | Email</span>
-              </div>
-              <div className={styles.inputBox}>
-                <input
-                  ref={orgName}
-                  required
-                  type="text"
-                  value={formData.orgName}
-                  placeholder={``}
-                  name={`orgName`}
-                  onChange={(event) => {
-                    handletext(event);
-                  }}
-                  autoComplete="off"
-                  autoCorrect="off"
-                  spellCheck={false}
-                />
-                <span>Organisation Name</span>
-              </div>
-              <div className={styles.inputBox}>
-                <textarea
-                  name="project"
-                  cols={40}
-                  rows={5}
-                  ref={project}
-                  required
-                  value={formData.project}
-                  placeholder={``}
-                  autoComplete="off"
-                  autoCorrect="off"
-                  spellCheck={false}
-                  onChange={(event) => {
-                    handletextArea(event);
-                  }}
-                />
-                <span>Project Details</span>
-              </div>
-              {loading ? (
-                <div className={`${styles.button} ${styles.dark}`}>
-                  <Loader sms={"Sending Mail"} />
-                </div>
-              ) : (
-                <input
-                  type="submit"
-                  value="Send Mail"
-                  className={`${styles.button} ${styles.light}`}
-                />
-              )}
-            </form>
-          </div>
+        <div className={styles.intro}>
+          <Reveal as="p" className={styles.eyebrow}>
+            {t.contact.eyebrow}
+          </Reveal>
+          <Reveal as="h2" className={styles.heading}>
+            {t.contact.heading}
+          </Reveal>
+          <Reveal as="p" className={styles.details} delay={80}>
+            {t.contact.intro}
+          </Reveal>
+
+          <Reveal className={styles.quotation} delay={140}>
+            <FaQuoteLeft className={styles.quoteMark} />
+            <p>{t.contact.quote}</p>
+            <FaQuoteRight className={styles.quoteMark} />
+          </Reveal>
         </div>
+
+        <Reveal className={styles.contactForm} delay={100}>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              onSubmit();
+            }}
+          >
+            <div className={styles.inputBox}>
+              <label htmlFor="fullName">{t.contact.fields.fullName}</label>
+              <input
+                id="fullName"
+                ref={fullName}
+                required
+                type="text"
+                value={formData.fullName}
+                name="fullName"
+                onChange={handleText}
+                autoComplete="off"
+                spellCheck={false}
+              />
+            </div>
+            <div className={styles.inputBox}>
+              <label htmlFor="email">{t.contact.fields.contact}</label>
+              <input
+                id="email"
+                ref={email}
+                required
+                type="text"
+                value={formData.email}
+                name="email"
+                onChange={handleText}
+                autoComplete="off"
+                spellCheck={false}
+              />
+            </div>
+            <div className={styles.inputBox}>
+              <label htmlFor="orgName">{t.contact.fields.orgName}</label>
+              <input
+                id="orgName"
+                ref={orgName}
+                required
+                type="text"
+                value={formData.orgName}
+                name="orgName"
+                onChange={handleText}
+                autoComplete="off"
+                spellCheck={false}
+              />
+            </div>
+            <div className={styles.inputBox}>
+              <label htmlFor="project">{t.contact.fields.project}</label>
+              <textarea
+                id="project"
+                name="project"
+                rows={5}
+                ref={project}
+                required
+                value={formData.project}
+                autoComplete="off"
+                spellCheck={false}
+                onChange={handleTextArea}
+              />
+            </div>
+
+            {loading ? (
+              <div className={`${styles.button} ${styles.loading}`}>
+                <Loader sms={t.contact.sending} />
+              </div>
+            ) : (
+              <button type="submit" className={styles.button}>
+                {t.contact.submit}
+              </button>
+            )}
+          </form>
+        </Reveal>
       </div>
     </div>
   );
 };
 
-export default DoYouHaveAnIdea;
+export default Contact;

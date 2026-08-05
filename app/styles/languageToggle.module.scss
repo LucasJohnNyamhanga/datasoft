@@ -1,0 +1,54 @@
+@import "index";
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid $brass-dim;
+  border-radius: $radius-md;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  button {
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: $brass;
+    font-family: $font-body;
+    font-weight: 600;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    padding: 0.4rem 0.65rem;
+    cursor: pointer;
+    transition: background-color 0.2s $ease-standard, color 0.2s $ease-standard;
+
+    &:hover {
+      color: $brass-bright;
+    }
+  }
+
+  .active {
+    background-color: $brass;
+    color: $espresso-deep;
+
+    &:hover {
+      color: $espresso-deep;
+    }
+  }
+
+  &.light {
+    border-color: $bone;
+
+    button {
+      color: $coffee;
+    }
+
+    .active {
+      background-color: $ink;
+      color: $ivory;
+
+      &:hover {
+        color: $ivory;
+      }
+    }
+  }
+}

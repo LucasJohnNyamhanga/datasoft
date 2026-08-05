@@ -1,89 +1,86 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { useRouter, useSelectedLayoutSegment } from "next/navigation";
 import Styles from "../styles/navigation.module.scss";
+import { useLanguage } from "../i18n/LanguageContext";
+import LanguageToggle from "./LanguageToggle";
 
 const Nav = () => {
   const segment = useSelectedLayoutSegment();
-
-  console.log(segment);
   const router = useRouter();
+  const { t } = useLanguage();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const handleNavigation = (nav: string) => {
     router.push(nav);
   };
 
   return (
-    <div className={Styles.container} id={"top"}>
-      <div className={Styles.innerContainerTop}>
-        <div className={Styles.NavDetails}>
-          <div className={Styles.topAdvatisment}>
-            <p>
-              Call Us: <a href="tel:+255767887999">+255 767 887 999</a> or
-              <a href="#idea"> Fill Form Now</a>
-            </p>
+    <div className={`${Styles.container} ${scrolled ? Styles.scrolled : ""}`} id="top">
+      <div className={Styles.announce}>
+        <p>
+          {t.nav.callUs}: <a href="tel:+255767887999">+255 767 887 999</a>{" "}
+          {t.nav.or} <a href="#idea">{t.nav.fillForm}</a>
+        </p>
+      </div>
+      <div className={Styles.bar}>
+        <nav className={Styles.nav}>
+          <div
+            className={Styles.logo}
+            onClick={() => {
+              if (segment != null) {
+                handleNavigation("/");
+              } else {
+                handleNavigation("#home");
+              }
+            }}
+          >
+            <Image
+              alt="DataSoft Tanzania"
+              src="/brainas.svg"
+              width={38}
+              height={38}
+              priority
+            />
+            <span className={Styles.name}>DataSoft</span>
           </div>
-        </div>
-        <div className={Styles.NavHeader}>
-          <nav className={Styles.nav}>
-            <div
-              className={Styles.logo}
-              onClick={(e) => {
-                if (segment != null) {
-                  handleNavigation("/");
-                } else {
-                  handleNavigation("#home");
-                }
-              }}
-            >
-              <div className={Styles.datasoft}>
-                <div className={Styles.icon}>
-                  <Image
-                    alt=""
-                    src={`/brainas.svg`}
-                    placeholder="blur"
-                    blurDataURL={`/brainas.svg`}
-                    style={{
-                      objectFit: "cover",
-                      objectPosition: "right",
-                    }}
-                    quality={100}
-                    priority
-                    unoptimized={true}
-                    width={50}
-                    height={50}
-                  />
-                </div>
-                <div className={Styles.name}>DataSoft</div>
-              </div>
-            </div>
-            <div className={Styles.link}>
-              {segment != null ? (
-                <Link href="/" className={Styles.links}>
-                  Home
-                </Link>
-              ) : (
-                <a href="#home" className={Styles.links}>
-                  Home
-                </a>
-              )}
-              {segment == null && (
-                <>
-                  <a href="#services" className={Styles.links}>
-                    Services
-                  </a>
-                  <a href="#projects" className={Styles.links}>
-                    Projects
-                  </a>
-                </>
-              )}
-              <a href="#idea" className={Styles.links}>
-                Contact Us
+
+          <div className={Styles.links}>
+            {segment != null ? (
+              <Link href="/" className={Styles.link}>
+                {t.nav.home}
+              </Link>
+            ) : (
+              <a href="#home" className={Styles.link}>
+                {t.nav.home}
               </a>
-            </div>
-          </nav>
-        </div>
+            )}
+            {segment == null && (
+              <>
+                <a href="#services" className={Styles.link}>
+                  {t.nav.services}
+                </a>
+                <a href="#process" className={Styles.link}>
+                  {t.nav.process}
+                </a>
+              </>
+            )}
+            <a href="#idea" className={Styles.link}>
+              {t.nav.contact}
+            </a>
+          </div>
+
+          <LanguageToggle />
+        </nav>
       </div>
     </div>
   );

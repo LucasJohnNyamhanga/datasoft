@@ -2,57 +2,67 @@
 
 .container {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 15px;
-  margin-bottom: 25px;
-  font-family: $fontHeader;
-  font-weight: 500;
-  font-size: 1rem;
+  background-color: $ivory;
   scroll-margin-top: 90px;
-
-  .subContainer {
-    display: flex;
-    flex-direction: column;
-
-    h2 {
-      font-family: $fontHeader;
-      font-weight: 700;
-      font-size: 30px;
-      margin: 0px;
-      margin-bottom: 10px;
-      padding-bottom: 0px;
-      margin-left: 0px;
-      margin-top: 15px;
-      color: $green;
-    }
-  }
 }
 
-.innerContainer {
-  width: 100%;
-  max-width: 1200px;
+.subContainer {
+  max-width: $content-max;
+  margin: 0 auto;
+  padding: $space-xl $gutter;
+}
+
+.eyebrow {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $coffee;
+  margin: 0 0 1rem;
+}
+
+.heading {
+  font-family: $font-display;
+  font-weight: 420;
+  font-size: clamp(1.75rem, 3.2vw, 2.75rem);
+  line-height: 1.1;
+  color: $ink;
+  margin: 0;
+  max-width: 20ch;
+}
+
+.intro {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: $ink-soft;
+  max-width: 60ch;
+  margin: 1.5rem 0 0;
+}
+
+.grid {
   display: grid;
-  grid-gap: 15px;
-  //margin-top: 20px;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  margin-top: $space-lg;
 
-  @media (min-width: 268px) {
-    grid-template-columns: repeat(1, 1fr);
-    align-items: center;
-    justify-content: center;
-  }
-
-  @media (min-width: 468px) {
+  @media (min-width: 640px) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (min-width: 888px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media (min-width: 1200px) {
+  @media (min-width: 1024px) {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.cell {
+  height: 100%;
+}
+
+@media (max-width: 640px) {
+  .subContainer {
+    padding: $space-lg $gutter;
   }
 }

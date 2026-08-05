@@ -1,696 +1,218 @@
 @import "index";
 
 .container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: "Montserrat";
-  margin: 0px;
-  padding: 0px;
-  transition: 0.1s linear;
   position: relative;
-  margin-top: 100px;
-  max-width: 1800px;
+  width: 100%;
+  min-height: 640px;
+  padding-top: 107px;
+  overflow: hidden;
+  background-color: $espresso-deep;
   scroll-margin-top: 90px;
-
-  .background {
-    position: absolute;
-    left: 100px;
-    top: 30%;
-    width: 50%;
-    height: max-content;
-    padding: 40px;
-    z-index: 10;
-    color: $white;
-    background: -webkit-linear-gradient(
-      right,
-      rgba(black, 1) 0%,
-      rgba(255, 255, 0, 0.315) 100%
-    );
-    background: -moz-linear-gradient(
-      right,
-      rgba(black, 1) 0%,
-      rgba(255, 255, 0, 0.315) 100%
-    );
-    background: -ms-linear-gradient(
-      right,
-      rgba(black, 1) 0%,
-      rgba(255, 255, 0, 0.315) 100%
-    );
-    background: linear-gradient(
-      to right,
-      rgba(black, 1) 0%,
-      rgba(255, 255, 0, 0.315) 100%
-    );
-    border-radius: 15px;
-
-    @media only screen and (max-width: 1588px) {
-      background: -webkit-linear-gradient(
-        right,
-        $green 0%,
-        rgba(black, 1) 100%
-      );
-      background: -moz-linear-gradient(right, $green 0%, rgba(black, 1) 100%);
-      background: -ms-linear-gradient(right, $green 0%, rgba(black, 1) 100%);
-      background: linear-gradient(to right, $green 0%, rgba(black, 1) 100%);
-    }
-
-    .button {
-      display: flex;
-      width: fit-content;
-      height: 40px;
-      justify-content: center;
-      align-items: center;
-      margin: 0rem;
-      padding: 1rem;
-      line-height: 35px;
-      //border: 1px solid;
-      border-radius: 5px;
-      text-align: center;
-      font-size: 16px;
-      text-decoration: none;
-      transition: all 0.35s;
-      box-sizing: border-box;
-      background: $green;
-      background: linear-gradient(0deg, $green 0%, $gold 100%);
-      color: #fff;
-      font-weight: 600;
-    }
-
-    .buttonStyle {
-      font-weight: 600;
-      $btn-color: $black;
-      $btn-hover-color: $black;
-      position: relative;
-      border-color: $btn-color;
-      color: $white;
-      transition-delay: 0.3s;
-      overflow: hidden;
-      &:hover {
-        transform: translateY(-0.3em);
-        border-color: $btn-hover-color;
-        color: rgba(221, 99, 149, 0);
-        transition-delay: 0s;
-        &::before {
-          opacity: 1;
-          transform: translateX(0);
-          transition-delay: 0.15s;
-        }
-      }
-      &::before {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        content: attr(data-hover);
-        color: $white;
-        text-align: center;
-        transform: translateX(-60%);
-        transition: all 0.4s;
-        z-index: 1;
-      }
-    }
-
-    .button:hover {
-      cursor: pointer;
-      scale: 1.1;
-    }
-
-    h1 {
-      font-family: $fontHeader;
-      font-style: normal;
-      font-weight: 800;
-      font-size: 40px;
-      // text-transform: uppercase;
-      margin-bottom: 5px;
-      margin-top: 0px;
-      padding-top: 0px;
-    }
-
-    p {
-      font-family: $fontHeader;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 18px;
-      line-height: 1.5rem;
-    }
-
-    .block {
-      display: inline-block;
-      white-space: nowrap;
-    }
-
-    $main-green: #53f765;
-    $main-yellow: #fffd35;
-    $main-orange: #ff9c00;
-    $main-red: #ff3368;
-    $main-blue: #32f8ff;
-    $main-darkblue: #324fff;
-    $margin: -0.01rem;
-
-    .glitch {
-      color: white;
-      line-height: 1;
-    }
-
-    .characterscontainer {
-      position: relative;
-      margin: $margin/2 0;
-    }
-
-    .character {
-      display: inline-block;
-      position: relative;
-      letter-spacing: -$margin/1.5;
-    }
-
-    .character:nth-child(even) {
-      bottom: $margin/3;
-    }
-
-    @-webkit-keyframes glitch-animation-after {
-      0% {
-        clip: rect(15px, 600px, 100px, 0);
-      }
-      6.66667% {
-        clip: rect(6px, 600px, 94px, 0);
-      }
-      13.33333% {
-        clip: rect(28px, 600px, 58px, 0);
-      }
-      20% {
-        clip: rect(32px, 600px, 37px, 0);
-      }
-      26.66667% {
-        clip: rect(76px, 600px, 39px, 0);
-      }
-      33.33333% {
-        clip: rect(74px, 600px, 36px, 0);
-      }
-      40% {
-        clip: rect(81px, 600px, 34px, 0);
-      }
-      46.66667% {
-        clip: rect(54px, 600px, 14px, 0);
-      }
-      53.33333% {
-        clip: rect(65px, 600px, 50px, 0);
-      }
-      60% {
-        clip: rect(85px, 600px, 100px, 0);
-      }
-      66.66667% {
-        clip: rect(61px, 600px, 72px, 0);
-      }
-      73.33333% {
-        clip: rect(23px, 600px, 65px, 0);
-      }
-      80% {
-        clip: rect(0, 0, 0, 0);
-      }
-      100% {
-        clip: rect(0, 0, 0, 0);
-      }
-    }
-
-    @keyframes glitch-animation-after {
-      0% {
-        clip: rect(65px, 600px, 39px, 0);
-      }
-      6.66667% {
-        clip: rect(19px, 600px, 21px, 0);
-      }
-      13.33333% {
-        clip: rect(80px, 600px, 51px, 0);
-      }
-      20% {
-        clip: rect(6px, 600px, 16px, 0);
-      }
-      26.66667% {
-        clip: rect(31px, 600px, 95px, 0);
-      }
-      33.33333% {
-        clip: rect(94px, 600px, 84px, 0);
-      }
-      40% {
-        clip: rect(84px, 600px, 74px, 0);
-      }
-      46.66667% {
-        clip: rect(97px, 600px, 55px, 0);
-      }
-      53.33333% {
-        clip: rect(7px, 600px, 18px, 0);
-      }
-      60% {
-        clip: rect(24px, 600px, 17px, 0);
-      }
-      66.66667% {
-        clip: rect(28px, 600px, 97px, 0);
-      }
-      73.33333% {
-        clip: rect(61px, 600px, 2px, 0);
-      }
-      80% {
-        clip: rect(0, 0, 0, 0);
-      }
-      100% {
-        clip: rect(0, 0, 0, 0);
-      }
-    }
-
-    @-webkit-keyframes glitch-animation-before {
-      0% {
-        clip: rect(62px, 600px, 45px, 0);
-      }
-      6.66667% {
-        clip: rect(46px, 600px, 67px, 0);
-      }
-      13.33333% {
-        clip: rect(68px, 600px, 49px, 0);
-      }
-      20% {
-        clip: rect(82px, 600px, 56px, 0);
-      }
-      26.66667% {
-        clip: rect(53px, 600px, 6px, 0);
-      }
-      33.33333% {
-        clip: rect(9px, 600px, 90px, 0);
-      }
-      40% {
-        clip: rect(95px, 600px, 69px, 0);
-      }
-      46.66667% {
-        clip: rect(50px, 600px, 99px, 0);
-      }
-      53.33333% {
-        clip: rect(4px, 600px, 60px, 0);
-      }
-      60% {
-        clip: rect(78px, 600px, 97px, 0);
-      }
-      66.66667% {
-        clip: rect(30px, 600px, 69px, 0);
-      }
-      73.33333% {
-        clip: rect(68px, 600px, 49px, 0);
-      }
-      80% {
-        clip: rect(0, 0, 0, 0);
-      }
-      100% {
-        clip: rect(0, 0, 0, 0);
-      }
-    }
-
-    @keyframes glitch-animation-before {
-      0% {
-        clip: rect(86px, 600px, 98px, 0);
-      }
-      6.66667% {
-        clip: rect(62px, 600px, 92px, 0);
-      }
-      13.33333% {
-        clip: rect(91px, 600px, 20px, 0);
-      }
-      20% {
-        clip: rect(47px, 600px, 44px, 0);
-      }
-      26.66667% {
-        clip: rect(1px, 600px, 77px, 0);
-      }
-      33.33333% {
-        clip: rect(99px, 600px, 22px, 0);
-      }
-      40% {
-        clip: rect(44px, 600px, 12px, 0);
-      }
-      46.66667% {
-        clip: rect(71px, 600px, 65px, 0);
-      }
-      53.33333% {
-        clip: rect(52px, 600px, 28px, 0);
-      }
-      60% {
-        clip: rect(10px, 600px, 15px, 0);
-      }
-      66.66667% {
-        clip: rect(75px, 600px, 69px, 0);
-      }
-      73.33333% {
-        clip: rect(57px, 600px, 62px, 0);
-      }
-      80% {
-        clip: rect(0, 0, 0, 0);
-      }
-      100% {
-        clip: rect(0, 0, 0, 0);
-      }
-    }
-
-    .glitch:before,
-    .glitch:after {
-      content: attr(data-text);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(204, 57, 107, 0);
-      clip: rect(0, 0, 0, 0);
-    }
-
-    .glitch:after {
-      left: 2px;
-      text-shadow: -5px 0 rgba(255, 51, 104, 0.5);
-      animation: glitch-animation-after 2s infinite linear alternate-reverse;
-    }
-
-    .glitch:before {
-      left: -2px;
-      text-shadow: 5px 0 rgba(94, 38, 255, 0.5);
-      animation: glitch-animation-before 3s infinite linear alternate-reverse;
-    }
-  }
-  @media only screen and (max-width: 1488px) {
-    .background {
-      padding: 20px;
-      left: 50px;
-      top: 30%;
-      h1 {
-        font-size: 35px;
-      }
-      p {
-        font-size: 18px;
-      }
-      .button {
-        font-size: 18px;
-      }
-    }
-  }
-
-  @media only screen and (max-width: 1108px) {
-    .background {
-      // position: absolute;
-      left: 10px;
-      // top: 30%;
-      // width: 50%;
-      // height: max-content;
-      // padding: 20px;
-      // z-index: 10;
-      // color: $white;
-      h1 {
-        font-size: 27px;
-      }
-      p {
-        font-size: 15px;
-      }
-      .button {
-        font-size: 15px;
-      }
-    }
-  }
-
-  @media only screen and (max-width: 710px) {
-    .background {
-      left: 20px;
-      top: 300px;
-      width: 40%;
-
-      background: -webkit-linear-gradient(
-        right,
-        rgba($green, 0.7) 0%,
-        rgba(black, 1) 100%
-      );
-      background: -moz-linear-gradient(
-        right,
-        rgba($green, 0.7) 0%,
-        rgba(black, 1) 100%
-      );
-      background: -ms-linear-gradient(
-        right,
-        rgba($green, 0.7) 0%,
-        rgba(black, 1) 100%
-      );
-      background: linear-gradient(
-        to right,
-        rgba($green, 0.7) 0%,
-        rgba(black, 1) 100%
-      );
-
-      h1 {
-        font-size: 25px;
-        margin-bottom: 0px;
-      }
-      p,
-      .button {
-        font-size: 14px;
-        display: none;
-      }
-    }
-  }
-
-  @media only screen and (max-width: 790px) {
-    .background {
-      // position: absolute;
-      left: 10px;
-      top: 300px;
-      width: 40%;
-      // height: max-content;
-      // padding: 20px;
-      // z-index: 10;
-      // color: $white;
-      h1 {
-        font-size: 24px;
-        margin-bottom: 15px;
-      }
-      p,
-      .button {
-        font-size: 14px;
-        display: none;
-      }
-    }
-  }
-
-  @media only screen and (max-width: 640px) {
-    .background {
-      // position: absolute;
-      left: 58%;
-      top: 200px;
-      width: 40%;
-      // height: max-content;
-      // padding: 20px;
-      // z-index: 10;
-      // color: $white;
-      h1 {
-        font-size: 22px;
-        margin-bottom: 10px;
-      }
-      p,
-      .button {
-        font-size: 14px;
-        display: none;
-      }
-    }
-  }
-  @media only screen and (max-width: 540px) {
-    .background {
-      // position: absolute;
-      left: 58%;
-      top: 200px;
-      max-width: 250px;
-      margin-right: 10px;
-      // height: max-content;
-      padding: 12px;
-      // z-index: 10;
-      // color: $white;
-      h1 {
-        font-size: 22px;
-        margin-bottom: 10px;
-      }
-      p {
-        font-size: 14px;
-        display: none;
-      }
-      .button {
-        font-size: 10px;
-      }
-    }
-  }
-
-  @media only screen and (max-width: 320px) {
-    .background {
-      // position: absolute;
-      left: 40%;
-      top: 80px;
-      max-width: 250px;
-      margin-right: 5px;
-      padding: 10px;
-      // z-index: 10;
-      // color: $white;
-      h1 {
-        font-size: 22px;
-        margin-bottom: 10px;
-      }
-      p {
-        font-size: 14px;
-        display: none;
-      }
-      .button {
-        font-size: 10px;
-      }
-    }
-  }
 }
 
-.section {
+.image {
+  position: absolute;
+  top: 110px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    100deg,
+    rgba(15, 36, 24, 0.72) 0%,
+    rgba(15, 36, 24, 0.35) 42%,
+    rgba(15, 36, 24, 0) 68%
+  );
+}
+
+.frame {
+  position: relative;
+  z-index: 3;
   width: 100%;
-  max-width: 1800px;
-  padding: 0px;
-  margin: 0px;
+  height: 100%;
+  min-height: 640px;
+  max-width: $content-max;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 4rem) $gutter;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.card {
+  max-width: 34rem;
+  padding: clamp(2rem, 4vw, 3rem);
+  background-color: rgba(15, 36, 24, 0.86);
+  border: 1px solid rgba(212, 160, 23, 0.3);
+  border-radius: $radius-md;
+}
+
+.eyebrow {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $brass;
+  margin: 0 0 1.25rem;
+}
+
+.headline {
+  font-family: $font-display;
+  font-weight: 380;
+  font-size: clamp(2.25rem, 4.2vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: $ivory;
+  margin: 0;
+}
+
+.line {
+  display: block;
+}
+
+.lineItalic {
+  font-style: italic;
+  color: $brass-bright;
+}
+
+.subheadline {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: $bone;
+  max-width: 42ch;
+  margin: 1.5rem 0 0;
+}
+
+.actions {
   display: flex;
   flex-direction: row;
-  z-index: 999;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
 }
-.descHolder {
-  @media only screen and (min-width: 790px) {
+
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
+  background-color: $brass;
+  color: $espresso-deep;
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: $radius-sm;
+  transition: background-color 0.25s $ease-standard, transform 0.25s $ease-standard,
+    box-shadow 0.25s $ease-standard;
+
+  &:hover {
+    background-color: $brass-bright;
+    transform: translateY(-1px);
+    box-shadow: $glow-brass;
+  }
+}
+
+.ghostButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
+  background-color: transparent;
+  color: $ivory;
+  border: 1px solid $brass-dim;
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: $radius-sm;
+  transition: border-color 0.25s $ease-standard, color 0.25s $ease-standard;
+
+  &:hover {
+    border-color: $brass;
+    color: $brass-bright;
+  }
+}
+
+.mobileLattice {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .container {
+    min-height: 0;
+    margin-top: 57px;
+    padding-top: 0;
+    padding-bottom: 2.5rem;
+    background-color: $espresso-deep;
+  }
+
+  .image,
+  .scrim {
     display: none;
   }
-  @media only screen and (max-width: 790px) {
-    display: flex;
+
+  .frame {
+    min-height: 0;
+    padding: 2.75rem 1.25rem 0;
   }
-  padding: 10px;
-  .desc {
-    background: -webkit-linear-gradient(right, $green 0%, rgba(black, 1) 100%);
-    background: -moz-linear-gradient(right, $green 0%, rgba(black, 1) 100%);
-    background: -ms-linear-gradient(right, $green 0%, rgba(black, 1) 100%);
-    background: linear-gradient(to right, $green 0%, rgba(black, 1) 100%);
-    padding: 15px;
-    font-weight: 500;
-    color: $white;
-    font-size: 16px;
-    border-radius: 10px;
 
-    .button {
-      font-weight: 600 !important;
-      display: flex;
-      width: fit-content;
-      height: 40px;
-      justify-content: center;
-      align-items: center;
-      margin: 0rem;
-      padding: 1rem;
-      line-height: 35px;
-      //border: 1px solid;
-      border-radius: 5px;
-      text-align: center;
-      font-size: 16px;
-      text-decoration: none;
-      transition: all 0.35s;
-      box-sizing: border-box;
-      background: $green;
-      background: linear-gradient(0deg, $ugoro 0%, $gold 100%);
-      color: #fff;
-    }
-
-    .buttonStyle {
-      $btn-color: $black;
-      $btn-hover-color: $black;
-      position: relative;
-      border-color: $btn-color;
-      color: $white;
-      transition-delay: 0.3s;
-      overflow: hidden;
-      font-weight: 600 !important;
-      &:hover {
-        transform: translateY(-0.3em);
-        border-color: $btn-hover-color;
-        color: rgba(221, 99, 149, 0);
-        transition-delay: 0s;
-        &::before {
-          opacity: 1;
-          transform: translateX(0);
-          transition-delay: 0.15s;
-        }
-      }
-      &::before {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        content: attr(data-hover);
-        color: $white;
-        text-align: center;
-        transform: translateX(-60%);
-        transition: all 0.4s;
-        z-index: 1;
-      }
-    }
-
-    .button:hover {
-      cursor: pointer;
-      scale: 1.1;
-    }
-  }
-}
-.hero {
-  width: 100%;
-  margin: 0px 0px 0px 0px;
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  justify-content: center;
-  position: relative;
-  height: 600px;
-  isolation: isolate;
-  .image {
+  .card {
+    max-width: none;
     width: 100%;
-    height: auto;
-    position: relative;
-    top: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+  }
+
+  .headline {
+    font-size: clamp(2.1rem, 9vw, 2.75rem);
+  }
+
+  .subheadline {
+    max-width: none;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primaryButton,
+  .ghostButton {
+    text-align: center;
+  }
+
+  .mobileLattice {
+    display: block;
+    height: 48px;
+    margin-top: 2.75rem;
+    color: $brass;
+    opacity: 0.14;
+    background-image: repeating-linear-gradient(
+        45deg,
+        currentColor 0,
+        currentColor 1px,
+        transparent 1px,
+        transparent 16px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        currentColor 0,
+        currentColor 1px,
+        transparent 1px,
+        transparent 16px
+      );
   }
 }
-
-@media only screen and (max-width: 1150px) {
-  .hero {
-    .info {
-      .details {
-        p {
-          font-size: 16px;
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 858px) {
-  .hero {
-    height: 500px;
-    .info {
-      .details {
-        p {
-          font-size: 14px;
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 1008px) {
-  .background {
-    width: 0%;
-  }
-}
-
-@media only screen and (max-width: 458px) {
-  .background {
-    width: 0%;
-  }
-}
-
-//button

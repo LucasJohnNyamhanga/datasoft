@@ -1,0 +1,138 @@
+@import "index";
+
+.container {
+  position: relative;
+  width: 100%;
+  background-color: $espresso-deep;
+  overflow: hidden;
+  scroll-margin-top: 90px;
+}
+
+.subContainer {
+  position: relative;
+  z-index: 2;
+  max-width: $content-max;
+  margin: 0 auto;
+  padding: $space-xl $gutter;
+}
+
+.eyebrow {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $brass;
+  margin: 0 0 1rem;
+}
+
+.heading {
+  font-family: $font-display;
+  font-weight: 420;
+  font-size: clamp(1.75rem, 3.2vw, 2.75rem);
+  line-height: 1.1;
+  color: $ivory;
+  margin: 0;
+  max-width: 20ch;
+}
+
+.intro {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: $bone;
+  max-width: 60ch;
+  margin: 1.5rem 0 0;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  row-gap: 3rem;
+  margin-top: $space-lg;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 3rem;
+    row-gap: 3.5rem;
+  }
+
+  @media (min-width: 1080px) {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 2.75rem;
+  }
+}
+
+.step {
+  position: relative;
+  padding-top: 1.75rem;
+  border-top: 1px solid $espresso-line;
+}
+
+.number {
+  display: block;
+  font-family: $font-display;
+  font-weight: 380;
+  font-size: 1.75rem;
+  color: $brass;
+  margin-bottom: 1.5rem;
+}
+
+.stepTitle {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: $ivory;
+  margin: 0 0 0.85rem;
+}
+
+.stepDescription {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: $bone;
+  margin: 0;
+}
+
+.closing {
+  font-family: $font-display;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: $brass-bright;
+  max-width: 42ch;
+  margin: $space-lg 0 0;
+}
+
+.lattice {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 64px;
+  color: $brass;
+  opacity: 0.12;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+      45deg,
+      currentColor 0,
+      currentColor 1px,
+      transparent 1px,
+      transparent 18px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      currentColor 0,
+      currentColor 1px,
+      transparent 1px,
+      transparent 18px
+    );
+}
+
+@media (max-width: 640px) {
+  .subContainer {
+    padding: $space-lg $gutter;
+  }
+}

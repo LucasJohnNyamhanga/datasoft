@@ -2,6 +2,7 @@ import styles from "./styles/page.module.scss";
 
 import Hero from "./components/Hero";
 import WhatWeDo from "./components/WhatWeDo";
+import Process from "./components/Process";
 import WhatWeHaveDone from "./components/WhatWeHaveDone";
 import Footer from "./components/Footer";
 import GoToTop from "./components/GoToTop";
@@ -10,8 +11,9 @@ import ContactUs from "./components/Contact";
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Hero image={"/datasoftsoftware.gif"} />
+      <Hero />
       <WhatWeDo />
+      <Process />
       <WhatWeHaveDone />
       <ContactUs />
       <Footer />

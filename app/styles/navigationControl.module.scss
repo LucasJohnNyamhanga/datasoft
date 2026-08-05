@@ -1,9 +1,9 @@
-@media only screen and (max-width: 958px) {
+@media only screen and (max-width: 900px) {
   .pc {
     display: none;
   }
 }
-@media only screen and (min-width: 958px) {
+@media only screen and (min-width: 900px) {
   .mobile {
     display: none;
   }
@@ -16,11 +16,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 999;
   margin: 0;
   padding: 0;
-  background: -webkit-linear-gradient(right, rgba(#f1f1f1, 1) 0%, gold 100%);
-  background: -moz-linear-gradient(right, rgba(#f1f1f1, 1) 0%, gold 100%);
-  background: -ms-linear-gradient(right, rgba(#f1f1f1, 1) 0%, gold 100%);
-  background: linear-gradient(to right, rgba(#f1f1f1, 1) 0%, gold 100%);
 }

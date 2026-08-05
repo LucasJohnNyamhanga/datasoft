@@ -1,57 +1,50 @@
 "use client";
-import React, { useEffect, useRef } from "react";
-import { RiRocketLine } from "react-icons/ri";
-import { GiFireBowl } from "react-icons/gi";
+import { useEffect, useRef } from "react";
+import { FiArrowUp } from "react-icons/fi";
 import { BsWhatsapp } from "react-icons/bs";
 import styles from "../styles/goToTop.module.scss";
-import Link from "next/link";
+import { useLanguage } from "../i18n/LanguageContext";
 
 const GoToTop = () => {
-  const rocket = useRef<HTMLDivElement>(null!);
-
-  const handleScroll = () => {
-    const scrollPosition = window.scrollY; // => scroll position
-
-    if (scrollPosition > 450) {
-      rocket.current.classList.add(styles.Show);
-    } else {
-      if (rocket.current != null) {
-        rocket.current.classList.remove(styles.Show);
-      }
-    }
-  };
-
-  let smoothScroll = () => {
-    scroll({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
+  const { t } = useLanguage();
+  const button = useRef<HTMLButtonElement>(null!);
 
   useEffect(() => {
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      if (!button.current) return;
+      button.current.classList.toggle(styles.show, window.scrollY > 450);
     };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  return (
-    <div>
-      <div
-        ref={rocket}
-        className={`${styles.backToTop} ${styles.vibrater}`}
-        onClick={smoothScroll}
-      >
-        <RiRocketLine size={50} />
-        <GiFireBowl size={30} className={styles.fire} />
-      </div>
 
-      <a href="https://wa.me/+255784477999">
-        <div className={`${styles.whatsaap}`}>
-          <BsWhatsapp size={30} />
-        </div>
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  return (
+    <>
+      <button
+        ref={button}
+        type="button"
+        className={styles.backToTop}
+        onClick={scrollToTop}
+        aria-label={t.goToTop.label}
+      >
+        <FiArrowUp size={20} />
+      </button>
+
+      <a
+        href="https://wa.me/255767887999"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.whatsapp}
+        aria-label={t.goToTop.whatsapp}
+      >
+        <BsWhatsapp size={20} />
       </a>
-    </div>
+    </>
   );
 };
 

@@ -1,276 +1,60 @@
-import styles from "../styles/hero.module.scss";
+"use client";
 import Image from "next/image";
-import Link from "next/link";
+import { useLanguage } from "../i18n/LanguageContext";
+import styles from "../styles/hero.module.scss";
+import Reveal from "./Reveal";
 
-type dataHero = {
-  image: string;
-};
+const Hero = () => {
+  const { t } = useLanguage();
 
-function hero({ image }: dataHero) {
   return (
     <div id="home" className={styles.container}>
-      <div className={styles.section}>
-        <div className={styles.hero}>
-          <div className={styles.image}>
-            <Image
-              alt=""
-              src={image}
-              placeholder="blur"
-              blurDataURL={image}
-              style={{
-                objectFit: "cover",
-                objectPosition: "right",
-              }}
-              quality={100}
-              priority={true}
-              unoptimized={true}
-              fill
-            />
-          </div>
-        </div>
-        <div className={styles.background}>
-          <h1>
-            <div className="title-glitch-top">
-              <div className={`${styles.block}`}>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="L"
-                >
-                  L
-                </span>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="e"
-                >
-                  e
-                </span>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="t"
-                >
-                  t
-                </span>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="'"
-                >
-                  {`'`}
-                </span>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="s"
-                >
-                  s
-                </span>
-              </div>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text=""
-              >
-                &nbsp;
-              </span>
+      <div className={styles.image}>
+        <Image
+          alt="DataSoft Tanzania"
+          src="/datasoftsoftware.gif"
+          fill
+          unoptimized
+          priority
+          style={{ objectFit: "cover", objectPosition: "right center" }}
+        />
+      </div>
 
-              <div className={`${styles.block}`}>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="b"
-                >
-                  b
-                </span>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="r"
-                >
-                  r
-                </span>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="i"
-                >
-                  i
-                </span>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="n"
-                >
-                  n
-                </span>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="g"
-                >
-                  g
-                </span>
-              </div>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text=""
-              >
-                &nbsp;
-              </span>
+      <div className={styles.scrim} />
 
-              <div className={`${styles.block}`}>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="y"
-                >
-                  y
-                </span>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="o"
-                >
-                  o
-                </span>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="u"
-                >
-                  u
-                </span>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="r"
-                >
-                  r
-                </span>
-              </div>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text=""
-              >
-                &nbsp;
-              </span>
+      <div className={styles.frame}>
+        <div className={styles.card}>
+          <Reveal as="p" className={styles.eyebrow}>
+            {t.hero.eyebrow}
+          </Reveal>
 
-              <div className={`${styles.block}`}>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="i"
-                >
-                  i
-                </span>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="d"
-                >
-                  d
-                </span>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="e"
-                >
-                  e
-                </span>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="a"
-                >
-                  a
-                </span>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="s"
-                >
-                  s
-                </span>
-              </div>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text=""
-              >
-                &nbsp;
-              </span>
-
-              <div className={`${styles.block}`}>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="t"
-                >
-                  t
-                </span>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="o"
-                >
-                  o
-                </span>
-              </div>
-              <span
-                className={`${styles.glitch} ${styles.character}`}
-                data-text=""
-              >
-                &nbsp;
-              </span>
-              <div className={`${styles.block}`}>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="l"
-                >
-                  l
-                </span>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="i"
-                >
-                  i
-                </span>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="f"
-                >
-                  f
-                </span>
-                <span
-                  className={`${styles.glitch} ${styles.character}`}
-                  data-text="e"
-                >
-                  e
-                </span>
-              </div>
-            </div>
+          <h1 className={styles.headline}>
+            <Reveal as="span" className={styles.line}>
+              {t.hero.headlineLines[0]}
+            </Reveal>
+            <Reveal as="span" className={`${styles.line} ${styles.lineItalic}`} delay={90}>
+              {t.hero.headlineLines[1]}
+            </Reveal>
           </h1>
-          <p>
-            We are innovators, creators, technological makers. We turn ideas
-            into full efficient working technological solution, that are
-            customized to meet your company’s organizational needs, highlight
-            its core competencies, and further its success.
-          </p>
-          <div>
-            <a
-              href={`#idea`}
-              className={`${styles.button} ${styles.buttonStyle}`}
-              data-hover="Okey, let's do this."
-            >
-              {`Let's work together.`}
+
+          <Reveal as="p" className={styles.subheadline} delay={160}>
+            {t.hero.subheadline}
+          </Reveal>
+
+          <Reveal className={styles.actions} delay={220}>
+            <a href="#idea" className={styles.primaryButton}>
+              {t.hero.ctaPrimary}
             </a>
-          </div>
+            <a href="#services" className={styles.ghostButton}>
+              {t.hero.ctaSecondary}
+            </a>
+          </Reveal>
         </div>
       </div>
-      <div className={styles.descHolder}>
-        <div className={styles.desc}>
-          <p>
-            We are innovators, creators, technological makers. We turn ideas
-            into full effecient working technological solution, that are
-            customized to meet your company’s organizational needs, highlight
-            its core competencies, and further its success.
-          </p>
-          <div>
-            <a
-              href={`#idea`}
-              className={`${styles.button} ${styles.buttonStyle}`}
-              data-hover="Okey, let's do this."
-            >
-              {`Let's work together.`}
-            </a>
-          </div>
-        </div>
-      </div>
+
+      <div className={styles.mobileLattice} />
     </div>
   );
-}
+};
 
-export default hero;
-
-// {
-//   `Let's bring your idea to life.`;
-// }
+export default Hero;

@@ -1,47 +1,27 @@
 "use client";
 import Link from "next/link";
 import styles from "../styles/section.module.scss";
-import { useRouter } from "next/navigation";
 
-type dataType = {
+type ServiceProps = {
   header: string;
   icon: React.ReactNode;
   description: string;
   link: string;
+  learnMore: string;
+  featured?: boolean;
 };
 
-const Service = ({ header, icon, description, link }: dataType) => {
-  const router = useRouter();
-
-  const handleNavigation = (nav: string) => {
-    router.push(nav);
-  };
-
+const Service = ({ header, icon, description, link, learnMore, featured }: ServiceProps) => {
   return (
-    <div
-      className={styles.container}
-      style={{ cursor: "pointer" }}
-      onClick={(e) => {
-        handleNavigation(link);
-      }}
+    <Link
+      href={link}
+      className={`${styles.card} ${featured ? styles.featured : ""}`}
     >
-      {/* <!-- START SECTION SERVICES --> */}
-      <div className={styles.sectionservices}>
-        {/* <!-- Single Service --> */}
-        <div className={styles.cover}>
-          <div className={styles.singleservice}>
-            <div className={styles.content}>
-              <span className={styles.icon}>{icon}</span>
-              <h3 className={styles.title}>{header}</h3>
-              <p className={styles.description}>{description}</p>
-              <a className={styles.learnmore}>Learn More</a>
-            </div>
-            <span className={styles.circlebefore}></span>
-          </div>
-        </div>
-        {/* <!-- / End Single Service --> */}
-      </div>
-    </div>
+      <span className={styles.icon}>{icon}</span>
+      <h3 className={styles.title}>{header}</h3>
+      <p className={styles.description}>{description}</p>
+      <span className={styles.learnMore}>{learnMore}</span>
+    </Link>
   );
 };
 

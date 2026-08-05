@@ -2,190 +2,67 @@
 
 .container {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 15px;
-  font-family: $fontHeader;
-  font-weight: 500;
-  font-size: 18px;
-  position: relative;
-  scroll-margin-top: 100px;
-  //isolation: isolate;
+  background-color: $ivory;
+  scroll-margin-top: 90px;
+}
 
-  &::after {
-    content: "";
-    background-color: $mainBackGround;
-    position: absolute;
-    inset: 0;
-    transform: skewY(2deg);
-    z-index: 1;
+.subContainer {
+  max-width: $content-max;
+  margin: 0 auto;
+  padding: $space-xl $gutter;
+}
+
+.eyebrow {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $coffee;
+  margin: 0 0 1rem;
+}
+
+.heading {
+  font-family: $font-display;
+  font-weight: 420;
+  font-size: clamp(1.75rem, 3.2vw, 2.75rem);
+  line-height: 1.1;
+  color: $ink;
+  margin: 0;
+  max-width: 22ch;
+}
+
+.intro {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: $ink-soft;
+  max-width: 60ch;
+  margin: 1.5rem 0 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  margin-top: $space-lg;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .subContainer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    max-width: 1200px;
-    margin-bottom: 50px;
-    z-index: 99;
-
-    h2 {
-      font-family: $fontHeader;
-      font-weight: 700;
-      font-size: 30px;
-      margin: 0px;
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      margin-left: 0px;
-      margin-top: 15px;
-      color: $green;
-    }
-
-    h3 {
-      color: $ugoro;
-    }
-
-    .innerContainer {
-      width: 100%;
-      max-width: 1200px;
-      display: grid;
-      grid-gap: 15px;
-      //padding: 10px;
-
-      @media (min-width: 268px) {
-        grid-template-columns: repeat(1, 1fr);
-        align-items: center;
-        justify-content: center;
-      }
-
-      @media (min-width: 568px) {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      @media (min-width: 888px) {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      @media (min-width: 1200px) {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
-  }
-
-  .line {
-    height: 5px;
-    background-color: $gold;
-    width: 100px;
-    margin-left: 3px;
-  }
-
-  .inputBox {
-    position: relative;
-    width: 100%;
-    margin-bottom: 15px;
-
-    input {
-      border: 2px solid $ugoro;
-      padding: 10px;
-      font-size: 18px;
-      font-weight: 500;
-      border-radius: 5px;
-      width: 100%;
-      outline: none;
-      font-family: $fontHeader;
-      margin-bottom: 10px;
-      color: $gold;
-      z-index: 1;
-
-      &:valid ~ span,
-      &:focus ~ span {
-        color: $lightblue;
-        transform: translateX(10px) translateY(-15px);
-        font-size: 16px;
-        padding: 4px 10px 0px 10px;
-        background-color: $white;
-        font-weight: 600;
-        border-radius: 2px;
-        z-index: 0;
-        left: 0px;
-      }
-
-      &:valid,
-      &:focus {
-        border: 2px solid $lightblue;
-        z-index: 0;
-      }
-    }
-
-    textarea {
-      border: 2px solid $ugoro;
-      padding: 10px;
-      font-size: 18px;
-      font-weight: 500;
-      border-radius: 5px;
-      width: 100%;
-      outline: none;
-      font-family: $fontHeader;
-      margin-bottom: 10px;
-      color: $gold;
-      z-index: 1;
-
-      &:valid ~ span,
-      &:focus ~ span {
-        color: $lightblue;
-        transform: translateX(10px) translateY(-15px);
-        font-size: 16px;
-        padding: 4px 10px 0px 10px;
-        background-color: $white;
-        font-weight: 600;
-        border-radius: 2px;
-        z-index: 0;
-        left: 0px;
-      }
-
-      &:valid,
-      &:focus {
-        border: 2px solid $lightblue;
-        z-index: 0;
-      }
-    }
-
-    span {
-      position: absolute;
-      left: 10px;
-      top: 3px;
-      padding: 10px;
-      pointer-events: none;
-      font-size: 18px;
-      font-weight: 400;
-      color: $gray;
-      // text-transform: uppercase;
-      font-family: $fontHeader;
-      transition: 0.5s;
-      z-index: 0;
-    }
+  @media (min-width: 1100px) {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
-.list {
-  ol {
-    list-style-position: inside;
-    counter-reset: list;
+.cell {
+  height: 100%;
+}
 
-    li {
-      counter-increment: list;
-      font-weight: 600;
-    }
-
-    li::marker {
-      font-family: "Sigmar One", cursive;
-      content: "Step " counter(list) ". ";
-      font-weight: 600;
-      color: $ugoro;
-    }
+@media (max-width: 640px) {
+  .subContainer {
+    padding: $space-lg $gutter;
   }
 }

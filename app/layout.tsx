@@ -1,16 +1,26 @@
 import "./styles/globals.scss";
 import Navigation from "./components/Navigation";
+import { LanguageProvider } from "./i18n/LanguageContext";
+import { Fraunces } from "next/font/google";
 
 import type { Metadata } from "next";
 
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+  weight: ["300", "400", "500", "600"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "DataSoft Tanzania",
+  title: "DataSoft Tanzania — Suluhisho za Teknolojia, Mwanza",
   description:
-    "Get a technological solution from the ideas you have, evolved into full efficient working solutions, that are customized to meet your company’s organizational needs, highlight its core competencies, and further its success.",
+    "DataSoft ni nyumba ya kiteknolojia ya Mwanza inayogeuza mawazo ya biashara kuwa programu, tovuti, mitandao na miundo inayofanya kazi — kwa ustadi na umakini wa hali ya juu.",
   openGraph: {
-    title: "DataSoft Tanzania",
+    title: "DataSoft Tanzania — Suluhisho za Teknolojia, Mwanza",
     description:
-      "Get a technological solution from the ideas you have, evolved into full efficient working solutions, that are customized to meet your company’s organizational needs, highlight its core competencies, and further its success.",
+      "DataSoft ni nyumba ya kiteknolojia ya Mwanza inayogeuza mawazo ya biashara kuwa programu, tovuti, mitandao na miundo inayofanya kazi — kwa ustadi na umakini wa hali ya juu.",
     url: "https://www.datasoft.co.tz",
     siteName: "DataSoft Tanzania",
     images: [
@@ -26,7 +36,7 @@ export const metadata: Metadata = {
         alt: "Datasoft Tanzania",
       },
     ],
-    locale: "en-US",
+    locale: "sw_TZ",
     type: "website",
   },
   icons: {
@@ -49,32 +59,23 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.datasoft.co.tz",
     languages: {
+      sw: "https://www.datasoft.co.tz",
       "en-US": "https://www.datasoft.co.tz",
     },
-    media: {
-      "only screen and (max-width: 600px)": "https://www.datasoft.co.tz",
-    },
-    types: {
-      "application/rss+xml": "https://www.datasoft.co.tz",
-    },
   },
-  bookmarks: ["https://www.datasoft.co.tz"],
   category: "technology",
   referrer: "origin-when-cross-origin",
   keywords: [
-    "Website",
-    "React",
-    "JavaScript",
-    "Software",
-    "web development",
-    "tanzania",
-    "datasoft",
-    "system",
+    "DataSoft Tanzania",
+    "ukuzaji wa programu",
+    "tovuti Tanzania",
+    "mitandao ya kompyuta",
+    "ubunifu wa michoro",
+    "software development",
+    "web hosting Tanzania",
+    "Mwanza",
   ],
-  authors: [
-    { name: "Lucas John" },
-    // { name: "Lucas John", url: "https://www.instagram.com/johnsavanter" },
-  ],
+  authors: [{ name: "Lucas John" }],
   colorScheme: "light",
   creator: "Lucas John",
   publisher: "Lucas John",
@@ -86,17 +87,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
+    <html lang="sw" className={fraunces.variable}>
       <head />
 
       <body>
-        {/* <Check /> */}
-        <Navigation />
-        {children}
+        <LanguageProvider>
+          <Navigation />
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

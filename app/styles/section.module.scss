@@ -1,122 +1,83 @@
 @import "index";
 
-.sectionservices {
-  font-family: $fontHeader, sans-serif;
-  color: #202020;
-  max-width: 500px;
-  margin: 0px;
-  padding: 0px;
-  z-index: 999;
-  grid-column-end: span 4;
-  font-size: 1.8rem;
+.card {
   position: relative;
-}
-
-.sectionservices .singleservice {
-  position: relative;
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 40px 30px;
-  overflow: hidden;
-}
-
-.sectionservices .singleservice .content {
-  position: relative;
-  z-index: 20;
-}
-
-.sectionservices .singleservice .circlebefore {
-  position: absolute;
-  top: 0;
-  right: 0px;
-  transform: translate(40%, -40%);
-  width: 150px;
-  height: 150px;
-  background-color: $ugoro;
-  border: 6px solid $green;
-  border-radius: 50%;
-  opacity: 0.5;
-  z-index: 10;
-  transition: all 0.6s;
-}
-
-.sectionservices .singleservice:hover .circlebefore {
-  width: 100%;
-  height: 100%;
-  transform: none;
-  border: 0;
-  border-radius: 0;
-  opacity: 1;
-}
-
-.sectionservices .singleservice .icon {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  padding: $space-lg $space-md;
+  background-color: $ivory-card;
+  border: 1px solid $bone;
+  border-radius: $radius-md;
+  transition: border-color 0.25s $ease-standard, transform 0.25s $ease-standard;
+
+  &:hover {
+    border-color: $brass-dim;
+    transform: translateY(-2px);
+
+    .learnMore::after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.icon {
+  display: inline-flex;
   align-items: center;
-  margin: 0px;
-  padding: 0px;
-  width: 70px;
-  height: 70px;
-  background-color: $green;
-  border-radius: 5px;
-  text-align: center;
-  color: #fff;
-  font-size: 2rem;
-  transition: all 0.3s;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: $space-md;
+  border: 1px solid $brass-dim;
+  border-radius: $radius-sm;
+  color: $brass;
+  font-size: 1.35rem;
 }
 
-.sectionservices .singleservice:hover .icon {
-  background-color: #fff;
-  color: $ugoro;
+.featured .icon {
+  background-color: $brass;
+  border-color: $brass;
+  color: $espresso-deep;
 }
 
-.sectionservices .singleservice .title {
-  margin-bottom: 18px;
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: $green;
-  transition: color 0.3s;
+.title {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: $ink;
+  margin: 0 0 0.75rem;
 }
 
-.sectionservices .singleservice:hover .title {
-  color: #fff;
+.description {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: $ink-soft;
+  margin: 0 0 $space-md;
+  flex-grow: 1;
 }
 
-.sectionservices .singleservice .description {
-  margin-bottom: 20px;
-  font-size: 1rem;
-  transition: color 0.3s;
-  font-weight: 500;
-}
-
-.sectionservices .singleservice:hover .description {
-  color: #fff;
-}
-
-.sectionservices .singleservice a {
+.learnMore {
   position: relative;
-  font-size: 1rem;
-  color: $green;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $ink;
 
-.sectionservices .singleservice:hover a {
-  color: #fff;
-}
-
-.sectionservices .singleservice a:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background-color: $ugoro;
-  transition: background-color 0.3s;
-}
-
-.sectionservices .singleservice:hover a:after {
-  background-color: #fff;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 1px;
+    width: 100%;
+    background-color: $brass;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s $ease-standard;
+  }
 }

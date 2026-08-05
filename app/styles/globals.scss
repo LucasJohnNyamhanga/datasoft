@@ -3,6 +3,7 @@
 @font-face {
   font-family: "Montserrat";
   font-weight: 300;
+  font-display: swap;
   src: url("/fonts/montserrat/montserrat_light_300-webfont.woff2")
       format("woff2"),
     url("/fonts/montserrat/montserrat_light_300-webfont.woff") format("woff");
@@ -11,6 +12,7 @@
 @font-face {
   font-family: "Montserrat";
   font-weight: 400;
+  font-display: swap;
   src: url("/fonts/montserrat/montserrat_regular_400-webfont.woff2")
       format("woff2"),
     url("/fonts/montserrat/montserrat_regular_400-webfont.woff") format("woff");
@@ -19,6 +21,7 @@
 @font-face {
   font-family: "Montserrat";
   font-weight: 500;
+  font-display: swap;
   src: url("/fonts/montserrat/montserrat_medium_500-webfont.woff2")
       format("woff2"),
     url("/fonts/montserrat/montserrat_medium_500-webfont.woff") format("woff");
@@ -27,6 +30,7 @@
 @font-face {
   font-family: "Montserrat";
   font-weight: 600;
+  font-display: swap;
   src: url("/fonts/montserrat/montserrat_semibold_600-webfont.woff2")
       format("woff2"),
     url("/fonts/montserrat/montserrat_semibold_600-webfont.woff") format("woff");
@@ -35,52 +39,84 @@
 @font-face {
   font-family: "Montserrat";
   font-weight: 700;
+  font-display: swap;
   src: url("/fonts/montserrat/montserrat_bold_700-webfont.woff2")
       format("woff2"),
     url("/fonts/montserrat/montserrat_bold_700-webfont.woff") format("woff");
 }
+
 @font-face {
   font-family: "Montserrat";
   font-weight: 800;
+  font-display: swap;
   src: url("/fonts/montserrat/montserrat_extrabold_800-webfont.woff2")
       format("woff2"),
     url("/fonts/montserrat/montserrat_extrabold_800-webfont.woff")
       format("woff");
 }
 
+:root {
+  --scrollbar-track: #{$espresso-deep};
+  --scrollbar-thumb: #{$brass-dim};
+  color-scheme: dark light;
+}
+
 html {
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
+
 html,
 body {
-  --scrollbarBG: black;
-  --thumbBG: #007aff;
-  background-color: $white;
+  background-color: $ivory;
+  color: $ink;
   padding: 0;
   margin: 0;
   width: 100%;
-  font-family: $fontHeader, $fontBody;
-  background-color: $white;
+  font-family: $font-body;
   scroll-behavior: smooth;
-  @media (prefers-color-scheme: dark) {
-    color: $black;
-  }
   cursor: default;
   scrollbar-width: thin;
-  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
 
   &::-webkit-scrollbar-track {
-    background: var(--scrollbarBG);
+    background: var(--scrollbar-track);
   }
   &::-webkit-scrollbar-thumb {
-    background-color: var(--thumbBG);
+    background-color: var(--scrollbar-thumb);
     border-radius: 6px;
-    border: 3px solid var(--scrollbarBG);
+    border: 3px solid var(--scrollbar-track);
   }
   &::-webkit-scrollbar {
     width: 11px;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  body {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $font-display;
+  margin: 0;
+}
+
+p {
+  font-family: $font-body;
 }
 
 a {
@@ -88,12 +124,63 @@ a {
   text-decoration: none;
 }
 
+::selection {
+  background: $brass;
+  color: $espresso-deep;
+}
+
+:focus-visible {
+  outline: 2px solid $brass;
+  outline-offset: 3px;
+}
+
 * {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: light;
+// Shared scroll-reveal — the single authored motion moment reused site-wide.
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s $ease-standard, transform 0.7s $ease-standard;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+// Signature ornament — an abstract carved lattice, never a literal cultural replica.
+// Set `color` on the parent to control tint; opacity is fixed low so it reads as texture.
+.lattice-divider {
+  height: 56px;
+  width: 100%;
+  pointer-events: none;
+  opacity: 0.16;
+  background-image: repeating-linear-gradient(
+      45deg,
+      currentColor 0,
+      currentColor 1px,
+      transparent 1px,
+      transparent 18px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      currentColor 0,
+      currentColor 1px,
+      transparent 1px,
+      transparent 18px
+    );
+
+  @media (max-width: 640px) {
+    height: 36px;
   }
 }

@@ -1,596 +1,174 @@
 @import "index";
 
 .container {
-  background-color: $ugoro;
   width: 100%;
+  background-color: $maroon;
+  scroll-margin-top: 90px;
+  clip-path: polygon(0 0, 50% 56px, 100% 0, 100% 100%, 0 100%);
+}
+
+.subContainer {
+  max-width: $content-max;
+  margin: 0 auto;
+  padding: calc(#{$space-xl} + 2rem) $gutter $space-xl;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-lg;
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr;
+    gap: $space-xl;
+  }
+}
+
+.intro {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 0px;
-  margin: 0px;
-  font-family: $fontHeader;
-  font-weight: 500;
-  font-size: 18px;
-  padding-bottom: 20px;
-  position: relative;
-  scroll-margin-top: 100px;
+}
 
-  &::before {
+.eyebrow {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $brass;
+  margin: 0 0 1rem;
+}
+
+.heading {
+  font-family: $font-display;
+  font-weight: 420;
+  font-size: clamp(1.75rem, 3.2vw, 2.75rem);
+  line-height: 1.1;
+  color: $ivory;
+  margin: 0;
+}
+
+.details {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: $bone;
+  max-width: 46ch;
+  margin: 1.5rem 0 0;
+}
+
+.quotation {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.85rem;
+  margin-top: $space-md;
+  padding-top: $space-md;
+  border-top: 1px solid $espresso-line;
+
+  p {
+    font-family: $font-display;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.15rem;
+    line-height: 1.4;
+    color: $brass-bright;
+    margin: 0;
+  }
+}
+
+.quoteMark {
+  flex-shrink: 0;
+  color: $brass-dim;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+}
+
+.contactForm {
+  form {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    content: "";
-    background-color: $ugoro;
-    position: absolute;
-    inset: 0;
-    transform: skewY(5deg);
-    z-index: 1;
-    height: 50%;
+  }
+}
+
+.inputBox {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+
+  label {
+    font-family: $font-body;
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: $brass-dim;
+    margin-bottom: 0.65rem;
   }
 
-  .border {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background-color: $ugoro;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: skewY(-5deg);
-    z-index: 999;
-    height: 50%;
+  input,
+  textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid $brass-dim;
+    padding: 0.6rem 0.1rem;
+    font-family: $font-body;
+    font-size: 1rem;
+    color: $ivory;
+    outline: none;
+    resize: vertical;
+    transition: border-color 0.2s $ease-standard, border-width 0.2s $ease-standard;
+
+    &::placeholder {
+      color: $ink-soft;
+    }
+
+    &:focus {
+      border-bottom: 2px solid $brass;
+    }
+  }
+}
+
+.button {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.25rem;
+  background-color: $brass;
+  color: $espresso-deep;
+  border: none;
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: $radius-sm;
+  cursor: pointer;
+  transition: background-color 0.25s $ease-standard, transform 0.25s $ease-standard,
+    box-shadow 0.25s $ease-standard;
+
+  &:hover {
+    background-color: $brass-bright;
+    transform: translateY(-1px);
+    box-shadow: $glow-brass;
+  }
+}
+
+.loading {
+  cursor: progress;
+  opacity: 0.85;
+}
+
+@media (max-width: 640px) {
+  .container {
+    clip-path: polygon(0 0, 50% 28px, 100% 0, 100% 100%, 0 100%);
   }
 
   .subContainer {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-    padding: 0px 10px;
-    text-align: center;
-
-    h2 {
-      font-family: $fontHeader;
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      font-weight: 700;
-      font-size: 46px;
-      width: 100%;
-
-      .block {
-        display: inline-block;
-        white-space: nowrap;
-      }
-
-      $main-green: #53f765;
-      $main-yellow: #fffd35;
-      $main-orange: #ff9c00;
-      $main-red: #ff3368;
-      $main-blue: #32f8ff;
-      $main-darkblue: #324fff;
-      $margin: -0.01rem;
-
-      .glitch {
-        color: $gold;
-        line-height: 1;
-      }
-
-      .characterscontainer {
-        position: relative;
-        margin: $margin/2 0;
-      }
-
-      .character {
-        display: inline-block;
-        position: relative;
-        letter-spacing: -$margin/1.5;
-      }
-
-      .character:nth-child(even) {
-        bottom: $margin/3;
-      }
-
-      @-webkit-keyframes glitch-animation-after {
-        0% {
-          clip: rect(15px, 600px, 100px, 0);
-        }
-        6.66667% {
-          clip: rect(6px, 600px, 94px, 0);
-        }
-        13.33333% {
-          clip: rect(28px, 600px, 58px, 0);
-        }
-        20% {
-          clip: rect(32px, 600px, 37px, 0);
-        }
-        26.66667% {
-          clip: rect(76px, 600px, 39px, 0);
-        }
-        33.33333% {
-          clip: rect(74px, 600px, 36px, 0);
-        }
-        40% {
-          clip: rect(81px, 600px, 34px, 0);
-        }
-        46.66667% {
-          clip: rect(54px, 600px, 14px, 0);
-        }
-        53.33333% {
-          clip: rect(65px, 600px, 50px, 0);
-        }
-        60% {
-          clip: rect(85px, 600px, 100px, 0);
-        }
-        66.66667% {
-          clip: rect(61px, 600px, 72px, 0);
-        }
-        73.33333% {
-          clip: rect(23px, 600px, 65px, 0);
-        }
-        80% {
-          clip: rect(0, 0, 0, 0);
-        }
-        100% {
-          clip: rect(0, 0, 0, 0);
-        }
-      }
-
-      @keyframes glitch-animation-after {
-        0% {
-          clip: rect(65px, 600px, 39px, 0);
-        }
-        6.66667% {
-          clip: rect(19px, 600px, 21px, 0);
-        }
-        13.33333% {
-          clip: rect(80px, 600px, 51px, 0);
-        }
-        20% {
-          clip: rect(6px, 600px, 16px, 0);
-        }
-        26.66667% {
-          clip: rect(31px, 600px, 95px, 0);
-        }
-        33.33333% {
-          clip: rect(94px, 600px, 84px, 0);
-        }
-        40% {
-          clip: rect(84px, 600px, 74px, 0);
-        }
-        46.66667% {
-          clip: rect(97px, 600px, 55px, 0);
-        }
-        53.33333% {
-          clip: rect(7px, 600px, 18px, 0);
-        }
-        60% {
-          clip: rect(24px, 600px, 17px, 0);
-        }
-        66.66667% {
-          clip: rect(28px, 600px, 97px, 0);
-        }
-        73.33333% {
-          clip: rect(61px, 600px, 2px, 0);
-        }
-        80% {
-          clip: rect(0, 0, 0, 0);
-        }
-        100% {
-          clip: rect(0, 0, 0, 0);
-        }
-      }
-
-      @-webkit-keyframes glitch-animation-before {
-        0% {
-          clip: rect(62px, 600px, 45px, 0);
-        }
-        6.66667% {
-          clip: rect(46px, 600px, 67px, 0);
-        }
-        13.33333% {
-          clip: rect(68px, 600px, 49px, 0);
-        }
-        20% {
-          clip: rect(82px, 600px, 56px, 0);
-        }
-        26.66667% {
-          clip: rect(53px, 600px, 6px, 0);
-        }
-        33.33333% {
-          clip: rect(9px, 600px, 90px, 0);
-        }
-        40% {
-          clip: rect(95px, 600px, 69px, 0);
-        }
-        46.66667% {
-          clip: rect(50px, 600px, 99px, 0);
-        }
-        53.33333% {
-          clip: rect(4px, 600px, 60px, 0);
-        }
-        60% {
-          clip: rect(78px, 600px, 97px, 0);
-        }
-        66.66667% {
-          clip: rect(30px, 600px, 69px, 0);
-        }
-        73.33333% {
-          clip: rect(68px, 600px, 49px, 0);
-        }
-        80% {
-          clip: rect(0, 0, 0, 0);
-        }
-        100% {
-          clip: rect(0, 0, 0, 0);
-        }
-      }
-
-      @keyframes glitch-animation-before {
-        0% {
-          clip: rect(86px, 600px, 98px, 0);
-        }
-        6.66667% {
-          clip: rect(62px, 600px, 92px, 0);
-        }
-        13.33333% {
-          clip: rect(91px, 600px, 20px, 0);
-        }
-        20% {
-          clip: rect(47px, 600px, 44px, 0);
-        }
-        26.66667% {
-          clip: rect(1px, 600px, 77px, 0);
-        }
-        33.33333% {
-          clip: rect(99px, 600px, 22px, 0);
-        }
-        40% {
-          clip: rect(44px, 600px, 12px, 0);
-        }
-        46.66667% {
-          clip: rect(71px, 600px, 65px, 0);
-        }
-        53.33333% {
-          clip: rect(52px, 600px, 28px, 0);
-        }
-        60% {
-          clip: rect(10px, 600px, 15px, 0);
-        }
-        66.66667% {
-          clip: rect(75px, 600px, 69px, 0);
-        }
-        73.33333% {
-          clip: rect(57px, 600px, 62px, 0);
-        }
-        80% {
-          clip: rect(0, 0, 0, 0);
-        }
-        100% {
-          clip: rect(0, 0, 0, 0);
-        }
-      }
-
-      .glitch:before,
-      .glitch:after {
-        content: attr(data-text);
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: rgba(204, 57, 107, 0);
-        clip: rect(0, 0, 0, 0);
-      }
-
-      .glitch:after {
-        left: 2px;
-        text-shadow: -5px 0 rgba(255, 51, 104, 0.5);
-        animation: glitch-animation-after 2s infinite linear alternate-reverse;
-      }
-
-      .glitch:before {
-        left: -2px;
-        text-shadow: 5px 0 rgba(94, 38, 255, 0.5);
-        animation: glitch-animation-before 3s infinite linear alternate-reverse;
-      }
-    }
-  }
-  .innerContainer {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 1200px;
-    justify-content: flex-start;
-    align-items: flex-start;
-    z-index: 999;
-
-    .details {
-      font-size: 22px;
-      color: $white;
-      font-weight: 400;
-      padding: 0px 15px;
-    }
-
-    .contact {
-      display: flex;
-      flex-direction: row;
-      width: 100%;
-
-      .button {
-        font-family: $fontHeader;
-        width: 100%;
-        height: fit-content;
-        color: #fff;
-        border-radius: 5px;
-        padding: 15px 20px;
-        font-weight: 700;
-        font-size: 18px;
-        background: transparent;
-        cursor: pointer;
-        position: relative;
-        display: inline-block;
-        border: none;
-        margin-bottom: 45px;
-      }
-
-      .light {
-        border: none;
-        background: $green;
-        background: linear-gradient(0deg, $green 0%, $gold 100%);
-        color: #fff;
-        overflow: hidden;
-      }
-
-      .light:hover {
-        text-decoration: none;
-        color: #fff;
-      }
-
-      .light:before {
-        position: absolute;
-        content: "";
-        display: inline-block;
-        top: -180px;
-        left: 0;
-        width: 30px;
-        height: 100%;
-        background-color: #fff;
-        animation: shiny 3s ease-in-out infinite;
-      }
-
-      .light:hover {
-        opacity: 0.7;
-      }
-
-      .light:active {
-        box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.3),
-          -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
-          inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
-          inset 4px 4px 6px 0 rgba(0, 0, 0, 0.2);
-      }
-
-      .dark {
-        border: none;
-        background: $green;
-        background: linear-gradient(0deg, $green 0%, $gold 100%);
-        color: #fff;
-        overflow: hidden;
-        opacity: 0.5;
-      }
-
-      .dark:before {
-        position: absolute;
-        content: "";
-        display: inline-block;
-        top: -180px;
-        left: 0;
-        width: 30px;
-        height: 100%;
-        background-color: #fff;
-        animation: shiny 3s ease-in-out infinite;
-      }
-
-      .dark:active {
-        box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.3),
-          -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
-          inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
-          inset 4px 4px 6px 0 rgba(0, 0, 0, 0.2);
-      }
-
-      @keyframes shiny {
-        0% {
-          transform: scale(0) rotate(45deg);
-          opacity: 0;
-        }
-
-        80% {
-          transform: scale(0) rotate(45deg);
-          opacity: 0.5;
-        }
-
-        81% {
-          transform: scale(4) rotate(45deg);
-          opacity: 1;
-        }
-
-        100% {
-          transform: scale(50) rotate(45deg);
-          opacity: 0;
-        }
-      }
-
-      .contactHeder {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        flex: 1;
-        padding: 10px;
-
-        h2 {
-          color: $gold;
-          margin-bottom: 0px;
-          margin-top: 10px;
-          font-size: 35px;
-
-          span {
-            color: $green;
-          }
-        }
-
-        .quotation {
-          display: flex;
-          flex-direction: row;
-          color: $gold;
-          font-weight: 400;
-          padding: 15px 15px;
-          padding-right: 45px;
-
-          .quoteLeft {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            text-align: start;
-            font-size: 30px;
-          }
-
-          .qouteText {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            text-align: center;
-            width: fit-content;
-            font-size: 28px;
-          }
-
-          .quoteRight {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            align-items: flex-end;
-            text-align: start;
-            font-size: 30px;
-          }
-        }
-      }
-
-      .contactForm {
-        flex: 1;
-        padding: 15px;
-        margin-top: 20px;
-      }
-
-      @media only screen and (max-width: 815px) {
-        flex-direction: column;
-
-        .contactHeder {
-          h2 {
-            margin-top: 0px;
-          }
-        }
-        .contactForm {
-          margin-top: 10px;
-        }
-      }
-    }
+    padding: calc(#{$space-lg} + 1.25rem) $gutter $space-lg;
   }
 
-  .line {
-    height: 5px;
-    background-color: $green;
-    width: 100px;
-    margin-left: 3px;
-  }
-
-  .inputBox {
-    position: relative;
-    width: 100%;
-    margin-bottom: 15px;
-
-    input {
-      border: 2px solid $ugoro;
-      padding: 10px;
-      font-size: 18px;
-      font-weight: 500;
-      border-radius: 5px;
-      width: 100%;
-      outline: none;
-      font-family: $fontHeader;
-      margin-bottom: 10px;
-      color: $black;
-      z-index: 1;
-
-      &:valid ~ span,
-      &:focus ~ span {
-        color: $lightblue;
-        transform: translateX(10px) translateY(-15px);
-        font-size: 16px;
-        padding: 4px 10px 0px 10px;
-        background-color: $white;
-        font-weight: 600;
-        border-radius: 2px;
-        z-index: 0;
-        left: 0px;
-      }
-
-      &:valid,
-      &:focus {
-        border: 2px solid $lightblue;
-        z-index: 0;
-      }
-    }
-
-    textarea {
-      border: 2px solid $ugoro;
-      padding: 10px;
-      font-size: 18px;
-      font-weight: 500;
-      border-radius: 5px;
-      width: 100%;
-      outline: none;
-      font-family: $fontHeader;
-      margin-bottom: 10px;
-      color: $black;
-      z-index: 1;
-
-      &:valid ~ span,
-      &:focus ~ span {
-        color: $lightblue;
-        transform: translateX(10px) translateY(-15px);
-        font-size: 16px;
-        padding: 4px 10px 0px 10px;
-        background-color: $white;
-        font-weight: 600;
-        border-radius: 2px;
-        z-index: 0;
-        left: 0px;
-      }
-
-      &:valid,
-      &:focus {
-        border: 2px solid $lightblue;
-        z-index: 0;
-      }
-    }
-
-    span {
-      position: absolute;
-      left: 10px;
-      top: 3px;
-      padding: 10px;
-      pointer-events: none;
-      font-size: 18px;
-      font-weight: 400;
-      color: $gray;
-      // text-transform: uppercase;
-      font-family: $fontHeader;
-      transition: 0.5s;
-      z-index: 0;
-    }
+  .button {
+    align-self: stretch;
   }
 }
