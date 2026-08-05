@@ -1,8 +1,7 @@
 "use client";
-import { Drawer } from "@mui/material";
 import Link from "next/link";
 import { useSelectedLayoutSegment } from "next/navigation";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Styles from "../styles/drawerMobile.module.scss";
 import { useLanguage } from "../i18n/LanguageContext";
 import LanguageToggle from "./LanguageToggle";
@@ -23,6 +22,20 @@ export const MuiDrawer = () => {
     hamburger.current.classList.remove(Styles.isActive);
   };
 
+  useEffect(() => {
+    if (!isDrawerOpen) return;
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") handleClose();
+    };
+    document.body.style.overflow = "hidden";
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = "";
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [isDrawerOpen]);
+
   return (
     <>
       <button
@@ -36,11 +49,16 @@ export const MuiDrawer = () => {
         <span></span>
         <span></span>
       </button>
-      <Drawer
-        anchor="right"
-        open={isDrawerOpen}
-        onClose={handleClose}
-        PaperProps={{ className: Styles.paper }}
+      <div
+        className={`${Styles.backdrop} ${isDrawerOpen ? Styles.backdropOpen : ""}`}
+        onClick={handleClose}
+        aria-hidden={!isDrawerOpen}
+      />
+      <div
+        className={`${Styles.paper} ${isDrawerOpen ? Styles.paperOpen : ""}`}
+        role="dialog"
+        aria-modal="true"
+        aria-hidden={!isDrawerOpen}
       >
         <div className={Styles.panel} role="presentation">
           {segment != null ? (
@@ -73,7 +91,7 @@ export const MuiDrawer = () => {
             <LanguageToggle />
           </div>
         </div>
-      </Drawer>
+      </div>
     </>
   );
 };

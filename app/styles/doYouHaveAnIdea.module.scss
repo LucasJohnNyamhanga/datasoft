@@ -1,8 +1,8 @@
-@import "index";
+@use "index" as *;
 
 .container {
   width: 100%;
-  background-color: $maroon;
+  background: $gradient-maroon;
   scroll-margin-top: 90px;
   clip-path: polygon(0 0, 50% 56px, 100% 0, 100% 100%, 0 100%);
 }
@@ -134,7 +134,7 @@
   align-items: center;
   justify-content: center;
   padding: 1rem 2.25rem;
-  background-color: $brass;
+  background: $gradient-gold;
   color: $espresso-deep;
   border: none;
   font-family: $font-body;
@@ -144,11 +144,11 @@
   text-transform: uppercase;
   border-radius: $radius-sm;
   cursor: pointer;
-  transition: background-color 0.25s $ease-standard, transform 0.25s $ease-standard,
+  transition: background 0.25s $ease-standard, transform 0.25s $ease-standard,
     box-shadow 0.25s $ease-standard;
 
   &:hover {
-    background-color: $brass-bright;
+    background: $gradient-gold-hover;
     transform: translateY(-1px);
     box-shadow: $glow-brass;
   }

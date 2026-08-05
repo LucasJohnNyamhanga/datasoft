@@ -1,0 +1,50 @@
+@use "index" as *;
+
+.pattern {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+// stroke/fill are set per-instance in NetworkPattern.tsx (plain hex, no
+// gradient) — not set here, since a CSS class declaration would win over
+// the element's fill/stroke attribute.
+.link {
+  stroke-width: 1.4;
+  opacity: 0.6;
+  stroke-dasharray: 4 7;
+  animation: flow 5s linear infinite;
+}
+
+.node {
+  opacity: 1;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pulse 3.6s ease-in-out infinite;
+}
+
+@keyframes flow {
+  to {
+    stroke-dashoffset: -110;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.6);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link,
+  .node {
+    animation: none;
+  }
+}

@@ -1,17 +1,28 @@
-@import "index";
+@use "index" as *;
 
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
   background-color: $ivory-card;
-  border: 1px solid $bone;
+  border: 1px solid $maroon;
   border-radius: $radius-md;
   overflow: hidden;
   transition: border-color 0.25s $ease-standard, transform 0.25s $ease-standard;
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, $brass 0%, $brass 65%, $maroon 100%);
+  }
+
   &:hover {
-    border-color: $brass-dim;
+    border-color: $maroon-line;
     transform: translateY(-2px);
   }
 }
@@ -30,24 +41,46 @@
 .lattice {
   position: absolute;
   inset: 0;
-  color: $brass;
   opacity: 0.16;
   pointer-events: none;
-  background-image: repeating-linear-gradient(
+  background: $gradient-mesh;
+  mask-image: repeating-linear-gradient(
       45deg,
-      currentColor 0,
-      currentColor 1px,
+      black 0,
+      black 1px,
       transparent 1px,
       transparent 16px
     ),
     repeating-linear-gradient(
       -45deg,
-      currentColor 0,
-      currentColor 1px,
+      black 0,
+      black 1px,
       transparent 1px,
       transparent 16px
     );
-  mask-image: radial-gradient(circle, black, transparent 75%);
+  -webkit-mask-image: repeating-linear-gradient(
+      45deg,
+      black 0,
+      black 1px,
+      transparent 1px,
+      transparent 16px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      black 0,
+      black 1px,
+      transparent 1px,
+      transparent 16px
+    );
+
+  // Fades the mesh toward the edges by painting over it in the visual
+  // panel's own color, rather than stacking a second mask on top.
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, transparent 0%, $espresso-raised 75%);
+  }
 }
 
 .medallion {
@@ -60,7 +93,7 @@
   justify-content: center;
   width: 3.75rem;
   height: 3.75rem;
-  border: 1px solid $brass-dim;
+  border: 1px solid $maroon-bright;
   border-radius: 50%;
   color: $brass;
   font-size: 1.5rem;

@@ -28,8 +28,9 @@ const Nav = () => {
     <div className={`${Styles.container} ${scrolled ? Styles.scrolled : ""}`} id="top">
       <div className={Styles.announce}>
         <p>
-          {t.nav.callUs}: <a href="tel:+255767887999">+255 767 887 999</a>{" "}
-          {t.nav.or} <a href="#idea">{t.nav.fillForm}</a>
+          {t.nav.callUs}: <a href="tel:+255767887999">+255 767 887 999</a>
+          <span className={Styles.divider}>{t.nav.or}</span>
+          <a href="#idea">{t.nav.fillForm}</a>
         </p>
       </div>
       <div className={Styles.bar}>

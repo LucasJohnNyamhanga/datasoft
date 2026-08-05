@@ -1,4 +1,4 @@
-@import "index";
+@use "index" as *;
 
 .container {
   position: relative;
@@ -6,7 +6,7 @@
   min-height: 640px;
   padding-top: 107px;
   overflow: hidden;
-  background-color: $espresso-deep;
+  background: $gradient-shell;
   scroll-margin-top: 90px;
 }
 
@@ -29,6 +29,12 @@
     rgba(15, 36, 24, 0.35) 42%,
     rgba(15, 36, 24, 0) 68%
   );
+}
+
+.network {
+  z-index: 2;
+  mask-image: linear-gradient(100deg, black 0%, black 38%, transparent 62%);
+  -webkit-mask-image: linear-gradient(100deg, black 0%, black 38%, transparent 62%);
 }
 
 .frame {
@@ -105,7 +111,7 @@
   align-items: center;
   justify-content: center;
   padding: 0.9rem 2rem;
-  background-color: $brass;
+  background: $gradient-gold;
   color: $espresso-deep;
   font-family: $font-body;
   font-weight: 600;
@@ -113,11 +119,11 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   border-radius: $radius-sm;
-  transition: background-color 0.25s $ease-standard, transform 0.25s $ease-standard,
+  transition: background 0.25s $ease-standard, transform 0.25s $ease-standard,
     box-shadow 0.25s $ease-standard;
 
   &:hover {
-    background-color: $brass-bright;
+    background: $gradient-gold-hover;
     transform: translateY(-1px);
     box-shadow: $glow-brass;
   }
@@ -155,12 +161,17 @@
     margin-top: 57px;
     padding-top: 0;
     padding-bottom: 2.5rem;
-    background-color: $espresso-deep;
+    background: $gradient-shell;
   }
 
   .image,
   .scrim {
     display: none;
+  }
+
+  .network {
+    mask-image: linear-gradient(to top, black 0%, black 55%, transparent 90%);
+    -webkit-mask-image: linear-gradient(to top, black 0%, black 55%, transparent 90%);
   }
 
   .frame {
@@ -198,19 +209,33 @@
     display: block;
     height: 48px;
     margin-top: 2.75rem;
-    color: $brass;
-    opacity: 0.14;
-    background-image: repeating-linear-gradient(
+    opacity: 0.16;
+    background: $gradient-mesh;
+    mask-image: repeating-linear-gradient(
         45deg,
-        currentColor 0,
-        currentColor 1px,
+        black 0,
+        black 1px,
         transparent 1px,
         transparent 16px
       ),
       repeating-linear-gradient(
         -45deg,
-        currentColor 0,
-        currentColor 1px,
+        black 0,
+        black 1px,
+        transparent 1px,
+        transparent 16px
+      );
+    -webkit-mask-image: repeating-linear-gradient(
+        45deg,
+        black 0,
+        black 1px,
+        transparent 1px,
+        transparent 16px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        black 0,
+        black 1px,
         transparent 1px,
         transparent 16px
       );

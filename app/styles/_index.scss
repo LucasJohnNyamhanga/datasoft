@@ -2,6 +2,8 @@
 // The palette keeps DataSoft's own colors (green / gold / maroon / cream)
 // refined into a cohesive, premium system. See DESIGN.md at the project root.
 
+@use "sass:color";
+
 // Typography
 $font-display: var(--font-fraunces), Georgia, serif;
 $font-body: "Montserrat", sans-serif;
@@ -23,6 +25,7 @@ $forest-bright: #45c078;
 // Closing register (deep wine maroon) — contact + footer, DataSoft's "brief us" register
 $maroon: #591421;
 $maroon-line: #7c2635;
+$maroon-bright: #c9455f;
 
 // Room register (warm cream) — content rooms, cards, forms
 $ivory: #fbf6e7;
@@ -53,3 +56,14 @@ $gutter: clamp(1.25rem, 5vw, 6rem);
 // Motion
 $ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
 $glow-brass: 0 0 40px rgba(212, 160, 23, 0.22);
+
+// Gradients — built only from the palette above, used to add richness/flow
+// to large flat surfaces (shells, buttons, the maroon register).
+$gradient-shell: linear-gradient(165deg, #{$espresso-raised} 0%, #{$espresso-deep} 60%);
+$gradient-gold: linear-gradient(135deg, #{$brass-bright} 0%, #{$brass} 65%);
+$gradient-gold-hover: linear-gradient(135deg, #{color.adjust($brass-bright, $lightness: 4%)} 0%, #{$brass-bright} 65%);
+$gradient-maroon: linear-gradient(165deg, #{color.adjust($maroon, $lightness: 6%)} 0%, #{$maroon} 55%, #{color.adjust($maroon, $lightness: -6%)} 100%);
+
+// Gold flowing into the closing maroon register — used to color the
+// carved-lattice ornament patterns.
+$gradient-mesh: linear-gradient(135deg, #{$brass-bright} 0%, #{$brass} 45%, #{$maroon} 100%);

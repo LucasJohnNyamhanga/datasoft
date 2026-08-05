@@ -1,4 +1,4 @@
-@import "index";
+@use "index" as *;
 
 .container {
   position: fixed;
@@ -38,6 +38,11 @@
         color: $brass-bright;
         border-color: $brass-bright;
       }
+    }
+
+    .divider {
+      display: inline-block;
+      margin: 0 0.5em;
     }
   }
 }

@@ -15,8 +15,10 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   title: "DataSoft Tanzania — Suluhisho za Teknolojia, Mwanza",
+
   description:
     "DataSoft ni nyumba ya kiteknolojia ya Mwanza inayogeuza mawazo ya biashara kuwa programu, tovuti, mitandao na miundo inayofanya kazi — kwa ustadi na umakini wa hali ya juu.",
+
   openGraph: {
     title: "DataSoft Tanzania — Suluhisho za Teknolojia, Mwanza",
     description:
@@ -39,6 +41,7 @@ export const metadata: Metadata = {
     locale: "sw_TZ",
     type: "website",
   },
+
   icons: {
     icon: "/brainas.svg",
     shortcut: "/brainas.svg",
@@ -48,14 +51,11 @@ export const metadata: Metadata = {
       url: "/brainas.svg",
     },
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
+
   verification: {
     google: "oN-oJx51JrDZi5ZxU2E682HRJ0dyDB2ZEe9bGQQy3Ds",
   },
+
   alternates: {
     canonical: "https://www.datasoft.co.tz",
     languages: {
@@ -63,8 +63,10 @@ export const metadata: Metadata = {
       "en-US": "https://www.datasoft.co.tz",
     },
   },
+
   category: "technology",
   referrer: "origin-when-cross-origin",
+
   keywords: [
     "DataSoft Tanzania",
     "ukuzaji wa programu",
@@ -75,10 +77,10 @@ export const metadata: Metadata = {
     "web hosting Tanzania",
     "Mwanza",
   ],
+
   authors: [{ name: "Lucas John" }],
-  colorScheme: "light",
   creator: "Lucas John",
-  publisher: "Lucas John",
+  publisher: "Lucas John"
 };
 
 export default function RootLayout({
@@ -99,3 +101,10 @@ export default function RootLayout({
     </html>
   );
 }
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  colorScheme: "light"
+};

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useLanguage } from "../i18n/LanguageContext";
 import styles from "../styles/serviceHero.module.scss";
 import Reveal from "./Reveal";
+import NetworkPattern from "./NetworkPattern";
 
 type ServiceHeroProps = {
   serviceKey: "software" | "hosting" | "networking" | "graphics";
@@ -16,13 +17,15 @@ const ServiceHero = ({ serviceKey, image }: ServiceHeroProps) => {
 
   return (
     <div className={styles.container}>
+      <NetworkPattern className={styles.network} />
+
       <div className={styles.imageFrame}>
         <Image
           alt={service.title}
           src={image}
           fill
           priority
-          style={{ objectFit: "cover" }}
+          className={styles.image}
           sizes="100vw"
         />
       </div>

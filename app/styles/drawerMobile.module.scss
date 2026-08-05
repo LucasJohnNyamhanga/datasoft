@@ -1,4 +1,4 @@
-@import "index";
+@use "index" as *;
 
 .hamburger {
   display: flex;
@@ -33,11 +33,47 @@
   }
 }
 
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  background-color: rgba(15, 36, 24, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s $ease-standard;
+}
+
+.backdropOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .paper {
-  background-color: $espresso-deep !important;
-  color: $ivory !important;
-  width: 82vw !important;
-  max-width: 340px !important;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1201;
+  background: $gradient-maroon;
+  color: $ivory;
+  width: 82vw;
+  max-width: 340px;
+  box-shadow: -12px 0 40px rgba(0, 0, 0, 0.35);
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.35s $ease-standard, visibility 0.35s $ease-standard;
+}
+
+.paperOpen {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backdrop,
+  .paper {
+    transition: none;
+  }
 }
 
 .panel {
@@ -55,7 +91,7 @@
   text-transform: uppercase;
   color: $bone;
   padding: 1rem 0;
-  border-bottom: 1px solid $espresso-line;
+  border-bottom: 1px solid $maroon-line;
   transition: color 0.2s $ease-standard, padding-left 0.2s $ease-standard;
 
   &:hover {

@@ -1,4 +1,4 @@
-@import "index";
+@use "index" as *;
 
 .container {
   width: 100%;
@@ -38,6 +38,7 @@
   flex-direction: row;
   align-items: center;
   gap: 0.5rem;
+  cursor: pointer;
 
   .name {
     font-family: $font-body;

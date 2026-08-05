@@ -1,11 +1,17 @@
-@import "index";
+@use "index" as *;
 
 .container {
   position: relative;
   width: 100%;
-  background-color: $espresso-deep;
+  background: $gradient-shell;
   overflow: hidden;
   scroll-margin-top: 90px;
+}
+
+.network {
+  z-index: 1;
+  mask-image: radial-gradient(ellipse 60% 80% at 78% 30%, black, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 80% at 78% 30%, black, transparent 70%);
 }
 
 .subContainer {
@@ -73,9 +79,9 @@
 .number {
   display: block;
   font-family: $font-display;
-  font-weight: 380;
+  font-weight: 600;
   font-size: 1.75rem;
-  color: $brass;
+  color: $maroon-bright;
   margin-bottom: 1.5rem;
 }
 
@@ -112,20 +118,34 @@
   right: 0;
   bottom: 0;
   height: 64px;
-  color: $brass;
-  opacity: 0.12;
+  opacity: 0.16;
   pointer-events: none;
-  background-image: repeating-linear-gradient(
+  background: $gradient-mesh;
+  mask-image: repeating-linear-gradient(
       45deg,
-      currentColor 0,
-      currentColor 1px,
+      black 0,
+      black 1px,
       transparent 1px,
       transparent 18px
     ),
     repeating-linear-gradient(
       -45deg,
-      currentColor 0,
-      currentColor 1px,
+      black 0,
+      black 1px,
+      transparent 1px,
+      transparent 18px
+    );
+  -webkit-mask-image: repeating-linear-gradient(
+      45deg,
+      black 0,
+      black 1px,
+      transparent 1px,
+      transparent 18px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      black 0,
+      black 1px,
       transparent 1px,
       transparent 18px
     );

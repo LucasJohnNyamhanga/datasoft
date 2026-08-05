@@ -1,8 +1,8 @@
-@import "index";
+@use "index" as *;
 
 .container {
   width: 100%;
-  background-color: $maroon;
+  background: $gradient-maroon;
 }
 
 .top {

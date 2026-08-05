@@ -28,10 +28,10 @@ const sw = {
     languageLabel: "Lugha",
   },
   hero: {
-    eyebrow: "DataSoft · Mwanza, Tanzania",
+    eyebrow: "DataSoft Tanzania",
     headlineLines: ["Wazo Moja.", "Suluhisho Kamili."],
     subheadline:
-      "Hatujengi kila kitu kwa kila mtu. Tunachagua kujenga suluhisho moja sahihi kwa biashara yako. Iwe programu au tovuti, iwe mtandao au mfumo, tunajenga kwa usahihi wa ufundi na uelewa wa soko la Tanzania.",
+      "Hatujengi kila kitu kwa kila mtu. Tunachagua kujenga suluhisho moja sahihi kwa biashara yako. Iwe programu au tovuti, iwe mtandao au mfumo. Tutaujenga kwa usahihi wa ufundi na uelewa wa soko la Tanzania.",
     ctaPrimary: "Anzisha Mradi Wako",
     ctaSecondary: "Ona Huduma Zetu",
   },
@@ -39,7 +39,7 @@ const sw = {
     eyebrow: "Huduma Zetu",
     heading: "Nguzo Nne za Kazi Yetu",
     intro:
-      "Kampuni moja, uwezo kamili. Kutoka wazo la kwanza hadi mfumo unaofanya kazi, tovuti inayokuwezesha, mtandao unaoutegemea, na mfumo unaouza.",
+      "Kampuni moja, uwezo kamili. Kutoka wazo la kwanza hadi mfumo unaofanya kazi, tovuti inayokuwezesha, mtandao unaoutegemea au mfumo unaouza.",
     services: [
       {
         key: "software",
@@ -270,7 +270,7 @@ const en: Dict = {
     languageLabel: "Language",
   },
   hero: {
-    eyebrow: "DataSoft · Mwanza, Tanzania",
+    eyebrow: "DataSoft Tanzania",
     headlineLines: ["One Idea.", "A Complete Solution."],
     subheadline:
       "We don't build everything for everyone. We choose to build the one right solution for your business whether its a software, website, network or system design. With a craftsman's precision and a real understanding of the Tanzanian market.",

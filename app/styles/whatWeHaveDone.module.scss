@@ -1,8 +1,8 @@
-@import "index";
+@use "index" as *;
 
 .container {
   width: 100%;
-  background-color: $ivory;
+  background: linear-gradient(to bottom, $ivory 0%, $ivory 88%, rgba($maroon, 0.07) 100%);
   scroll-margin-top: 90px;
 }
 

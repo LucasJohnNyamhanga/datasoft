@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useLanguage } from "../i18n/LanguageContext";
 import styles from "../styles/hero.module.scss";
 import Reveal from "./Reveal";
+import NetworkPattern from "./NetworkPattern";
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -21,6 +22,7 @@ const Hero = () => {
       </div>
 
       <div className={styles.scrim} />
+      <NetworkPattern className={styles.network} />
 
       <div className={styles.frame}>
         <div className={styles.card}>
