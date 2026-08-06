@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import styles from "./styles/page.module.scss";
 import NotFoundContent from "./components/NotFoundContent";
 import ContactUs from "./components/Contact";
 import Footer from "./components/Footer";
@@ -11,11 +12,11 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <>
+    <div className={styles.main}>
       <NotFoundContent />
       <ContactUs />
       <Footer />
       <GoToTop />
-    </>
+    </div>
   );
 }

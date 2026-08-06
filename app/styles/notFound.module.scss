@@ -3,7 +3,8 @@
 .container {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: min(100vh, 720px);
+  margin-bottom: $space-xl;
   padding-top: var(--nav-height, 107px);
   overflow: hidden;
   background: $gradient-hero;
@@ -124,6 +125,7 @@
 @media (max-width: 640px) {
   .container {
     min-height: 0;
+    margin-bottom: $space-lg;
     padding-bottom: 3rem;
   }
 
