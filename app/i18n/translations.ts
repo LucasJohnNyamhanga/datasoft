@@ -143,6 +143,15 @@ const sw = {
   common: {
     letsWork: "Wasiliana Nasi",
   },
+  notFound: {
+    eyebrow: "Hitilafu 404",
+    headlineLines: ["Ooo, Umepotea Njia.", "Tupo Hapa Kukusaidia."],
+    message:
+      "Ukurasa unaoutafuta haupo, au huenda kiungo kimebadilika kidogo. Usijali — hata mifumo bora zaidi huwa na njia panda kama hii mara moja moja.",
+    subMessage:
+      "Bofya kitufe hapa chini nasi tutakurudisha mahali ambapo teknolojia na ubunifu hukutana.",
+    ctaHome: "Rudi Nyumbani",
+  },
   portfolio: {
     eyebrow: "Uwezo Wetu",
     heading: "Haya Ndiyo Tunayoyajenga",
@@ -388,6 +397,15 @@ const en: Dict = {
   },
   common: {
     letsWork: "Contact Us",
+  },
+  notFound: {
+    eyebrow: "Error 404",
+    headlineLines: ["Oops, You've Drifted.", "We're Here to Help."],
+    message:
+      "The page you're looking for isn't here, or the link may have shifted slightly. Even the best-built systems hit an unexpected junction once in a while.",
+    subMessage:
+      "Tap below and we'll guide you back to where technology and craft meet.",
+    ctaHome: "Back to Home",
   },
   portfolio: {
     eyebrow: "Our Capability",

@@ -1,0 +1,142 @@
+@use "index" as *;
+
+.scene {
+  position: relative;
+  width: clamp(200px, 30vw, 280px);
+  height: clamp(200px, 30vw, 280px);
+  perspective: 900px;
+}
+
+.core {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  animation: tumble 16s linear infinite;
+}
+
+.ringWrap {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+}
+
+.ringOne {
+  transform: rotateX(78deg);
+}
+
+.ringTwo {
+  transform: rotateX(78deg) rotateZ(60deg);
+}
+
+.ringThree {
+  transform: rotateX(78deg) rotateZ(-60deg);
+}
+
+.ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid rgba(212, 160, 23, 0.55);
+  box-shadow: 0 0 22px rgba(212, 160, 23, 0.25);
+}
+
+.ringTwo .ring {
+  border-color: rgba(74, 144, 217, 0.55);
+  box-shadow: 0 0 22px rgba(74, 144, 217, 0.25);
+}
+
+.ringThree .ring {
+  border-color: rgba(240, 197, 80, 0.45);
+  box-shadow: 0 0 18px rgba(240, 197, 80, 0.2);
+}
+
+.electron {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 9px;
+  height: 9px;
+  margin: -4.5px 0 0 -4.5px;
+  border-radius: 50%;
+  background: $brass-bright;
+  box-shadow: 0 0 10px 3px rgba(240, 197, 80, 0.8);
+  animation: orbit 6s linear infinite;
+}
+
+.ringTwo .electron {
+  background: $cobalt-bright;
+  box-shadow: 0 0 10px 3px rgba(74, 144, 217, 0.85);
+  animation-duration: 7.5s;
+  animation-direction: reverse;
+}
+
+.ringThree .electron {
+  animation-duration: 9s;
+}
+
+.nucleus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 46px;
+  height: 46px;
+  margin: -23px 0 0 -23px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 34% 30%, $brass-bright 0%, $cobalt-bright 55%, $cobalt 100%);
+  box-shadow: 0 0 46px 14px rgba(240, 197, 80, 0.35), 0 0 90px 30px rgba(74, 144, 217, 0.2);
+  animation: breathe 3.6s ease-in-out infinite;
+}
+
+.floorGlow {
+  position: absolute;
+  left: 50%;
+  bottom: -6%;
+  width: 70%;
+  height: 24px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(240, 197, 80, 0.28) 0%, rgba(240, 197, 80, 0) 72%);
+  filter: blur(2px);
+}
+
+@keyframes tumble {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(clamp(88px, 13vw, 122px)) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(clamp(88px, 13vw, 122px)) rotate(-360deg);
+  }
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .core,
+  .electron,
+  .nucleus {
+    animation: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .scene {
+    width: 190px;
+    height: 190px;
+  }
+}

@@ -1,0 +1,137 @@
+@use "index" as *;
+
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: var(--nav-height, 107px);
+  overflow: hidden;
+  background: $gradient-hero;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pattern {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.35;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(
+    circle at 50% 38%,
+    rgba(13, 44, 78, 0.2) 0%,
+    rgba(13, 44, 78, 0.72) 68%,
+    rgba(13, 44, 78, 0.92) 100%
+  );
+}
+
+.frame {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: clamp(3rem, 8vw, 4.5rem) $gutter 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.sceneWrap {
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $brass;
+  margin: 0 0 1rem;
+}
+
+.headline {
+  font-family: $font-display;
+  font-weight: 380;
+  font-size: clamp(2.1rem, 4.5vw, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: $ivory;
+  margin: 0;
+}
+
+.line {
+  display: block;
+}
+
+.lineItalic {
+  font-style: italic;
+  color: $brass-bright;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 42ch;
+  margin: 1.5rem 0 0;
+
+  p {
+    font-family: $font-body;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: $bone;
+    margin: 0;
+  }
+}
+
+.actions {
+  margin-top: 2.25rem;
+}
+
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2.25rem;
+  background: $gradient-gold;
+  color: $sapphire-deep;
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: $radius-sm;
+  transition: background 0.25s $ease-standard, transform 0.25s $ease-standard,
+    box-shadow 0.25s $ease-standard;
+
+  &:hover {
+    background: $gradient-gold-hover;
+    transform: translateY(-1px);
+    box-shadow: $glow-brass;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    min-height: 0;
+    padding-bottom: 3rem;
+  }
+
+  .frame {
+    padding: 2.5rem 1.25rem 3.5rem;
+  }
+
+  .headline {
+    font-size: clamp(1.9rem, 8vw, 2.5rem);
+  }
+}
