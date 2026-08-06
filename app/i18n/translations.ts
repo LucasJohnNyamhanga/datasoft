@@ -127,7 +127,7 @@ const sw = {
     visitUs: "TUTEMBELEE",
     addressLines: [
       "Nyumba Na. 640,",
-      "Barabara ya Utafiti wa Tiba,",
+      "Barabara ya Medical Research,",
       "Kitangiri, Ilemela,",
       "Mwanza, Tanzania.",
     ],
