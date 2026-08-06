@@ -115,7 +115,7 @@ const sw = {
     fields: {
       fullName: "Jina Kamili",
       contact: "Namba ya Simu au Barua Pepe",
-      orgName: "Jina la Shirika",
+      orgName: "Jina la lako au Shirika",
       project: "Maelezo ya Mradi",
     },
     submit: "Tuma Ujumbe",
