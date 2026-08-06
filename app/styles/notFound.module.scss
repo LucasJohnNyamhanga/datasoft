@@ -3,9 +3,9 @@
 .container {
   position: relative;
   width: 100%;
-  min-height: min(100vh, 720px);
+  min-height: 640px;
   padding-top: var(--nav-height, 107px);
-  padding-bottom: $space-xl;
+  padding-bottom: $space-lg;
   overflow: hidden;
   background: radial-gradient(
       ellipse 60% 140px at 50% 100%,
@@ -43,7 +43,7 @@
   width: 100%;
   max-width: 40rem;
   margin: 0 auto;
-  padding: clamp(3rem, 8vw, 4.5rem) $gutter 5rem;
+  padding: clamp(1.75rem, 5vw, 3rem) $gutter 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,7 +51,28 @@
 }
 
 .sceneWrap {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+@keyframes heroIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.heroIn {
+  animation: heroIn 0.7s $ease-standard both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroIn {
+    animation: none;
+  }
 }
 
 .eyebrow {

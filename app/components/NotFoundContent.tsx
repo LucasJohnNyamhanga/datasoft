@@ -4,7 +4,6 @@ import { useLanguage } from "../i18n/LanguageContext";
 import styles from "../styles/notFound.module.scss";
 import NetworkPattern from "./NetworkPattern";
 import TechCore from "./TechCore";
-import Reveal from "./Reveal";
 
 const NotFoundContent = () => {
   const { t } = useLanguage();
@@ -15,33 +14,36 @@ const NotFoundContent = () => {
       <div className={styles.scrim} />
 
       <div className={styles.frame}>
-        <Reveal className={styles.sceneWrap}>
+        <div className={`${styles.sceneWrap} ${styles.heroIn}`}>
           <TechCore />
-        </Reveal>
+        </div>
 
-        <Reveal as="p" className={styles.eyebrow} delay={80}>
+        <p className={`${styles.eyebrow} ${styles.heroIn}`} style={{ animationDelay: "80ms" }}>
           {t.notFound.eyebrow}
-        </Reveal>
+        </p>
 
         <h1 className={styles.headline}>
-          <Reveal as="span" className={styles.line} delay={140}>
+          <span className={`${styles.line} ${styles.heroIn}`} style={{ animationDelay: "140ms" }}>
             {t.notFound.headlineLines[0]}
-          </Reveal>
-          <Reveal as="span" className={`${styles.line} ${styles.lineItalic}`} delay={200}>
+          </span>
+          <span
+            className={`${styles.line} ${styles.lineItalic} ${styles.heroIn}`}
+            style={{ animationDelay: "200ms" }}
+          >
             {t.notFound.headlineLines[1]}
-          </Reveal>
+          </span>
         </h1>
 
-        <Reveal className={styles.message} delay={260}>
+        <div className={`${styles.message} ${styles.heroIn}`} style={{ animationDelay: "260ms" }}>
           <p>{t.notFound.message}</p>
           <p>{t.notFound.subMessage}</p>
-        </Reveal>
+        </div>
 
-        <Reveal className={styles.actions} delay={320}>
+        <div className={`${styles.actions} ${styles.heroIn}`} style={{ animationDelay: "320ms" }}>
           <Link href="/" className={styles.primaryButton}>
             {t.notFound.ctaHome}
           </Link>
-        </Reveal>
+        </div>
       </div>
     </div>
   );
