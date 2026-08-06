@@ -54,7 +54,7 @@
   right: 0;
   bottom: 0;
   z-index: 1201;
-  background: $gradient-maroon;
+  background: $gradient-shell;
   color: $ivory;
   width: 82vw;
   max-width: 340px;
@@ -91,7 +91,7 @@
   text-transform: uppercase;
   color: $bone;
   padding: 1rem 0;
-  border-bottom: 1px solid $maroon-line;
+  border-bottom: 1px solid $sapphire-line;
   transition: color 0.2s $ease-standard, padding-left 0.2s $ease-standard;
 
   &:hover {
