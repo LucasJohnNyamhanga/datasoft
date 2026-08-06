@@ -110,7 +110,7 @@ const sw = {
     eyebrow: "Wasiliana Nasi",
     heading: "Tuambie Kuhusu Mradi Wako",
     intro:
-      "Tunaweza kuanza kulifanyia kazi wazo lako ndani ya masaa machache. Tujaze taarifa chache na tutawasiliana nawe haraka.",
+      "Tunaweza kuanza kulifanyia kazi wazo lako ndani ya masaa machache. Jaza taarifa zako chache na tutawasiliana nawe haraka iwezekanavyo.",
     quote: "Wazo Sahihi + Bidhaa Sahihi + Soko Sahihi = Mafanikio",
     fields: {
       fullName: "Jina Kamili",
