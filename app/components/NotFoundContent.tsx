@@ -18,31 +18,33 @@ const NotFoundContent = () => {
           <TechCore />
         </div>
 
-        <p className={`${styles.eyebrow} ${styles.heroIn}`} style={{ animationDelay: "80ms" }}>
-          {t.notFound.eyebrow}
-        </p>
+        <div className={styles.copy}>
+          <p className={`${styles.eyebrow} ${styles.heroIn}`} style={{ animationDelay: "80ms" }}>
+            {t.notFound.eyebrow}
+          </p>
 
-        <h1 className={styles.headline}>
-          <span className={`${styles.line} ${styles.heroIn}`} style={{ animationDelay: "140ms" }}>
-            {t.notFound.headlineLines[0]}
-          </span>
-          <span
-            className={`${styles.line} ${styles.lineItalic} ${styles.heroIn}`}
-            style={{ animationDelay: "200ms" }}
-          >
-            {t.notFound.headlineLines[1]}
-          </span>
-        </h1>
+          <h1 className={styles.headline}>
+            <span className={`${styles.line} ${styles.heroIn}`} style={{ animationDelay: "140ms" }}>
+              {t.notFound.headlineLines[0]}
+            </span>
+            <span
+              className={`${styles.line} ${styles.lineItalic} ${styles.heroIn}`}
+              style={{ animationDelay: "200ms" }}
+            >
+              {t.notFound.headlineLines[1]}
+            </span>
+          </h1>
 
-        <div className={`${styles.message} ${styles.heroIn}`} style={{ animationDelay: "260ms" }}>
-          <p>{t.notFound.message}</p>
-          <p>{t.notFound.subMessage}</p>
-        </div>
+          <div className={`${styles.message} ${styles.heroIn}`} style={{ animationDelay: "260ms" }}>
+            <p>{t.notFound.message}</p>
+            <p>{t.notFound.subMessage}</p>
+          </div>
 
-        <div className={`${styles.actions} ${styles.heroIn}`} style={{ animationDelay: "320ms" }}>
-          <Link href="/" className={styles.primaryButton}>
-            {t.notFound.ctaHome}
-          </Link>
+          <div className={`${styles.actions} ${styles.heroIn}`} style={{ animationDelay: "320ms" }}>
+            <Link href="/" className={styles.primaryButton}>
+              {t.notFound.ctaHome}
+            </Link>
+          </div>
         </div>
       </div>
     </div>

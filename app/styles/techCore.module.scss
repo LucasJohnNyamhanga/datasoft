@@ -2,9 +2,9 @@
 
 .scene {
   position: relative;
-  width: clamp(150px, 20vw, 200px);
-  height: clamp(150px, 20vw, 200px);
-  perspective: 700px;
+  width: clamp(150px, 16vw, 240px);
+  height: clamp(150px, 16vw, 240px);
+  perspective: 800px;
 }
 
 .core {
