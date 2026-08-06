@@ -15,7 +15,7 @@ const sw = {
   meta: {
     title: "DataSoft Tanzania — Suluhisho la Teknolojia",
     description:
-      "DataSoft ni nyumba ya kiteknolojia inayogeuza mawazo ya biashara kuwa programu, tovuti, mitandao na miundo inayofanya kazi kwa ustadi na umakini wa hali ya juu.",
+      "DataSoft ni kitovu cha kiteknolojia ambapo uendeshaji wa biashara hugeuzwa kuwa programu, tovuti, mitandao au mfumo unaofanya kazi kwa ustadi na umakini wa hali ya juu.",
   },
   nav: {
     home: "Nyumbani",
@@ -261,7 +261,7 @@ const en: Dict = {
   meta: {
     title: "DataSoft Tanzania — Technology Solutions",
     description:
-      "DataSoft is a Mwanza-based technology house turning business ideas into working software, websites, networks and systems that are built with craft and precision.",
+      "DataSoft is a technological center turning business into working software, websites, networks or systems that are built with craft and precision.",
   },
   nav: {
     home: "Home",
