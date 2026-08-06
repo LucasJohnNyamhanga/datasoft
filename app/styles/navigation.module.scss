@@ -6,45 +6,139 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: $espresso-deep;
+  background-color: $sapphire-deep;
   border-bottom: 1px solid transparent;
   transition: border-color 0.3s $ease-standard, box-shadow 0.3s $ease-standard;
 
   &.scrolled {
-    border-bottom-color: $espresso-line;
+    border-bottom-color: $sapphire-line;
     box-shadow: 0 12px 30px -18px rgba(0, 0, 0, 0.6);
   }
 }
 
 .announce {
   width: 100%;
+  background-color: $sapphire-raised;
+  border-bottom: 1px solid $sapphire-line;
+}
 
-  p {
-    max-width: $content-max;
-    margin: 0 auto;
-    padding: 0.55rem $gutter;
-    text-align: center;
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.03em;
-    color: $bone;
+.announceRow {
+  max-width: $content-max;
+  margin: 0 auto;
+  padding: 0.6rem $gutter;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  font-family: $font-body;
+}
 
-    a {
-      color: $brass;
-      border-bottom: 1px solid $brass-dim;
-      transition: color 0.2s $ease-standard, border-color 0.2s $ease-standard;
+.callLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  white-space: nowrap;
 
-      &:hover {
-        color: $brass-bright;
-        border-color: $brass-bright;
+  &:hover {
+    .callIcon {
+      color: $brass-bright;
+      filter: drop-shadow(0 0 6px rgba($brass, 0.5));
+    }
+
+    .callText {
+      color: $ivory;
+
+      &::after {
+        transform: scaleX(1);
       }
     }
 
-    .divider {
-      display: inline-block;
-      margin: 0 0.5em;
+    .callNumber {
+      color: $brass-bright;
     }
   }
+}
+
+.callIcon {
+  color: $brass;
+  transition: color 0.25s $ease-standard, filter 0.25s $ease-standard;
+}
+
+.callText {
+  position: relative;
+  padding-bottom: 3px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: $bone;
+  transition: color 0.25s $ease-standard;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    background-color: $brass;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s $ease-standard;
+  }
+}
+
+.callNumber {
+  color: $brass;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  transition: color 0.25s $ease-standard;
+}
+
+.divider {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: rgba($bone, 0.55);
+  white-space: nowrap;
+}
+
+.dividerLine {
+  width: 1px;
+  height: 10px;
+  background-color: $sapphire-line;
+}
+
+.formLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.38rem 0.95rem;
+  border: 1px solid $brass-dim;
+  border-radius: $radius-sm;
+  color: $ivory;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: border-color 0.25s $ease-standard, color 0.25s $ease-standard;
+
+  &:hover {
+    border-color: $brass;
+    color: $brass-bright;
+
+    .formIcon {
+      transform: translateX(3px);
+    }
+  }
+}
+
+.formIcon {
+  transition: transform 0.25s $ease-standard;
 }
 
 .bar {
@@ -75,7 +169,7 @@
     font-family: $font-body;
     font-weight: 700;
     font-size: 1.4rem;
-    color: $forest-bright;
+    color: $cobalt-bright;
   }
 }
 

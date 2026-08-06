@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter, useSelectedLayoutSegment } from "next/navigation";
+import { FaPhoneAlt, FaArrowRight } from "react-icons/fa";
 import Styles from "../styles/navigation.module.scss";
 import { useLanguage } from "../i18n/LanguageContext";
 import LanguageToggle from "./LanguageToggle";
@@ -27,11 +28,27 @@ const Nav = () => {
   return (
     <div className={`${Styles.container} ${scrolled ? Styles.scrolled : ""}`} id="top">
       <div className={Styles.announce}>
-        <p>
-          {t.nav.callUs}: <a href="tel:+255767887999">+255 767 887 999</a>
-          <span className={Styles.divider}>{t.nav.or}</span>
-          <a href="#idea">{t.nav.fillForm}</a>
-        </p>
+        <div className={Styles.announceRow}>
+          <a
+            href="tel:+255767887999"
+            className={Styles.callLink}
+            aria-label={`${t.nav.callUs} +255 767 887 999`}
+          >
+            <FaPhoneAlt className={Styles.callIcon} size={11} aria-hidden="true" />
+            <span className={Styles.callText} aria-hidden="true">
+              {t.nav.callUs} <span className={Styles.callNumber}>+255 767 887 999</span>
+            </span>
+          </a>
+          <span className={Styles.divider} aria-hidden="true">
+            <span className={Styles.dividerLine} />
+            {t.nav.or}
+            <span className={Styles.dividerLine} />
+          </span>
+          <a href="#idea" className={Styles.formLink}>
+            {t.nav.fillForm}
+            <FaArrowRight className={Styles.formIcon} size={10} aria-hidden="true" />
+          </a>
+        </div>
       </div>
       <div className={Styles.bar}>
         <nav className={Styles.nav}>

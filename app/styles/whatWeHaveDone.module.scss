@@ -3,7 +3,7 @@
 .container {
   width: 100%;
   background: linear-gradient(to bottom, $ivory 0%, $ivory 88%, rgba($maroon, 0.07) 100%);
-  scroll-margin-top: 90px;
+  scroll-margin-top: var(--nav-height, 90px);
 }
 
 .subContainer {

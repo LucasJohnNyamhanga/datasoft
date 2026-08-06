@@ -8,7 +8,7 @@
   align-items: center;
   background: $gradient-shell;
   overflow: hidden;
-  padding-top: 110px;
+  padding-top: var(--nav-height, 110px);
 }
 
 .network {
@@ -33,7 +33,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(15, 36, 24, 0.15), rgba(15, 36, 24, 0.5));
+    background: linear-gradient(180deg, rgba(13, 44, 78, 0.15), rgba(13, 44, 78, 0.5));
   }
 }
 
@@ -113,7 +113,7 @@
   margin-top: 2.25rem;
   padding: 1rem 2.25rem;
   background: $gradient-gold;
-  color: $espresso-deep;
+  color: $sapphire-deep;
   font-family: $font-body;
   font-weight: 600;
   font-size: 0.8rem;

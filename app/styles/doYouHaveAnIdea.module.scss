@@ -2,8 +2,9 @@
 
 .container {
   width: 100%;
+  margin-top: -56px;
   background: $gradient-maroon;
-  scroll-margin-top: 90px;
+  scroll-margin-top: var(--nav-height, 90px);
   clip-path: polygon(0 0, 50% 56px, 100% 0, 100% 100%, 0 100%);
 }
 
@@ -62,7 +63,7 @@
   gap: 0.85rem;
   margin-top: $space-md;
   padding-top: $space-md;
-  border-top: 1px solid $espresso-line;
+  border-top: 1px solid $sapphire-line;
 
   p {
     font-family: $font-display;
@@ -135,7 +136,7 @@
   justify-content: center;
   padding: 1rem 2.25rem;
   background: $gradient-gold;
-  color: $espresso-deep;
+  color: $sapphire-deep;
   border: none;
   font-family: $font-body;
   font-weight: 600;
@@ -161,6 +162,7 @@
 
 @media (max-width: 640px) {
   .container {
+    margin-top: -28px;
     clip-path: polygon(0 0, 50% 28px, 100% 0, 100% 100%, 0 100%);
   }
 

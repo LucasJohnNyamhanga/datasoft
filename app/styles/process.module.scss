@@ -5,7 +5,7 @@
   width: 100%;
   background: $gradient-shell;
   overflow: hidden;
-  scroll-margin-top: 90px;
+  scroll-margin-top: var(--nav-height, 90px);
 }
 
 .network {
@@ -73,7 +73,7 @@
 .step {
   position: relative;
   padding-top: 1.75rem;
-  border-top: 1px solid $espresso-line;
+  border-top: 1px solid $sapphire-line;
 }
 
 .number {

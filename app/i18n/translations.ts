@@ -29,9 +29,12 @@ const sw = {
   },
   hero: {
     eyebrow: "DataSoft Tanzania",
-    headlineLines: ["Wazo Moja.", "Suluhisho Kamili."],
-    subheadline:
-      "Hatujengi kila kitu kwa kila mtu. Tunachagua kujenga suluhisho moja sahihi kwa biashara yako. Iwe programu au tovuti, iwe mtandao au mfumo. Tutaujenga kwa usahihi wa ufundi na uelewa wa soko la Tanzania.",
+    headlineLines: ["Muunganiko Mmoja.", "Suluhisho Kamili."],
+    subheadline: [
+      "Kila biashara ina changamoto yake. Ndiyo maana hatutoi suluhisho za jumla.",
+      "Tunabuni programu, tovuti na mitandao inayofika popote biashara yako inapohitaji — hadi ndani ya chumba kinachohusika.",
+      "Teknolojia iliyojengwa kwa usahihi. Muunganiko unaotegemewa.",
+    ],
     ctaPrimary: "Anzisha Mradi Wako",
     ctaSecondary: "Ona Huduma Zetu",
   },
@@ -271,9 +274,12 @@ const en: Dict = {
   },
   hero: {
     eyebrow: "DataSoft Tanzania",
-    headlineLines: ["One Idea.", "A Complete Solution."],
-    subheadline:
-      "We don't build everything for everyone. We choose to build the one right solution for your business whether its a software, website, network or system design. With a craftsman's precision and a real understanding of the Tanzanian market.",
+    headlineLines: ["One Connection.", "A Complete Solution."],
+    subheadline: [
+      "Every business has its own challenge. That's why we don't offer generic solutions.",
+      "We design software, websites and networks that reach wherever your business needs them — all the way to the room where it matters.",
+      "Technology built with precision. Connections you can rely on.",
+    ],
     ctaPrimary: "Start Your Project",
     ctaSecondary: "See Our Services",
   },

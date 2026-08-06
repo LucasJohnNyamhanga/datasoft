@@ -86,7 +86,7 @@ export const MuiDrawer = () => {
 
           <div className={Styles.footer}>
             <div className={Styles.callLine}>
-              {t.nav.callUs}: <a href="tel:+255767887999">+255 767 887 999</a>
+              {t.nav.callUs} <a href="tel:+255767887999">+255 767 887 999</a>
             </div>
             <LanguageToggle />
           </div>

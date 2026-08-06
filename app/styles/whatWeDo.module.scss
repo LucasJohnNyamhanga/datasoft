@@ -3,7 +3,7 @@
 .container {
   width: 100%;
   background-color: $ivory;
-  scroll-margin-top: 90px;
+  scroll-margin-top: var(--nav-height, 90px);
 }
 
 .subContainer {

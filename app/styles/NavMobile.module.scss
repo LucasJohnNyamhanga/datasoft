@@ -2,27 +2,67 @@
 
 .container {
   width: 100%;
-  background-color: $espresso-deep;
-  border-bottom: 1px solid $espresso-line;
+  background-color: $sapphire-deep;
+  border-bottom: 1px solid $sapphire-line;
 }
 
 .announce {
-  border-bottom: 1px solid $espresso-line;
-  padding: 0.35rem 1rem;
+  background-color: $sapphire-raised;
+  border-bottom: 1px solid $sapphire-line;
+  padding: 0.5rem 1rem;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 0.1rem;
+  justify-content: center;
+  gap: 0.6rem;
+}
 
-  div {
-    font-size: 0.68rem;
-    color: $bone;
-    text-align: center;
+.callLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
 
-    a {
-      color: $brass;
-    }
+.callIcon {
+  color: $brass;
+}
+
+.callNumber {
+  font-family: $font-body;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: $bone;
+}
+
+.dividerLine {
+  width: 1px;
+  height: 10px;
+  background-color: $sapphire-line;
+}
+
+.formLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid $brass-dim;
+  border-radius: $radius-sm;
+  color: $ivory;
+  font-family: $font-body;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  &:active {
+    border-color: $brass;
+    color: $brass-bright;
   }
+}
+
+.formIcon {
+  color: $brass;
 }
 
 .bar {
@@ -44,7 +84,7 @@
     font-family: $font-body;
     font-weight: 700;
     font-size: 1.2rem;
-    color: $forest-bright;
+    color: $cobalt-bright;
   }
 }
 

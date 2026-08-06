@@ -4,13 +4,13 @@
   position: relative;
   width: 100%;
   min-height: 640px;
-  padding-top: 107px;
+  padding-top: var(--nav-height, 107px);
   overflow: hidden;
-  background: $gradient-shell;
-  scroll-margin-top: 90px;
+  background: $gradient-hero;
+  scroll-margin-top: var(--nav-height, 90px);
 }
 
-.image {
+.cityMap {
   position: absolute;
   top: 110px;
   right: 0;
@@ -25,16 +25,10 @@
   z-index: 2;
   background: linear-gradient(
     100deg,
-    rgba(15, 36, 24, 0.72) 0%,
-    rgba(15, 36, 24, 0.35) 42%,
-    rgba(15, 36, 24, 0) 68%
+    rgba(13, 44, 78, 0.74) 0%,
+    rgba(13, 44, 78, 0.38) 42%,
+    rgba(13, 44, 78, 0) 68%
   );
-}
-
-.network {
-  z-index: 2;
-  mask-image: linear-gradient(100deg, black 0%, black 38%, transparent 62%);
-  -webkit-mask-image: linear-gradient(100deg, black 0%, black 38%, transparent 62%);
 }
 
 .frame {
@@ -54,7 +48,7 @@
 .card {
   max-width: 34rem;
   padding: clamp(2rem, 4vw, 3rem);
-  background-color: rgba(15, 36, 24, 0.86);
+  background-color: rgba(13, 44, 78, 0.86);
   border: 1px solid rgba(212, 160, 23, 0.3);
   border-radius: $radius-md;
 }
@@ -89,13 +83,20 @@
 }
 
 .subheadline {
-  font-family: $font-body;
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: $bone;
-  max-width: 42ch;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  max-width: 52ch;
   margin: 1.5rem 0 0;
+
+  p {
+    font-family: $font-body;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: $bone;
+    margin: 0;
+  }
 }
 
 .actions {
@@ -112,7 +113,7 @@
   justify-content: center;
   padding: 0.9rem 2rem;
   background: $gradient-gold;
-  color: $espresso-deep;
+  color: $sapphire-deep;
   font-family: $font-body;
   font-weight: 600;
   font-size: 0.78rem;
@@ -158,20 +159,28 @@
 @media (max-width: 900px) {
   .container {
     min-height: 0;
-    margin-top: 57px;
+    margin-top: var(--nav-height, 57px);
     padding-top: 0;
     padding-bottom: 2.5rem;
-    background: $gradient-shell;
+    background: $gradient-hero;
   }
 
-  .image,
+  // A separate illustration band pushed the CTA below the fold — the
+  // message matters more than the map, so instead they share the same
+  // space: the map runs full-bleed behind the text, dimmed by the scrim
+  // just enough that the map still reads (streets, nodes, the HQ cone) but
+  // the headline/CTA are unambiguously the foreground.
+  .cityMap {
+    top: 0;
+  }
+
   .scrim {
-    display: none;
-  }
-
-  .network {
-    mask-image: linear-gradient(to top, black 0%, black 55%, transparent 90%);
-    -webkit-mask-image: linear-gradient(to top, black 0%, black 55%, transparent 90%);
+    background: linear-gradient(
+      180deg,
+      rgba(13, 44, 78, 0.6) 0%,
+      rgba(13, 44, 78, 0.74) 55%,
+      rgba(13, 44, 78, 0.68) 100%
+    );
   }
 
   .frame {
@@ -179,6 +188,8 @@
     padding: 2.75rem 1.25rem 0;
   }
 
+  // No boxed panel — text sits directly on the dimmed map rather than in a
+  // separate opaque card, so background and message read as one surface.
   .card {
     max-width: none;
     width: 100%;
@@ -205,39 +216,9 @@
     text-align: center;
   }
 
+  // The map itself now carries the network motif, so the old ornament strip
+  // (a stand-in for when mobile had no imagery at all) would be redundant.
   .mobileLattice {
-    display: block;
-    height: 48px;
-    margin-top: 2.75rem;
-    opacity: 0.16;
-    background: $gradient-mesh;
-    mask-image: repeating-linear-gradient(
-        45deg,
-        black 0,
-        black 1px,
-        transparent 1px,
-        transparent 16px
-      ),
-      repeating-linear-gradient(
-        -45deg,
-        black 0,
-        black 1px,
-        transparent 1px,
-        transparent 16px
-      );
-    -webkit-mask-image: repeating-linear-gradient(
-        45deg,
-        black 0,
-        black 1px,
-        transparent 1px,
-        transparent 16px
-      ),
-      repeating-linear-gradient(
-        -45deg,
-        black 0,
-        black 1px,
-        transparent 1px,
-        transparent 16px
-      );
+    display: none;
   }
 }

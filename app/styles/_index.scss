@@ -1,5 +1,5 @@
 // DataSoft Tanzania — brand-true design tokens.
-// The palette keeps DataSoft's own colors (green / gold / maroon / cream)
+// The palette pairs a professional sapphire-blue shell with gold and maroon
 // refined into a cohesive, premium system. See DESIGN.md at the project root.
 
 @use "sass:color";
@@ -8,19 +8,24 @@
 $font-display: var(--font-fraunces), Georgia, serif;
 $font-body: "Montserrat", sans-serif;
 
-// Shell register (dark forest green) — nav, hero, process, service hero
-$espresso-deep: #0f2418;
-$espresso-raised: #17331f;
-$espresso-line: #294b34;
+// Shell register (deep sapphire blue) — nav, hero, process, service hero
+$sapphire-deep: #0d2c4e;
+$sapphire-raised: #163f6d;
+$sapphire-line: #2c5a8c;
 
 // Accent (refined gold) — every CTA, active state, link underline, icon stroke
 $brass: #d4a017;
 $brass-bright: #f0c550;
 $brass-dim: #8a6b12;
 
-// Signature brand green — logotype, success state, WhatsApp affordance
-$forest: #2e9f5b;
-$forest-bright: #45c078;
+// Signature brand blue — logotype, success state, hero spotlight glow
+$cobalt: #2e6fb8;
+$cobalt-bright: #4a90d9;
+
+// WhatsApp's own brand green — reserved for the WhatsApp affordance only,
+// never used as a DataSoft palette color elsewhere.
+$whatsapp-green: #25d366;
+$whatsapp-green-bright: #2fe073;
 
 // Closing register (deep wine maroon) — contact + footer, DataSoft's "brief us" register
 $maroon: #591421;
@@ -59,10 +64,21 @@ $glow-brass: 0 0 40px rgba(212, 160, 23, 0.22);
 
 // Gradients — built only from the palette above, used to add richness/flow
 // to large flat surfaces (shells, buttons, the maroon register).
-$gradient-shell: linear-gradient(165deg, #{$espresso-raised} 0%, #{$espresso-deep} 60%);
+$gradient-shell: linear-gradient(165deg, #{$sapphire-raised} 0%, #{$sapphire-deep} 60%);
 $gradient-gold: linear-gradient(135deg, #{$brass-bright} 0%, #{$brass} 65%);
 $gradient-gold-hover: linear-gradient(135deg, #{color.adjust($brass-bright, $lightness: 4%)} 0%, #{$brass-bright} 65%);
 $gradient-maroon: linear-gradient(165deg, #{color.adjust($maroon, $lightness: 6%)} 0%, #{$maroon} 55%, #{color.adjust($maroon, $lightness: -6%)} 100%);
+
+// Hero-only: a professional "spotlight" gradient — a cobalt glow rising out
+// of the deep sapphire shell — used nowhere else so the hero keeps a
+// distinct, first-viewport-only signature.
+$gradient-hero: radial-gradient(
+  circle at 26% 18%,
+  #{$cobalt-bright} 0%,
+  #{$cobalt} 24%,
+  #{$sapphire-deep} 62%,
+  #{color.adjust($sapphire-deep, $lightness: -7%)} 100%
+);
 
 // Gold flowing into the closing maroon register — used to color the
 // carved-lattice ornament patterns.

@@ -56,8 +56,9 @@
 }
 
 :root {
-  --scrollbar-track: #{$espresso-deep};
+  --scrollbar-track: #{$sapphire-deep};
   --scrollbar-thumb: #{$brass-dim};
+  --nav-height: 126px;
   color-scheme: dark light;
 }
 
@@ -126,7 +127,7 @@ a {
 
 ::selection {
   background: $brass;
-  color: $espresso-deep;
+  color: $sapphire-deep;
 }
 
 :focus-visible {

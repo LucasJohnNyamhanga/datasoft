@@ -61,7 +61,18 @@ const Contact = () => {
 
   return (
     <div className={styles.container} id="idea">
-      <Toaster position="top-center" />
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          style: {
+            background: "#0D2C4E",
+            color: "#FBF6E7",
+            border: "1px solid #2C5A8C",
+          },
+          success: { iconTheme: { primary: "#2E6FB8", secondary: "#FBF6E7" } },
+          error: { iconTheme: { primary: "#C1432B", secondary: "#FBF6E7" } },
+        }}
+      />
       <div className={styles.subContainer}>
         <div className={styles.intro}>
           <Reveal as="p" className={styles.eyebrow}>
