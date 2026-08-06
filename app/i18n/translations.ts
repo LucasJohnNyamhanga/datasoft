@@ -147,7 +147,7 @@ const sw = {
     eyebrow: "Hitilafu 404",
     headlineLines: ["Ooo, Umepotea Njia.", "Tupo Hapa Kukusaidia."],
     message:
-      "Ukurasa unaoutafuta haupo, au huenda kiungo kimebadilika kidogo. Usijali — hata mifumo bora zaidi huwa na njia panda kama hii mara moja moja.",
+      "Ukurasa unaoutafuta haupo, au huenda kiungo kimebadilika kidogo. Usijali maana hata mifumo bora zaidi huwa na njia panda kama hii mara moja moja.",
     subMessage:
       "Bofya kitufe hapa chini nasi tutakurudisha mahali ambapo teknolojia na ubunifu hukutana.",
     ctaHome: "Rudi Nyumbani",
