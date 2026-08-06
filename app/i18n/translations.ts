@@ -13,9 +13,9 @@ export type ServiceContent = {
 
 const sw = {
   meta: {
-    title: "DataSoft Tanzania — Suluhisho za Teknolojia, Mwanza",
+    title: "DataSoft Tanzania — Suluhisho la Teknolojia",
     description:
-      "DataSoft ni nyumba ya kiteknolojia ya Mwanza inayogeuza mawazo ya biashara kuwa programu, tovuti, mitandao na miundo inayofanya kazi — kwa ustadi na umakini wa hali ya juu.",
+      "DataSoft ni nyumba ya kiteknolojia inayogeuza mawazo ya biashara kuwa programu, tovuti, mitandao na miundo inayofanya kazi kwa ustadi na umakini wa hali ya juu.",
   },
   nav: {
     home: "Nyumbani",
@@ -29,12 +29,12 @@ const sw = {
   },
   hero: {
     eyebrow: "DataSoft Tanzania",
-    headlineLines: ["Teknolojia Moja.", "Fursa Zisizo na Kikomo."],
+    headlineLines: ["Teknolojia Moja.", "Uwezekano Usio na Kikomo."],
 
     subheadline: [
-      "Hatutengenezi programu pekee bali tunajenga mifumo bunifu inayowasaidia wafanyabiashara kufanya zaidi, kukua haraka na kushindana kwa nguvu.",
-      "Kutoka programu, tovuti hadi miundombinu ya kidijitali, tunaunganisha teknolojia zote muhimu kuwa suluhisho moja linalolenga mafanikio ya biashara yako.",
-      "Ubunifu wenye usahihi. Muunganiko wa kuaminika. Msingi wa ukuaji wa kesho.",
+      "Tunajenga mifumo bunifu inayosaidia biashara kufanya zaidi, kukua na kushindana.",
+      "Programu, tovuti na mitandao wenye suluhisho jumuishi linalojengwa kwa mahitaji yako.",
+      "Ubunifu sahihi. Muunganiko wa kuaminika. Ukuaji endelevu.",
     ],
     ctaPrimary: "Anzisha Mradi Wako",
     ctaSecondary: "Ona Huduma Zetu",
@@ -259,9 +259,9 @@ export type Dict = typeof sw;
 
 const en: Dict = {
   meta: {
-    title: "DataSoft Tanzania — Technology Solutions, Mwanza",
+    title: "DataSoft Tanzania — Technology Solutions",
     description:
-      "DataSoft is a Mwanza-based technology house turning business ideas into working software, websites, networks and design — built with craft and precision.",
+      "DataSoft is a Mwanza-based technology house turning business ideas into working software, websites, networks and systems that are built with craft and precision.",
   },
   nav: {
     home: "Home",
@@ -275,12 +275,12 @@ const en: Dict = {
   },
   hero: {
     eyebrow: "DataSoft Tanzania",
-    headlineLines: ["One Technology.", "Endless Possibilities."],
+    headlineLines: ["One Technology.", "Limitless Possibilities."],
 
     subheadline: [
-      "We don't just develop software, we engineer intelligent systems that empower businesses to perform, scale, and lead.",
-      "From applications and websites to network infrastructure, we deliver connected solutions designed around your business goals.",
-      "Built with precision. Connected with reliability. Designed for growth.",
+      "We build intelligent systems that empower businesses to perform better, scale faster, and stay competitive.",
+      "Software, websites, and digital infrastructure, a connected solutions designed around your business needs.",
+      "Built with precision. Connected with trust. Designed for sustainable growth.",
     ],
     ctaPrimary: "Start Your Project",
     ctaSecondary: "See Our Services",
