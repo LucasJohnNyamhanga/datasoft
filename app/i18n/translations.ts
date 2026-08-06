@@ -95,7 +95,7 @@ const sw = {
       {
         title: "Ujenzi",
         description:
-          "Timu yetu inajenga na kupima suluhisho hatua kwa hatua, tukikuweka taarifa kila mara mradi unavyoendelea.",
+          "Timu yetu inajenga na kupima suluhisho hatua kwa hatua, tukikupa taarifa kila mara mradi unavyoendelea.",
       },
       {
         title: "Uzinduzi",
@@ -152,7 +152,7 @@ const sw = {
       {
         title: "Mifumo ya Uendeshaji wa Biashara",
         description:
-          "Mifumo ya kusimamia hisa, mauzo na taarifa za wateja, ulioundwa kufuata mtiririko wa kazi wa shirika lako.",
+          "Mifumo ya kusimamia biashara, mauzo na taarifa za wateja, ulioundwa kufuata mtiririko wa kazi wa shirika lako.",
         tags: ["Mfumo hai wa data", "Ripoti za wakati halisi"],
       },
       {
@@ -279,7 +279,7 @@ const en: Dict = {
 
     subheadline: [
       "We build intelligent systems that empower businesses to perform better, scale faster, and stay competitive.",
-      "Software, websites, and digital infrastructure, a connected solutions designed around your business needs.",
+      "Software, websites, and digital infrastructure, connected solutions designed around your business needs.",
       "Built with precision. Connected with trust. Designed for sustainable growth.",
     ],
     ctaPrimary: "Start Your Project",
@@ -398,7 +398,7 @@ const en: Dict = {
       {
         title: "Business Operations Systems",
         description:
-          "Systems for managing stock, sales and customer records — built to follow your organization's own workflow.",
+          "Systems for managing business, sales and customer records which is built to follow your organization's own workflow.",
         tags: ["Live data system", "Real-time reporting"],
       },
       {
