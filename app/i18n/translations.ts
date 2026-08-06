@@ -29,11 +29,12 @@ const sw = {
   },
   hero: {
     eyebrow: "DataSoft Tanzania",
-    headlineLines: ["Muunganiko Mmoja.", "Suluhisho Kamili."],
+    headlineLines: ["Teknolojia Moja.", "Fursa Zisizo na Kikomo."],
+
     subheadline: [
-      "Kila biashara ina changamoto yake. Ndiyo maana hatutoi suluhisho za jumla.",
-      "Tunabuni programu, tovuti na mitandao inayofika popote biashara yako inapohitaji — hadi ndani ya chumba kinachohusika.",
-      "Teknolojia iliyojengwa kwa usahihi. Muunganiko unaotegemewa.",
+      "Hatutengenezi programu pekee bali tunajenga mifumo bunifu inayowasaidia wafanyabiashara kufanya zaidi, kukua haraka na kushindana kwa nguvu.",
+      "Kutoka programu, tovuti hadi miundombinu ya kidijitali, tunaunganisha teknolojia zote muhimu kuwa suluhisho moja linalolenga mafanikio ya biashara yako.",
+      "Ubunifu wenye usahihi. Muunganiko wa kuaminika. Msingi wa ukuaji wa kesho.",
     ],
     ctaPrimary: "Anzisha Mradi Wako",
     ctaSecondary: "Ona Huduma Zetu",
@@ -274,11 +275,12 @@ const en: Dict = {
   },
   hero: {
     eyebrow: "DataSoft Tanzania",
-    headlineLines: ["One Connection.", "A Complete Solution."],
+    headlineLines: ["One Technology.", "Endless Possibilities."],
+
     subheadline: [
-      "Every business has its own challenge. That's why we don't offer generic solutions.",
-      "We design software, websites and networks that reach wherever your business needs them — all the way to the room where it matters.",
-      "Technology built with precision. Connections you can rely on.",
+      "We don't just develop software, we engineer intelligent systems that empower businesses to perform, scale, and lead.",
+      "From applications and websites to network infrastructure, we deliver connected solutions designed around your business goals.",
+      "Built with precision. Connected with reliability. Designed for growth.",
     ],
     ctaPrimary: "Start Your Project",
     ctaSecondary: "See Our Services",
