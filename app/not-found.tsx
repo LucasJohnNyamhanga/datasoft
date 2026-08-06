@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import NotFoundContent from "./components/NotFoundContent";
+import ContactUs from "./components/Contact";
+import Footer from "./components/Footer";
+import GoToTop from "./components/GoToTop";
 
 export const metadata: Metadata = {
   title: "Ukurasa Haukupatikana — DataSoft Tanzania",
@@ -7,5 +10,12 @@ export const metadata: Metadata = {
 };
 
 export default function NotFound() {
-  return <NotFoundContent />;
+  return (
+    <>
+      <NotFoundContent />
+      <ContactUs />
+      <Footer />
+      <GoToTop />
+    </>
+  );
 }
