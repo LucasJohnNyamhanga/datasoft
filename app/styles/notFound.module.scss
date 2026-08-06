@@ -7,7 +7,8 @@
   padding-top: var(--nav-height, 107px);
   padding-bottom: $space-lg;
   overflow: hidden;
-  background: linear-gradient(to top, $maroon 0, $maroon 64px, transparent 64px), $gradient-hero;
+  background: radial-gradient(ellipse 60% 140px at 50% 100%, rgba($maroon-bright, 0.4) 0%, rgba($maroon-bright, 0) 100%),
+    $gradient-hero;
   display: flex;
   align-items: center;
   justify-content: center;
