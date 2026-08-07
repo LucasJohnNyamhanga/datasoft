@@ -33,7 +33,7 @@ const sw = {
 
     subheadline: [
       "Kutoka wazo hadi utekelezaji, tunajenga suluhisho za kidigitali zinazorahisisha kazi na kuharakisha ukuaji wa biashara.",
-      "Teknolojia iliyobuniwa kulingana na mahitaji yako ili ufanye zaidi kwa muda mfupi na kwa ufanisi.",
+      "Kila suluhisho hubuniwa kulingana na mahitaji yako ili ufanye zaidi kwa muda mfupi na kwa ufanisi.",
       "Unganisha teknolojia na ubunifu, ufungue uwezo mpya wa ukuaji.",
     ],
     ctaPrimary: "Anzisha Mradi Wako",
