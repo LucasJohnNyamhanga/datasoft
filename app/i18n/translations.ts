@@ -32,9 +32,9 @@ const sw = {
     headlineLines: ["Teknolojia Moja.", "Uwezekano Usio na Kikomo."],
 
     subheadline: [
-      "Tunajenga mifumo bunifu inayosaidia biashara kufanya zaidi, kukua na kushindana.",
-      "Programu, tovuti na mitandao wenye suluhisho jumuishi linalojengwa kwa mahitaji yako.",
-      "Ubunifu sahihi. Muunganiko wa kuaminika. Ukuaji endelevu.",
+      "Kutoka wazo hadi utekelezaji, tunajenga suluhisho za kidigitali zinazorahisisha kazi, kuunganisha mifumo na kuharakisha ukuaji wa biashara yako.",
+      "Programu, tovuti na miundombinu ya teknolojia iliyobuniwa kulingana na mahitaji yako, ili ufanye zaidi kwa muda mfupi na kwa ufanisi mkubwa.",
+      "Unganisha teknolojia na ubunifu, badilisha uwezo kuwa matokeo yanayodumu.",
     ],
     ctaPrimary: "Anzisha Mradi Wako",
     ctaSecondary: "Ona Huduma Zetu",
