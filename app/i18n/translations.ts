@@ -287,9 +287,9 @@ const en: Dict = {
     headlineLines: ["One Technology.", "Limitless Possibilities."],
 
     subheadline: [
-      "We build intelligent systems that empower businesses to perform better, scale faster, and stay competitive.",
-      "Software, websites, and digital infrastructure, connected solutions designed around your business needs.",
-      "Built with precision. Connected with trust. Designed for sustainable growth.",
+      "From idea to implementation, we build digital solutions that simplify work and accelerate business growth.",
+      "Every solution is designed around your unique needs, helping you accomplish more in less time with greater efficiency.",
+      "Connect technology with innovation and unlock new opportunities for growth.",
     ],
     ctaPrimary: "Start Your Project",
     ctaSecondary: "See Our Services",
