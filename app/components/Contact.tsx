@@ -1,37 +1,57 @@
 "use client";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import styles from "../styles/doYouHaveAnIdea.module.scss";
-import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+import { FaQuoteLeft, FaQuoteRight, FaCircleCheck, FaBoltLightning, FaArrowLeft } from "react-icons/fa6";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import Loader from "./loaderWait";
 import Reveal from "./Reveal";
 import { useLanguage } from "../i18n/LanguageContext";
 
+const emptyAnswers = {
+  projectType: "",
+  serviceInterest: "",
+  layoutStatus: "",
+  budget: "",
+  timeline: "",
+};
+
+const emptyDetails = {
+  fullName: "",
+  email: "",
+  orgName: "",
+  project: "",
+};
+
 const Contact = () => {
   const { t } = useLanguage();
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    orgName: "",
-    project: "",
-  });
+  const questionSteps = t.contact.steps;
+  const finalStepIndex = questionSteps.length;
+  const totalSteps = questionSteps.length + 1;
+
+  const [stepIndex, setStepIndex] = useState(0);
+  const [answers, setAnswers] = useState<Record<string, string>>(emptyAnswers);
+  const [details, setDetails] = useState(emptyDetails);
   const [loading, setLoad] = useState(false);
   const notifySuccess = (message: string) => toast.success(message);
   const notifyError = (message: string) => toast.error(message);
 
-  const fullName = useRef<HTMLInputElement>(null!);
-  const email = useRef<HTMLInputElement>(null!);
-  const orgName = useRef<HTMLInputElement>(null!);
-  const project = useRef<HTMLTextAreaElement>(null!);
-
   const handleText = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setDetails({ ...details, [e.target.name]: e.target.value });
   };
 
   const handleTextArea = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setDetails({ ...details, [e.target.name]: e.target.value });
   };
+
+  const selectOption = (key: string, value: string) => {
+    setAnswers((prev) => ({ ...prev, [key]: value }));
+    setTimeout(() => {
+      setStepIndex((i) => Math.min(i + 1, finalStepIndex));
+    }, 220);
+  };
+
+  const goBack = () => setStepIndex((i) => Math.max(i - 1, 0));
 
   const onSubmit = async () => {
     if (loading) return;
@@ -45,10 +65,16 @@ const Contact = () => {
     };
 
     try {
-      const response = await axios.post("/api/email", formData, config);
+      const response = await axios.post(
+        "/api/email",
+        { ...details, ...answers },
+        config
+      );
       if (response.data.success) {
         notifySuccess(t.contact.successMessage);
-        setFormData({ fullName: "", email: "", orgName: "", project: "" });
+        setDetails(emptyDetails);
+        setAnswers(emptyAnswers);
+        setStepIndex(0);
       } else {
         notifyError(t.contact.errorMessage);
       }
@@ -58,6 +84,9 @@ const Contact = () => {
       setLoad(false);
     }
   };
+
+  const currentStep = questionSteps[stepIndex];
+  const isFinalStep = stepIndex === finalStepIndex;
 
   return (
     <div className={styles.container} id="idea">
@@ -85,6 +114,17 @@ const Contact = () => {
             {t.contact.intro}
           </Reveal>
 
+          <Reveal className={styles.trustRow} delay={110}>
+            <span className={styles.trustBadge}>
+              <FaCircleCheck />
+              {t.contact.trust.consultation}
+            </span>
+            <span className={styles.trustBadge}>
+              <FaBoltLightning />
+              {t.contact.trust.prototype}
+            </span>
+          </Reveal>
+
           <Reveal className={styles.quotation} delay={140}>
             <FaQuoteLeft className={styles.quoteMark} />
             <p>{t.contact.quote}</p>
@@ -93,79 +133,132 @@ const Contact = () => {
         </div>
 
         <Reveal className={styles.contactForm} delay={100}>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              onSubmit();
-            }}
-          >
-            <div className={styles.inputBox}>
-              <label htmlFor="fullName">{t.contact.fields.fullName}</label>
-              <input
-                id="fullName"
-                ref={fullName}
-                required
-                type="text"
-                value={formData.fullName}
-                name="fullName"
-                onChange={handleText}
-                autoComplete="off"
-                spellCheck={false}
+          <div className={styles.progressWrap}>
+            <div className={styles.progressBar}>
+              <div
+                className={styles.progressFill}
+                style={{ width: `${((stepIndex + 1) / totalSteps) * 100}%` }}
               />
             </div>
-            <div className={styles.inputBox}>
-              <label htmlFor="email">{t.contact.fields.contact}</label>
-              <input
-                id="email"
-                ref={email}
-                required
-                type="text"
-                value={formData.email}
-                name="email"
-                onChange={handleText}
-                autoComplete="off"
-                spellCheck={false}
-              />
-            </div>
-            <div className={styles.inputBox}>
-              <label htmlFor="orgName">{t.contact.fields.orgName}</label>
-              <input
-                id="orgName"
-                ref={orgName}
-                required
-                type="text"
-                value={formData.orgName}
-                name="orgName"
-                onChange={handleText}
-                autoComplete="off"
-                spellCheck={false}
-              />
-            </div>
-            <div className={styles.inputBox}>
-              <label htmlFor="project">{t.contact.fields.project}</label>
-              <textarea
-                id="project"
-                name="project"
-                rows={5}
-                ref={project}
-                required
-                value={formData.project}
-                autoComplete="off"
-                spellCheck={false}
-                onChange={handleTextArea}
-              />
-            </div>
+            <span className={styles.progressLabel}>
+              {t.contact.progress.step} {stepIndex + 1} {t.contact.progress.of}{" "}
+              {totalSteps}
+            </span>
+          </div>
 
-            {loading ? (
-              <div className={`${styles.button} ${styles.loading}`}>
-                <Loader sms={t.contact.sending} />
+          {!isFinalStep && currentStep && (
+            <div className={styles.stepPanel}>
+              <h3 className={styles.stepQuestion}>{currentStep.question}</h3>
+              <p className={styles.stepReason}>{currentStep.reason}</p>
+
+              <div className={styles.optionsGrid}>
+                {currentStep.options.map((option) => (
+                  <button
+                    key={option.value}
+                    type="button"
+                    className={`${styles.optionButton} ${
+                      answers[currentStep.key] === option.value ? styles.optionSelected : ""
+                    }`}
+                    aria-pressed={answers[currentStep.key] === option.value}
+                    onClick={() => selectOption(currentStep.key, option.value)}
+                  >
+                    {option.label}
+                  </button>
+                ))}
               </div>
-            ) : (
-              <button type="submit" className={styles.button}>
-                {t.contact.submit}
-              </button>
-            )}
-          </form>
+
+              {stepIndex > 0 && (
+                <button type="button" className={styles.backButton} onClick={goBack}>
+                  <FaArrowLeft />
+                  {t.contact.back}
+                </button>
+              )}
+            </div>
+          )}
+
+          {isFinalStep && (
+            <div className={styles.stepPanel}>
+              <h3 className={styles.stepQuestion}>{t.contact.finalStep.title}</h3>
+              <p className={styles.stepReason}>{t.contact.finalStep.reason}</p>
+
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  onSubmit();
+                }}
+              >
+                <div className={styles.inputBox}>
+                  <label htmlFor="fullName">{t.contact.fields.fullName}</label>
+                  <input
+                    id="fullName"
+                    required
+                    type="text"
+                    value={details.fullName}
+                    name="fullName"
+                    onChange={handleText}
+                    autoComplete="off"
+                    spellCheck={false}
+                  />
+                </div>
+                <div className={styles.inputBox}>
+                  <label htmlFor="email">{t.contact.fields.contact}</label>
+                  <input
+                    id="email"
+                    required
+                    type="text"
+                    value={details.email}
+                    name="email"
+                    onChange={handleText}
+                    autoComplete="off"
+                    spellCheck={false}
+                  />
+                </div>
+                <div className={styles.inputBox}>
+                  <label htmlFor="orgName">{t.contact.fields.orgName}</label>
+                  <input
+                    id="orgName"
+                    required
+                    type="text"
+                    value={details.orgName}
+                    name="orgName"
+                    onChange={handleText}
+                    autoComplete="off"
+                    spellCheck={false}
+                  />
+                </div>
+                <div className={styles.inputBox}>
+                  <label htmlFor="project">{t.contact.fields.project}</label>
+                  <textarea
+                    id="project"
+                    name="project"
+                    rows={5}
+                    required
+                    value={details.project}
+                    autoComplete="off"
+                    spellCheck={false}
+                    onChange={handleTextArea}
+                  />
+                </div>
+
+                <div className={styles.finalActions}>
+                  <button type="button" className={styles.backButton} onClick={goBack}>
+                    <FaArrowLeft />
+                    {t.contact.back}
+                  </button>
+
+                  {loading ? (
+                    <div className={`${styles.button} ${styles.loading}`}>
+                      <Loader sms={t.contact.sending} />
+                    </div>
+                  ) : (
+                    <button type="submit" className={styles.button}>
+                      {t.contact.submit}
+                    </button>
+                  )}
+                </div>
+              </form>
+            </div>
+          )}
         </Reveal>
       </div>
     </div>

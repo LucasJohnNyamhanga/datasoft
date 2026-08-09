@@ -6,7 +6,17 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { fullName, email, orgName, project } = req.body;
+  const {
+    fullName,
+    email,
+    orgName,
+    project,
+    projectType,
+    serviceInterest,
+    layoutStatus,
+    budget,
+    timeline,
+  } = req.body;
 
   try {
     await transporter.sendMail({
@@ -16,6 +26,11 @@ export default async function handler(
       html: `<h1>Full Name:</h1><p> ${fullName} </p><p/>
         <h1>Email or Phone Number:</h1><p> ${email} </p><p/>
         <h1>Organisation Name:</h1><p> ${orgName} </p><p/>
+        <h1>Project Type:</h1><p> ${projectType || "—"} </p><p/>
+        <h1>Service Interest:</h1><p> ${serviceInterest || "—"} </p><p/>
+        <h1>Existing Layout/Design:</h1><p> ${layoutStatus || "—"} </p><p/>
+        <h1>Budget:</h1><p> ${budget || "—"} </p><p/>
+        <h1>Timeline:</h1><p> ${timeline || "—"} </p><p/>
         <h1>Project Details</h1><p> ${project} </p><p/>
         `,
     });

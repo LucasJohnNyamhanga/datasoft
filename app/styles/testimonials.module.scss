@@ -1,0 +1,166 @@
+@use "index" as *;
+
+.container {
+  width: 100%;
+  background: $ivory;
+  scroll-margin-top: var(--nav-height, 90px);
+}
+
+.subContainer {
+  max-width: $content-max;
+  margin: 0 auto;
+  padding: $space-xl $gutter;
+}
+
+.eyebrow {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $coffee;
+  margin: 0 0 1rem;
+}
+
+.heading {
+  font-family: $font-display;
+  font-weight: 420;
+  font-size: clamp(1.75rem, 3.2vw, 2.75rem);
+  line-height: 1.1;
+  color: $ink;
+  margin: 0;
+  max-width: 26ch;
+}
+
+.intro {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: $ink-soft;
+  max-width: 60ch;
+  margin: 1.5rem 0 0;
+}
+
+.masonry {
+  margin-top: $space-lg;
+  columns: 1;
+  column-gap: 1.5rem;
+}
+
+.card {
+  position: relative;
+  display: block;
+  width: 100%;
+  break-inside: avoid;
+  margin: 0 0 1.5rem;
+  padding: $space-md;
+  background-color: $ivory-card;
+  border: 1px solid $bone;
+  border-radius: $radius-md;
+  overflow: hidden;
+}
+
+.featured {
+  border-color: $brass-dim;
+  box-shadow: inset 3px 0 0 $brass;
+}
+
+.quoteMark {
+  position: absolute;
+  top: 0.25rem;
+  right: 1rem;
+  font-family: $hero-font-display;
+  font-weight: 380;
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  line-height: 1;
+  color: $brass-dim;
+  opacity: 0.14;
+  pointer-events: none;
+}
+
+.stars {
+  display: flex;
+  gap: 0.15rem;
+  margin: 0 0 0.85rem;
+}
+
+.star {
+  color: $brass;
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.quote {
+  position: relative;
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: $ink;
+  margin: 0 0 $space-md;
+}
+
+.featured .quote {
+  font-size: 1.1rem;
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.avatar {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background-color: rgba(212, 160, 23, 0.12);
+  border: 1px solid $brass-dim;
+  color: $coffee;
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.personText {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.name {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: $ink;
+}
+
+.role {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 0.8125rem;
+  color: $ink-soft;
+}
+
+@media (min-width: 640px) {
+  .masonry {
+    columns: 2;
+  }
+}
+
+@media (min-width: 1000px) {
+  .masonry {
+    columns: 3;
+  }
+}
+
+@media (max-width: 640px) {
+  .subContainer {
+    padding: $space-lg $gutter;
+  }
+}

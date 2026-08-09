@@ -29,25 +29,31 @@ const sw = {
   },
   hero: {
     eyebrow: "DataSoft Tanzania",
-    headlineLines: ["Teknolojia Moja.", "Uwezekano Usio na Kikomo."],
+    headlineLines: ["Teknolojia moja.", "Uwezekano usio na kikomo."],
 
     subheadline: [
       "Kutoka wazo hadi utekelezaji, tunajenga suluhisho za kidigitali zinazorahisisha kazi na kuharakisha ukuaji wa biashara.",
-      "Kila suluhisho hubuniwa kulingana na mahitaji yako ili ufanye zaidi kwa muda mfupi na kwa ufanisi.",
-      "Unganisha teknolojia na ubunifu, ufungue uwezo mpya wa ukuaji.",
     ],
     ctaPrimary: "Anzisha Mradi Wako",
     ctaSecondary: "Ona Huduma Zetu",
+    mapCaption: "Biashara yako, ikijengwa mstari kwa mstari na DataSoft",
   },
   whatWeDo: {
-    eyebrow: "Huduma Zetu",
-    heading: "Nguzo Nne za Kazi Yetu",
+    headingLines: [
+      "Kasi, urahisi na ukuaji,",
+      "bila maumivu ya kichwa ya kiteknolojia",
+    ],
     intro:
-      "Kampuni moja, uwezo kamili. Kutoka wazo la kwanza hadi mfumo unaofanya kazi, tovuti inayokuwezesha, mtandao unaoutegemea au mfumo unaouza.",
+      "Tunakupa tekinolojia inayorahisisha kazi zako kwa kuzifanya zijikamilishe zenyewe. Tunaondoa ugumu wa kiufundi ili uweke nguvu kwenye kukuza biashara yako, si kusimamia teknolojia.",
+    hub: {
+      title: "DataSoft",
+      tag: "Kiini cha Teknolojia",
+    },
     services: [
       {
         key: "software",
         header: "Ukuzaji wa Programu",
+        tag: "Thabiti",
         description:
           "Tunabuni na kujenga mifumo thabiti ya kiprogramu, iliyoundwa mahususi kukidhi mahitaji ya kiutendaji ya shirika lako.",
         link: "/Software",
@@ -55,6 +61,7 @@ const sw = {
       {
         key: "hosting",
         header: "Tovuti na Uwekaji Mtandaoni",
+        tag: "Haraka",
         description:
           "Tunatengeneza tovuti za kifahari na kuziweka mtandaoni kwa uthabiti, kasi na usalama unaostahili chapa yako.",
         link: "/Hosting",
@@ -62,6 +69,7 @@ const sw = {
       {
         key: "networking",
         header: "Mitandao ya Kompyuta",
+        tag: "Salama",
         description:
           "Tunaunganisha kompyuta za ofisini kushirikiana rasilimali kama printa na skana, tukifanya ofisi yako kujitegemea kikamilifu.",
         link: "/Networking",
@@ -69,12 +77,72 @@ const sw = {
       {
         key: "graphics",
         header: "Ubunifu wa Michoro",
+        tag: "Ubunifu",
         description:
           "Tunaunda kazi za kisanii za michoro zinazowasilisha ujumbe na malengo yako kwa usahihi na mvuto.",
         link: "/Graphics",
       },
     ],
     learnMore: "Soma Zaidi",
+  },
+  included: {
+    eyebrow: "Kila Kitu Kimejumuishwa",
+    headingLines: [
+      "Pumzika — kila kitu unachohitaji",
+      "kiko kwenye ncha ya kidole chako.",
+    ],
+    intro:
+      "Kila mradi tunaoujenga huja na vipengele hivi vyote tayari vimewekwa, bila malipo ya ziada yaliyofichika — wewe zingatia biashara, sisi tunashughulikia teknolojia.",
+    items: [
+      {
+        key: "automation",
+        title: "Otomatiki",
+        description:
+          "Taratibu za kazi zinazojiendesha zenyewe — arifa, ripoti na hatua za kila siku — ili timu yako itumie muda kwenye mambo muhimu zaidi.",
+      },
+      {
+        key: "metrics",
+        title: "Ufuatiliaji na Takwimu",
+        description:
+          "Dashibodi na ripoti za wakati halisi zinazokuonyesha jinsi biashara yako inavyofanya kazi, kila siku.",
+      },
+      {
+        key: "payments",
+        title: "Malipo kwa Njia ya Mtandaoni",
+        description:
+          "Muunganiko wa njia za malipo za simu na benki, ili wateja wako walipe kwa urahisi popote walipo.",
+      },
+      {
+        key: "security",
+        title: "Usalama na Kasi",
+        description:
+          "Vyeti vya SSL, ulinzi dhidi ya matatizo ya kawaida ya mtandao, na miundombinu ya kasi ya hali ya juu — bila kuathiriana.",
+      },
+      {
+        key: "support",
+        title: "Msaada Endelevu",
+        description:
+          "Timu yetu ya Mwanza inabaki karibu nawe baada ya uzinduzi, tayari kusaidia pindi unapohitaji.",
+      },
+      {
+        key: "backups",
+        title: "Nakala za Akiba",
+        description:
+          "Taarifa zako muhimu huhifadhiwa kiotomatiki mara kwa mara, ili usipoteze kazi hata tatizo likitokea.",
+      },
+      {
+        key: "scale",
+        title: "Ukuaji Endelevu",
+        description:
+          "Mifumo yetu huundwa kukua sambamba na biashara yako — kutoka mtumiaji mmoja hadi maelfu, bila kuanza upya.",
+      },
+      {
+        key: "uptime",
+        title: "Upatikanaji wa Uhakika",
+        description:
+          "Uwekaji mtandaoni unaofuatiliwa muda wote, ili tovuti na mfumo wako ubaki hai bila usumbufu.",
+      },
+    ],
   },
   process: {
     eyebrow: "Jinsi Tunavyofanya Kazi",
@@ -110,8 +178,83 @@ const sw = {
     eyebrow: "Wasiliana Nasi",
     heading: "Tuambie Kuhusu Mradi Wako",
     intro:
-      "Tunaweza kuanza kulifanyia kazi wazo lako ndani ya masaa machache. Jaza taarifa zako chache na tutawasiliana nawe haraka iwezekanavyo.",
-    quote: "Wazo Sahihi + Bidhaa Sahihi + Soko Sahihi = Mafanikio",
+      "Majibu machache tu yanatusaidia kukupa ushauri sahihi mara ya kwanza — sio fomu ya kawaida, ni mwanzo wa mradi wako.",
+    quoteFormula: {
+      terms: ["Wazo Sahihi", "Bidhaa Sahihi", "Soko Sahihi"],
+      result: "Mafanikio",
+    },
+    trust: {
+      consultation: "Ushauri wa Kwanza — Bure",
+      prototype: "Mfano wa Kwanza (Prototype) Ndani ya Masaa 48",
+    },
+    progress: { step: "Hatua", of: "kati ya" },
+    back: "Rudi Nyuma",
+    steps: [
+      {
+        key: "projectType",
+        question: "Mradi wako ni mpya au unaboresha uliopo?",
+        reason:
+          "Hii hutusaidia kujua tuanzie wapi — kutoka mwanzo kabisa au kuboresha kilichopo.",
+        options: [
+          { value: "new", label: "Mradi Mpya Kabisa" },
+          { value: "upgrade", label: "Ninaboresha Uliopo" },
+          { value: "unsure", label: "Sina Uhakika Bado" },
+        ],
+      },
+      {
+        key: "serviceInterest",
+        question: "Unahitaji huduma gani hasa?",
+        reason: "Tunataka kukuunganisha na wataalamu sahihi mara moja.",
+        options: [
+          { value: "software", label: "Programu au Mfumo" },
+          { value: "website", label: "Tovuti" },
+          { value: "networking", label: "Mitandao ya Kompyuta" },
+          { value: "graphics", label: "Ubunifu wa Michoro" },
+          { value: "mixed", label: "Zaidi ya Moja / Sijui Bado" },
+        ],
+      },
+      {
+        key: "layoutStatus",
+        question: "Je, una muundo (design) tayari kwa mradi wako?",
+        reason:
+          "Hii hutusaidia kupanga muda na gharama sahihi, bila kukukisia.",
+        options: [
+          { value: "ready", label: "Ndiyo, Nina Tayari" },
+          { value: "idea", label: "Nina Wazo, Nahitaji Ushauri" },
+          { value: "none", label: "Hapana, DataSoft Initoe Chaguo" },
+        ],
+      },
+      {
+        key: "budget",
+        question: "Bajeti yako inakadiriwa kiasi gani?",
+        reason:
+          "Hakuna jibu 'baya' hapa wala sio kukubana, ni kutusaidia tusipendekeze kitu nje ya uwezo wako, au kidogo mno kwa lengo lako.",
+        options: [
+          { value: "under-500k", label: "Chini ya TZS 500,000" },
+          { value: "500k-2m", label: "TZS 500,000 – 2,000,000" },
+          { value: "2m-5m", label: "TZS 2,000,000 – 5,000,000" },
+          { value: "above-5m", label: "Zaidi ya TZS 5,000,000" },
+          { value: "unsure", label: "Sijui Bado, Nahitaji Ushauri" },
+        ],
+      },
+      {
+        key: "timeline",
+        question: "Unahitaji mradi ukamilike lini?",
+        reason:
+          "Tunaweza kuanza kutengeneza mfano wa kwanza (prototype) ndani ya masaa 48 baada ya mazungumzo yetu.",
+        options: [
+          { value: "urgent", label: "Haraka Iwezekanavyo (Wiki 2)" },
+          { value: "1month", label: "Ndani ya Mwezi 1" },
+          { value: "1to3months", label: "Miezi 1 – 3" },
+          { value: "flexible", label: "Sina Haraka, Ubora Kwanza" },
+        ],
+      },
+    ],
+    finalStep: {
+      title: "Hatua ya Mwisho — Taarifa Zako",
+      reason:
+        "Ushauri wa kwanza ni bure. Timu yetu itawasiliana nawe ndani ya saa chache.",
+    },
     fields: {
       fullName: "Jina Kamili",
       contact: "Namba ya Simu au Barua Pepe",
@@ -181,6 +324,106 @@ const sw = {
         description:
           "Nembo, vitambulisho vya chapa na vifaa vya masoko vinavyowasilisha ujumbe wako kwa usahihi.",
         tags: ["Vitambulisho vya chapa", "Vifaa vya kuchapisha na kidijitali"],
+      },
+    ],
+  },
+  testimonials: {
+    eyebrow: "Wanachosema Wateja",
+    heading: "Tunaaminiwa na Biashara, Mashirika na Taasisi",
+    intro:
+      "Kutoka Kigoma hadi Mbeya, hawa ni baadhi ya wamiliki wa biashara na taasisi tunaowahudumia kila siku — hii ndiyo sababu wanaendelea kuchagua DataSoft.",
+    items: [
+      {
+        name: "Godwin Marko Shauri",
+        role: "Mfanyabiashara",
+        location: "Kasulu, Kigoma",
+        quote:
+          "Tangu DataSoft wanijengee mfumo wa duka langu, nimeacha kuandika mauzo kwa mkono. Sasa naona kila kitu — bidhaa zilizouzwa, faida ya siku — kwa dakika moja tu. Kazi nzuri ya kweli!",
+      },
+      {
+        name: "Benson Godfrey",
+        role: "Mmiliki, Kuafit Gym",
+        location: "Njiro, Arusha",
+        quote:
+          "Tovuti waliyotujengea Kuafit Gym ni ya kisasa na inavutia sana. Wanachama wanajisajili mtandaoni, wanalipa, na wanaona ratiba za mazoezi bila kupiga simu ofisini. DataSoft wamebadilisha jinsi tunavyofanya kazi!",
+      },
+      {
+        name: "Neema Isaya",
+        role: "Mkurugenzi, Shule ya Awali Tumaini",
+        location: "Mwanza",
+        quote:
+          "Mtandao wetu wa shule sasa unafanya kazi bila kukwama, na walimu wanatumia mfumo mmoja kuweka alama za wanafunzi. Timu ya DataSoft ilituelewa kwa haraka na kufanya kazi kwa uaminifu mkubwa.",
+      },
+      {
+        name: "Hamisi Ally Juma",
+        role: "Meneja, Hoteli ya Baobab",
+        location: "Dodoma",
+        quote:
+          "Tovuti mpya ya hoteli yetu inapokea wageni kutoka nje ya nchi kila wiki. Ni ya haraka, nzuri kuangalia, na haijawahi kuzimika hata siku moja tangu izinduliwe.",
+      },
+      {
+        name: "Grace Mrema",
+        role: "Mwanzilishi, Chic Boutique",
+        location: "Arusha",
+        quote:
+          "Nembo na vifaa vya chapa walivyonitengenezea DataSoft vimenipa taswira ya kitaalamu ambayo wateja wanaiona mara moja. Naona tofauti kubwa katika mauzo yangu ya mtandaoni.",
+      },
+      {
+        name: "Elias Mushi",
+        role: "Mkurugenzi Mtendaji, Mbeya Fresh Produce Ltd",
+        location: "Mbeya",
+        quote:
+          "Mfumo wa kusimamia hisa na wasambazaji umetuokoa saa nyingi kila wiki. Kila idara sasa inaona taarifa zile zile, wakati ule ule. Hii ndiyo tija tuliyoihitaji.",
+      },
+    ],
+  },
+  faq: {
+    eyebrow: "Maswali Yanayoulizwa Mara kwa Mara",
+    heading: "Una Swali? Tuko Hapa",
+    intro:
+      "Majibu ya haraka kwa mambo ambayo wateja wetu huuliza mara kwa mara kabla ya kuanza mradi.",
+    contactPrompt: "Bado una swali? Wasiliana nasi",
+    items: [
+      {
+        question: "Ni huduma gani hasa mnazotoa?",
+        answer:
+          "Tunatoa huduma nne kuu: ukuzaji wa programu maalumu, ubunifu wa tovuti pamoja na uwekaji mtandaoni, usanifu wa mitandao ya kompyuta ya ofisini, na ubunifu wa michoro ya chapa. Kila huduma inaweza kusimama peke yake au kuunganishwa katika mradi mmoja.",
+      },
+      {
+        question: "Mradi wangu utachukua muda gani kukamilika?",
+        answer:
+          "Inategemea ukubwa wa mradi, lakini tunaweza kuanza kukujengea mfano wa kwanza (prototype) ndani ya masaa 48 baada ya mazungumzo yetu ya kwanza. Kila mradi hupitia hatua nne — Wazo, Muundo, Ujenzi na Uzinduzi — na tutakupa muda kamili baada ya kuelewa mahitaji yako.",
+      },
+      {
+        question: "Gharama ya mradi ni kiasi gani?",
+        answer:
+          "Kila mradi ni wa kipekee, hivyo bei hutegemea ukubwa na mahitaji yake. Fomu yetu ya mawasiliano hukuuliza wigo wa bajeti yako ili tuweze kukushauri kifurushi kinachokufaa — na ushauri wa kwanza ni bure kabisa.",
+      },
+      {
+        question: "Je, mnafanya kazi na wateja walio nje ya Mwanza?",
+        answer:
+          "Ndiyo. Ingawa timu yetu ipo Mwanza, tunahudumia wateja kote Tanzania — kutoka Kigoma na Arusha hadi Dodoma na Mbeya — kupitia mawasiliano ya mtandaoni na simu, na tunasafiri panapohitajika kwa miradi ya mitandao ya ofisini.",
+      },
+      {
+        question:
+          "Sina muundo (design) wowote tayari — je, mnaweza kunisaidia?",
+        answer:
+          "Kabisa. Wakati wa kujaza fomu ya mawasiliano unaweza kutuambia kama huna muundo bado, na timu yetu itakushauri na kukubunia chaguo kutoka mwanzo — hauhitaji kuja na kila kitu tayari.",
+      },
+      {
+        question: "Je, mtanisaidia baada ya tovuti au mfumo wangu kuzinduliwa?",
+        answer:
+          "Ndiyo. Kila mradi tunaoujenga unakuja na msaada endelevu, ufuatiliaji wa upatikanaji (uptime), na nakala za akiba za mara kwa mara — timu yetu ya Mwanza inabaki karibu nawe kwa msaada wowote unaohitajika baada ya uzinduzi.",
+      },
+      {
+        question: "Je, tovuti au mfumo wangu utakuwa salama?",
+        answer:
+          "Ndiyo. Miradi yetu yanajumuisha vyeti vya usalama (SSL), ulinzi dhidi ya matatizo ya kawaida ya mtandao, na nakala za akiba za taarifa zako, ili biashara yako ibaki salama na ifanye kazi bila wasiwasi.",
+      },
+      {
+        question: "Nianzeje mradi wangu na DataSoft?",
+        answer:
+          "Jaza fomu yetu fupi ya mawasiliano hapo chini, au tupigie simu moja kwa moja. Maswali machache tu yanatosha kutusaidia kuelewa mradi wako, na timu yetu itawasiliana nawe ndani ya saa chache kuanza mazungumzo — bila malipo.",
       },
     ],
   },
@@ -284,25 +527,31 @@ const en: Dict = {
   },
   hero: {
     eyebrow: "DataSoft Tanzania",
-    headlineLines: ["One Technology.", "Limitless Possibilities."],
+    headlineLines: ["One technology.", "Limitless possibilities."],
 
     subheadline: [
       "From idea to implementation, we build digital solutions that simplify work and accelerate business growth.",
-      "Every solution is designed around your unique needs, helping you accomplish more in less time with greater efficiency.",
-      "Connect technology with innovation and unlock new opportunities for growth.",
     ],
     ctaPrimary: "Start Your Project",
     ctaSecondary: "See Our Services",
+    mapCaption: "Your business, built line by line by DataSoft",
   },
   whatWeDo: {
-    eyebrow: "Our Services",
-    heading: "Four Pillars of Our Work",
+    headingLines: [
+      "Speed, simplicity, and growth,",
+      "without the tech headaches",
+    ],
     intro:
-      "One company, full capability. From the first idea to a working system, the website that presents it, the network that runs it, and the design that sells it.",
+      "We provide technology that automates your workflow and eliminates technical hurdles, allowing you to focus on growing your business and not managing technology.",
+    hub: {
+      title: "DataSoft",
+      tag: "Technology Core",
+    },
     services: [
       {
         key: "software",
         header: "Software Development",
+        tag: "Robust",
         description:
           "We design and build robust software systems, customized to meet your organization's operational needs.",
         link: "/Software",
@@ -310,6 +559,7 @@ const en: Dict = {
       {
         key: "hosting",
         header: "Web Design & Hosting",
+        tag: "Fast",
         description:
           "We build refined websites and keep them online with reliability, speed and security worthy of your brand.",
         link: "/Hosting",
@@ -317,6 +567,7 @@ const en: Dict = {
       {
         key: "networking",
         header: "Computer Networking",
+        tag: "Secure",
         description:
           "We connect office computers to share resources like printers and scanners, making your office fully self-sufficient.",
         link: "/Networking",
@@ -324,12 +575,69 @@ const en: Dict = {
       {
         key: "graphics",
         header: "Graphics Design",
+        tag: "Creative",
         description:
           "We create artistic graphic work that communicates your intended message and objectives with precision.",
         link: "/Graphics",
       },
     ],
     learnMore: "Learn More",
+  },
+  included: {
+    eyebrow: "Everything Included",
+    headingLines: ["Relax — everything you need,", "right at your fingertips."],
+    intro:
+      "Every project we build comes with all of this already included, with no hidden extra costs — you focus on your business, we handle the technology.",
+    items: [
+      {
+        key: "automation",
+        title: "Automation",
+        description:
+          "Workflows that run themselves — alerts, reports and everyday tasks — so your team spends time on what matters most.",
+      },
+      {
+        key: "metrics",
+        title: "Metrics & Monitoring",
+        description:
+          "Real-time dashboards and reporting that show you exactly how your business is performing, every day.",
+      },
+      {
+        key: "payments",
+        title: "Online Payments",
+        description:
+          "Mobile money and bank payment integrations, so your customers can pay easily wherever they are.",
+      },
+      {
+        key: "security",
+        title: "Security & Speed",
+        description:
+          "SSL certificates, protection against common threats, and high-performance infrastructure — without trade-offs.",
+      },
+      {
+        key: "support",
+        title: "Ongoing Support",
+        description:
+          "Our Mwanza-based team stays close after launch, ready to help whenever you need us.",
+      },
+      {
+        key: "backups",
+        title: "Automatic Backups",
+        description:
+          "Your important data is backed up automatically and regularly, so nothing is lost if something goes wrong.",
+      },
+      {
+        key: "scale",
+        title: "Built to Scale",
+        description:
+          "Our systems are built to grow alongside your business — from one user to thousands, without starting over.",
+      },
+      {
+        key: "uptime",
+        title: "Reliable Uptime",
+        description:
+          "Monitored, dependable hosting that keeps your website and systems running without disruption.",
+      },
+    ],
   },
   process: {
     eyebrow: "How We Work",
@@ -365,8 +673,81 @@ const en: Dict = {
     eyebrow: "Contact Us",
     heading: "Tell Us About Your Project",
     intro:
-      "We can start working on your idea within hours. Share a few details and we'll be in touch quickly.",
+      "A few quick answers help us give you the right advice from the start — this isn't just a form, it's the beginning of your project.",
     quote: "The Right Idea + The Right Product + The Right Market = Success",
+    trust: {
+      consultation: "First Consultation — Free",
+      prototype: "First Prototype Ready Within 48 Hours",
+    },
+    progress: { step: "Step", of: "of" },
+    back: "Back",
+    steps: [
+      {
+        key: "projectType",
+        question:
+          "Is your project brand new, or an upgrade to an existing one?",
+        reason:
+          "This helps us know where to start — from scratch, or improving what you already have.",
+        options: [
+          { value: "new", label: "Brand New Project" },
+          { value: "upgrade", label: "Upgrading an Existing One" },
+          { value: "unsure", label: "Not Sure Yet" },
+        ],
+      },
+      {
+        key: "serviceInterest",
+        question: "What service do you need exactly?",
+        reason: "So we can connect you with the right specialists right away.",
+        options: [
+          { value: "software", label: "Software or a System" },
+          { value: "website", label: "Website" },
+          { value: "networking", label: "Computer Networking" },
+          { value: "graphics", label: "Graphics Design" },
+          { value: "mixed", label: "More Than One / Not Sure Yet" },
+        ],
+      },
+      {
+        key: "layoutStatus",
+        question: "Do you already have a design or layout ready?",
+        reason:
+          "This helps us plan the right timeline and cost, without guessing.",
+        options: [
+          { value: "ready", label: "Yes, It's Ready" },
+          { value: "idea", label: "I Have an Idea, Need Guidance" },
+          { value: "none", label: "No, DataSoft Should Give Me Options" },
+        ],
+      },
+      {
+        key: "budget",
+        question: "What's your estimated budget?",
+        reason:
+          "There are no 'wrong' answers here, and we aren't trying to corner you. We just want to make sure we don't propose something outside your budget or too small for your goals.",
+        options: [
+          { value: "under-500k", label: "Under TZS 500,000" },
+          { value: "500k-2m", label: "TZS 500,000 – 2,000,000" },
+          { value: "2m-5m", label: "TZS 2,000,000 – 5,000,000" },
+          { value: "above-5m", label: "Above TZS 5,000,000" },
+          { value: "unsure", label: "Not Sure Yet, Need Advice" },
+        ],
+      },
+      {
+        key: "timeline",
+        question: "When do you need the project completed?",
+        reason:
+          "We can start on a first prototype within 48 hours of our first conversation.",
+        options: [
+          { value: "urgent", label: "As Soon as Possible (2 Weeks)" },
+          { value: "1month", label: "Within 1 Month" },
+          { value: "1to3months", label: "1 – 3 Months" },
+          { value: "flexible", label: "No Rush, Quality First" },
+        ],
+      },
+    ],
+    finalStep: {
+      title: "Final Step — Your Details",
+      reason:
+        "The first consultation is free. Our team will reach out within a few hours.",
+    },
     fields: {
       fullName: "Full Name",
       contact: "Phone Number or Email",
@@ -436,6 +817,56 @@ const en: Dict = {
         description:
           "Logos, brand identities and marketing materials that carry your message with precision.",
         tags: ["Brand identity", "Print & digital materials"],
+      },
+    ],
+  },
+  testimonials: {
+    eyebrow: "What Clients Say",
+    heading: "Trusted by Businesses, Organizations and Institutions",
+    intro:
+      "From Kigoma to Mbeya, these are some of the business owners and institutions we serve every day — this is why they keep choosing DataSoft.",
+    items: [
+      {
+        name: "Godwin Marko Shauri",
+        role: "Business Owner",
+        location: "Kasulu, Kigoma",
+        quote:
+          "Since DataSoft built my shop's system, I've stopped writing sales by hand. Now I see everything — items sold, the day's profit — in a single glance. Truly excellent work!",
+      },
+      {
+        name: "Benson Godfrey",
+        role: "Owner, Kuafit Gym",
+        location: "Njiro, Arusha",
+        quote:
+          "The website DataSoft built for Kuafit Gym is modern and eye-catching. Members sign up online, pay, and check workout schedules without ever calling the office. DataSoft has changed how we operate!",
+      },
+      {
+        name: "Neema Isaya",
+        role: "Director, Tumaini Preschool",
+        location: "Mwanza",
+        quote:
+          "Our school's network no longer stalls, and teachers now use one system to record student grades. DataSoft's team understood us quickly and worked with real integrity.",
+      },
+      {
+        name: "Hamisi Ally Juma",
+        role: "Manager, Baobab Hotel",
+        location: "Dodoma",
+        quote:
+          "Our hotel's new website brings in guests from abroad every week. It's fast, beautiful, and hasn't gone down a single day since launch.",
+      },
+      {
+        name: "Grace Mrema",
+        role: "Founder, Chic Boutique",
+        location: "Arusha",
+        quote:
+          "The logo and brand materials DataSoft designed gave me a professional look customers notice instantly. I've seen a real jump in my online sales.",
+      },
+      {
+        name: "Elias Mushi",
+        role: "Managing Director, Mbeya Fresh Produce Ltd",
+        location: "Mbeya",
+        quote:
+          "The inventory and supplier management system has saved us hours every week. Every department now sees the same information, at the same time. This is exactly the efficiency we needed.",
       },
     ],
   },

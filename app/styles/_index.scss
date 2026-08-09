@@ -8,6 +8,51 @@
 $font-display: var(--font-fraunces), Georgia, serif;
 $font-body: "Montserrat", sans-serif;
 
+// The exact font files used in the approved "Option B" hero mockup (fetched
+// directly from Google Fonts, same source next/font and the site's
+// self-hosted Montserrat both draw from, but pinned here byte-for-byte so
+// display copy matches the mockup exactly rather than relying on next/font's
+// own weight selection). Shared across any section that needs that same
+// display register (currently Hero and WhatWeDo).
+@font-face {
+  font-family: "Fraunces Hero";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/hero/fraunces-hero-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Fraunces Hero";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/hero/fraunces-hero-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Montserrat Hero";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/hero/montserrat-hero-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Montserrat Hero";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/hero/montserrat-hero-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Montserrat Hero";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/hero/montserrat-hero-700.woff2") format("woff2");
+}
+
+$hero-font-display: "Fraunces Hero", #{$font-display};
+$hero-font-body: "Montserrat Hero", #{$font-body};
+
 // Shell register (deep sapphire blue) — nav, hero, process, service hero
 $sapphire-deep: #0d2c4e;
 $sapphire-raised: #163f6d;

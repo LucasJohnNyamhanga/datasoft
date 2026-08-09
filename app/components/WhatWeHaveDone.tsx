@@ -1,16 +1,10 @@
 "use client";
 import styles from "../styles/whatWeHaveDone.module.scss";
-import CardProject from "./CardProject";
+import CapabilityShowcase from "./CapabilityShowcase";
 import Reveal from "./Reveal";
 import { useLanguage } from "../i18n/LanguageContext";
-import { FaLaptopCode, FaMobileAlt, FaGlobeAfrica, FaImages } from "react-icons/fa";
 
-const icons = [
-  <FaLaptopCode key="software" />,
-  <FaMobileAlt key="mobile" />,
-  <FaGlobeAfrica key="hosting" />,
-  <FaImages key="graphics" />,
-];
+const kinds = ["system", "app", "website", "brand"] as const;
 
 const WhatWeHaveDone = () => {
   const { t } = useLanguage();
@@ -28,15 +22,24 @@ const WhatWeHaveDone = () => {
           {t.portfolio.intro}
         </Reveal>
 
-        <div className={styles.grid}>
+        <div className={styles.rows}>
           {t.portfolio.items.map((item, index) => (
-            <Reveal key={item.title} delay={index * 70} className={styles.cell}>
-              <CardProject
-                icon={icons[index]}
-                title={item.title}
-                description={item.description}
-                tags={item.tags}
-              />
+            <Reveal key={item.title} delay={index * 80} className={styles.row}>
+              <div className={styles.visual}>
+                <CapabilityShowcase kind={kinds[index]} />
+              </div>
+              <div className={styles.copy}>
+                <span className={styles.index}>{`0${index + 1}`}</span>
+                <h3 className={styles.itemTitle}>{item.title}</h3>
+                <p className={styles.itemDescription}>{item.description}</p>
+                <ul className={styles.pillList}>
+                  {item.tags.map((tag) => (
+                    <li key={tag} className={styles.pill}>
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </Reveal>
           ))}
         </div>

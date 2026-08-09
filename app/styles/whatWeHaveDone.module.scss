@@ -42,27 +42,113 @@
   margin: 1.5rem 0 0;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 1.5rem;
+.rows {
+  display: flex;
+  flex-direction: column;
   margin-top: $space-lg;
+}
 
-  @media (min-width: 640px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.row {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2rem;
+  padding: $space-lg 0;
+  border-top: 1px solid $bone;
 
-  @media (min-width: 1100px) {
-    grid-template-columns: repeat(4, 1fr);
+  &:first-child {
+    border-top: none;
+    padding-top: $space-md;
   }
 }
 
-.cell {
-  height: 100%;
+.visual {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
+
+.copy {
+  width: 100%;
+  min-width: 0;
+}
+
+.index {
+  display: block;
+  font-family: $hero-font-display;
+  font-weight: 380;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  color: $brass-dim;
+  opacity: 0.5;
+  line-height: 1;
+  margin: 0 0 0.75rem;
+}
+
+.itemTitle {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  color: $ink;
+  margin: 0 0 0.85rem;
+}
+
+.itemDescription {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: $ink-soft;
+  max-width: 42ch;
+  margin: 0 0 1.25rem;
+}
+
+.pillList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pill {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: $coffee;
+  background-color: rgba(107, 66, 38, 0.08);
+  padding: 0.35rem 0.7rem;
+  border-radius: $radius-sm;
+}
+
+@media (min-width: 900px) {
+  .row {
+    flex-direction: row;
+    align-items: center;
+    gap: clamp(2.5rem, 5vw, 4.5rem);
+  }
+
+  .visual {
+    flex: 1 1 26rem;
+    max-width: 30rem;
+  }
+
+  .copy {
+    flex: 1 1 22rem;
+    max-width: 30rem;
+  }
+
+  .row:nth-child(even) {
+    flex-direction: row-reverse;
+  }
 }
 
 @media (max-width: 640px) {
   .subContainer {
     padding: $space-lg $gutter;
+  }
+
+  .row {
+    padding: $space-md 0;
   }
 }

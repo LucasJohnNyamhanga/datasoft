@@ -51,6 +51,55 @@
   color: $sapphire-deep;
 }
 
+.card[data-accent="hosting"] .icon {
+  border-color: $cobalt;
+  color: $cobalt;
+}
+
+.card[data-accent="networking"] .icon {
+  border-color: $rust;
+  color: $rust;
+}
+
+.card[data-accent="graphics"] .icon {
+  border-color: $maroon-bright;
+  color: $maroon-bright;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $brass-dim;
+  margin: 0 0 0.6rem;
+
+  &::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+    flex: none;
+  }
+}
+
+.card[data-accent="hosting"] .tag {
+  color: $cobalt;
+}
+
+.card[data-accent="networking"] .tag {
+  color: $rust;
+}
+
+.card[data-accent="graphics"] .tag {
+  color: $maroon-bright;
+}
+
 @keyframes iconGlow {
   0%,
   100% {

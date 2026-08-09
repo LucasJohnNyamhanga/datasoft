@@ -56,6 +56,33 @@
   margin: 1.5rem 0 0;
 }
 
+.trustRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+
+.trustBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.85rem;
+  background: rgba($ivory, 0.08);
+  border: 1px solid rgba($brass-dim, 0.5);
+  border-radius: 999px;
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  color: $brass-bright;
+
+  svg {
+    flex-shrink: 0;
+    font-size: 0.85rem;
+  }
+}
+
 .quotation {
   display: flex;
   flex-direction: row;
@@ -87,6 +114,134 @@
   form {
     display: flex;
     flex-direction: column;
+  }
+}
+
+.progressWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.75rem;
+}
+
+.progressBar {
+  flex: 1;
+  height: 4px;
+  background: rgba($ivory, 0.14);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: $gradient-gold;
+  border-radius: 999px;
+  transition: width 0.35s $ease-standard;
+}
+
+.progressLabel {
+  flex-shrink: 0;
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $brass-dim;
+  white-space: nowrap;
+}
+
+.stepPanel {
+  display: flex;
+  flex-direction: column;
+}
+
+.stepQuestion {
+  font-family: $font-display;
+  font-weight: 420;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  line-height: 1.25;
+  color: $ivory;
+  margin: 0 0 0.6rem;
+}
+
+.stepReason {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: $bone;
+  margin: 0 0 1.5rem;
+}
+
+.optionsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.optionButton {
+  text-align: left;
+  padding: 0.9rem 1.1rem;
+  background: rgba($ivory, 0.04);
+  border: 1px solid rgba($brass-dim, 0.45);
+  border-radius: $radius-sm;
+  font-family: $font-body;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: $ivory;
+  cursor: pointer;
+  transition: border-color 0.2s $ease-standard, background 0.2s $ease-standard,
+    transform 0.2s $ease-standard;
+
+  &:hover {
+    border-color: $brass;
+    background: rgba($ivory, 0.08);
+  }
+}
+
+.optionSelected {
+  border-color: $brass;
+  background: rgba($brass, 0.16);
+  color: $brass-bright;
+  font-weight: 600;
+}
+
+.backButton {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 0;
+  background: none;
+  border: none;
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $brass-dim;
+  cursor: pointer;
+  transition: color 0.2s $ease-standard;
+
+  svg {
+    font-size: 0.75rem;
+  }
+
+  &:hover {
+    color: $brass-bright;
+  }
+}
+
+.finalActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.5rem;
+
+  .backButton {
+    margin-top: 0;
   }
 }
 
@@ -172,5 +327,10 @@
 
   .button {
     align-self: stretch;
+  }
+
+  .finalActions {
+    flex-direction: column-reverse;
+    align-items: stretch;
   }
 }

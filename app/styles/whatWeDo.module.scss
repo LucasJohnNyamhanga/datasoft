@@ -2,7 +2,7 @@
 
 .container {
   width: 100%;
-  background-color: $ivory;
+  background-color: $bone;
   scroll-margin-top: var(--nav-height, 90px);
 }
 
@@ -12,24 +12,23 @@
   padding: $space-xl $gutter;
 }
 
-.eyebrow {
-  font-family: $font-body;
-  font-weight: 600;
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: $coffee;
-  margin: 0 0 1rem;
+.header {
+  max-width: 42rem;
 }
 
 .heading {
-  font-family: $font-display;
-  font-weight: 420;
-  font-size: clamp(1.75rem, 3.2vw, 2.75rem);
-  line-height: 1.1;
+  font-family: $hero-font-display;
+  font-weight: 400;
+  font-size: clamp(1.9rem, 4vw, 3.1rem);
+  line-height: 1.16;
+  letter-spacing: -0.01em;
   color: $ink;
   margin: 0;
-  max-width: 20ch;
+  max-width: 22ch;
+}
+
+.line {
+  display: block;
 }
 
 .intro {
@@ -38,15 +37,86 @@
   font-size: 1.0625rem;
   line-height: 1.65;
   color: $ink-soft;
-  max-width: 60ch;
-  margin: 1.5rem 0 0;
+  max-width: 52ch;
+  margin: 1.25rem 0 0;
+}
+
+.showcase {
+  margin-top: $space-lg;
+}
+
+.canvas {
+  display: none;
+  position: relative;
+  height: clamp(120px, 15vw, 190px);
+  margin-bottom: $space-md;
+  border-radius: $radius-md;
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
+}
+
+.dotGrid {
+  position: absolute;
+  inset: -25%;
+  background-image: radial-gradient(circle, rgba(23, 32, 26, 0.16) 1px, transparent 1.5px);
+  background-size: 22px 22px;
+  transform: rotate(-4deg) skewX(6deg) scale(1.3);
+}
+
+.wires {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+
+  path {
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+  }
+}
+
+.hub {
+  position: absolute;
+  top: 0.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.35rem 0.9rem 0.35rem 0.4rem;
+  background-color: $ivory-card;
+  border: 1px solid $bone;
+  border-radius: 999px;
+  box-shadow: 0 8px 20px -12px rgba(23, 32, 26, 0.3);
+}
+
+.hubTitle {
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: 0.78rem;
+  color: $ink;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.hubTag {
+  font-family: $font-body;
+  font-weight: 500;
+  font-size: 0.62rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $ink-soft;
+  margin: 0;
+  line-height: 1.2;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 1.5rem;
-  margin-top: $space-lg;
 
   @media (min-width: 640px) {
     grid-template-columns: repeat(2, 1fr);
@@ -59,6 +129,12 @@
 
 .cell {
   height: 100%;
+}
+
+@media (min-width: 1024px) {
+  .canvas {
+    display: block;
+  }
 }
 
 @media (max-width: 640px) {

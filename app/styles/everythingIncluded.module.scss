@@ -1,0 +1,145 @@
+@use "index" as *;
+
+.container {
+  width: 100%;
+  background-color: $ivory;
+  scroll-margin-top: var(--nav-height, 90px);
+}
+
+.subContainer {
+  max-width: $content-max;
+  margin: 0 auto;
+  padding: $space-xl $gutter;
+}
+
+.header {
+  max-width: 42rem;
+}
+
+.eyebrow {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $brass-dim;
+  margin: 0 0 1rem;
+}
+
+.heading {
+  font-family: $font-display;
+  font-weight: 420;
+  font-size: clamp(1.75rem, 3.2vw, 2.75rem);
+  line-height: 1.1;
+  color: $ink;
+  margin: 0;
+  max-width: 24ch;
+}
+
+.line {
+  display: block;
+}
+
+.intro {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: $ink-soft;
+  max-width: 52ch;
+  margin: 1.25rem 0 0;
+}
+
+.list {
+  margin-top: $space-lg;
+  border-top: 1px solid $bone;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid $bone;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.85rem 0;
+  }
+
+  &:hover {
+    .icon {
+      border-color: $brass;
+      color: $brass-bright;
+    }
+
+    .index {
+      color: $brass-dim;
+    }
+  }
+}
+
+.rowHead {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-shrink: 0;
+
+  @media (min-width: 768px) {
+    width: 20rem;
+  }
+}
+
+.index {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: $bone;
+  transition: color 0.25s $ease-standard;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+  border: 1px solid $brass-dim;
+  border-radius: $radius-sm;
+  color: $brass;
+  font-size: 1.1rem;
+  transition: border-color 0.25s $ease-standard, color 0.25s $ease-standard;
+}
+
+.title {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: $ink;
+  margin: 0;
+}
+
+.description {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: $ink-soft;
+  margin: 0;
+  padding-left: calc(2.75rem + 1.25rem + 2.5rem);
+
+  @media (min-width: 768px) {
+    padding-left: 0;
+    max-width: 32rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .subContainer {
+    padding: $space-lg $gutter;
+  }
+}

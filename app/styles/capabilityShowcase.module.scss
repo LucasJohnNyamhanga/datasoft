@@ -1,0 +1,782 @@
+@use "index" as *;
+
+// Same dark sapphire glass "device" chrome as the Hero's CodeEditor window —
+// reused here so the four capability mockups read as the site's one
+// recurring signature visual device rather than four one-off illustrations.
+
+$mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monospace;
+
+.window {
+  --ide-bg: #{rgba($sapphire-deep, 0.82)};
+  --ide-bg-raised: #{rgba($sapphire-raised, 0.6)};
+  --ide-bg-editor: #{rgba($sapphire-deep, 0.5)};
+  --ide-border: #{rgba($bone, 0.14)};
+  --ide-text: #cfe0f2;
+  --ide-text-dim: #{rgba(#cfe0f2, 0.45)};
+  --ide-accent: #{$cobalt-bright};
+  --ide-accent-2: #{$brass-bright};
+
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: $radius-md * 2;
+  overflow: hidden;
+  background: var(--ide-bg);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid var(--ide-border);
+  box-shadow: 0 40px 70px -32px rgba(7, 16, 28, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  isolation: isolate;
+}
+
+.window::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 38%);
+}
+
+.titleBar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  flex: none;
+  height: 2.35rem;
+  padding: 0 0.9rem;
+  background: var(--ide-bg-raised);
+  border-bottom: 1px solid var(--ide-border);
+}
+
+.trafficLights {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex: none;
+}
+
+.dotRed,
+.dotYellow,
+.dotGreen {
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+.dotRed {
+  background: #ff5f57;
+}
+.dotYellow {
+  background: #febc2e;
+}
+.dotGreen {
+  background: #28c840;
+}
+
+.titleText {
+  flex: 1;
+  text-align: center;
+  font-family: $mono;
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+  color: var(--ide-text-dim);
+}
+
+.titleSpacer {
+  width: 3.6rem;
+  flex: none;
+}
+
+.body {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  min-height: 0;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  display: flex;
+}
+
+// ---- System / dashboard mock -------------------------------------------
+
+.sysBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  width: 100%;
+  min-height: 0;
+}
+
+.statRow {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.statTile {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.55rem 0.7rem;
+  background: var(--ide-bg-raised);
+  border: 1px solid var(--ide-border);
+  border-radius: $radius-sm;
+}
+
+.statValue {
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: clamp(0.72rem, 1.6vw, 0.9rem);
+  color: var(--ide-text);
+}
+
+.statLabel {
+  font-family: $font-body;
+  font-weight: 500;
+  font-size: 0.6rem;
+  letter-spacing: 0.04em;
+  color: var(--ide-text-dim);
+}
+
+.sysTable {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--ide-bg-editor);
+  border: 1px solid var(--ide-border);
+  border-radius: $radius-sm;
+  overflow: hidden;
+}
+
+.sysRowHead,
+.sysRow {
+  display: grid;
+  grid-template-columns: 1.1fr 1.2fr 1fr;
+  gap: 0.4rem;
+  padding: 0.45rem 0.7rem;
+  font-family: $font-body;
+  font-size: 0.66rem;
+}
+
+.sysRowHead {
+  color: var(--ide-text-dim);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.58rem;
+  border-bottom: 1px solid var(--ide-border);
+}
+
+.sysRow {
+  color: var(--ide-text);
+  border-bottom: 1px solid var(--ide-border);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.sysStatus {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--ide-text-dim);
+}
+
+.liveDot {
+  flex: none;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background: var(--ide-accent);
+  animation: pulseDot 1.6s ease-in-out infinite;
+}
+
+.sparkline {
+  flex: none;
+  height: 2.4rem;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.3rem;
+  padding: 0 0.1rem;
+}
+
+.sparkBar {
+  flex: 1;
+  border-radius: 2px 2px 0 0;
+  background: linear-gradient(to top, var(--ide-accent-2), rgba($brass-bright, 0.35));
+}
+
+// ---- App / phone mock ----------------------------------------------------
+
+.appBody {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.codeGhost {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--ide-bg-editor);
+  border: 1px solid var(--ide-border);
+  border-radius: $radius-sm;
+  overflow: hidden;
+}
+
+.codeGhostBar {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 0.28rem;
+  padding: 0.4rem 0.55rem;
+  background: var(--ide-bg-raised);
+  border-bottom: 1px solid var(--ide-border);
+}
+
+.ghostDot {
+  width: 0.32rem;
+  height: 0.32rem;
+  border-radius: 50%;
+  background: var(--ide-text-dim);
+  opacity: 0.6;
+}
+
+.codeGhostBody {
+  flex: 1;
+  min-height: 0;
+  padding: 0.6rem 0.7rem;
+  font-family: $mono;
+  font-size: clamp(0.5rem, 1.4vw, 0.6rem);
+  line-height: 1.7;
+  overflow: hidden;
+}
+
+.codeGhostLine {
+  display: flex;
+}
+
+.codeGhostLineNumber {
+  flex: none;
+  width: 1.1rem;
+  text-align: right;
+  margin-right: 0.6rem;
+  color: var(--ide-text-dim);
+  opacity: 0.5;
+  user-select: none;
+}
+
+.codeGhostText {
+  white-space: pre;
+  color: var(--ide-text);
+  opacity: 0.85;
+}
+
+.kw {
+  color: var(--ide-accent);
+}
+
+.type {
+  color: var(--ide-accent-2);
+}
+
+.str {
+  color: #7ec699;
+}
+
+.phone {
+  position: relative;
+  z-index: 1;
+  width: 50%;
+  max-width: 9.5rem;
+  aspect-ratio: 9 / 18.5;
+  padding: 0.4rem;
+  background: linear-gradient(160deg, #2c313b 0%, #12151a 100%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 1.5rem;
+  box-shadow: 0 22px 38px -20px rgba(7, 16, 28, 0.7), inset 0 0 0 1px rgba(0, 0, 0, 0.35);
+}
+
+.phoneButton {
+  position: absolute;
+  top: 20%;
+  right: -2px;
+  width: 2px;
+  height: 11%;
+  border-radius: 2px 0 0 2px;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.phoneScreen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0.6rem 0.5rem 0.55rem;
+  background: var(--ide-bg-editor);
+  border-radius: 1.05rem;
+  overflow: hidden;
+}
+
+.phoneNotch {
+  flex: none;
+  align-self: center;
+  width: 1.7rem;
+  height: 0.24rem;
+  margin-bottom: 0.45rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.phoneHeader {
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: 0.62rem;
+  color: var(--ide-text);
+  text-align: center;
+}
+
+.phoneList {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.32rem;
+  margin-top: 0.55rem;
+}
+
+.phoneRow {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.28rem 0.3rem;
+  background: var(--ide-bg-raised);
+  border-radius: 3px;
+}
+
+.phoneDot {
+  flex: none;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 2px;
+  background: var(--ide-accent-2);
+}
+
+.phoneName {
+  flex: 1;
+  min-width: 0;
+  font-family: $font-body;
+  font-size: 0.5rem;
+  color: var(--ide-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.phonePrice {
+  flex: none;
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.47rem;
+  color: var(--ide-text-dim);
+}
+
+.phoneCta {
+  flex: none;
+  margin-top: 0.5rem;
+  padding: 0.4rem;
+  text-align: center;
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: 0.55rem;
+  letter-spacing: 0.03em;
+  color: $sapphire-deep;
+  background: $gradient-gold;
+  border-radius: 999px;
+}
+
+// ---- Website mock ---------------------------------------------------------
+
+.webBody {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.webNav {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.5rem 0.7rem;
+  background: var(--ide-bg-raised);
+  border: 1px solid var(--ide-border);
+  border-radius: $radius-sm;
+}
+
+.webWordmark {
+  flex: none;
+  font-family: $font-display;
+  font-weight: 420;
+  font-size: 0.72rem;
+  letter-spacing: -0.01em;
+  color: var(--ide-text);
+}
+
+.webNavLinks {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.webNavLink {
+  font-family: $font-body;
+  font-weight: 500;
+  font-size: 0.48rem;
+  letter-spacing: 0.02em;
+  color: var(--ide-text-dim);
+  white-space: nowrap;
+}
+
+.webNavCta {
+  margin-left: auto;
+  flex: none;
+  padding: 0.28rem 0.65rem;
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: 0.46rem;
+  letter-spacing: 0.03em;
+  color: $sapphire-deep;
+  background: $gradient-gold;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.webHero {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: stretch;
+  gap: 0.7rem;
+  padding: 0.9rem 0.8rem;
+  background: var(--ide-bg-editor);
+  border: 1px solid var(--ide-border);
+  border-radius: $radius-sm;
+  overflow: hidden;
+}
+
+.webHeroCopy {
+  flex: 1.1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+.webEyebrow {
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: 0.42rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ide-accent-2);
+}
+
+.webHeadline {
+  font-family: $font-display;
+  font-weight: 420;
+  font-size: clamp(0.66rem, 2vw, 0.85rem);
+  line-height: 1.2;
+  color: var(--ide-text);
+  margin: 0.1rem 0 0;
+
+  em {
+    font-style: italic;
+    color: var(--ide-accent-2);
+  }
+}
+
+.webParagraph {
+  height: 0.28rem;
+  width: 60%;
+  border-radius: 2px;
+  background: var(--ide-text-dim);
+  opacity: 0.7;
+  margin-top: 0.15rem;
+}
+
+.webButton {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: 0.5rem;
+  letter-spacing: 0.03em;
+  color: $sapphire-deep;
+  background: $gradient-gold;
+  border-radius: 999px;
+}
+
+.webHeroImage {
+  position: relative;
+  flex: 0.85;
+  border-radius: $radius-sm;
+  overflow: hidden;
+  background: linear-gradient(155deg, #{$maroon-bright} 0%, #{$maroon} 55%, #{$sapphire-deep} 100%);
+}
+
+.webHeroImage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0) 40%);
+}
+
+.webImageBadge {
+  position: absolute;
+  top: 0.45rem;
+  left: 0.45rem;
+  padding: 0.2rem 0.5rem;
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: 0.4rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $sapphire-deep;
+  background: var(--ide-accent-2);
+  border-radius: 999px;
+}
+
+.webBadge {
+  position: absolute;
+  right: 0.4rem;
+  bottom: 0.4rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  padding: 0.5rem 0.7rem;
+  background: var(--ide-bg-raised);
+  border: 1px solid var(--ide-border);
+  border-radius: $radius-sm;
+  box-shadow: 0 14px 26px -16px rgba(7, 16, 28, 0.6);
+}
+
+.webScore {
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1;
+  color: var(--ide-accent-2);
+}
+
+.webBadgeLabel {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.52rem;
+  color: var(--ide-text);
+  white-space: nowrap;
+}
+
+.webBadgeSub {
+  font-family: $font-body;
+  font-size: 0.46rem;
+  color: var(--ide-text-dim);
+  white-space: nowrap;
+}
+
+// ---- Brand / artboard mock -------------------------------------------
+
+.brandBody {
+  position: relative;
+  width: 100%;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.toolRail {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.4rem;
+  background: var(--ide-bg-raised);
+  border: 1px solid var(--ide-border);
+  border-radius: $radius-sm;
+}
+
+.toolIcon {
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 3px;
+  background: var(--ide-text-dim);
+  opacity: 0.6;
+}
+
+.artboard {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.9rem;
+  background: var(--ide-bg-editor);
+  border: 1px solid var(--ide-border);
+  border-radius: $radius-sm;
+}
+
+.logoMark {
+  position: relative;
+  width: 2.9rem;
+  height: 2.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoMark::before {
+  content: "";
+  position: absolute;
+  inset: -45%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba($brass-bright, 0.4) 0%,
+    rgba($cobalt-bright, 0.2) 45%,
+    transparent 72%
+  );
+  filter: blur(7px);
+  animation: brainGlow 3.4s ease-in-out infinite;
+}
+
+.brainMark {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 6px 12px rgba(7, 16, 28, 0.5));
+  animation: brainFloat 5.5s ease-in-out infinite;
+}
+
+.brainAccentGold {
+  fill: none;
+  stroke: var(--ide-accent-2);
+  stroke-linecap: round;
+}
+
+.brainAccentCobalt {
+  fill: none;
+  stroke: var(--ide-accent);
+  stroke-linecap: round;
+}
+
+.wordmark {
+  width: 4rem;
+  height: 0.4rem;
+  border-radius: 2px;
+  background: var(--ide-text);
+  opacity: 0.85;
+}
+
+.swatchRow {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.swatch {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.cardPreview {
+  position: absolute;
+  right: -0.4rem;
+  bottom: -0.5rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  width: 4rem;
+  padding: 0.55rem;
+  background: var(--ide-bg-raised);
+  border: 1px solid var(--ide-border);
+  border-radius: $radius-sm;
+  transform: rotate(-6deg);
+  box-shadow: 0 16px 28px -18px rgba(7, 16, 28, 0.6);
+}
+
+.cardLine {
+  height: 0.3rem;
+  border-radius: 2px;
+  background: var(--ide-text-dim);
+}
+
+// ---- Animations ---------------------------------------------------------
+
+@keyframes pulseDot {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(74, 144, 217, 0.5);
+  }
+  50% {
+    opacity: 0.6;
+    box-shadow: 0 0 0 3px rgba(74, 144, 217, 0);
+  }
+}
+
+@keyframes brainFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-4%) rotate(2deg);
+  }
+}
+
+@keyframes brainGlow {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .liveDot,
+  .brainMark,
+  .logoMark::before {
+    animation: none;
+  }
+}
