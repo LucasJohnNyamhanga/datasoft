@@ -1,12 +1,18 @@
 "use client";
-import { useState } from "react";
-import styles from "../styles/doYouHaveAnIdea.module.scss";
-import { FaQuoteLeft, FaQuoteRight, FaCircleCheck, FaBoltLightning, FaArrowLeft } from "react-icons/fa6";
 import axios from "axios";
+import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import {
+  FaArrowLeft,
+  FaBoltLightning,
+  FaCircleCheck,
+  FaQuoteLeft,
+  FaQuoteRight,
+} from "react-icons/fa6";
+import { useLanguage } from "../i18n/LanguageContext";
+import styles from "../styles/doYouHaveAnIdea.module.scss";
 import Loader from "./loaderWait";
 import Reveal from "./Reveal";
-import { useLanguage } from "../i18n/LanguageContext";
 
 const emptyAnswers = {
   projectType: "",
@@ -68,7 +74,7 @@ const Contact = () => {
       const response = await axios.post(
         "/api/email",
         { ...details, ...answers },
-        config
+        config,
       );
       if (response.data.success) {
         notifySuccess(t.contact.successMessage);
@@ -127,7 +133,7 @@ const Contact = () => {
 
           <Reveal className={styles.quotation} delay={140}>
             <FaQuoteLeft className={styles.quoteMark} />
-            <p>{t.contact.quote}</p>
+            <p>{t.contact.quoteFormula.result}</p>
             <FaQuoteRight className={styles.quoteMark} />
           </Reveal>
         </div>
@@ -157,7 +163,9 @@ const Contact = () => {
                     key={option.value}
                     type="button"
                     className={`${styles.optionButton} ${
-                      answers[currentStep.key] === option.value ? styles.optionSelected : ""
+                      answers[currentStep.key] === option.value
+                        ? styles.optionSelected
+                        : ""
                     }`}
                     aria-pressed={answers[currentStep.key] === option.value}
                     onClick={() => selectOption(currentStep.key, option.value)}
@@ -168,7 +176,11 @@ const Contact = () => {
               </div>
 
               {stepIndex > 0 && (
-                <button type="button" className={styles.backButton} onClick={goBack}>
+                <button
+                  type="button"
+                  className={styles.backButton}
+                  onClick={goBack}
+                >
                   <FaArrowLeft />
                   {t.contact.back}
                 </button>
@@ -178,7 +190,9 @@ const Contact = () => {
 
           {isFinalStep && (
             <div className={styles.stepPanel}>
-              <h3 className={styles.stepQuestion}>{t.contact.finalStep.title}</h3>
+              <h3 className={styles.stepQuestion}>
+                {t.contact.finalStep.title}
+              </h3>
               <p className={styles.stepReason}>{t.contact.finalStep.reason}</p>
 
               <form
@@ -241,7 +255,11 @@ const Contact = () => {
                 </div>
 
                 <div className={styles.finalActions}>
-                  <button type="button" className={styles.backButton} onClick={goBack}>
+                  <button
+                    type="button"
+                    className={styles.backButton}
+                    onClick={goBack}
+                  >
                     <FaArrowLeft />
                     {t.contact.back}
                   </button>
