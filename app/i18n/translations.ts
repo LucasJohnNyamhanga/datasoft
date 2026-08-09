@@ -674,7 +674,10 @@ const en: Dict = {
     heading: "Tell Us About Your Project",
     intro:
       "A few quick answers help us give you the right advice from the start — this isn't just a form, it's the beginning of your project.",
-    quote: "The Right Idea + The Right Product + The Right Market = Success",
+    quoteFormula: {
+      terms: ["The Right Idea", "The Right Product", "The Right Market"],
+      result: "Success",
+    },
     trust: {
       consultation: "First Consultation — Free",
       prototype: "First Prototype Ready Within 48 Hours",
@@ -947,6 +950,55 @@ const en: Dict = {
       why: "Every design project starts from your business goal, not this year's trend — the result still holds up years from now.",
       ctaLabel: "Start a Design Project",
     },
+  },
+  faq: {
+    eyebrow: "Frequently Asked Questions",
+    heading: "Have a Question? We're Here",
+    intro:
+      "Quick answers to the questions our clients ask most often before starting a project.",
+    contactPrompt: "Still have a question? Contact us",
+    items: [
+      {
+        question: "What exactly do you offer?",
+        answer:
+          "We provide four main services: custom software development, web design and hosting, office computer networking, and graphics design. Each service can stand alone or be combined in one project.",
+      },
+      {
+        question: "How long will my project take to complete?",
+        answer:
+          "It depends on the project's size, but we can start building your first prototype within 48 hours of our first conversation. Every project follows four stages — Idea, Design, Build and Launch — and we will give you a full timeline once we understand your needs.",
+      },
+      {
+        question: "How much does a project cost?",
+        answer:
+          "Every project is unique, so the price depends on its scope and requirements. Our contact form asks about your budget range so we can recommend the right package — and the first consultation is completely free.",
+      },
+      {
+        question: "Do you work with clients outside Mwanza?",
+        answer:
+          "Yes. Although our team is based in Mwanza, we serve clients across Tanzania — from Kigoma and Arusha to Dodoma and Mbeya — through online communication and phone, and we travel when office networking projects require it.",
+      },
+      {
+        question: "I don't have any design ready yet — can you help me?",
+        answer:
+          "Absolutely. When you fill out the contact form, you can let us know that you don't have a design yet, and our team will advise you and propose options from the start — you don't need to bring everything ready.",
+      },
+      {
+        question: "Will you support me after my website or system launches?",
+        answer:
+          "Yes. Every project we build comes with ongoing support, uptime monitoring, and regular backups — our Mwanza team stays close to help with any needs after launch.",
+      },
+      {
+        question: "Will my website or system be secure?",
+        answer:
+          "Yes. Our projects include security certificates (SSL), protection against common web threats, and regular backups of your data, so your business remains safe and reliable.",
+      },
+      {
+        question: "How do I start my project with DataSoft?",
+        answer:
+          "Fill our short contact form below, or call us directly. A few questions are enough for us to understand your project, and our team will reach out within a few hours to start the conversation — free of charge.",
+      },
+    ],
   },
 };
 
