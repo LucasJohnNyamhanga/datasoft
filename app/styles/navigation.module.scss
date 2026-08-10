@@ -212,6 +212,14 @@
   }
 }
 
+.linkActive {
+  color: $ivory;
+
+  &::after {
+    transform: scaleX(1);
+  }
+}
+
 @media (max-width: 900px) {
   .container {
     display: none;

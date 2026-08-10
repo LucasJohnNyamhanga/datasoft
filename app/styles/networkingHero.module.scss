@@ -1,0 +1,239 @@
+@use "index" as *;
+
+// The Networking page's own hero — mirrors the homepage Hero's split
+// layout and ivory register (rather than ServiceHero's dark image banner)
+// so the "IDE-style device panel" language carries over directly, with a
+// breadcrumb reinstated so wayfinding back to Home still works.
+
+.container {
+  position: relative;
+  width: 100%;
+  padding-top: var(--nav-height, 107px);
+  background-color: $ivory;
+  scroll-margin-top: var(--nav-height, 90px);
+}
+
+.frame {
+  width: 100%;
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 4rem) $gutter clamp(3.5rem, 7vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.copy {
+  width: 100%;
+  min-width: 0;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $ink-soft;
+  margin: 0 0 1.5rem;
+
+  a {
+    color: $ink-soft;
+    transition: color 0.2s $ease-standard;
+
+    &:hover {
+      color: $brass-dim;
+    }
+  }
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: $hero-font-body;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: $ink-soft;
+  border: 1px solid $bone;
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  margin: 0 0 1.75rem;
+}
+
+.eyebrowDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $brass;
+  flex: none;
+}
+
+.headline {
+  font-family: $hero-font-display;
+  font-weight: 400;
+  font-size: clamp(2.4rem, 5.5vw, 3.75rem);
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+  color: $ink;
+  margin: 0;
+}
+
+.line {
+  display: block;
+}
+
+.lineAccent {
+  font-style: italic;
+  color: $brass-dim;
+}
+
+.subheadline {
+  font-family: $hero-font-body;
+  font-weight: 400;
+  font-size: 1.08rem;
+  line-height: 1.6;
+  color: $ink-soft;
+  max-width: 46ch;
+  margin: 1.4rem auto 0;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2.25rem;
+}
+
+.primaryButton,
+.outlineButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 2.2rem;
+  font-family: $hero-font-body;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  transition: background 0.25s $ease-standard, border-color 0.25s $ease-standard,
+    color 0.25s $ease-standard, transform 0.25s $ease-standard, box-shadow 0.25s $ease-standard;
+}
+
+.primaryButton {
+  background: $gradient-gold;
+  color: $ink;
+  border: 1px solid transparent;
+
+  &:hover {
+    background: $gradient-gold-hover;
+    transform: translateY(-1px);
+    box-shadow: $glow-brass;
+  }
+}
+
+.outlineButton {
+  background-color: transparent;
+  color: $ink;
+  border: 1px solid $ink;
+
+  &:hover {
+    border-color: $brass-dim;
+    color: $brass-dim;
+  }
+}
+
+.panelWrap {
+  width: 100%;
+  max-width: 38rem;
+  margin: clamp(3rem, 6vw, 4rem) 0 0;
+}
+
+.panel {
+  position: relative;
+  aspect-ratio: 8 / 5;
+}
+
+.panelCaption {
+  font-family: $hero-font-body;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $ink-soft;
+  opacity: 0.8;
+  text-align: center;
+  margin: 1rem 0 0;
+}
+
+@media (max-width: 640px) {
+  .frame {
+    padding: 2.25rem 1.25rem 3rem;
+  }
+
+  .headline {
+    font-size: clamp(2.1rem, 9vw, 2.75rem);
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .primaryButton,
+  .outlineButton {
+    text-align: center;
+  }
+
+  .panel {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .frame {
+    max-width: $content-max;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(3rem, 5vw, 6rem);
+    text-align: left;
+    padding: clamp(3rem, 7vw, 5.5rem) $gutter clamp(4rem, 8vw, 6.5rem);
+  }
+
+  .breadcrumb {
+    justify-content: flex-start;
+  }
+
+  .copy {
+    flex: 1 1 26rem;
+    max-width: 34rem;
+  }
+
+  .subheadline {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .actions {
+    justify-content: flex-start;
+  }
+
+  .panelWrap {
+    flex: 1 1 30rem;
+    max-width: 34rem;
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,403 @@
+@use "index" as *;
+
+// Same dark sapphire glass "device" chrome as CodeEditor/CapabilityShowcase —
+// reused here so this reads as the site's one recurring signature visual
+// device rather than a one-off illustration.
+
+$mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monospace;
+
+.window {
+  --ide-bg: #{rgba($sapphire-deep, 0.82)};
+  --ide-bg-raised: #{rgba($sapphire-raised, 0.6)};
+  --ide-bg-editor: #{rgba($sapphire-deep, 0.5)};
+  --ide-border: #{rgba($bone, 0.14)};
+  --ide-text: #cfe0f2;
+  --ide-text-dim: #{rgba(#cfe0f2, 0.45)};
+  --ide-accent: #{$cobalt-bright};
+  --ide-accent-2: #{$brass-bright};
+
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: $radius-md * 2;
+  overflow: hidden;
+  background: var(--ide-bg);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid var(--ide-border);
+  box-shadow: 0 40px 70px -32px rgba(7, 16, 28, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  isolation: isolate;
+}
+
+.window::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 38%);
+}
+
+.titleBar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  flex: none;
+  height: 2.35rem;
+  padding: 0 0.9rem;
+  background: var(--ide-bg-raised);
+  border-bottom: 1px solid var(--ide-border);
+}
+
+.trafficLights {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex: none;
+}
+
+.dotRed,
+.dotYellow,
+.dotGreen {
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+.dotRed {
+  background: #ff5f57;
+}
+.dotYellow {
+  background: #febc2e;
+}
+.dotGreen {
+  background: #28c840;
+}
+
+.titleText {
+  flex: 1;
+  text-align: center;
+  font-family: $mono;
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+  color: var(--ide-text-dim);
+}
+
+.titleSpacer {
+  width: 3.6rem;
+  flex: none;
+}
+
+// ---- Body / canvas -------------------------------------------------------
+
+.body {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  padding: clamp(0.75rem, 2.4vw, 1.5rem);
+}
+
+.canvas {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  border-radius: $radius-sm;
+  overflow: hidden;
+  background: var(--ide-bg-editor);
+  border: 1px solid var(--ide-border);
+}
+
+.dotGrid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(207, 224, 242, 0.14) 1px, transparent 1.5px);
+  background-size: 20px 20px;
+}
+
+.wires {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+
+  path {
+    fill: none;
+    stroke-width: 1.1;
+    stroke-linecap: round;
+  }
+}
+
+.pathOut {
+  stroke: var(--ide-accent-2);
+  opacity: 0.7;
+  stroke-dasharray: 2.4 3.4;
+  animation: flow 3.2s linear infinite;
+}
+
+.pathIn {
+  stroke: var(--ide-accent);
+  opacity: 0.7;
+  stroke-dasharray: 2.4 3.4;
+  animation: flow 3.2s linear infinite;
+}
+
+.packetOut {
+  fill: var(--ide-accent-2);
+  filter: drop-shadow(0 0 2.5px rgba(240, 197, 80, 0.9));
+}
+
+.packetIn {
+  fill: var(--ide-accent);
+  filter: drop-shadow(0 0 2.5px rgba(74, 144, 217, 0.9));
+}
+
+.flowTag {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.18rem 0.55rem;
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.5rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border-radius: 999px;
+  background: var(--ide-bg-raised);
+  border: 1px solid var(--ide-border);
+}
+
+.flowTagOut {
+  top: 6%;
+  color: var(--ide-accent-2);
+}
+
+.flowTagIn {
+  bottom: 6%;
+  color: var(--ide-accent);
+}
+
+// ---- Server / cloud nodes -------------------------------------------------
+
+.node {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  width: clamp(4.5rem, 14vw, 6.5rem);
+}
+
+.serverNode {
+  left: clamp(0.4rem, 3vw, 1.25rem);
+}
+
+.cloudNode {
+  right: clamp(0.4rem, 3vw, 1.25rem);
+}
+
+.nodeLabel {
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: clamp(0.56rem, 1.4vw, 0.68rem);
+  color: var(--ide-text);
+  margin: 0;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.nodeSub {
+  font-family: $font-body;
+  font-weight: 500;
+  font-size: clamp(0.44rem, 1.1vw, 0.52rem);
+  letter-spacing: 0.02em;
+  color: var(--ide-text-dim);
+  margin: 0;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.serverRack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
+  width: clamp(2.4rem, 7vw, 3.1rem);
+  padding: 0.3rem;
+  background: var(--ide-bg-raised);
+  border: 1px solid var(--ide-border);
+  border-radius: 3px;
+  box-shadow: 0 10px 24px -14px rgba(7, 16, 28, 0.7);
+}
+
+.rackUnit {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.16rem;
+  height: 0.5rem;
+  padding: 0 0.28rem;
+  background: var(--ide-bg-editor);
+  border-radius: 2px;
+}
+
+.rackUnit i {
+  width: 0.16rem;
+  height: 0.16rem;
+  border-radius: 50%;
+  flex: none;
+}
+
+.ledGreen {
+  background: #3ddc84;
+  animation: pulseLed 2.2s ease-in-out infinite;
+}
+
+.ledGold {
+  background: var(--ide-accent-2);
+  animation: pulseLed 2.2s ease-in-out infinite;
+  animation-delay: 0.6s;
+}
+
+.ledDim {
+  background: var(--ide-text-dim);
+  opacity: 0.5;
+}
+
+.cloudShape {
+  position: relative;
+  width: clamp(3.6rem, 10vw, 4.6rem);
+  height: clamp(1.9rem, 5.2vw, 2.4rem);
+  filter: drop-shadow(0 8px 18px rgba(74, 144, 217, 0.35));
+}
+
+.cloudPuffLeft,
+.cloudPuffRight {
+  position: absolute;
+  bottom: 22%;
+  width: 60%;
+  height: 78%;
+  border-radius: 50%;
+  background: linear-gradient(155deg, $cobalt-bright 0%, $cobalt 100%);
+}
+
+.cloudPuffLeft {
+  left: 2%;
+}
+
+.cloudPuffRight {
+  right: 2%;
+  height: 65%;
+}
+
+.cloudBase {
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  bottom: 0;
+  height: 55%;
+  border-radius: 999px;
+  background: linear-gradient(155deg, $cobalt-bright 0%, $cobalt 100%);
+}
+
+// ---- Status bar -----------------------------------------------------------
+
+.statusBar {
+  position: relative;
+  z-index: 1;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 1.5rem;
+  padding: 0 0.75rem;
+  background: var(--ide-accent);
+  font-family: $mono;
+  font-size: 0.58rem;
+  color: $sapphire-deep;
+}
+
+.statusLeft,
+.statusRight {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.statusItem {
+  display: flex;
+  align-items: center;
+  gap: 0.32rem;
+  white-space: nowrap;
+}
+
+.liveDot {
+  flex: none;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: $sapphire-deep;
+  animation: pulseDot 1.6s ease-in-out infinite;
+}
+
+// ---- Animations -------------------------------------------------------
+
+@keyframes flow {
+  to {
+    stroke-dashoffset: -34;
+  }
+}
+
+@keyframes pulseLed {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@keyframes pulseDot {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(13, 44, 78, 0.4);
+  }
+  50% {
+    opacity: 0.55;
+    box-shadow: 0 0 0 3px rgba(13, 44, 78, 0);
+  }
+}
+
+@media (max-width: 640px) {
+  .flowTag {
+    font-size: 0.44rem;
+    padding: 0.14rem 0.42rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pathOut,
+  .pathIn,
+  .ledGreen,
+  .ledGold,
+  .liveDot {
+    animation: none;
+  }
+
+  .packetOut,
+  .packetIn {
+    display: none;
+  }
+}

@@ -6,11 +6,14 @@ import Styles from "../styles/drawerMobile.module.scss";
 import { useLanguage } from "../i18n/LanguageContext";
 import LanguageToggle from "./LanguageToggle";
 
+const SERVICE_SEGMENTS = ["Software", "Hosting", "Networking", "Graphics"];
+
 export const MuiDrawer = () => {
   const segment = useSelectedLayoutSegment();
   const { t } = useLanguage();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const hamburger = useRef<HTMLButtonElement>(null!);
+  const isServicePage = segment != null && SERVICE_SEGMENTS.includes(segment);
 
   const handleMenuClick = () => {
     hamburger.current.classList.toggle(Styles.isActive);
@@ -79,6 +82,16 @@ export const MuiDrawer = () => {
                 {t.nav.process}
               </a>
             </>
+          )}
+          {isServicePage && (
+            <a href="#capabilities" className={Styles.link} onClick={handleClose}>
+              {t.nav.capabilities}
+            </a>
+          )}
+          {segment === "Networking" && (
+            <a href="#process" className={Styles.link} onClick={handleClose}>
+              {t.nav.process}
+            </a>
           )}
           <a href="#idea" className={Styles.link} onClick={handleClose}>
             {t.nav.contact}

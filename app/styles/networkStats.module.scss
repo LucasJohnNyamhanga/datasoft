@@ -1,0 +1,58 @@
+@use "index" as *;
+
+.container {
+  width: 100%;
+  background-color: $ivory-card;
+  border-top: 1px solid $bone;
+  border-bottom: 1px solid $bone;
+}
+
+.subContainer {
+  max-width: $content-max;
+  margin: 0 auto;
+  padding: $space-md $gutter;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-md;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: $space-lg;
+  }
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 0;
+  border-top: 1px solid $bone;
+
+  @media (min-width: 768px) {
+    padding: 0 0 0 $space-lg;
+    border-top: none;
+    border-left: 1px solid $bone;
+
+    &:first-child {
+      padding-left: 0;
+      border-left: none;
+    }
+  }
+}
+
+.value {
+  font-family: $font-display;
+  font-weight: 420;
+  font-size: clamp(1.9rem, 3vw, 2.5rem);
+  line-height: 1;
+  color: $brass-dim;
+}
+
+.label {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: $ink-soft;
+  max-width: 32ch;
+}

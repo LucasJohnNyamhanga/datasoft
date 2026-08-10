@@ -42,7 +42,11 @@
   gap: 2.5rem;
 
   @media (min-width: 640px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 960px) {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -62,12 +66,18 @@
 }
 
 .body {
+  display: block;
   font-family: $font-body;
   font-weight: 400;
   font-size: 0.95rem;
   line-height: 1.6;
   color: $bone;
   margin: 0 0 0.35rem;
+  transition: color 0.2s $ease-standard;
+
+  &:hover {
+    color: $brass-bright;
+  }
 
   a {
     transition: color 0.2s $ease-standard;

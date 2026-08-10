@@ -226,6 +226,15 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   box-shadow: inset 2px 0 0 var(--ide-accent);
 }
 
+.treeRowClickable {
+  cursor: pointer;
+
+  &:hover:not(.treeRowActive) {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--ide-text);
+  }
+}
+
 .folderIcon {
   flex: none;
   width: 0.6rem;
@@ -291,11 +300,19 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   gap: 0.45rem;
   padding: 0 0.75rem;
   height: 2rem;
+  background: none;
+  border: none;
+  border-right: 1px solid var(--ide-border);
   font-family: $mono;
   font-size: 0.64rem;
   color: var(--ide-text-dim);
-  border-right: 1px solid var(--ide-border);
   white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.tab:hover {
+  color: var(--ide-text);
 }
 
 .tabActive {

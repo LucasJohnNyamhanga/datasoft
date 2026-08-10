@@ -1,0 +1,631 @@
+@use "index" as *;
+@use "sass:color";
+
+// A Photoshop-style IDE card — same dark sapphire glass "device" chrome as
+// codeEditor.module.scss, but the accent register leans on brand gold
+// (rather than cobalt) since this window represents creative/brand work.
+
+$mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monospace;
+
+.window {
+  --ide-bg: #{rgba($sapphire-deep, 0.82)};
+  --ide-bg-raised: #{rgba($sapphire-raised, 0.6)};
+  --ide-bg-editor: #{rgba($sapphire-deep, 0.5)};
+  --ide-border: #{rgba($bone, 0.14)};
+  --ide-text: #cfe0f2;
+  --ide-text-dim: #{rgba(#cfe0f2, 0.45)};
+  --ide-accent: #{$brass-bright};
+  --ide-accent-2: #{$cobalt-bright};
+
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: $radius-md * 2;
+  overflow: hidden;
+  background: var(--ide-bg);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid var(--ide-border);
+  box-shadow: 0 40px 70px -32px rgba(7, 16, 28, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  isolation: isolate;
+}
+
+.window::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 38%);
+}
+
+// ---- Title bar --------------------------------------------------------
+
+.titleBar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  flex: none;
+  height: 2.35rem;
+  padding: 0 0.9rem;
+  background: var(--ide-bg-raised);
+  border-bottom: 1px solid var(--ide-border);
+}
+
+.trafficLights {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex: none;
+}
+
+.dotRed,
+.dotYellow,
+.dotGreen {
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+.dotRed {
+  background: #ff5f57;
+}
+.dotYellow {
+  background: #febc2e;
+}
+.dotGreen {
+  background: #28c840;
+}
+
+.titleText {
+  flex: 1;
+  text-align: center;
+  font-family: $mono;
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+  color: var(--ide-text-dim);
+}
+
+.titleSpacer {
+  width: 3.6rem;
+  flex: none;
+}
+
+// ---- Menu bar -----------------------------------------------------------
+
+.menuBar {
+  position: relative;
+  z-index: 1;
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 1.7rem;
+  padding: 0 0.9rem;
+  background: var(--ide-bg-raised);
+  border-bottom: 1px solid var(--ide-border);
+  overflow: hidden;
+}
+
+.menuItem {
+  font-family: $font-body;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ide-text-dim);
+  white-space: nowrap;
+}
+
+// ---- Body layout --------------------------------------------------------
+
+.body {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+}
+
+// ---- Toolbox -----------------------------------------------------------
+
+.toolbox {
+  flex: none;
+  width: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 0;
+  background: var(--ide-bg-raised);
+  border-right: 1px solid var(--ide-border);
+}
+
+.toolIcon {
+  width: 1.15rem;
+  height: 1.15rem;
+  color: var(--ide-text-dim);
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.toolActive {
+  color: $sapphire-deep;
+  background: var(--ide-accent);
+  border-radius: $radius-sm;
+  padding: 0.2rem;
+  width: calc(1.15rem + 0.4rem);
+  height: calc(1.15rem + 0.4rem);
+  margin: -0.2rem 0;
+}
+
+// ---- Canvas --------------------------------------------------------------
+
+.canvasWrap {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--ide-bg-editor);
+}
+
+.rulerH {
+  flex: none;
+  height: 0.85rem;
+  display: flex;
+  align-items: flex-end;
+  padding-left: 0.85rem;
+  border-bottom: 1px solid var(--ide-border);
+}
+
+.tickH {
+  flex: 1;
+  border-left: 1px solid var(--ide-text-dim);
+  opacity: 0.35;
+  height: 0.3rem;
+
+  &:nth-child(5n + 1) {
+    height: 0.5rem;
+    opacity: 0.55;
+  }
+}
+
+.canvasRow {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+}
+
+.rulerV {
+  flex: none;
+  width: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 0.2rem;
+  border-right: 1px solid var(--ide-border);
+}
+
+.tickV {
+  flex: 1;
+  border-top: 1px solid var(--ide-text-dim);
+  opacity: 0.35;
+  width: 0.3rem;
+
+  &:nth-child(4n + 1) {
+    width: 0.5rem;
+    opacity: 0.55;
+  }
+}
+
+.canvas {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  margin: 0.9rem;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.posterBg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(165deg, #{color.adjust($maroon, $lightness: 6%)} 0%, $maroon 55%, #{color.adjust($maroon, $lightness: -8%)} 100%);
+}
+
+.posterPhoto {
+  position: absolute;
+  right: 6%;
+  bottom: 8%;
+  width: 46%;
+  height: 58%;
+  border-radius: 6px;
+  background: linear-gradient(155deg, rgba(240, 197, 80, 0.35), rgba(13, 44, 78, 0.55));
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.posterLogo {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 1.7rem;
+  height: 1.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: $brass-bright;
+  color: $sapphire-deep;
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: 0.55rem;
+  letter-spacing: 0.02em;
+}
+
+.posterHeadlineWrap {
+  position: absolute;
+  top: 22%;
+  left: 6%;
+  max-width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.selectionBox {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.3rem 0.5rem;
+  margin: -0.3rem -0.5rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px dashed rgba(240, 197, 80, 0.75);
+    border-radius: 2px;
+    animation: selectionPulse 1.6s ease-in-out infinite;
+  }
+}
+
+.posterEyebrow {
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: 0.42rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: $brass-bright;
+}
+
+.posterHeadline {
+  font-family: $font-display;
+  font-weight: 600;
+  font-size: clamp(0.95rem, 3.4vw, 1.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+
+.posterSub {
+  font-family: $font-body;
+  font-weight: 500;
+  font-size: 0.48rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.posterPriceBadge {
+  position: absolute;
+  top: 8%;
+  right: 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: $brass-bright;
+  color: $sapphire-deep;
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: 0.4rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  box-shadow: 0 8px 16px -6px rgba(0, 0, 0, 0.45);
+
+  em {
+    font-style: normal;
+    font-size: 0.85rem;
+    line-height: 1.1;
+  }
+}
+
+.posterCta {
+  position: absolute;
+  left: 6%;
+  bottom: 8%;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.95);
+  color: $maroon;
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: 0.46rem;
+  letter-spacing: 0.04em;
+}
+
+.cropHandle {
+  position: absolute;
+  width: 0.4rem;
+  height: 0.4rem;
+  background: #fff;
+  border: 1px solid $sapphire-deep;
+
+  &[data-pos="tl"] {
+    top: -0.2rem;
+    left: -0.2rem;
+  }
+  &[data-pos="tr"] {
+    top: -0.2rem;
+    right: -0.2rem;
+  }
+  &[data-pos="bl"] {
+    bottom: -0.2rem;
+    left: -0.2rem;
+  }
+  &[data-pos="br"] {
+    bottom: -0.2rem;
+    right: -0.2rem;
+  }
+}
+
+// ---- Right panel: color + layers -----------------------------------------
+
+.rightPanel {
+  flex: none;
+  width: 10.5rem;
+  display: flex;
+  flex-direction: column;
+  background: var(--ide-bg-raised);
+  border-left: 1px solid var(--ide-border);
+  overflow: hidden;
+}
+
+.panelSection {
+  padding: 0.55rem 0.8rem;
+
+  & + & {
+    border-top: 1px solid var(--ide-border);
+  }
+}
+
+.panelHeader {
+  margin-bottom: 0.4rem;
+  font-family: $mono;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ide-text-dim);
+}
+
+.swatchRow {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.swatch {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.opacityRow {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: $mono;
+  font-size: 0.52rem;
+  color: var(--ide-text-dim);
+}
+
+.opacityTrack {
+  flex: 1;
+  height: 2px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.opacityFill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--ide-accent);
+}
+
+.layerList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.layerRow {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  height: 1.4rem;
+  padding: 0 0.3rem;
+  border-radius: $radius-sm;
+  opacity: 0;
+  animation: layerIn 0.45s $ease-standard forwards;
+
+  @for $i from 1 through 5 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{0.15 + ($i - 1) * 0.09}s;
+    }
+  }
+}
+
+.layerRowActive {
+  background: rgba(240, 197, 80, 0.14);
+  box-shadow: inset 2px 0 0 var(--ide-accent);
+}
+
+.eyeIcon {
+  flex: none;
+  width: 0.85rem;
+  height: 0.85rem;
+  color: var(--ide-text-dim);
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.layerThumb {
+  flex: none;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.thumb-cta {
+  background: #fff;
+}
+.thumb-price {
+  background: $brass-bright;
+}
+.thumb-headline {
+  background: linear-gradient(155deg, $brass-bright, $cobalt-bright);
+}
+.thumb-logo {
+  background: $brass-bright;
+  border-radius: 50%;
+}
+.thumb-photo {
+  background: linear-gradient(155deg, rgba(240, 197, 80, 0.6), rgba(13, 44, 78, 0.8));
+}
+
+.layerLabel {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: $font-body;
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: var(--ide-text);
+}
+
+.lockIcon {
+  flex: none;
+  width: 0.55rem;
+  height: 0.6rem;
+  border: 1.4px solid var(--ide-text-dim);
+  border-bottom: none;
+  border-radius: 2px 2px 0 0;
+  opacity: 0.7;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 0.75rem;
+    height: 0.45rem;
+    margin-left: -0.1rem;
+    margin-top: 0.55rem;
+    border: 1.4px solid var(--ide-text-dim);
+    border-radius: 1px;
+  }
+}
+
+// ---- Status bar ---------------------------------------------------------
+
+.statusBar {
+  position: relative;
+  z-index: 1;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 1.5rem;
+  padding: 0 0.75rem;
+  background: var(--ide-accent);
+  font-family: $mono;
+  font-size: 0.58rem;
+  color: $sapphire-deep;
+}
+
+.statusLeft,
+.statusRight {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.statusItem {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+}
+
+// ---- Animations -----------------------------------------------------
+
+@keyframes layerIn {
+  from {
+    opacity: 0;
+    transform: translateX(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes selectionPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+// ---- Responsive ---------------------------------------------------------
+
+@media (max-width: 640px) {
+  .toolbox,
+  .rulerH,
+  .rulerV,
+  .rightPanel {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .layerRow {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+
+  .selectionBox::before {
+    animation: none !important;
+  }
+}

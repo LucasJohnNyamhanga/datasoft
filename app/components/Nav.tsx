@@ -8,11 +8,16 @@ import Styles from "../styles/navigation.module.scss";
 import { useLanguage } from "../i18n/LanguageContext";
 import LanguageToggle from "./LanguageToggle";
 
+const SERVICE_SEGMENTS = ["Software", "Hosting", "Networking", "Graphics"];
+const HOME_SECTIONS = ["home", "services", "process", "idea"];
+
 const Nav = () => {
   const segment = useSelectedLayoutSegment();
   const router = useRouter();
   const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const isServicePage = segment != null && SERVICE_SEGMENTS.includes(segment);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -20,6 +25,29 @@ const Nav = () => {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    if (segment != null) return;
+
+    const sections = HOME_SECTIONS.map((id) => document.getElementById(id)).filter(
+      (el): el is HTMLElement => el != null
+    );
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveSection(entry.target.id);
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+    );
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, [segment]);
+
+  const linkClass = (id: string) =>
+    `${Styles.link} ${activeSection === id ? Styles.linkActive : ""}`;
 
   const handleNavigation = (nav: string) => {
     router.push(nav);
@@ -78,21 +106,31 @@ const Nav = () => {
                 {t.nav.home}
               </Link>
             ) : (
-              <a href="#home" className={Styles.link}>
+              <a href="#home" className={linkClass("home")}>
                 {t.nav.home}
               </a>
             )}
             {segment == null && (
               <>
-                <a href="#services" className={Styles.link}>
+                <a href="#services" className={linkClass("services")}>
                   {t.nav.services}
                 </a>
-                <a href="#process" className={Styles.link}>
+                <a href="#process" className={linkClass("process")}>
                   {t.nav.process}
                 </a>
               </>
             )}
-            <a href="#idea" className={Styles.link}>
+            {isServicePage && (
+              <a href="#capabilities" className={Styles.link}>
+                {t.nav.capabilities}
+              </a>
+            )}
+            {segment === "Networking" && (
+              <a href="#process" className={Styles.link}>
+                {t.nav.process}
+              </a>
+            )}
+            <a href="#idea" className={segment == null ? linkClass("idea") : Styles.link}>
               {t.nav.contact}
             </a>
           </div>

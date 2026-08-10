@@ -9,6 +9,54 @@ export type ServiceContent = {
   whyHeading: string;
   why: string;
   ctaLabel: string;
+  // Optional richer hero content — populated for Software, Hosting and
+  // Graphics, whose pages get a home-page-style hero (a live device/studio
+  // mockup) instead of the shared image-backed ServiceHero. Networking
+  // sources its equivalent content from its own dictionary (i18n/networking.ts).
+  headlineLines?: [string, string];
+  ideCaption?: string;
+  secondaryCtaLabel?: string;
+  capabilitiesEyebrow?: string;
+  capabilitiesHeading?: [string, string];
+  capabilitiesIntro?: string;
+  capabilities?: { key: string; title: string; description: string }[];
+  // Hosting-only: labels for the ServerCloudFlow mockup (server/cloud
+  // node names and the live status pills in its window chrome).
+  flowLabels?: {
+    windowTitle: string;
+    serverLabel: string;
+    serverSub: string;
+    cloudLabel: string;
+    cloudSub: string;
+    outLabel: string;
+    inLabel: string;
+    statusOnline: string;
+    statusSecure: string;
+    statusBackup: string;
+  };
+  // Software, Hosting and Graphics only — Networking sources the equivalent
+  // content from its own dictionary (i18n/networking.ts). Brings these three
+  // pages up to the same depth: a stat strip, a numbered process, a fuller
+  // "why" section (whyHeading/why above double as its eyebrow/quote), and a
+  // page-specific FAQ instead of the generic homepage one.
+  stats?: { value: string; label: string }[];
+  process?: {
+    eyebrow: string;
+    heading: string;
+    intro: string;
+    steps: { title: string; description: string }[];
+    closing: string;
+  };
+  whySectionHeading?: string;
+  whyIntro?: string;
+  whyPoints?: string[];
+  faq?: {
+    eyebrow: string;
+    heading: string;
+    intro: string;
+    contactPrompt: string;
+    items: { question: string; answer: string }[];
+  };
 };
 
 const sw = {
@@ -21,6 +69,7 @@ const sw = {
     home: "Nyumbani",
     services: "Huduma",
     process: "Kazi Zetu",
+    capabilities: "Uwezo Wetu",
     contact: "Wasiliana Nasi",
     callUs: "Piga Simu",
     fillForm: "Jaza Fomu",
@@ -186,6 +235,8 @@ const sw = {
     trust: {
       consultation: "Ushauri wa Kwanza — Bure",
       prototype: "Mfano wa Kwanza (Prototype) Ndani ya Masaa 48",
+      support: "Msaada Baada ya Uzinduzi",
+      transparency: "Uwazi Kamili — Bila Mshangao",
     },
     progress: { step: "Hatua", of: "kati ya" },
     back: "Rudi Nyuma",
@@ -219,7 +270,7 @@ const sw = {
         reason:
           "Hii hutusaidia kupanga muda na gharama sahihi, bila kukukisia.",
         options: [
-          { value: "ready", label: "Ndiyo, Nina Tayari" },
+          { value: "ready", label: "Ndiyo, Ninao Tayari" },
           { value: "idea", label: "Nina Wazo, Nahitaji Ushauri" },
           { value: "none", label: "Hapana, DataSoft Initoe Chaguo" },
         ],
@@ -277,6 +328,7 @@ const sw = {
     briefUs: "TUAMBIE",
     talkBusiness: "Tuzungumze Kibiashara",
     socialMedia: "MITANDAO YA KIJAMII",
+    quickLinks: "VIUNGO",
     rights: "Haki Zote Zimehifadhiwa.",
   },
   goToTop: {
@@ -326,6 +378,13 @@ const sw = {
         tags: ["Vitambulisho vya chapa", "Vifaa vya kuchapisha na kidijitali"],
       },
     ],
+  },
+  graphicsStudio: {
+    eyebrow: "Ndani ya Studio Yetu",
+    heading: "Chapa Yako, Ikijengwa Tabaka Kwa Tabaka",
+    subheadline:
+      "Kutoka wazo la kwanza hadi bango tayari kuchapishwa — angalia jinsi kila tabaka la muundo wako linavyowekwa kwa umakini wa kitaalamu, si kwa violezo vya kawaida.",
+    caption: "Bango la kampeni, likijengwa tabaka kwa tabaka na DataSoft",
   },
   testimonials: {
     eyebrow: "Wanachosema Wateja",
@@ -406,7 +465,7 @@ const sw = {
       },
       {
         question:
-          "Sina muundo (design) wowote tayari — je, mnaweza kunisaidia?",
+          "Sina muundo (design) yeyote tayari — je, mnaweza kunisaidia?",
         answer:
           "Kabisa. Wakati wa kujaza fomu ya mawasiliano unaweza kutuambia kama huna muundo bado, na timu yetu itakushauri na kukubunia chaguo kutoka mwanzo — hauhitaji kuja na kila kitu tayari.",
       },
@@ -421,7 +480,7 @@ const sw = {
           "Ndiyo. Miradi yetu yanajumuisha vyeti vya usalama (SSL), ulinzi dhidi ya matatizo ya kawaida ya mtandao, na nakala za akiba za taarifa zako, ili biashara yako ibaki salama na ifanye kazi bila wasiwasi.",
       },
       {
-        question: "Nianzeje mradi wangu na DataSoft?",
+        question: "Nitaanzaje mradi wangu na DataSoft?",
         answer:
           "Jaza fomu yetu fupi ya mawasiliano hapo chini, au tupigie simu moja kwa moja. Maswali machache tu yanatosha kutusaidia kuelewa mradi wako, na timu yetu itawasiliana nawe ndani ya saa chache kuanza mazungumzo — bila malipo.",
       },
@@ -433,12 +492,17 @@ const sw = {
       eyebrow: "Ukuzaji wa Programu",
       title: "Programu Zilizoundwa Kwa Usahihi",
       subtitle:
-        "Mifumo inayojengwa kulingana na mahitaji halisi ya biashara yako — kutoka wazo la kwanza hadi matumizi kamili ya kila siku.",
+        "Tazama tukiijenga: maombi ya mkopo, alama za kikopo, ratiba za malipo — mfumo halisi tunaoujenga kwa wateja, ukiandikwa mstari kwa mstari mbele yako.",
+      headlineLines: [
+        "Kutoka fomu za karatasi",
+        "hadi mfumo unaojiendesha wenyewe.",
+      ],
       intro:
         "Kila biashara ina mtiririko wake wa kazi. Badala ya kukubandika mfumo wa kawaida, tunajenga programu inayofuata jinsi shirika lako linavyofanya kazi kwa uhalisia — iwe ni mfumo wa uendeshaji wa ndani, jukwaa la wateja, au programu ya simu.",
       includesHeading: "Tunachojenga",
       includes: [
         "Mifumo maalumu ya uendeshaji wa biashara (ERP, usimamizi wa hisa, uhasibu)",
+        "Mifumo ya mikopo na fedha ndogo — maombi, alama za kikopo na ratiba za malipo",
         "Majukwaa ya wavuti na programu za simu zenye data hai",
         "Uunganishaji na mifumo ya malipo na huduma za nje",
         "Matengenezo, uboreshaji na msaada wa kiufundi baada ya uzinduzi",
@@ -446,6 +510,42 @@ const sw = {
       whyHeading: "Kwa Nini DataSoft",
       why: "Uzoefu wetu upo Mwanza — tunaelewa muktadha wa kibiashara wa Tanzania, changamoto za mitandao ya ndani, na jinsi mifumo inavyopaswa kufanya kazi kwa uhakika katika mazingira haya.",
       ctaLabel: "Anza Mradi wa Programu",
+      secondaryCtaLabel: "Angalia Tunachojenga",
+      ideCaption:
+        "Mfumo halisi wa mkopo na fedha ndogo, ukijengwa mstari kwa mstari na DataSoft",
+      capabilitiesEyebrow: "Uwezo Wetu",
+      capabilitiesHeading: [
+        "Mifumo inayobeba biashara yako,",
+        "si tu skrini nzuri",
+      ],
+      capabilitiesIntro:
+        "Mfano ulioko juu — mfumo wa mkopo na fedha ndogo — ni sampuli tu. Uwezo huohuo unatumika kwenye kila mfumo tunaoujenga.",
+      capabilities: [
+        {
+          key: "credit",
+          title: "Mifumo ya Mkopo na Alama za Kikopo",
+          description:
+            "Maombi ya mkopo, uhakiki wa dhamana na uamuzi wa kuidhinisha — vyote vikifanya kazi kiotomatiki, kama ulivyoona kwenye programu hapo juu.",
+        },
+        {
+          key: "dashboards",
+          title: "Dashibodi za Wakati Halisi",
+          description:
+            "Ona malipo, mapato na hatari zinapotokea, si mwishoni mwa mwezi — maamuzi yanafanywa kwa taarifa za sasa, si za zamani.",
+        },
+        {
+          key: "payments",
+          title: "Malipo na Vikumbusho vya Kiotomatiki",
+          description:
+            "Ratiba za malipo, vikumbusho vya SMS na muunganiko na fedha za simu — wateja wanakumbushwa kabla ya tarehe, si baada.",
+        },
+        {
+          key: "scale",
+          title: "Imejengwa Kukua Nawe",
+          description:
+            "Kutoka wateja mia moja wa kwanza hadi laki moja, mfumo unakua bila kuhitaji kujengwa upya kutoka mwanzo.",
+        },
+      ],
     },
     hosting: {
       key: "hosting",
@@ -453,6 +553,7 @@ const sw = {
       title: "Tovuti Zenye Hadhi, Zinazopatikana Muda Wote",
       subtitle:
         "Tovuti nzuri, za kasi na salama, zikiwa tayari kukua sambamba na biashara yako, siku zote.",
+      headlineLines: ["Tovuti Yako Haipumziki.", "Sisi Pia Hatupumziki."],
       intro:
         "Tovuti yako mara nyingi ndiyo mahali pa kwanza mteja anapokutana na chapa yako. Tunaunda tovuti zenye muundo wa kifahari, kasi ya hali ya juu, na msingi thabiti wa kiufundi, kisha tunazihudumia ili zibaki mtandaoni bila usumbufu.",
       includesHeading: "Huduma Zinazojumuishwa",
@@ -462,9 +563,81 @@ const sw = {
         "Vyeti vya usalama (SSL) na ulinzi dhidi ya matatizo ya kawaida ya mtandao",
         "Usimamizi endelevu wa kikoa (domain) na sasisho za mfumo",
       ],
-      whyHeading: "Kwa Nini DataSoft",
-      why: "Tovuti tunazozijenga zinahudumiwa na timu iliyo hapa hapa Tanzania — hujakuwa peke yako pindi tovuti yako inapohitaji msaada wa haraka.",
+      whyHeading: "Timu Iliyo Hapa, Si Kituo cha Mbali",
+      why: "Tovuti tunazozijenga zinahudumiwa na timu iliyo hapa hapa Mwanza, Tanzania — hujakuwa peke yako pindi tovuti yako inapohitaji msaada wa haraka, na hatuachi kufanya kazi baada ya uzinduzi.",
       ctaLabel: "Anza Mradi wa Tovuti",
+      secondaryCtaLabel: "Ona Miundombinu Yetu",
+      ideCaption:
+        "Trafiki halisi ya tovuti, ikifuatiliwa saa kwa saa na DataSoft Cloud",
+      capabilitiesEyebrow: "Kila Kitu Tovuti Yako Inahitaji",
+      capabilitiesHeading: [
+        "Miundombinu Inayofanya Kazi,",
+        "Hata Wewe Ukiwa Umelala.",
+      ],
+      capabilitiesIntro:
+        "Uwekaji mtandaoni si kununua nafasi tu kwenye seva — ni mfumo mzima unaohakikisha tovuti yako inapatikana, ni salama, na iko tayari kukua. Haya ndiyo tunayoyashughulikia kwa niaba yako, kila siku.",
+      capabilities: [
+        {
+          key: "uptime",
+          title: "Ufuatiliaji wa Muda Wote",
+          description:
+            "Mfumo wetu unaangalia tovuti yako dakika kwa dakika, ukigundua na kutatua tatizo kabla halijamfikia mteja wako.",
+        },
+        {
+          key: "security",
+          title: "Ulinzi na Vyeti vya SSL",
+          description:
+            "Kila tovuti inapata cheti cha usalama (SSL) na ulinzi dhidi ya mashambulizi ya kawaida ya mtandaoni — data ya wateja wako inabaki siri.",
+        },
+        {
+          key: "backups",
+          title: "Nakala za Chelezo za Kila Siku",
+          description:
+            "Taarifa na maudhui ya tovuti yako yanahifadhiwa mara kwa mara, hivyo hata likitokea tatizo, unarudi kazini ndani ya dakika.",
+        },
+        {
+          key: "speed",
+          title: "Kasi Inayouza",
+          description:
+            "Tovuti ya kasi hubadilisha watazamaji kuwa wateja. Tunaboresha picha, misimbo na miundombinu ili ukurasa wako ufunguke haraka kila wakati.",
+        },
+        {
+          key: "scale",
+          title: "Inayokua Pamoja na Wewe",
+          description:
+            "Trafiki ikiongezeka, miundombinu yako inaongezeka pia — huna haja ya kuanza upya kila biashara yako inapokua.",
+        },
+        {
+          key: "support",
+          title: "Msaada wa Kweli, Ndani ya Tanzania",
+          description:
+            "Tovuti ikihitaji msaada, unazungumza na timu iliyo Mwanza — si kituo cha huduma cha nje kisichojua muktadha wako.",
+        },
+        {
+          key: "domain",
+          title: "Usimamizi wa Kikoa (Domain)",
+          description:
+            "Tunasimamia usajili na uhuishaji wa jina la tovuti yako, ili lisiisha bila wewe kujua na kuathiri biashara yako.",
+        },
+        {
+          key: "migration",
+          title: "Uhamishaji Bure",
+          description:
+            "Una tovuti tayari mahali pengine? Tunaihamishia kwenye miundombinu yetu bila malipo ya ziada na bila muda wa kutoonekana mtandaoni.",
+        },
+      ],
+      flowLabels: {
+        windowTitle: "seva.datasoft.co.tz — hali ya mtandao",
+        serverLabel: "Seva Yako",
+        serverSub: "Tovuti + Data",
+        cloudLabel: "DataSoft Cloud",
+        cloudSub: "Ufuatiliaji Saa 24",
+        outLabel: "Data Inayotoka",
+        inLabel: "Data Inayoingia",
+        statusOnline: "Mtandaoni",
+        statusSecure: "SSL Imewashwa",
+        statusBackup: "Nakala Mpya",
+      },
     },
     networking: {
       key: "networking",
@@ -488,21 +661,53 @@ const sw = {
     graphics: {
       key: "graphics",
       eyebrow: "Ubunifu wa Michoro",
-      title: "Muundo Unaozungumza Kwa Niaba ya Chapa Yako",
+      title: "Sekunde Tatu Kuvutia. Tunazitumia Vizuri.",
       subtitle:
-        "Kutoka nembo hadi vifaa kamili vya masoko — ubunifu unaowasilisha ujumbe wako kwa usahihi na mvuto.",
+        "Hiyo ndiyo muda mteja anaotumia kuamua kama chapa yako inaaminika — kutoka nembo hadi bango la kampeni, kila tabaka la muundo wetu linalenga sekunde hizo tatu.",
+      headlineLines: ["Sekunde Tatu Kuvutia.", "Tunazitumia Vizuri."],
       intro:
-        "Muonekano wa chapa yako huamua jinsi wateja wanavyoikisia kabla hata ya kuzungumza na wewe. Tunaunda kazi za kisanii zenye mshikamano — nembo, vitambulisho vya chapa, na vifaa vya masoko vinavyoendana na malengo yako ya kibiashara.",
+        "Muonekano wa chapa yako huzungumza kabla hata hujafungua mdomo. Tunaunda kazi za kisanii zenye mshikamano — nembo, vitambulisho vya chapa, na vifaa vya masoko — ambazo si tu nzuri kuangalia, bali zinauza, zinakumbukwa, na zinaendana na malengo yako ya kibiashara.",
       includesHeading: "Tunachobuni",
       includes: [
         "Nembo na vitambulisho kamili vya chapa (brand identity)",
-        "Vifaa vya masoko vya kuchapisha na vya kidijitali",
+        "Mabango na vifaa vya masoko vya kuchapisha na vya kidijitali",
         "Muundo wa mitandao ya kijamii unaoendana na chapa yako",
         "Vifungashio na miundo ya bidhaa",
       ],
       whyHeading: "Kwa Nini DataSoft",
       why: "Kila kazi ya ubunifu tunayoifanya inaanzia kwenye lengo lako la kibiashara, si kwenye mtindo wa mwaka huu tu — matokeo yanabaki na maana miaka mingi ijayo.",
       ctaLabel: "Anza Mradi wa Ubunifu",
+      secondaryCtaLabel: "Ona Uwezo Wetu",
+      capabilitiesEyebrow: "Uwezo Wetu",
+      capabilitiesHeading: ["Muundo Unaouza,", "Si Tu Mzuri Kuangalia"],
+      capabilitiesIntro:
+        "Bango ulilolioona likijengwa hapo juu ni mfano mmoja tu. Uwezo huohuo wa kubuni unatumika kwenye kila kazi tunayoifanya kwa chapa yako.",
+      capabilities: [
+        {
+          key: "branding",
+          title: "Nembo na Vitambulisho vya Chapa",
+          description:
+            "Tunaunda nembo na mfumo kamili wa chapa — rangi, fonti na miongozo — ili kila kinachotoka kwa jina lako kionekane kimoja na cha kuaminika.",
+        },
+        {
+          key: "print",
+          title: "Mabango na Vifaa vya Masoko",
+          description:
+            "Kutoka mabango ya kuchapisha hadi matangazo ya kidijitali, kila kipande kinaundwa kuvutia macho ndani ya sekunde tatu za kwanza.",
+        },
+        {
+          key: "social",
+          title: "Muundo wa Mitandao ya Kijamii",
+          description:
+            "Machapisho na vielelezo vinavyoendana na chapa yako, vilivyotengenezwa kuongeza mwonekano na mwingiliano wa wafuasi wako.",
+        },
+        {
+          key: "packaging",
+          title: "Vifungashio na Miundo ya Bidhaa",
+          description:
+            "Tunabuni vifungashio vinavyouza — muundo unaovutia dukani na kubaki akilini mwa mteja baada ya ununuzi.",
+        },
+      ],
     },
   } satisfies Record<string, ServiceContent>,
 };
@@ -519,6 +724,7 @@ const en: Dict = {
     home: "Home",
     services: "Services",
     process: "How We Work",
+    capabilities: "Capabilities",
     contact: "Contact Us",
     callUs: "Call Us",
     fillForm: "Fill the Form",
@@ -681,6 +887,8 @@ const en: Dict = {
     trust: {
       consultation: "First Consultation — Free",
       prototype: "First Prototype Ready Within 48 Hours",
+      support: "Support After Launch",
+      transparency: "Full Transparency — No Surprises",
     },
     progress: { step: "Step", of: "of" },
     back: "Back",
@@ -773,6 +981,7 @@ const en: Dict = {
     briefUs: "BRIEF US",
     talkBusiness: "Let's Talk Business",
     socialMedia: "SOCIAL MEDIA",
+    quickLinks: "QUICK LINKS",
     rights: "All Rights Reserved.",
   },
   goToTop: {
@@ -822,6 +1031,13 @@ const en: Dict = {
         tags: ["Brand identity", "Print & digital materials"],
       },
     ],
+  },
+  graphicsStudio: {
+    eyebrow: "Inside Our Studio",
+    heading: "Your Brand, Built Layer by Layer",
+    subheadline:
+      "From first sketch to a print-ready poster — watch how every layer of your design comes together with real craft, not stock templates.",
+    caption: "A campaign poster, being built layer by layer by DataSoft",
   },
   testimonials: {
     eyebrow: "What Clients Say",
@@ -873,18 +1089,72 @@ const en: Dict = {
       },
     ],
   },
+  faq: {
+    eyebrow: "Frequently Asked Questions",
+    heading: "Got a Question? We're Here",
+    intro:
+      "Quick answers to what clients most often ask before starting a project.",
+    contactPrompt: "Still have questions? Contact us",
+    items: [
+      {
+        question: "What services do you actually offer?",
+        answer:
+          "We offer four core services: custom software development, website design and hosting, office computer networking, and brand/graphics design. Each one can stand alone or be combined into a single project.",
+      },
+      {
+        question: "How long does a project take to complete?",
+        answer:
+          "It depends on the size of the project, but we can start building your first prototype within 48 hours of our first conversation. Every project moves through four stages — Idea, Design, Build and Launch — and we'll give you a firm timeline once we understand your needs.",
+      },
+      {
+        question: "How much does a project cost?",
+        answer:
+          "Every project is unique, so pricing depends on its size and requirements. Our contact form asks about your budget range so we can recommend the right package for you — and the first consultation is completely free.",
+      },
+      {
+        question: "Do you work with clients outside Mwanza?",
+        answer:
+          "Yes. While our team is based in Mwanza, we serve clients across Tanzania — from Kigoma and Arusha to Dodoma and Mbeya — through online and phone communication, and we travel on-site when a networking project requires it.",
+      },
+      {
+        question: "I don't have a design ready yet — can you still help?",
+        answer:
+          "Absolutely. Our contact form lets you tell us you don't have a design yet, and our team will guide you and put together options from scratch — you don't need to arrive with everything figured out.",
+      },
+      {
+        question: "Will you support my website or system after launch?",
+        answer:
+          "Yes. Every project we build comes with ongoing support, uptime monitoring and regular backups — our Mwanza-based team stays close by for whatever help you need after launch.",
+      },
+      {
+        question: "Will my website or system be secure?",
+        answer:
+          "Yes. Our projects include SSL security certificates, protection against common network threats, and regular backups of your data, so your business stays safe and runs without worry.",
+      },
+      {
+        question: "How do I start a project with DataSoft?",
+        answer:
+          "Fill out our short contact form below, or call us directly. A handful of quick questions is all we need to understand your project, and our team will reach out within a few hours to start the conversation — at no cost.",
+      },
+    ],
+  },
   services: {
     software: {
       key: "software",
       eyebrow: "Software Development",
       title: "Software Built With Precision",
       subtitle:
-        "Systems built around how your business actually works — from first idea to full daily use.",
+        "Watch us build it: loan approvals, credit scoring, repayment schedules — a real system we ship for clients, typed out line by line in front of you.",
+      headlineLines: [
+        "From paperwork and spreadsheets",
+        "to a system that runs itself.",
+      ],
       intro:
         "Every business has its own workflow. Rather than fitting you into an off-the-shelf system, we build software that follows how your organization truly operates — whether that's an internal operations system, a customer platform, or a mobile app.",
       includesHeading: "What We Build",
       includes: [
         "Custom business operations systems (ERP, inventory, accounting)",
+        "Loan and microfinance systems — applications, credit scoring and repayment schedules",
         "Web platforms and mobile apps backed by live data",
         "Integrations with payment systems and third-party services",
         "Maintenance, upgrades and technical support after launch",
@@ -892,6 +1162,42 @@ const en: Dict = {
       whyHeading: "Why DataSoft",
       why: "Our experience is rooted in Mwanza — we understand Tanzania's business context, local network realities, and what it takes for a system to run reliably in this environment.",
       ctaLabel: "Start a Software Project",
+      secondaryCtaLabel: "See What We Build",
+      ideCaption:
+        "A real loan & microfinance system, built line by line by DataSoft",
+      capabilitiesEyebrow: "What We're Capable Of",
+      capabilitiesHeading: [
+        "Systems that carry your business,",
+        "not just a pretty screen",
+      ],
+      capabilitiesIntro:
+        "The example above — a loan and microfinance system — is just one sample. The same capability goes into every system we build.",
+      capabilities: [
+        {
+          key: "credit",
+          title: "Loan & Credit Scoring Engines",
+          description:
+            "Loan applications, collateral checks and approval decisions — all running automatically, exactly like the code you just watched build itself.",
+        },
+        {
+          key: "dashboards",
+          title: "Real-Time Dashboards",
+          description:
+            "See repayments, revenue and risk the moment they happen, not at month-end — decisions run on current data, not last week's.",
+        },
+        {
+          key: "payments",
+          title: "Automated Payments & Reminders",
+          description:
+            "Repayment schedules, SMS reminders and mobile money integrations — clients get reminded before the due date, not after.",
+        },
+        {
+          key: "scale",
+          title: "Built to Scale With You",
+          description:
+            "From your first hundred clients to your first hundred thousand, the system grows without a rebuild from scratch.",
+        },
+      ],
     },
     hosting: {
       key: "hosting",
@@ -899,6 +1205,7 @@ const en: Dict = {
       title: "Websites With Standing, Always Online",
       subtitle:
         "Beautiful, fast and secure websites — ready to grow alongside your business, every day.",
+      headlineLines: ["Your Website Never Sleeps.", "Neither Do We."],
       intro:
         "Your website is often the first place a customer meets your brand. We design refined, fast websites on a solid technical foundation, then keep them running online without disruption.",
       includesHeading: "What's Included",
@@ -908,9 +1215,81 @@ const en: Dict = {
         "SSL security certificates and protection against common threats",
         "Ongoing domain management and platform updates",
       ],
-      whyHeading: "Why DataSoft",
-      why: "The websites we build are supported by a team based right here in Tanzania — you're never on your own when your site needs urgent help.",
+      whyHeading: "A Team That's Here, Not a Distant Call Center",
+      why: "The websites we build are supported by a team based right here in Mwanza, Tanzania — you're never on your own when your site needs urgent help, and we don't disappear after launch.",
       ctaLabel: "Start a Website Project",
+      secondaryCtaLabel: "See Our Infrastructure",
+      ideCaption:
+        "Real website traffic, monitored around the clock by DataSoft Cloud",
+      capabilitiesEyebrow: "Everything Your Website Needs",
+      capabilitiesHeading: [
+        "Infrastructure That Works,",
+        "Even While You Sleep.",
+      ],
+      capabilitiesIntro:
+        "Hosting isn't just buying space on a server — it's the whole system that keeps your website available, secure, and ready to grow. Here's everything we handle on your behalf, every day.",
+      capabilities: [
+        {
+          key: "uptime",
+          title: "Round-the-Clock Uptime Monitoring",
+          description:
+            "Our systems watch your website minute by minute, catching and resolving issues before they ever reach your customers.",
+        },
+        {
+          key: "security",
+          title: "SSL & Security Protection",
+          description:
+            "Every website gets an SSL certificate and protection against common online threats — your customers' data stays private.",
+        },
+        {
+          key: "backups",
+          title: "Daily Backups",
+          description:
+            "Your website's content and data are backed up regularly, so even if something goes wrong, you're back to work within minutes.",
+        },
+        {
+          key: "speed",
+          title: "Speed That Sells",
+          description:
+            "A fast website turns visitors into customers. We optimize images, code and infrastructure so your pages load quickly, every time.",
+        },
+        {
+          key: "scale",
+          title: "Grows Alongside You",
+          description:
+            "As your traffic grows, your infrastructure grows with it — no need to start over every time your business expands.",
+        },
+        {
+          key: "support",
+          title: "Real Support, Based in Tanzania",
+          description:
+            "When your website needs help, you talk to a team based in Mwanza — not an overseas call center that doesn't know your context.",
+        },
+        {
+          key: "domain",
+          title: "Domain Management",
+          description:
+            "We manage your domain's registration and renewal, so it never lapses without your knowledge and puts your business at risk.",
+        },
+        {
+          key: "migration",
+          title: "Free Migration",
+          description:
+            "Already have a website elsewhere? We move it to our infrastructure at no extra cost, with no downtime.",
+        },
+      ],
+      flowLabels: {
+        windowTitle: "server.datasoft.co.tz — network status",
+        serverLabel: "Your Server",
+        serverSub: "Website + Data",
+        cloudLabel: "DataSoft Cloud",
+        cloudSub: "Monitored 24/7",
+        outLabel: "Outgoing Data",
+        inLabel: "Incoming Data",
+        statusOnline: "Online",
+        statusSecure: "SSL Active",
+        statusBackup: "Fresh Backup",
+      },
     },
     networking: {
       key: "networking",
@@ -934,71 +1313,54 @@ const en: Dict = {
     graphics: {
       key: "graphics",
       eyebrow: "Graphics Design",
-      title: "Design That Speaks for Your Brand",
+      title: "Three Seconds to Impress. We Design for Them.",
       subtitle:
-        "From logo to a complete marketing toolkit — design that carries your message with precision and appeal.",
+        "That's how long a customer takes to judge whether your brand is trustworthy — from your logo to a campaign poster, every layer we design is built for that window.",
+      headlineLines: ["Three Seconds to Impress.", "We Design for Them."],
       intro:
-        "How your brand looks shapes how customers judge it before they ever speak to you. We create cohesive artistic work — logos, brand identities, and marketing materials aligned with your business goals.",
+        "How your brand looks speaks before you ever open your mouth. We create cohesive artistic work — logos, brand identities, and marketing materials — that isn't just beautiful to look at, but sells, sticks in memory, and stays aligned with your business goals.",
       includesHeading: "What We Design",
       includes: [
         "Logos and complete brand identity systems",
-        "Print and digital marketing materials",
+        "Posters and marketing materials, print and digital",
         "Social media design aligned with your brand",
         "Packaging and product design",
       ],
       whyHeading: "Why DataSoft",
       why: "Every design project starts from your business goal, not this year's trend — the result still holds up years from now.",
       ctaLabel: "Start a Design Project",
+      secondaryCtaLabel: "See Our Capabilities",
+      capabilitiesEyebrow: "Our Capabilities",
+      capabilitiesHeading: ["Design That Sells,", "Not Just Looks Good"],
+      capabilitiesIntro:
+        "The poster you saw being built above is just one example. The same design capability goes into every piece of work we create for your brand.",
+      capabilities: [
+        {
+          key: "branding",
+          title: "Logos & Brand Identity",
+          description:
+            "We design logos and a full brand system — color, type and guidelines — so everything carrying your name reads as one consistent, trustworthy brand.",
+        },
+        {
+          key: "print",
+          title: "Posters & Marketing Materials",
+          description:
+            "From print posters to digital ads, every piece is built to catch the eye within those first three seconds.",
+        },
+        {
+          key: "social",
+          title: "Social Media Design",
+          description:
+            "Posts and visuals aligned with your brand, built to boost visibility and engagement with your followers.",
+        },
+        {
+          key: "packaging",
+          title: "Packaging & Product Design",
+          description:
+            "We design packaging that sells — eye-catching on the shelf and memorable after the purchase.",
+        },
+      ],
     },
-  },
-  faq: {
-    eyebrow: "Frequently Asked Questions",
-    heading: "Have a Question? We're Here",
-    intro:
-      "Quick answers to the questions our clients ask most often before starting a project.",
-    contactPrompt: "Still have a question? Contact us",
-    items: [
-      {
-        question: "What exactly do you offer?",
-        answer:
-          "We provide four main services: custom software development, web design and hosting, office computer networking, and graphics design. Each service can stand alone or be combined in one project.",
-      },
-      {
-        question: "How long will my project take to complete?",
-        answer:
-          "It depends on the project's size, but we can start building your first prototype within 48 hours of our first conversation. Every project follows four stages — Idea, Design, Build and Launch — and we will give you a full timeline once we understand your needs.",
-      },
-      {
-        question: "How much does a project cost?",
-        answer:
-          "Every project is unique, so the price depends on its scope and requirements. Our contact form asks about your budget range so we can recommend the right package — and the first consultation is completely free.",
-      },
-      {
-        question: "Do you work with clients outside Mwanza?",
-        answer:
-          "Yes. Although our team is based in Mwanza, we serve clients across Tanzania — from Kigoma and Arusha to Dodoma and Mbeya — through online communication and phone, and we travel when office networking projects require it.",
-      },
-      {
-        question: "I don't have any design ready yet — can you help me?",
-        answer:
-          "Absolutely. When you fill out the contact form, you can let us know that you don't have a design yet, and our team will advise you and propose options from the start — you don't need to bring everything ready.",
-      },
-      {
-        question: "Will you support me after my website or system launches?",
-        answer:
-          "Yes. Every project we build comes with ongoing support, uptime monitoring, and regular backups — our Mwanza team stays close to help with any needs after launch.",
-      },
-      {
-        question: "Will my website or system be secure?",
-        answer:
-          "Yes. Our projects include security certificates (SSL), protection against common web threats, and regular backups of your data, so your business remains safe and reliable.",
-      },
-      {
-        question: "How do I start my project with DataSoft?",
-        answer:
-          "Fill our short contact form below, or call us directly. A few questions are enough for us to understand your project, and our team will reach out within a few hours to start the conversation — free of charge.",
-      },
-    ],
   },
 };
 

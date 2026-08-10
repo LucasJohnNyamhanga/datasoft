@@ -83,31 +83,65 @@
   }
 }
 
-.quotation {
+.formula {
   display: flex;
-  flex-direction: row;
   align-items: flex-start;
-  gap: 0.85rem;
-  margin-top: $space-md;
+  gap: 0.9rem;
+  margin-top: $space-lg;
   padding-top: $space-md;
-  border-top: 1px solid $sapphire-line;
-
-  p {
-    font-family: $font-display;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 1.15rem;
-    line-height: 1.4;
-    color: $brass-bright;
-    margin: 0;
-  }
+  border-top: 1px solid rgba($brass-dim, 0.5);
 }
 
-.quoteMark {
+.formulaLine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.65rem;
+  row-gap: 0.4rem;
+  margin: 0;
+}
+
+.formulaMark {
   flex-shrink: 0;
+  display: inline-flex;
   color: $brass-dim;
-  font-size: 1rem;
+  font-size: 1.4rem;
+  line-height: 1;
   margin-top: 0.3rem;
+}
+
+.formulaTerm {
+  font-family: $font-display;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.375rem, 2.8vw, 1.875rem);
+  line-height: 1.3;
+  color: $ivory;
+}
+
+.formulaOperator {
+  font-family: $font-display;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: $brass-dim;
+}
+
+.formulaEquals {
+  color: $brass-bright;
+  font-weight: 600;
+}
+
+.formulaResult {
+  font-family: $font-display;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.625rem, 3.4vw, 2.25rem);
+  background: $gradient-gold;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: $glow-brass;
 }
 
 .contactForm {
@@ -332,5 +366,14 @@
   .finalActions {
     flex-direction: column-reverse;
     align-items: stretch;
+  }
+
+  .formula {
+    margin-top: $space-md;
+    gap: 0.6rem;
+  }
+
+  .formulaMark {
+    font-size: 1.1rem;
   }
 }

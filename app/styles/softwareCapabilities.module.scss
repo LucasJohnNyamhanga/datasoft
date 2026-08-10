@@ -1,0 +1,156 @@
+@use "index" as *;
+
+.container {
+  position: relative;
+  width: 100%;
+  background: $gradient-shell;
+  overflow: hidden;
+  scroll-margin-top: var(--nav-height, 90px);
+}
+
+.network {
+  z-index: 1;
+  mask-image: radial-gradient(ellipse 60% 80% at 78% 30%, black, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 80% at 78% 30%, black, transparent 70%);
+}
+
+.subContainer {
+  position: relative;
+  z-index: 2;
+  max-width: $content-max;
+  margin: 0 auto;
+  padding: $space-xl $gutter;
+}
+
+.header {
+  max-width: 42rem;
+}
+
+.eyebrow {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $brass;
+  margin: 0 0 1rem;
+}
+
+.heading {
+  font-family: $font-display;
+  font-weight: 420;
+  font-size: clamp(1.75rem, 3.2vw, 2.75rem);
+  line-height: 1.1;
+  color: $ivory;
+  margin: 0;
+  max-width: 22ch;
+}
+
+.line {
+  display: block;
+}
+
+.intro {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: $bone;
+  max-width: 56ch;
+  margin: 1.25rem 0 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: $space-lg;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  position: relative;
+  padding: 2rem;
+  background: rgba(251, 246, 231, 0.04);
+  border: 1px solid rgba(233, 223, 196, 0.14);
+  border-radius: $radius-md;
+  backdrop-filter: blur(6px);
+  transition: border-color 0.25s $ease-standard, background 0.25s $ease-standard,
+    transform 0.25s $ease-standard;
+
+  &:hover {
+    border-color: $brass-dim;
+    background: rgba(251, 246, 231, 0.07);
+    transform: translateY(-2px);
+  }
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid $brass-dim;
+  border-radius: $radius-sm;
+  color: $brass-bright;
+  font-size: 1.1rem;
+}
+
+.cardTitle {
+  font-family: $font-display;
+  font-weight: 420;
+  font-size: 1.2rem;
+  line-height: 1.25;
+  color: $ivory;
+  margin: 0 0 0.75rem;
+}
+
+.cardDescription {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: $bone;
+  margin: 0;
+}
+
+// ---- Closing "why" pull-quote --------------------------------------------
+
+.closing {
+  margin-top: $space-lg;
+  padding-top: $space-md;
+  border-top: 1px solid $sapphire-line;
+}
+
+.closingEyebrow {
+  display: block;
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $brass;
+  margin: 0 0 1rem;
+}
+
+.closingQuote {
+  font-family: $font-display;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+  line-height: 1.5;
+  color: $brass-bright;
+  max-width: 56ch;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .subContainer {
+    padding: $space-lg $gutter;
+  }
+}

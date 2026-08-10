@@ -23,6 +23,18 @@ const Footer = () => {
 
         <div className={Styles.columns}>
           <div className={Styles.column}>
+            <div className={Styles.header}>{t.footer.quickLinks}</div>
+            <Link href="/" className={Styles.body}>
+              {t.nav.home}
+            </Link>
+            {t.whatWeDo.services.map((service) => (
+              <Link key={service.key} href={service.link} className={Styles.body}>
+                {service.header}
+              </Link>
+            ))}
+          </div>
+
+          <div className={Styles.column}>
             <div className={Styles.header}>{t.footer.visitUs}</div>
             {t.footer.addressLines.map((line) => (
               <p key={line} className={Styles.body}>

@@ -6,8 +6,10 @@ import {
   FaArrowLeft,
   FaBoltLightning,
   FaCircleCheck,
+  FaHeadset,
   FaQuoteLeft,
   FaQuoteRight,
+  FaShieldHalved,
 } from "react-icons/fa6";
 import { useLanguage } from "../i18n/LanguageContext";
 import styles from "../styles/doYouHaveAnIdea.module.scss";
@@ -32,6 +34,15 @@ const emptyDetails = {
 const Contact = () => {
   const { t } = useLanguage();
   const questionSteps = t.contact.steps;
+  const formulaParts: { type: "term" | "op" | "eq" | "result"; text: string }[] =
+    t.contact.quoteFormula.terms.flatMap((term, index) => [
+      ...(index > 0 ? [{ type: "op" as const, text: "+" }] : []),
+      { type: "term" as const, text: term },
+    ]);
+  formulaParts.push(
+    { type: "eq", text: "=" },
+    { type: "result", text: t.contact.quoteFormula.result },
+  );
   const finalStepIndex = questionSteps.length;
   const totalSteps = questionSteps.length + 1;
 
@@ -129,13 +140,48 @@ const Contact = () => {
               <FaBoltLightning />
               {t.contact.trust.prototype}
             </span>
+            <span className={styles.trustBadge}>
+              <FaHeadset />
+              {t.contact.trust.support}
+            </span>
+            <span className={styles.trustBadge}>
+              <FaShieldHalved />
+              {t.contact.trust.transparency}
+            </span>
           </Reveal>
 
-          <Reveal className={styles.quotation} delay={140}>
-            <FaQuoteLeft className={styles.quoteMark} />
-            <p>{t.contact.quoteFormula.result}</p>
-            <FaQuoteRight className={styles.quoteMark} />
-          </Reveal>
+          <div className={styles.formula}>
+            <Reveal as="span" className={styles.formulaMark} delay={140}>
+              <FaQuoteLeft aria-hidden="true" />
+            </Reveal>
+            <p className={styles.formulaLine}>
+              {formulaParts.map((part, index) => (
+                <Reveal
+                  as="span"
+                  key={`${part.type}-${index}`}
+                  delay={200 + index * 55}
+                  className={
+                    part.type === "term"
+                      ? styles.formulaTerm
+                      : part.type === "result"
+                        ? styles.formulaResult
+                        : `${styles.formulaOperator} ${
+                            part.type === "eq" ? styles.formulaEquals : ""
+                          }`
+                  }
+                >
+                  {part.text}
+                </Reveal>
+              ))}
+            </p>
+            <Reveal
+              as="span"
+              className={styles.formulaMark}
+              delay={200 + formulaParts.length * 55}
+            >
+              <FaQuoteRight aria-hidden="true" />
+            </Reveal>
+          </div>
         </div>
 
         <Reveal className={styles.contactForm} delay={100}>

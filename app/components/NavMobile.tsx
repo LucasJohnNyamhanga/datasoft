@@ -5,6 +5,7 @@ import { FaPhoneAlt, FaArrowRight } from "react-icons/fa";
 import Styles from "../styles/NavMobile.module.scss";
 import { useLanguage } from "../i18n/LanguageContext";
 import DrawerMobile from "./DrawerMobileMenu";
+import LanguageToggle from "./LanguageToggle";
 
 export const NavMobile = () => {
   const segment = useSelectedLayoutSegment();
@@ -37,6 +38,7 @@ export const NavMobile = () => {
           <span className={Styles.name}>DataSoft</span>
         </div>
         <div className={Styles.right}>
+          <LanguageToggle />
           <DrawerMobile />
         </div>
       </div>
