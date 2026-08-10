@@ -20,7 +20,7 @@ A local (Mwanza-based), full-service technology partner — one company that can
 
 ## Operating Context
 
-- Real business: House No 640, Medical Research Road, Kitangiri, Ilemela, Mwanza, Tanzania. Phone +255 767 887 999. Email datasofttanzania@gmail.com. Instagram @datasofttanzania.
+- Real business: House No 640, Medical Research Road, Kitangiri, Ilemela, Mwanza, Tanzania. Phone +255 767 887 999. Email info@datasoft.co.tz. Instagram @datasofttanzania.
 - Contact happens via a brief/contact form (posts to `/api/email` via Nodemailer) or direct call/WhatsApp-style tel link.
 - Site currently has one shared "Software Development Process" content block reused verbatim across the Software, Hosting, Networking, and Graphics service pages — a known defect to fix, not a fact to preserve.
 - Live at https://www.datasoft.co.tz.

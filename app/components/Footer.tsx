@@ -52,7 +52,7 @@ const Footer = () => {
               <a href="tel:+255767887999">+255 767 887 999</a>
             </p>
             <p className={Styles.body}>
-              <a href="mailto:datasofttanzania@gmail.com">datasofttanzania@gmail.com</a>
+              <a href="mailto:info@datasoft.co.tz">info@datasoft.co.tz</a>
             </p>
           </div>
 

@@ -13,5 +13,5 @@ export const transporter = nodemailer.createTransport({
 
 export const mailOptions = {
   from: `"DataSoft Website" <${email}>`,
-  to: email,
+  to: "info@datasoft.co.tz",
 };
