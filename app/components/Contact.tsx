@@ -7,8 +7,6 @@ import {
   FaBoltLightning,
   FaCircleCheck,
   FaHeadset,
-  FaQuoteLeft,
-  FaQuoteRight,
   FaShieldHalved,
 } from "react-icons/fa6";
 import { useLanguage } from "../i18n/LanguageContext";
@@ -150,16 +148,17 @@ const Contact = () => {
             </span>
           </Reveal>
 
-          <div className={styles.formula}>
-            <Reveal as="span" className={styles.formulaMarkOpen} delay={140}>
-              <FaQuoteLeft aria-hidden="true" />
-            </Reveal>
-            <p className={styles.formulaLine}>
+          <Reveal className={styles.formula} delay={140}>
+            <span className={styles.srOnly}>
+              {t.contact.quoteFormula.terms.join(" + ")} ={" "}
+              {t.contact.quoteFormula.result}
+            </span>
+            <p className={styles.formulaLine} aria-hidden="true">
               {formulaParts.map((part, index) => (
                 <Reveal
                   as="span"
                   key={`${part.type}-${index}`}
-                  delay={200 + index * 55}
+                  delay={220 + index * 55}
                   className={
                     part.type === "term"
                       ? styles.formulaTerm
@@ -174,14 +173,7 @@ const Contact = () => {
                 </Reveal>
               ))}
             </p>
-            <Reveal
-              as="span"
-              className={styles.formulaMarkClose}
-              delay={200 + formulaParts.length * 55}
-            >
-              <FaQuoteRight aria-hidden="true" />
-            </Reveal>
-          </div>
+          </Reveal>
         </div>
 
         <Reveal className={styles.contactForm} delay={100}>

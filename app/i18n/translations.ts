@@ -229,8 +229,8 @@ const sw = {
     intro:
       "Majibu machache tu yanatusaidia kukupa ushauri sahihi mara ya kwanza — sio fomu ya kawaida, ni mwanzo wa mradi wako.",
     quoteFormula: {
-      terms: ["Wazo Sahihi", "Bidhaa Sahihi", "Soko Sahihi"],
-      result: "Mafanikio",
+      terms: ["Wazo Bora", "Timu Bora", "Mfumo Bunifu"],
+      result: "Ushindi Wako",
     },
     trust: {
       consultation: "Ushauri wa Kwanza — Bure",
@@ -1142,8 +1142,8 @@ const en: Dict = {
     intro:
       "A few quick answers help us give you the right advice from the start — this isn't just a form, it's the beginning of your project.",
     quoteFormula: {
-      terms: ["The Right Idea", "The Right Product", "The Right Market"],
-      result: "Success",
+      terms: ["Great Idea", "Great Team", "Innovative System"],
+      result: "Your Victory",
     },
     trust: {
       consultation: "First Consultation — Free",
