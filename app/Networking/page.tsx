@@ -5,6 +5,7 @@ import NetworkStats from "../components/NetworkStats";
 import NetworkCapabilities from "../components/NetworkCapabilities";
 import NetworkProcess from "../components/NetworkProcess";
 import NetworkWhy from "../components/NetworkWhy";
+import NetworkFAQ from "../components/NetworkFAQ";
 import styles from "../styles/page.module.scss";
 import ContactUs from "../components/Contact";
 
@@ -16,6 +17,7 @@ const Networking = () => {
       <NetworkCapabilities />
       <NetworkProcess />
       <NetworkWhy />
+      <NetworkFAQ />
       <ContactUs />
       <Footer />
       <GoToTop />

@@ -151,7 +151,7 @@ const Contact = () => {
           </Reveal>
 
           <div className={styles.formula}>
-            <Reveal as="span" className={styles.formulaMark} delay={140}>
+            <Reveal as="span" className={styles.formulaMarkOpen} delay={140}>
               <FaQuoteLeft aria-hidden="true" />
             </Reveal>
             <p className={styles.formulaLine}>
@@ -176,7 +176,7 @@ const Contact = () => {
             </p>
             <Reveal
               as="span"
-              className={styles.formulaMark}
+              className={styles.formulaMarkClose}
               delay={200 + formulaParts.length * 55}
             >
               <FaQuoteRight aria-hidden="true" />

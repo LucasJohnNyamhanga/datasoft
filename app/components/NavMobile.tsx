@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
-import { useRouter, useSelectedLayoutSegment } from "next/navigation";
+import Link from "next/link";
+import { useSelectedLayoutSegment } from "next/navigation";
 import { FaPhoneAlt, FaArrowRight } from "react-icons/fa";
 import Styles from "../styles/NavMobile.module.scss";
 import { useLanguage } from "../i18n/LanguageContext";
@@ -9,7 +10,6 @@ import LanguageToggle from "./LanguageToggle";
 
 export const NavMobile = () => {
   const segment = useSelectedLayoutSegment();
-  const router = useRouter();
   const { t } = useLanguage();
 
   return (
@@ -30,13 +30,10 @@ export const NavMobile = () => {
         </a>
       </div>
       <div className={Styles.bar}>
-        <div
-          className={Styles.logo}
-          onClick={() => router.push(segment != null ? "/" : "#home")}
-        >
+        <Link href={segment != null ? "/" : "#home"} className={Styles.logo}>
           <Image alt="DataSoft Tanzania" src="/brainas.svg" width={32} height={32} priority />
           <span className={Styles.name}>DataSoft</span>
-        </div>
+        </Link>
         <div className={Styles.right}>
           <LanguageToggle />
           <DrawerMobile />

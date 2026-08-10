@@ -1,6 +1,10 @@
 @use "index" as *;
 
 .card {
+  --accent: #{$brass-dim};
+  --accent-strong: #{$brass};
+  --accent-soft: #{rgba($brass, 0.12)};
+
   position: relative;
   display: flex;
   flex-direction: column;
@@ -8,7 +12,7 @@
   height: 100%;
   padding: $space-lg $space-md;
   background-color: $ivory-card;
-  border: 1px solid $maroon;
+  border: 1px solid $bone;
   border-radius: $radius-md;
   transform: perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0);
   transition: border-color 0.25s $ease-standard, transform 0.35s $ease-standard,
@@ -16,18 +20,40 @@
   will-change: transform;
 
   &:hover {
-    border-color: $maroon-line;
+    border-color: var(--accent-strong);
     transform: perspective(900px) rotateX(2deg) rotateY(-2deg) translateY(-4px);
     box-shadow: 0 22px 40px -24px rgba(23, 32, 26, 0.35);
 
     .icon {
-      box-shadow: 0 0 0 5px rgba(212, 160, 23, 0.14);
+      box-shadow: 0 0 0 5px var(--accent-soft);
     }
 
     .learnMore::after {
       transform: scaleX(1);
     }
+
+    .learnMoreIcon {
+      transform: translateX(3px);
+    }
   }
+}
+
+.card[data-accent="hosting"] {
+  --accent: #{$cobalt};
+  --accent-strong: #{$cobalt};
+  --accent-soft: #{rgba($cobalt, 0.12)};
+}
+
+.card[data-accent="networking"] {
+  --accent: #{$rust};
+  --accent-strong: #{$rust};
+  --accent-soft: #{rgba($rust, 0.12)};
+}
+
+.card[data-accent="graphics"] {
+  --accent: #{$navy-line};
+  --accent-strong: #{$navy-line};
+  --accent-soft: #{rgba($navy-line, 0.12)};
 }
 
 .icon {
@@ -37,33 +63,18 @@
   width: 3rem;
   height: 3rem;
   margin-bottom: $space-md;
-  border: 1px solid $brass-dim;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-strong);
   border-radius: $radius-sm;
-  color: $brass;
+  color: var(--accent);
   font-size: 1.35rem;
   transition: box-shadow 0.35s $ease-standard;
-  animation: iconGlow 3.2s ease-in-out infinite;
 }
 
 .featured .icon {
   background: $gradient-gold;
   border-color: $brass;
   color: $sapphire-deep;
-}
-
-.card[data-accent="hosting"] .icon {
-  border-color: $cobalt;
-  color: $cobalt;
-}
-
-.card[data-accent="networking"] .icon {
-  border-color: $rust;
-  color: $rust;
-}
-
-.card[data-accent="graphics"] .icon {
-  border-color: $maroon-bright;
-  color: $maroon-bright;
 }
 
 .tag {
@@ -75,7 +86,7 @@
   font-size: 0.68rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: $brass-dim;
+  color: var(--accent);
   margin: 0 0 0.6rem;
 
   &::before {
@@ -85,34 +96,6 @@
     border-radius: 50%;
     background: currentColor;
     flex: none;
-  }
-}
-
-.card[data-accent="hosting"] .tag {
-  color: $cobalt;
-}
-
-.card[data-accent="networking"] .tag {
-  color: $rust;
-}
-
-.card[data-accent="graphics"] .tag {
-  color: $maroon-bright;
-}
-
-@keyframes iconGlow {
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 rgba(212, 160, 23, 0);
-  }
-  50% {
-    box-shadow: 0 0 0 4px rgba(212, 160, 23, 0.1);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .icon {
-    animation: none;
   }
 }
 
@@ -136,6 +119,9 @@
 
 .learnMore {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   font-family: $font-body;
   font-weight: 600;
   font-size: 0.75rem;
@@ -155,4 +141,8 @@
     transform-origin: left;
     transition: transform 0.25s $ease-standard;
   }
+}
+
+.learnMoreIcon {
+  transition: transform 0.25s $ease-standard;
 }

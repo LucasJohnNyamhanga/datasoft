@@ -1,6 +1,6 @@
 ---
 name: DataSoft Tanzania
-description: Full-service Tanzanian technology house — a professional sapphire-blue/gold/maroon system, refined into a premium, editorial system in Kiswahili.
+description: Full-service Tanzanian technology house — a professional sapphire-blue/gold, all-blue system, refined into a premium, editorial system in Kiswahili.
 colors:
   sapphire-deep: "#0D2C4E"
   sapphire-raised: "#163F6D"
@@ -11,8 +11,9 @@ colors:
   cobalt: "#2E6FB8"
   cobalt-bright: "#4A90D9"
   whatsapp-green: "#25D366"
-  maroon: "#591421"
-  maroon-line: "#7C2635"
+  navy-deep: "#071427"
+  navy-raised: "#0F2340"
+  navy-line: "#1F3F66"
   ivory: "#FBF6E7"
   ivory-card: "#FFFFFF"
   bone: "#E9DFC4"
@@ -75,18 +76,18 @@ components:
 
 **Creative North Star: "DataSoft, Elevated"**
 
-Direction contract — THESIS: this is a palette pivot within an existing refinement, not a wholesale replacement. DataSoft keeps its gold accent, its deep maroon "brief us" register, and the distinctive V-notch seam into the contact section — but the former forest-green shell and logotype are retired in favor of a professional sapphire blue (user decision, 2026-08-06: no green in the DataSoft palette; blue reads more corporate/trustworthy for a technology house pitching Tanzanian SMEs and institutions). The `datasoftsoftware.gif` hero photo was retired on desktop (user decision, 2026-08-06) in favor of an original city-map illustration, and the hero itself was later repositioned from a dark full-bleed shell to a light, typography-led register (user decision, 2026-08-09, taking laravel.com/cloud as the reference point) — see FIRST VIEWPORT below. OWN-WORLD: three brand hues (sapphire blue, gold, maroon) carried by disciplined typography (Fraunces display serif + Montserrat body), flat hairline-driven depth, and a bespoke network-city illustration — with the incumbent site's glitch-text, rainbow card chips, and default green/maroon SVG icon retired as execution debt, not as brand debt. STORY: a returning visitor recognizes DataSoft instantly (the maroon brief-us dip, the gold accent, the network motif) and now reads the shell as noticeably more composed, senior, and "we know what we're doing" than the old green scheme. FIRST VIEWPORT: an ivory hero on the content-room register, not the sapphire shell — a bordered gold-dot eyebrow pill, a centered serif Kiswahili headline (its second line italic gold), one tightened supporting sentence, a solid-gold pill CTA paired with an ink-outline pill CTA, and — below the fold, not behind the text — the same SVG top-down city map (streets, rooftops, DataSoft's fiber network house to house, the maroon HQ pin and its radar sweep, one interior floor plan zoomed around a pulsing router) recolored for a white card and contained inside a rounded, shadowed panel. The sapphire shell with the cobalt spotlight-glow gradient remains the site's dark register (nav bar, the 404 page, service-page heroes) — it is no longer the homepage hero's background. FORM: Persuade mode, brief-pinned (user confirmed 2026-08-06: replace green with blue everywhere except the WhatsApp affordance, which keeps WhatsApp's own brand green for recognizability; keep maroon confined to Contact/Footer). The homepage hero specifically now favors Laravel Cloud's clarity — one-sentence copy, a solid/outline pill CTA pair, a roomy quiet canvas — over the earlier dark spotlight treatment.
+Direction contract — THESIS: this is a palette pivot within an existing refinement, not a wholesale replacement. DataSoft keeps its gold accent, its deep "brief us" closing register, and the distinctive V-notch seam into the contact section — but the former forest-green shell and logotype are retired in favor of a professional sapphire blue (user decision, 2026-08-06: no green in the DataSoft palette; blue reads more corporate/trustworthy for a technology house pitching Tanzanian SMEs and institutions), and the closing register itself was later moved off maroon onto a near-black navy (user decision, 2026-08-10: drop maroon sitewide so the whole palette reads as one consistent, familiar blue system — the register keeps its job, just recolored). The `datasoftsoftware.gif` hero photo was retired on desktop (user decision, 2026-08-06) in favor of an original city-map illustration, and the hero itself was later repositioned from a dark full-bleed shell to a light, typography-led register (user decision, 2026-08-09, taking laravel.com/cloud as the reference point) — see FIRST VIEWPORT below. OWN-WORLD: two brand hues (sapphire blue, gold) plus a navy closing register, carried by disciplined typography (Fraunces display serif + Montserrat body), flat hairline-driven depth, and a bespoke network-city illustration — with the incumbent site's glitch-text, rainbow card chips, and default green/maroon SVG icon retired as execution debt, not as brand debt. STORY: a returning visitor recognizes DataSoft instantly (the navy brief-us dip, the gold accent, the network motif) and now reads the shell as noticeably more composed, senior, and "we know what we're doing" than the old green scheme. FIRST VIEWPORT: an ivory hero on the content-room register, not the sapphire shell — a bordered gold-dot eyebrow pill, a centered serif Kiswahili headline (its second line italic gold), one tightened supporting sentence, a solid-gold pill CTA paired with an ink-outline pill CTA, and — below the fold, not behind the text — the same SVG top-down city map (streets, rooftops, DataSoft's fiber network house to house, the HQ pin and its radar sweep, one interior floor plan zoomed around a pulsing router) recolored for a white card and contained inside a rounded, shadowed panel. The sapphire shell with the cobalt spotlight-glow gradient remains the site's dark register (nav bar, the 404 page, service-page heroes) — it is no longer the homepage hero's background. FORM: Persuade mode, brief-pinned (user confirmed 2026-08-06: replace green with blue everywhere except the WhatsApp affordance, which keeps WhatsApp's own brand green for recognizability; user confirmed 2026-08-10: keep navy confined to Contact/Footer, exactly where maroon used to live). The homepage hero specifically now favors Laravel Cloud's clarity — one-sentence copy, a solid/outline pill CTA pair, a roomy quiet canvas — over the earlier dark spotlight treatment.
 
 **Key Characteristics:**
-- Three brand hues, each with one clear job: **sapphire blue** is the shell and the logotype/success color; **gold** is the one interactive accent (every CTA, link, active state); **maroon** is the "closing" register reserved for the Contact and Footer section, exactly as before.
+- Two brand hues plus a closing register, each with one clear job: **sapphire blue** is the shell and the logotype/success color; **gold** is the one interactive accent (every CTA, link, active state); **navy** is the "closing" register reserved for the Contact and Footer section — the same role maroon used to fill, now recolored into the blue family for a consistent, familiar look.
 - Editorial serif (Fraunces) for headlines; Montserrat for everything functional — including the "DataSoft" logotype itself, which stays bold sans and brand-blue, never converted to the display serif.
 - The hero's supporting visual is a bespoke SVG illustration — a blueprint-style city map carrying DataSoft's own network graph — now a contained panel below the hero copy rather than a full-bleed background or the former brand photo, both retired.
-- The maroon Contact section keeps its signature V-notch top seam (via `clip-path`) — a distinctive, recognizable shape, not a generic straight section boundary.
+- The navy Contact section keeps its signature V-notch top seam (via `clip-path`) — a distinctive, recognizable shape, not a generic straight section boundary.
 - Flat, hairline-driven depth everywhere on the ivory/cream registers; the radial "spotlight" gradient remains the one deliberate rich surface, now confined to the sapphire shell's other appearances (nav, 404 page, service heroes) rather than the homepage hero.
 
 ## Colors
 
-Three brand hues, each confined to a register, plus a warm cream content room.
+Two brand hues plus a navy closing register, each confined to its own register, plus a warm cream content room.
 
 ### Primary accent
 - **Gold** (`#D4A017`): the one interactive accent. Every primary CTA, active nav state, link underline, icon stroke. Used on the dark shell; used sparingly (never as a body-text color) inside cream rooms.
@@ -101,9 +102,10 @@ Three brand hues, each confined to a register, plus a warm cream content room.
 - **Sapphire Raised** (`#163F6D`): raised surfaces on the shell.
 - **Sapphire Line** (`#2C5A8C`): hairline borders on the shell.
 
-### Closing register (maroon)
-- **Maroon** (`#591421`): reserved for the Contact ("Brief Us") section and the Footer only — never used elsewhere.
-- **Maroon Line** (`#7C2635`): hairlines and hover borders on the maroon register.
+### Closing register (navy)
+- **Navy Deep** (`#071427`): reserved for the Contact ("Brief Us") section and the Footer only — never used elsewhere. A near-black navy, deliberately darker/more desaturated than Sapphire Deep so the register still reads as distinct from the nav/hero shell despite sharing the same blue family.
+- **Navy Raised** (`#0F2340`): the lighter edge of the closing-register gradient, mirroring how Sapphire Raised relates to Sapphire Deep.
+- **Navy Line** (`#1F3F66`): hairlines and hover borders on the navy register.
 
 ### Content room (cream)
 - **Ivory** (`#FBF6E7`): the content-room background (service detail sections, portfolio, reading areas).
@@ -118,7 +120,7 @@ Three brand hues, each confined to a register, plus a warm cream content room.
 
 ### Named Rules
 **The One Accent Rule.** Gold is the only saturated color permitted for interactive emphasis outside the logotype. Cobalt blue is reserved for the logotype and success states — it is brand identity, not a second free accent.
-**The Register Rule.** Maroon appears only in Contact and Footer. If maroon starts appearing elsewhere, that's drift, not a new "pop" color.
+**The Register Rule.** Navy appears only in Contact and Footer. If navy starts appearing elsewhere, that's drift, not a new "pop" color. (Maroon is retired sitewide — do not reintroduce it.)
 **The One Exception Rule.** WhatsApp green exists in exactly one place (the WhatsApp affordance) and must never leak into any other component — it's a third-party brand color borrowed for recognizability, not a DataSoft hue.
 **The No-Shadow Rule.** Depth comes from hairlines and register changes, never `box-shadow` blur, with two exceptions: a soft warm ambient glow on dark-surface hover states, and the hero's radial spotlight gradient.
 
@@ -144,7 +146,7 @@ Single-column scroll, max content width 1280px, with generous outer gutters (`cl
 
 ## Elevation & Depth
 
-Flat by default. Depth reads through register changes (shell vs. cream room vs. maroon closing register) and 1px hairlines, not shadows. The permitted exceptions are the warm ambient glow on dark-surface hover and the hero's radial spotlight gradient.
+Flat by default. Depth reads through register changes (shell vs. cream room vs. navy closing register) and 1px hairlines, not shadows. The permitted exceptions are the warm ambient glow on dark-surface hover and the hero's radial spotlight gradient.
 
 ## Shapes
 
@@ -181,7 +183,7 @@ Corners use `rounded.sm`–`rounded.md` (4–8px) — buttons, cards, inputs. Th
 - `CapabilityShowcase` (`app/components/CapabilityShowcase.tsx`) reuses the Hero's `CodeEditor` glass-window chrome (title bar, macOS traffic lights, dark sapphire glass with backdrop blur) as the site's one recurring "signature device" for showing product artifacts, rather than inventing a new visual language per section. Each of the four windows renders a distinct, bespoke, static mockup body matching its capability rather than a shared icon: a live-updating business dashboard (stat tiles, a data table with one pulsing "live" row, a sparkline) for business systems; a smartphone frame (dark device bezel with a notch and a visible side-button nub, distinct from the sapphire glass around it, so it unmistakably reads as a physical phone) with a peeking browser window behind it for mobile + web platforms; a browser-chrome window with a wireframed nav/hero and a floating performance badge ("98 · Kasi ya Juu · SEO Imara") for business websites; and a design-tool artboard with a toolbar rail, an abstract logo mark, a wordmark bar, palette swatches, and a tilted business-card preview for branding/marketing materials. All content is static (no per-line typing animation, unlike `CodeEditor`) and `aria-hidden`, since the row's real copy carries the accessible content.
 
 ### Contact / "Brief Us" (signature)
-- Maroon background with the signature V-notch top seam via `clip-path: polygon(0 56px, 50% 0, 100% 56px, 100% 100%, 0 100%)`. Gold eyebrow, ivory heading, gold-bright italic pull-quote — the Footer continues the same maroon register with no hard seam between them.
+- Navy background with the signature V-notch top seam via `clip-path: polygon(0 56px, 50% 0, 100% 56px, 100% 100%, 0 100%)`. Gold eyebrow, ivory heading, gold-bright italic pull-quote — the Footer continues the same navy register with no hard seam between them.
 
 ## Do's and Don'ts
 
@@ -189,7 +191,7 @@ Corners use `rounded.sm`–`rounded.md` (4–8px) — buttons, cards, inputs. Th
 - **Do** keep the DataSoft wordmark bold, blue, and non-italic.
 - **Do** reuse the sapphire-glass window chrome (`CodeEditor`, `CapabilityShowcase`) as the site's one recurring device for showing product/work — don't invent a new mockup style per section.
 - **Do** keep the hero's city-map network illustration (now a light contained panel, see Hero below) and the Contact V-notch seam — they're the site's signature moments. The radial spotlight gradient remains a signature too, just relocated to the sapphire shell's other appearances (nav, 404, service heroes) rather than the homepage hero.
-- **Do** keep maroon confined to Contact + Footer.
+- **Do** keep navy confined to Contact + Footer.
 - **Do** keep WhatsApp green confined to the WhatsApp affordance only.
 - **Do** use hairlines and register changes for hierarchy before reaching for a shadow.
 
@@ -197,6 +199,6 @@ Corners use `rounded.sm`–`rounded.md` (4–8px) — buttons, cards, inputs. Th
 - **Don't** bring back the incumbent letter-by-letter glitch-text hero effect — retired as dated execution.
 - **Don't** use the old 8-color rainbow card-chip set (`$cardColor1`–`8`) — collapsed into the three-hue brand system.
 - **Don't** put the "Uwezo Wetu" portfolio items back into an icon-card grid (the retired `CardProject` pattern) — it stays a stacked, alternating, non-card row layout.
-- **Don't** let maroon leak into sections other than Contact/Footer, or let gold appear as a second logotype color.
-- **Don't** reintroduce green anywhere in the DataSoft palette outside the WhatsApp affordance.
+- **Don't** let navy leak into sections other than Contact/Footer, or let gold appear as a second logotype color.
+- **Don't** reintroduce green or maroon anywhere in the DataSoft palette outside the WhatsApp affordance.
 - **Don't** fabricate portfolio stats, client names, or testimonials — genericize illustrative examples per PRODUCT.md instead.

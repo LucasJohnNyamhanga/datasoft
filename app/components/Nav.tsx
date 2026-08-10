@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { useRouter, useSelectedLayoutSegment } from "next/navigation";
-import { FaPhoneAlt, FaArrowRight } from "react-icons/fa";
+import { useEffect, useRef, useState } from "react";
+import { useSelectedLayoutSegment } from "next/navigation";
+import { FaPhoneAlt, FaArrowRight, FaChevronDown } from "react-icons/fa";
 import Styles from "../styles/navigation.module.scss";
 import { useLanguage } from "../i18n/LanguageContext";
 import LanguageToggle from "./LanguageToggle";
@@ -13,10 +13,11 @@ const HOME_SECTIONS = ["home", "services", "process", "idea"];
 
 const Nav = () => {
   const segment = useSelectedLayoutSegment();
-  const router = useRouter();
   const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const servicesRef = useRef<HTMLDivElement>(null);
   const isServicePage = segment != null && SERVICE_SEGMENTS.includes(segment);
 
   useEffect(() => {
@@ -46,12 +47,29 @@ const Nav = () => {
     return () => observer.disconnect();
   }, [segment]);
 
+  useEffect(() => {
+    setServicesOpen(false);
+  }, [segment]);
+
+  useEffect(() => {
+    if (!servicesOpen) return;
+
+    const onPointerDown = (e: MouseEvent) => {
+      if (!servicesRef.current?.contains(e.target as Node)) setServicesOpen(false);
+    };
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setServicesOpen(false);
+    };
+    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [servicesOpen]);
+
   const linkClass = (id: string) =>
     `${Styles.link} ${activeSection === id ? Styles.linkActive : ""}`;
-
-  const handleNavigation = (nav: string) => {
-    router.push(nav);
-  };
 
   return (
     <div className={`${Styles.container} ${scrolled ? Styles.scrolled : ""}`} id="top">
@@ -80,16 +98,7 @@ const Nav = () => {
       </div>
       <div className={Styles.bar}>
         <nav className={Styles.nav}>
-          <div
-            className={Styles.logo}
-            onClick={() => {
-              if (segment != null) {
-                handleNavigation("/");
-              } else {
-                handleNavigation("#home");
-              }
-            }}
-          >
+          <Link href={segment != null ? "/" : "#home"} className={Styles.logo}>
             <Image
               alt="DataSoft Tanzania"
               src="/brainas.svg"
@@ -98,7 +107,7 @@ const Nav = () => {
               priority
             />
             <span className={Styles.name}>DataSoft</span>
-          </div>
+          </Link>
 
           <div className={Styles.links}>
             {segment != null ? (
@@ -121,11 +130,47 @@ const Nav = () => {
               </>
             )}
             {isServicePage && (
+              <div className={Styles.dropdown} ref={servicesRef}>
+                <button
+                  type="button"
+                  className={`${Styles.link} ${Styles.dropdownTrigger}`}
+                  aria-haspopup="true"
+                  aria-expanded={servicesOpen}
+                  onClick={() => setServicesOpen((prev) => !prev)}
+                >
+                  {t.nav.services}
+                  <FaChevronDown
+                    className={`${Styles.dropdownIcon} ${servicesOpen ? Styles.dropdownIconOpen : ""}`}
+                    size={9}
+                    aria-hidden="true"
+                  />
+                </button>
+                <div
+                  className={`${Styles.dropdownMenu} ${servicesOpen ? Styles.dropdownMenuOpen : ""}`}
+                  role="menu"
+                >
+                  {t.whatWeDo.services.map((service) => (
+                    <Link
+                      key={service.key}
+                      href={service.link}
+                      role="menuitem"
+                      className={`${Styles.dropdownItem} ${
+                        service.link === `/${segment}` ? Styles.dropdownItemActive : ""
+                      }`}
+                      onClick={() => setServicesOpen(false)}
+                    >
+                      {service.header}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+            {isServicePage && (
               <a href="#capabilities" className={Styles.link}>
                 {t.nav.capabilities}
               </a>
             )}
-            {segment === "Networking" && (
+            {isServicePage && (
               <a href="#process" className={Styles.link}>
                 {t.nav.process}
               </a>

@@ -1,0 +1,110 @@
+@use "index" as *;
+
+.container {
+  width: 100%;
+  background-color: $ivory-card;
+}
+
+.subContainer {
+  max-width: $content-max;
+  margin: 0 auto;
+  padding: $space-xl $gutter;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-lg;
+
+  @media (min-width: 860px) {
+    grid-template-columns: 1.2fr 1fr;
+    gap: $space-xl;
+    align-items: start;
+  }
+}
+
+.eyebrow {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $brass-dim;
+  margin: 0 0 1rem;
+}
+
+.heading {
+  font-family: $font-display;
+  font-weight: 420;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  line-height: 1.15;
+  color: $ink;
+  margin: 0;
+  max-width: 22ch;
+}
+
+.intro {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: $ink-soft;
+  max-width: 56ch;
+  margin: 1.25rem 0 0;
+}
+
+.points {
+  list-style: none;
+  margin: $space-md 0 0;
+  padding: 0;
+
+  li {
+    position: relative;
+    padding: 0.9rem 0 0.9rem 1.75rem;
+    border-top: 1px solid $bone;
+    font-family: $font-body;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.55;
+    color: $ink-soft;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 1.35rem;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: $rust;
+    }
+
+    &:last-child {
+      border-bottom: 1px solid $bone;
+    }
+  }
+}
+
+.quoteCard {
+  padding: $space-md;
+  background-color: $ivory;
+  border: 1px solid $bone;
+  border-radius: $radius-md;
+  align-self: start;
+
+  p {
+    font-family: $font-display;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: $ink;
+    margin: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .subContainer {
+    padding: $space-lg $gutter;
+  }
+}

@@ -1,11 +1,21 @@
 @use "index" as *;
 
 .container {
+  position: relative;
   width: 100%;
-  background: $gradient-maroon;
+  background: $gradient-navy;
+  overflow: hidden;
+}
+
+.network {
+  z-index: 0;
+  mask-image: radial-gradient(ellipse 65% 90% at 82% 0%, black, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 65% 90% at 82% 0%, black, transparent 70%);
 }
 
 .top {
+  position: relative;
+  z-index: 1;
   max-width: $content-max;
   margin: 0 auto;
   padding: $space-lg $gutter $space-md;
@@ -19,7 +29,7 @@
   gap: 1rem;
   padding-bottom: $space-md;
   margin-bottom: $space-md;
-  border-bottom: 1px solid $maroon-line;
+  border-bottom: 1px solid $navy-line;
 }
 
 .logo {
@@ -108,7 +118,7 @@
     justify-content: center;
     width: 2.5rem;
     height: 2.5rem;
-    border: 1px solid $maroon-line;
+    border: 1px solid $navy-line;
     border-radius: $radius-sm;
     color: $bone;
     transition: border-color 0.2s $ease-standard, color 0.2s $ease-standard;
@@ -121,10 +131,12 @@
 }
 
 .bottom {
+  position: relative;
+  z-index: 1;
   max-width: $content-max;
   margin: 0 auto;
   padding: 1.25rem $gutter;
-  border-top: 1px solid $maroon-line;
+  border-top: 1px solid $navy-line;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

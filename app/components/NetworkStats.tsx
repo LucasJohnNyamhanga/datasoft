@@ -3,6 +3,7 @@ import { useLanguage } from "../i18n/LanguageContext";
 import { networkingDictionaries } from "../i18n/networking";
 import styles from "../styles/networkStats.module.scss";
 import Reveal from "./Reveal";
+import StatValue from "./StatValue";
 
 const NetworkStats = () => {
   const { locale } = useLanguage();
@@ -13,7 +14,9 @@ const NetworkStats = () => {
       <div className={styles.subContainer}>
         {n.stats.map((stat, index) => (
           <Reveal key={stat.label} delay={index * 60} className={styles.stat}>
-            <span className={styles.value}>{stat.value}</span>
+            <span className={styles.value}>
+              <StatValue value={stat.value} />
+            </span>
             <span className={styles.label}>{stat.label}</span>
           </Reveal>
         ))}

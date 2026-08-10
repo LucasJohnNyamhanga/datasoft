@@ -238,7 +238,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
 .posterBg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(165deg, #{color.adjust($maroon, $lightness: 6%)} 0%, $maroon 55%, #{color.adjust($maroon, $lightness: -8%)} 100%);
+  background: linear-gradient(165deg, #{color.adjust($navy-deep, $lightness: 6%)} 0%, $navy-deep 55%, #{color.adjust($navy-deep, $lightness: -8%)} 100%);
 }
 
 .posterPhoto {
@@ -356,7 +356,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   padding: 0.4rem 0.9rem;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.95);
-  color: $maroon;
+  color: $navy-deep;
   font-family: $font-body;
   font-weight: 700;
   font-size: 0.46rem;

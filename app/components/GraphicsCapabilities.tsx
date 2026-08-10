@@ -17,7 +17,7 @@ const icons: Record<string, React.ReactNode> = {
 // layer is called back explicitly here as one example, so the grid reads as
 // proof of a broader design capability rather than a generic feature list.
 // Mirrors HostingFeatures/SoftwareCapabilities so all service pages share
-// one flow: hero -> capabilities grid + closing "why" quote -> contact.
+// one flow: hero -> stats -> capabilities grid -> process -> why -> faq -> contact.
 
 const GraphicsCapabilities = () => {
   const { t } = useLanguage();
@@ -56,11 +56,6 @@ const GraphicsCapabilities = () => {
             </Reveal>
           ))}
         </div>
-
-        <Reveal delay={180 + capabilities.length * 40} className={styles.closing}>
-          <span className={styles.closingEyebrow}>{s.whyHeading}</span>
-          <p className={styles.closingQuote}>{s.why}</p>
-        </Reveal>
       </div>
     </div>
   );

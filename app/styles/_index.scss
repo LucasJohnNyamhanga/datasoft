@@ -1,6 +1,7 @@
 // DataSoft Tanzania — brand-true design tokens.
-// The palette pairs a professional sapphire-blue shell with gold and maroon
-// refined into a cohesive, premium system. See DESIGN.md at the project root.
+// The palette pairs a professional sapphire-blue shell with gold and a
+// near-black navy closing register, refined into a cohesive, premium,
+// all-blue system. See DESIGN.md at the project root.
 
 @use "sass:color";
 
@@ -72,10 +73,12 @@ $cobalt-bright: #4a90d9;
 $whatsapp-green: #25d366;
 $whatsapp-green-bright: #2fe073;
 
-// Closing register (deep wine maroon) — contact + footer, DataSoft's "brief us" register
-$maroon: #591421;
-$maroon-line: #7c2635;
-$maroon-bright: #c9455f;
+// Closing register (near-black midnight navy) — contact + footer, DataSoft's
+// "brief us" register. Same blue family as the sapphire shell, but pushed
+// darker/more desaturated so the register still reads as distinct from nav/hero.
+$navy-deep: #071427;
+$navy-raised: #0f2340;
+$navy-line: #1f3f66;
 
 // Room register (warm cream) — content rooms, cards, forms
 $ivory: #fbf6e7;
@@ -108,11 +111,11 @@ $ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
 $glow-brass: 0 0 40px rgba(212, 160, 23, 0.22);
 
 // Gradients — built only from the palette above, used to add richness/flow
-// to large flat surfaces (shells, buttons, the maroon register).
+// to large flat surfaces (shells, buttons, the navy register).
 $gradient-shell: linear-gradient(165deg, #{$sapphire-raised} 0%, #{$sapphire-deep} 60%);
 $gradient-gold: linear-gradient(135deg, #{$brass-bright} 0%, #{$brass} 65%);
 $gradient-gold-hover: linear-gradient(135deg, #{color.adjust($brass-bright, $lightness: 4%)} 0%, #{$brass-bright} 65%);
-$gradient-maroon: linear-gradient(165deg, #{color.adjust($maroon, $lightness: 6%)} 0%, #{$maroon} 55%, #{color.adjust($maroon, $lightness: -6%)} 100%);
+$gradient-navy: linear-gradient(165deg, #{$navy-raised} 0%, #{$navy-deep} 55%, #{color.adjust($navy-deep, $lightness: -4%)} 100%);
 
 // Hero-only: a professional "spotlight" gradient — a cobalt glow rising out
 // of the deep sapphire shell — used nowhere else so the hero keeps a
@@ -125,6 +128,6 @@ $gradient-hero: radial-gradient(
   #{color.adjust($sapphire-deep, $lightness: -7%)} 100%
 );
 
-// Gold flowing into the closing maroon register — used to color the
+// Gold flowing into the closing navy register — used to color the
 // carved-lattice ornament patterns.
-$gradient-mesh: linear-gradient(135deg, #{$brass-bright} 0%, #{$brass} 45%, #{$maroon} 100%);
+$gradient-mesh: linear-gradient(135deg, #{$brass-bright} 0%, #{$brass} 45%, #{$navy-deep} 100%);

@@ -147,7 +147,7 @@ const sw = {
         key: "automation",
         title: "Otomatiki",
         description:
-          "Taratibu za kazi zinazojiendesha zenyewe — arifa, ripoti na hatua za kila siku — ili timu yako itumie muda kwenye mambo muhimu zaidi.",
+          "Mfumo unaoweza kujiendesha wenyewe huku ukikupa taarifa, ripoti na hatua za kila siku na kuifanya timu yako ipate muda zaidi kufanya mambo muhimu zaidi ya uendeshaji na kutoa fursa ya kukua bila mipaka.",
       },
       {
         key: "metrics",
@@ -165,7 +165,7 @@ const sw = {
         key: "security",
         title: "Usalama na Kasi",
         description:
-          "Vyeti vya SSL, ulinzi dhidi ya matatizo ya kawaida ya mtandao, na miundombinu ya kasi ya hali ya juu — bila kuathiriana.",
+          "Vyeti vya SSL, ulinzi dhidi ya matatizo ya kawaida ya mtandao, na miundombinu ya kasi ya hali ya juu bila kuathiri kazi zako.",
       },
       {
         key: "support",
@@ -175,21 +175,21 @@ const sw = {
       },
       {
         key: "backups",
-        title: "Nakala za Akiba",
+        title: "Taarifa Zinahifadhiwa",
         description:
-          "Taarifa zako muhimu huhifadhiwa kiotomatiki mara kwa mara, ili usipoteze kazi hata tatizo likitokea.",
+          "Taarifa zako muhimu huhifadhiwa moja kwa moja ili usipate tabu kuzitafuta wakati wa kazi hata kama tatizo likitokea.",
       },
       {
         key: "scale",
         title: "Ukuaji Endelevu",
         description:
-          "Mifumo yetu huundwa kukua sambamba na biashara yako — kutoka mtumiaji mmoja hadi maelfu, bila kuanza upya.",
+          "Mifumo yetu huundwa kukua sambamba na biashara yako, kutoka mtumiaji mmoja hadi maelfu bila kuanza upya.",
       },
       {
         key: "uptime",
         title: "Upatikanaji wa Uhakika",
         description:
-          "Uwekaji mtandaoni unaofuatiliwa muda wote, ili tovuti na mfumo wako ubaki hai bila usumbufu.",
+          "Ufuatiliaji wa muda wote wa mtandao, ili tovuti na mfumo wako ubaki hai bila usumbufu pale unapouhitaji.",
       },
     ],
   },
@@ -236,7 +236,7 @@ const sw = {
       consultation: "Ushauri wa Kwanza — Bure",
       prototype: "Mfano wa Kwanza (Prototype) Ndani ya Masaa 48",
       support: "Msaada Baada ya Uzinduzi",
-      transparency: "Uwazi Kamili — Bila Mshangao",
+      transparency: "Usalama Kamili kwenye utendaji wa mfumo",
     },
     progress: { step: "Hatua", of: "kati ya" },
     back: "Rudi Nyuma",
@@ -404,7 +404,7 @@ const sw = {
         role: "Mmiliki, Kuafit Gym",
         location: "Njiro, Arusha",
         quote:
-          "Tovuti waliyotujengea Kuafit Gym ni ya kisasa na inavutia sana. Wanachama wanajisajili mtandaoni, wanalipa, na wanaona ratiba za mazoezi bila kupiga simu ofisini. DataSoft wamebadilisha jinsi tunavyofanya kazi!",
+          "Tovuti waliyotujengea ya Kuafit Gym ni ya kisasa na inavutia sana. Wanachama wanajisajili mtandaoni, wanalipa, na wanaona ratiba za mazoezi bila kupiga simu ofisini. DataSoft wamebadilisha jinsi tunavyofanya kazi!",
       },
       {
         name: "Neema Isaya",
@@ -546,6 +546,89 @@ const sw = {
             "Kutoka wateja mia moja wa kwanza hadi laki moja, mfumo unakua bila kuhitaji kujengwa upya kutoka mwanzo.",
         },
       ],
+      stats: [
+        {
+          value: "Masaa 48",
+          label:
+            "kutoka mazungumzo yetu ya kwanza hadi mfano wa kwanza unaobofya",
+        },
+        {
+          value: "Hatua 4",
+          label:
+            "zilizopangwa — Wazo, Muundo, Ujenzi, Uzinduzi — kila mradi unapitia",
+        },
+        {
+          value: "100%",
+          label:
+            "mfumo maalumu ulioundwa kwa ajili ya biashara yako tu kwa kuangalia mahitaji yako na nini biashara yako inachokihitaji",
+        },
+      ],
+      process: {
+        eyebrow: "Jinsi Tunavyojenga",
+        heading: "Kutoka Wazo Hadi Mfumo Unaofanya Kazi",
+        intro:
+          "Kila mfumo tunaoujenga unapitia hatua nne zilizopangwa, ili matokeo yaendane na jinsi biashara yako inavyofanya kazi kwa uhalisia.",
+        steps: [
+          {
+            title: "Wazo",
+            description:
+              "Tunazungumza kuhusu mtiririko halisi wa kazi yako, changamoto zilizopo, na matokeo unayotarajia — kabla ya kuandika msimbo wowote.",
+          },
+          {
+            title: "Muundo",
+            description:
+              "Tunachora ramani ya mfumo — skrini, data na uhusiano kati yake — ili uone jinsi kitakavyofanya kazi kabla ya ujenzi kuanza.",
+          },
+          {
+            title: "Ujenzi",
+            description:
+              "Tunaandika mfumo hatua kwa hatua, tukikuonyesha maendeleo mara kwa mara badala ya kukupa mshangao mwishoni.",
+          },
+          {
+            title: "Uzinduzi",
+            description:
+              "Tunazindua, tunafundisha timu yako, na tunabaki karibu kwa matengenezo na uboreshaji unaoendelea.",
+          },
+        ],
+        closing:
+          "Hakuna hatua inayorukwa — ndiyo maana mfumo wako unafanya kazi tangu siku ya kwanza.",
+      },
+      whySectionHeading: "Mfumo Mbovu ni Gharama Iliyofichika",
+      whyIntro:
+        "Kila saa inayotumika kuingiza data mara mbili, kila ripoti inayotengenezwa kwa mkono, kila uamuzi unaosubiri mtu aliye likizo — vyote ni gharama halisi ya mfumo usiofaa kazi yako.",
+      whyPoints: [
+        "Excel zinazopotea, zenye toleo tofauti kwa kila mfanyakazi",
+        "Ripoti zinazochukua siku kutengeneza kwa mkono kila mwezi",
+        "Mfumo unaokwama pindi biashara yako inapokua zaidi ya ulivyopangwa",
+      ],
+      faq: {
+        eyebrow: "Maswali Kuhusu Programu",
+        heading: "Maswali Yanayoulizwa Kuhusu Ukuzaji wa Programu",
+        intro: "Majibu ya haraka kabla ya kuanza mradi wako wa mfumo.",
+        contactPrompt: "Bado una swali kuhusu mfumo wako? Wasiliana nasi",
+        items: [
+          {
+            question: "Mfumo wangu utachukua muda gani kujengwa?",
+            answer:
+              "Tunaweza kukujengea mfano wa kwanza unaobofya (prototype) ndani ya masaa 48 baada ya mazungumzo yetu ya kwanza. Muda kamili wa mradi unategemea ukubwa wake, na tutakupa ratiba kamili baada ya kuelewa mahitaji yako.",
+          },
+          {
+            question: "Je, mnaweza kuboresha mfumo niliokuwa nao tayari?",
+            answer:
+              "Ndiyo. Tunaweza kuongeza vipengele vipya, kuboresha kasi, au kuunganisha mfumo wako uliopo na huduma nyingine badala ya kuanza kutoka mwanzo.",
+          },
+          {
+            question: "Nani anamiliki msimbo wa mfumo baada ya kukamilika?",
+            answer:
+              "Wewe. Mfumo unaojengwa kwa ajili yako ni mali yako kamili, ikiwa ni pamoja na msimbo wake wa chanzo.",
+          },
+          {
+            question: "Je, mtanisaidia baada ya uzinduzi?",
+            answer:
+              "Ndiyo, kila mfumo unakuja na matengenezo na msaada endelevu — timu yetu ya Mwanza inabaki karibu nawe.",
+          },
+        ],
+      },
     },
     hosting: {
       key: "hosting",
@@ -564,7 +647,7 @@ const sw = {
         "Usimamizi endelevu wa kikoa (domain) na sasisho za mfumo",
       ],
       whyHeading: "Timu Iliyo Hapa, Si Kituo cha Mbali",
-      why: "Tovuti tunazozijenga zinahudumiwa na timu iliyo hapa hapa Mwanza, Tanzania — hujakuwa peke yako pindi tovuti yako inapohitaji msaada wa haraka, na hatuachi kufanya kazi baada ya uzinduzi.",
+      why: "Tovuti tunazozijenga zinahudumiwa na timu iliyo hapa hapa Mwanza, Tanzania. Haupo peke yako pindi tovuti yako inapohitaji msaada wa haraka, na hatuachi kufanya kazi baada ya uzinduzi.",
       ctaLabel: "Anza Mradi wa Tovuti",
       secondaryCtaLabel: "Ona Miundombinu Yetu",
       ideCaption:
@@ -575,7 +658,7 @@ const sw = {
         "Hata Wewe Ukiwa Umelala.",
       ],
       capabilitiesIntro:
-        "Uwekaji mtandaoni si kununua nafasi tu kwenye seva — ni mfumo mzima unaohakikisha tovuti yako inapatikana, ni salama, na iko tayari kukua. Haya ndiyo tunayoyashughulikia kwa niaba yako, kila siku.",
+        "Uwekaji mtandaoni si kununua nafasi tu kwenye seva, bali ni mfumo mzima unaohakikisha tovuti yako inapatikana, ni salama, na iko tayari kukua. Haya ndiyo tunayoyashughulikia kwa niaba yako, kila siku.",
       capabilities: [
         {
           key: "uptime",
@@ -587,7 +670,7 @@ const sw = {
           key: "security",
           title: "Ulinzi na Vyeti vya SSL",
           description:
-            "Kila tovuti inapata cheti cha usalama (SSL) na ulinzi dhidi ya mashambulizi ya kawaida ya mtandaoni — data ya wateja wako inabaki siri.",
+            "Kila tovuti inapata cheti cha usalama (SSL) na ulinzi dhidi ya mashambulizi yote ya mtandaoni, data ya wateja wako zinabaki siri na salama wakati wote.",
         },
         {
           key: "backups",
@@ -605,19 +688,19 @@ const sw = {
           key: "scale",
           title: "Inayokua Pamoja na Wewe",
           description:
-            "Trafiki ikiongezeka, miundombinu yako inaongezeka pia — huna haja ya kuanza upya kila biashara yako inapokua.",
+            "Trafiki ikiongezeka, miundombinu yako inaongezeka pia, wala huna haja ya kuanza upya kila biashara yako inapokua.",
         },
         {
           key: "support",
           title: "Msaada wa Kweli, Ndani ya Tanzania",
           description:
-            "Tovuti ikihitaji msaada, unazungumza na timu iliyo Mwanza — si kituo cha huduma cha nje kisichojua muktadha wako.",
+            "Tovuti ikihitaji msaada, unazungumza na timu yetu inayokusikiliza kwa muda wote. Kituo chako cha huduma kwa wateja kinachofahamu muktadha wako.",
         },
         {
           key: "domain",
           title: "Usimamizi wa Kikoa (Domain)",
           description:
-            "Tunasimamia usajili na uhuishaji wa jina la tovuti yako, ili lisiisha bila wewe kujua na kuathiri biashara yako.",
+            "Tunasimamia usajili na uhuishaji wa jina la tovuti yako, ili umiliki wake usiende nje ya muda bila wewe kujua na kuathiri biashara yako.",
         },
         {
           key: "migration",
@@ -637,6 +720,91 @@ const sw = {
         statusOnline: "Mtandaoni",
         statusSecure: "SSL Imewashwa",
         statusBackup: "Nakala Mpya",
+      },
+      stats: [
+        {
+          value: "Saa 24 za Siku 7",
+          label:
+            "ufuatiliaji wa upatikanaji wa tovuti, ukigundua tatizo kabla ya mteja wako",
+        },
+        {
+          value: "Chini ya Saa Moja",
+          label:
+            "wastani wa muda wa kujibu pindi tovuti inapohitaji msaada wa haraka",
+        },
+        {
+          value: "0 Tsh",
+          label:
+            "gharama ya ziada ya kuhamisha tovuti yako iliyopo kwenye miundombinu yetu",
+        },
+      ],
+      process: {
+        eyebrow: "Jinsi Tunavyofanya Kazi",
+        heading: "Kila Tovuti Inapitia Njia Ile Ile ya Uhakika",
+        intro:
+          "Kila mradi wa tovuti unapitia hatua nne zilizopangwa, ili tovuti yako iwe imara tangu siku ya kwanza ya kuzinduliwa.",
+        steps: [
+          {
+            title: "Tathmini",
+            description:
+              "Tunaangalia tovuti yako ya sasa (kama ipo) na mahitaji yako, kisha tunapendekeza muundo na miundombinu inayofaa.",
+          },
+          {
+            title: "Ubunifu",
+            description:
+              "Tunaunda tovuti yenye muonekano wa kifahari na kasi ya hali ya juu, ikijengwa kwenye msingi thabiti wa kiufundi.",
+          },
+          {
+            title: "Uzinduzi",
+            description:
+              "Tunahamisha au kuanzisha tovuti yako kwenye miundombinu yetu bila muda wa kutoonekana mtandaoni.",
+          },
+          {
+            title: "Ufuatiliaji",
+            description:
+              "Tunaendelea kuiangalia saa 24, tukichukua nakala za akiba na kutatua matatizo kabla hujayagundua.",
+          },
+        ],
+        closing:
+          "Tovuti yako haikai kimya baada ya uzinduzi — tunabaki tukiiangalia kila siku.",
+      },
+      whySectionHeading:
+        "Tovuti Iliyokufa kwa Dakika Tano ni Wateja Waliopotea",
+      whyIntro:
+        "Kila sekunde tovuti yako inachukua kufunguka, kila 'tovuti haipatikani' — ni fursa ya mauzo inayopotea kwenda kwa mshindani wako.",
+      whyPoints: [
+        "Tovuti inayoshuka usiku bila mtu kugundua mpaka asubuhi",
+        "Cheti cha SSL kinachoisha bila kuonya mtu yeyote",
+        "Hakuna nakala ya akiba pindi kosa dogo linapofuta maudhui yote",
+      ],
+      faq: {
+        eyebrow: "Maswali Kuhusu Tovuti na Uwekaji Mtandaoni",
+        heading: "Maswali Yanayoulizwa Kuhusu Hosting",
+        intro: "Majibu ya haraka kabla ya kuanza mradi wa tovuti yako.",
+        contactPrompt: "Bado una swali kuhusu tovuti yako? Wasiliana nasi",
+        items: [
+          {
+            question: "Tovuti yangu itakuwa na kasi kiasi gani?",
+            answer:
+              "Tunaboresha picha, misimbo na miundombinu ili ukurasa wako ufunguke haraka kila wakati — kasi ni sehemu ya muundo, si jambo la kuongezwa baadaye.",
+          },
+          {
+            question: "Nini kitatokea tovuti yangu ikishuka?",
+            answer:
+              "Mfumo wetu unaangalia tovuti yako dakika kwa dakika. Tatizo likitokea, timu yetu ya Mwanza inaanza kulitatua mara moja, mara nyingi kabla hujaligundua.",
+          },
+          {
+            question:
+              "Je, mnaweza kuhamisha tovuti yangu iliyopo kwa DataSoft?",
+            answer:
+              "Ndiyo, bila malipo ya ziada na bila muda wa kutoonekana mtandaoni. Tunashughulikia uhamishaji mzima kwa niaba yako.",
+          },
+          {
+            question: "Je, mnasimamia kikoa (domain) changu pia?",
+            answer:
+              "Ndiyo. Tunasimamia usajili na uhuishaji wa jina la tovuti yako, ili lisiisha bila wewe kujua.",
+          },
+        ],
       },
     },
     networking: {
@@ -663,7 +831,7 @@ const sw = {
       eyebrow: "Ubunifu wa Michoro",
       title: "Sekunde Tatu Kuvutia. Tunazitumia Vizuri.",
       subtitle:
-        "Hiyo ndiyo muda mteja anaotumia kuamua kama chapa yako inaaminika — kutoka nembo hadi bango la kampeni, kila tabaka la muundo wetu linalenga sekunde hizo tatu.",
+        "Huu ndiyo muda mteja anaotumia kuamua kama chapa yako inaaminika, kutoka nembo hadi bango la kampeni, kila tabaka la michoro yetu inalenga sekunde hizo tatu.",
       headlineLines: ["Sekunde Tatu Kuvutia.", "Tunazitumia Vizuri."],
       intro:
         "Muonekano wa chapa yako huzungumza kabla hata hujafungua mdomo. Tunaunda kazi za kisanii zenye mshikamano — nembo, vitambulisho vya chapa, na vifaa vya masoko — ambazo si tu nzuri kuangalia, bali zinauza, zinakumbukwa, na zinaendana na malengo yako ya kibiashara.",
@@ -705,14 +873,107 @@ const sw = {
           key: "packaging",
           title: "Vifungashio na Miundo ya Bidhaa",
           description:
-            "Tunabuni vifungashio vinavyouza — muundo unaovutia dukani na kubaki akilini mwa mteja baada ya ununuzi.",
+            "Tunabuni vifungashio vinavyouza, michoro inayobakia dukani na kubaki akilini mwa mteja baada ya ununuzi.",
         },
       ],
+      stats: [
+        {
+          value: "Sekunde 3",
+          label:
+            "muda ambao hisia ya kwanza inatakiwa ifike kwa walengwa wa mchoro, kila tabaka la muundo wetu linalenga hilo",
+        },
+        {
+          value: "100%",
+          label:
+            "dhana za kipekee iliyo maalumukwa ajili yako, hakuna kikolezo cha jumla kinachotumika kwa wateja wote",
+        },
+        {
+          value: "Mfumo Pekee",
+          label:
+            "mfumo mmoja wa chapa unaotumika kwenye kuchapisha, kidijitali na vifungashio",
+        },
+      ],
+      process: {
+        eyebrow: "Jinsi Tunavyobuni",
+        heading: "Kutoka Mazungumzo Hadi Muundo Uliokamilika",
+        intro:
+          "Kila kazi ya ubunifu tunayoifanya inapitia hatua nne zilizopangwa, ili matokeo yaendane na chapa yako, si tu mtindo wa siku hiyo.",
+        steps: [
+          {
+            title: "Ugunduzi",
+            description:
+              "Tunaelewa chapa yako, hadhira yako na malengo ya kibiashara kabla ya kuchora chochote.",
+          },
+          {
+            title: "Dhana",
+            description:
+              "Tunachora dhana kadhaa tofauti, ili uone mielekeo mbalimbali kabla ya kuchagua moja ya kuiendeleza.",
+          },
+          {
+            title: "Uboreshaji",
+            description:
+              "Tunaboresha dhana uliyoichagua kwa maoni yako, hatua kwa hatua, mpaka ifikie kiwango unachokitaka.",
+          },
+          {
+            title: "Ukabidhi",
+            description:
+              "Unapokea faili zote za mwisho, ukiwa tayari kwa uchapishaji, mtandao au vyote viwili.",
+          },
+        ],
+        closing:
+          "Kila kazi inatokana na mazungumzo, si nadhani — ndiyo maana matokeo yanaendana na chapa yako.",
+      },
+      whySectionHeading: "Muundo Usioendana ni Chapa Isiyoaminika",
+      whyIntro:
+        "Nembo moja kwenye tovuti, nyingine kwenye vipeperushi, rangi tofauti kila mfanyakazi anapotengeneza slaidi — mteja anaona hilo kabla hajasoma neno lolote.",
+      whyPoints: [
+        "Nembo zenye ubora tofauti zikitumika mahali tofauti",
+        "Hakuna mwongozo wa chapa, hivyo kila mfanyakazi anabuni kwa mtindo wake",
+        "Vifaa vya masoko vinavyoonekana kutoka makampuni tofauti, si kimoja",
+      ],
+      faq: {
+        eyebrow: "Maswali Kuhusu Ubunifu",
+        heading: "Maswali Yanayoulizwa Kuhusu Ubunifu wa Michoro",
+        intro: "Majibu ya haraka kabla ya kuanza mradi wako wa chapa.",
+        contactPrompt: "Bado una swali kuhusu muundo wako? Wasiliana nasi",
+        items: [
+          {
+            question: "Nitapata dhana ngapi za kuchagua?",
+            answer:
+              "Tunakuletea dhana kadhaa tofauti mwanzoni, ili uchague kutoka mielekeo halisi tofauti, si toleo moja lililobadilishwa rangi.",
+          },
+          {
+            question: "Ni marudio mangapi ya maoni yanayojumuishwa?",
+            answer:
+              "Baada ya kuchagua dhana, tunaiboresha kwa maoni yako hatua kwa hatua mpaka ifikie kiwango unachokitaka — si toleo moja tu la mwisho.",
+          },
+          {
+            question: "Je, nitapata faili za chanzo za muundo?",
+            answer:
+              "Ndiyo. Unapokea faili zote za mwisho, tayari kwa uchapishaji au matumizi ya kidijitali, ukiwa na uwezo kamili wa kuzitumia.",
+          },
+          {
+            question:
+              "Je, mnaweza kubuni kwa ajili ya kuchapisha na kidijitali kutoka chapa moja?",
+            answer:
+              "Ndiyo. Mfumo mmoja wa chapa — rangi, fonti na miongozo — unatumika kwenye kila kipande, kutoka mabango ya kuchapisha hadi machapisho ya mitandao ya kijamii.",
+          },
+        ],
+      },
     },
   } satisfies Record<string, ServiceContent>,
 };
 
 export type Dict = typeof sw;
+
+// Software, Hosting and Graphics are the three service pages whose stats /
+// process / why / faq sections live in this file (Networking sources its
+// equivalent content from i18n/networking.ts instead, via its own
+// Network*-prefixed components). Narrowing to this union — rather than
+// `keyof Dict["services"]`, which also includes "networking" — lets
+// ServiceStats/ServiceProcess/ServiceWhy/FAQ index `t.services[key]` and get
+// back a type that's guaranteed to carry those fields.
+export type ExtendedServiceKey = "software" | "hosting" | "graphics";
 
 const en: Dict = {
   meta: {
@@ -1198,6 +1459,85 @@ const en: Dict = {
             "From your first hundred clients to your first hundred thousand, the system grows without a rebuild from scratch.",
         },
       ],
+      stats: [
+        { value: "48h", label: "from our first call to a clickable prototype" },
+        {
+          value: "4",
+          label:
+            "structured stages — Idea, Design, Build, Launch — every project follows",
+        },
+        {
+          value: "100%",
+          label:
+            "custom-built — no template stretched to fit a workflow it wasn't made for",
+        },
+      ],
+      process: {
+        eyebrow: "How We Build",
+        heading: "From Idea to a System That Works",
+        intro:
+          "Every system we build moves through four structured stages, so the result matches how your business actually operates.",
+        steps: [
+          {
+            title: "Idea",
+            description:
+              "We talk through your actual workflow, the friction you're dealing with, and the outcome you need — before a single line of code gets written.",
+          },
+          {
+            title: "Design",
+            description:
+              "We map the system — screens, data and how they connect — so you can see how it will work before we start building.",
+          },
+          {
+            title: "Build",
+            description:
+              "We write the system in stages, showing you progress along the way instead of disappearing until launch day.",
+          },
+          {
+            title: "Launch",
+            description:
+              "We ship it, train your team, and stay close for ongoing maintenance and improvements.",
+          },
+        ],
+        closing:
+          "No stage gets skipped — that's why what you get on day one actually works.",
+      },
+      whySectionHeading: "Bad Software Is a Cost You Don't See on the Invoice",
+      whyIntro:
+        "Every hour spent re-entering the same data, every report built by hand, every decision waiting on the one person who knows where the file is — that's the real cost of software that doesn't fit how you work.",
+      whyPoints: [
+        "Spreadsheets that go missing, with a different version on everyone's laptop",
+        "Reports that take days to assemble by hand every month",
+        "A system that buckles the moment your business outgrows what it was built for",
+      ],
+      faq: {
+        eyebrow: "Software Questions",
+        heading: "Questions We Get About Software Development",
+        intro: "Quick answers before you start your system's project.",
+        contactPrompt: "Still have a question about your system? Get in touch",
+        items: [
+          {
+            question: "How long will my system take to build?",
+            answer:
+              "We can have a clickable first prototype ready within 48 hours of our first conversation. Full project timelines depend on scope, and we'll give you a complete schedule once we understand your requirements.",
+          },
+          {
+            question: "Can you improve a system I already have?",
+            answer:
+              "Yes. We can add new features, improve performance, or connect your existing system to other services instead of starting from scratch.",
+          },
+          {
+            question: "Who owns the code once the system is finished?",
+            answer:
+              "You do. A system built for you is entirely your property, including its source code.",
+          },
+          {
+            question: "Will you support the system after launch?",
+            answer:
+              "Yes — every system comes with ongoing maintenance and support, and our Mwanza-based team stays close by.",
+          },
+        ],
+      },
     },
     hosting: {
       key: "hosting",
@@ -1290,6 +1630,87 @@ const en: Dict = {
         statusSecure: "SSL Active",
         statusBackup: "Fresh Backup",
       },
+      stats: [
+        {
+          value: "24/7",
+          label: "uptime monitoring, catching trouble before your customers do",
+        },
+        {
+          value: "<1hr",
+          label: "average response time when a site needs urgent help",
+        },
+        {
+          value: "0 Tsh",
+          label:
+            "extra cost to migrate your existing website onto our infrastructure",
+        },
+      ],
+      process: {
+        eyebrow: "How We Work",
+        heading: "Every Website Follows the Same Reliable Path",
+        intro:
+          "Every website project moves through four structured stages, so your site is solid from the day it launches.",
+        steps: [
+          {
+            title: "Audit",
+            description:
+              "We review your current site (if you have one) and your needs, then recommend the right design and infrastructure.",
+          },
+          {
+            title: "Design",
+            description:
+              "We build a refined, fast website on a solid technical foundation.",
+          },
+          {
+            title: "Launch",
+            description:
+              "We migrate or stand up your site on our infrastructure with zero downtime.",
+          },
+          {
+            title: "Monitor",
+            description:
+              "We keep watching around the clock — backups, uptime checks, and issues resolved before you notice them.",
+          },
+        ],
+        closing:
+          "Your website doesn't go quiet after launch — we keep watching it every day.",
+      },
+      whySectionHeading: "Five Minutes of Downtime Is Customers Lost",
+      whyIntro:
+        "Every extra second your site takes to load, every 'this site can't be reached' — is a sale that happens somewhere else instead.",
+      whyPoints: [
+        "A site that goes down overnight with nobody noticing until morning",
+        "An SSL certificate that quietly expires with no one warned",
+        "No backup on hand the one time a small mistake wipes out your content",
+      ],
+      faq: {
+        eyebrow: "Hosting Questions",
+        heading: "Questions We Get About Hosting",
+        intro: "Quick answers before you start your website's project.",
+        contactPrompt: "Still have a question about your website? Get in touch",
+        items: [
+          {
+            question: "How fast will my website be?",
+            answer:
+              "We optimize images, code and infrastructure so your pages load quickly, every time — speed is part of the build, not an afterthought.",
+          },
+          {
+            question: "What happens if my site goes down?",
+            answer:
+              "Our systems watch your site minute by minute. If something goes wrong, our Mwanza-based team starts fixing it immediately, often before you notice.",
+          },
+          {
+            question: "Can you migrate my existing website to DataSoft?",
+            answer:
+              "Yes, at no extra cost and with zero downtime. We handle the entire migration on your behalf.",
+          },
+          {
+            question: "Do you manage my domain too?",
+            answer:
+              "Yes. We manage your domain's registration and renewal, so it never lapses without your knowledge.",
+          },
+        ],
+      },
     },
     networking: {
       key: "networking",
@@ -1360,6 +1781,89 @@ const en: Dict = {
             "We design packaging that sells — eye-catching on the shelf and memorable after the purchase.",
         },
       ],
+      stats: [
+        {
+          value: "3s",
+          label:
+            "the window a first impression has to land — every layer we design targets it",
+        },
+        {
+          value: "100%",
+          label:
+            "original concepts — no stock template recycled across different clients",
+        },
+        {
+          value: "1",
+          label: "brand system carried across print, digital and packaging",
+        },
+      ],
+      process: {
+        eyebrow: "How We Design",
+        heading: "From Conversation to Finished Design",
+        intro:
+          "Every design project moves through four structured stages, so the result fits your brand, not just the trend of the moment.",
+        steps: [
+          {
+            title: "Discover",
+            description:
+              "We learn your brand, your audience and your business goals before a single concept is sketched.",
+          },
+          {
+            title: "Concept",
+            description:
+              "We sketch a few distinct directions, so you're choosing between real options, not one idea dressed differently.",
+          },
+          {
+            title: "Refine",
+            description:
+              "We refine the direction you pick against your feedback, round by round, until it's right.",
+          },
+          {
+            title: "Deliver",
+            description:
+              "You receive final files ready for print, digital, or both.",
+          },
+        ],
+        closing:
+          "Every piece starts from a conversation, not a guess — that's why the result actually fits your brand.",
+      },
+      whySectionHeading: "Inconsistent Design Reads as an Unreliable Brand",
+      whyIntro:
+        "One logo on the website, a slightly different one on the flyers, a new color every time someone builds a slide deck — customers notice before they read a single word.",
+      whyPoints: [
+        "Logo files of inconsistent quality scattered across different folders",
+        "No brand guide, so every employee designs slides their own way",
+        "Marketing materials that look like they came from three different companies",
+      ],
+      faq: {
+        eyebrow: "Design Questions",
+        heading: "Questions We Get About Graphics Design",
+        intro: "Quick answers before you start your brand's project.",
+        contactPrompt: "Still have a question about your design? Get in touch",
+        items: [
+          {
+            question: "How many concepts do I get to choose from?",
+            answer:
+              "We bring you a few genuinely distinct concepts up front, so you're picking between real directions, not one design recolored.",
+          },
+          {
+            question: "How many rounds of revisions are included?",
+            answer:
+              "Once you pick a direction, we refine it against your feedback round by round until it's right — not just a single final pass.",
+          },
+          {
+            question: "Will I get the source design files?",
+            answer:
+              "Yes. You receive all final files, ready for print or digital use, with full rights to use them.",
+          },
+          {
+            question:
+              "Can you design for both print and digital from one brand?",
+            answer:
+              "Yes. One brand system — color, type and guidelines — carries across every piece, from print posters to social media posts.",
+          },
+        ],
+      },
     },
   },
 };

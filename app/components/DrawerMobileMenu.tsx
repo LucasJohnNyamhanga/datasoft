@@ -84,9 +84,24 @@ export const MuiDrawer = () => {
             </>
           )}
           {isServicePage && (
-            <a href="#capabilities" className={Styles.link} onClick={handleClose}>
-              {t.nav.capabilities}
-            </a>
+            <>
+              <span className={Styles.groupLabel}>{t.nav.services}</span>
+              {t.whatWeDo.services.map((service) => (
+                <Link
+                  key={service.key}
+                  href={service.link}
+                  className={`${Styles.link} ${Styles.subLink} ${
+                    service.link === `/${segment}` ? Styles.linkActive : ""
+                  }`}
+                  onClick={handleClose}
+                >
+                  {service.header}
+                </Link>
+              ))}
+              <a href="#capabilities" className={Styles.link} onClick={handleClose}>
+                {t.nav.capabilities}
+              </a>
+            </>
           )}
           {segment === "Networking" && (
             <a href="#process" className={Styles.link} onClick={handleClose}>

@@ -21,7 +21,11 @@ export type NetworkingContent = {
     eyebrow: string;
     headingLines: [string, string];
     intro: string;
-    items: { key: "design" | "sharing" | "security" | "monitoring"; title: string; description: string }[];
+    items: {
+      key: "design" | "sharing" | "security" | "monitoring";
+      title: string;
+      description: string;
+    }[];
   };
   why: {
     eyebrow: string;
@@ -37,6 +41,13 @@ export type NetworkingContent = {
     steps: { title: string; description: string }[];
     closing: string;
   };
+  faq: {
+    eyebrow: string;
+    heading: string;
+    intro: string;
+    contactPrompt: string;
+    items: { question: string; answer: string }[];
+  };
 };
 
 const sw: NetworkingContent = {
@@ -45,19 +56,31 @@ const sw: NetworkingContent = {
     eyebrow: "Mitandao ya Kompyuta",
     headlineLines: ["Kila Kifaa.", "Mtandao Mmoja wa Uhakika."],
     subheadline:
-      "Kutoka mapokezi hadi ofisi ya nyuma, tunabuni na kusimika mitandao ya LAN na WiFi inayounganisha kila kompyuta, printa na seva — papo hapo, kwa usalama, na bila simu za 'mtandao umekufa'.",
+      "Kutoka mapokezi hadi ofisi ya nyuma, tunabuni na kusimika mitandao ya LAN na WiFi inayounganisha kila kompyuta, printa na seva kwa mawasiliano ya papo hapo, kwa usalama, na bila simu za 'mtandao haupo'.",
     ctaPrimary: "Anza Mradi wa Mtandao",
     ctaSecondary: "Ona Jinsi Inavyofanya Kazi",
     panelTitle: "ramani-ya-mtandao — datasoft",
-    panelCaption: "Uigaji wa moja kwa moja: jinsi data inavyosafiri ofisini kwako, kifaa hadi kifaa",
+    panelCaption:
+      "Uigaji wa moja kwa moja: jinsi data inavyosafiri ofisini kwako, kifaa hadi kifaa",
     statusNetwork: "OFISI-LAN · 192.168.1.0/24",
     statusDevices: "vifaa 7 mtandaoni",
     statusLink: "Muunganiko: Thabiti",
   },
   stats: [
-    { value: "7+", label: "aina za vifaa vilivyounganishwa — kompyuta, printa, skana, hifadhi" },
-    { value: "<5ms", label: "wastani wa muda wa mawasiliano ndani ya mtandao" },
-    { value: "24/7", label: "ufuatiliaji wa mfumo, ili tatizo ligundulike kabla hujaligundua wewe" },
+    {
+      value: "Vifaa 7 na Zaidi",
+      label:
+        "aina za vifaa vilivyounganishwa — kompyuta, printa, skana, hifadhi",
+    },
+    {
+      value: "Chini ya Milisekunde 5",
+      label: "wastani wa muda wa mawasiliano ndani ya mtandao",
+    },
+    {
+      value: "Saa 24 za Siku 7",
+      label:
+        "ufuatiliaji wa mfumo, ili tatizo ligundulike kabla hujaligundua wewe",
+    },
   ],
   capabilities: {
     eyebrow: "Tunachofanya",
@@ -131,7 +154,37 @@ const sw: NetworkingContent = {
           "Tunajaribu mtandao chini ya matumizi halisi, tunafundisha timu yako, na tunabaki karibu kwa ufuatiliaji unaoendelea.",
       },
     ],
-    closing: "Uwazi kamili katika kila hatua — unajua vifaa vyako viko wapi, na kwa nini.",
+    closing:
+      "Uwazi kamili katika kila hatua — unajua vifaa vyako viko wapi, na kwa nini.",
+  },
+  faq: {
+    eyebrow: "Maswali Kuhusu Mitandao",
+    heading: "Maswali Yanayoulizwa Kuhusu Mitandao ya Kompyuta",
+    intro: "Majibu ya haraka kabla ya kuanza mradi wa mtandao wa ofisi yako.",
+    contactPrompt: "Bado una swali kuhusu mtandao wako? Wasiliana nasi",
+    items: [
+      {
+        question: "Usimikaji wa mtandao huchukua muda gani?",
+        answer:
+          "Ofisi ndogo huchukua siku chache tu, kutoka ukaguzi hadi ukabidhi. Ofisi kubwa zenye ghorofa nyingi zinaweza kuchukua wiki moja au mbili — tutakupa muda kamili baada ya ukaguzi wa kwanza.",
+      },
+      {
+        question: "Je, mtafanya kazi bila kuvuruga shughuli za ofisi yangu?",
+        answer:
+          "Ndiyo. Tunapanga usimikaji kuzunguka ratiba yako ya kazi, mara nyingi nje ya saa za kazi au sehemu kwa sehemu, ili timu yako iendelee kufanya kazi bila usumbufu.",
+      },
+      {
+        question:
+          "Nina vifaa vichache tu — mtandao huu ni mkubwa kupita kiasi?",
+        answer:
+          "Hapana. Tunabuni mtandao kufuatana na ukubwa halisi wa ofisi yako sasa, huku tukiacha nafasi ya kukua — hulipii uwezo usiouhitaji.",
+      },
+      {
+        question: "Je, mtaendelea kunisaidia baada ya usimikaji?",
+        answer:
+          "Ndiyo. Kila mtandao tunaousimika unakuja na ufuatiliaji endelevu, hivyo tatizo linagunduliwa na kutatuliwa kabla halijaathiri timu yako.",
+      },
+    ],
   },
 };
 
@@ -145,15 +198,22 @@ const en: NetworkingContent = {
     ctaPrimary: "Start a Networking Project",
     ctaSecondary: "See How It Works",
     panelTitle: "office-lan.map — datasoft",
-    panelCaption: "Live simulation: how data moves through your office, device by device",
+    panelCaption:
+      "Live simulation: how data moves through your office, device by device",
     statusNetwork: "OFFICE-LAN · 192.168.1.0/24",
     statusDevices: "7 devices online",
     statusLink: "Link: Stable",
   },
   stats: [
-    { value: "7+", label: "device types unified — PCs, printers, scanners, storage" },
+    {
+      value: "7+",
+      label: "device types unified — PCs, printers, scanners, storage",
+    },
     { value: "<5ms", label: "average local network latency" },
-    { value: "24/7", label: "monitoring, so problems get caught before you notice them" },
+    {
+      value: "24/7",
+      label: "monitoring, so problems get caught before you notice them",
+    },
   ],
   capabilities: {
     eyebrow: "What We Do",
@@ -227,7 +287,36 @@ const en: NetworkingContent = {
           "We test the network under real use, train your team, and stay close for ongoing monitoring.",
       },
     ],
-    closing: "Full transparency at every stage — you know exactly where your equipment is, and why.",
+    closing:
+      "Full transparency at every stage — you know exactly where your equipment is, and why.",
+  },
+  faq: {
+    eyebrow: "Networking Questions",
+    heading: "Questions We Get About Computer Networking",
+    intro: "Quick answers before you start your office network project.",
+    contactPrompt: "Still have a question about your network? Get in touch",
+    items: [
+      {
+        question: "How long does a network installation take?",
+        answer:
+          "A small office takes just a few days, start to handover. Larger, multi-floor offices can take one to two weeks — we'll give you an exact timeline after the initial survey.",
+      },
+      {
+        question: "Will the work disrupt my office?",
+        answer:
+          "No. We schedule installation around your working hours, often outside business hours or floor by floor, so your team keeps working without interruption.",
+      },
+      {
+        question: "I only have a few devices — isn't this overkill?",
+        answer:
+          "No. We size the network to your office's actual scale today, while leaving room to grow — you never pay for capacity you don't need.",
+      },
+      {
+        question: "Do you keep supporting the network after installation?",
+        answer:
+          "Yes. Every network we install comes with ongoing monitoring, so issues get caught and resolved before they affect your team.",
+      },
+    ],
   },
 };
 

@@ -100,6 +100,36 @@
   }
 }
 
+.groupLabel {
+  padding-top: 1.25rem;
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba($bone, 0.5);
+}
+
+.subLink {
+  padding: 0.75rem 0 0.75rem 0.9rem;
+  font-size: 0.82rem;
+  border-bottom: none;
+  border-left: 1px solid $sapphire-line;
+
+  &:hover {
+    padding-left: 1.3rem;
+  }
+}
+
+.linkActive {
+  color: $brass-bright;
+  pointer-events: none;
+
+  &:hover {
+    padding-left: inherit;
+  }
+}
+
 .footer {
   margin-top: auto;
   padding-top: 2rem;

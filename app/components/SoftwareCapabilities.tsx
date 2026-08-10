@@ -16,6 +16,8 @@ const icons: Record<string, React.ReactNode> = {
 // the loan & microfinance example the visitor just watched get typed out
 // is called back explicitly here as "just one sample," so the four cards
 // read as proof of a broader capability rather than a generic feature list.
+// The "why DataSoft" beat now lives in its own ServiceWhy section further
+// down the page.
 
 const SoftwareCapabilities = () => {
   const { t } = useLanguage();
@@ -54,11 +56,6 @@ const SoftwareCapabilities = () => {
             </Reveal>
           ))}
         </div>
-
-        <Reveal delay={180 + capabilities.length * 50} className={styles.closing}>
-          <span className={styles.closingEyebrow}>{s.whyHeading}</span>
-          <p className={styles.closingQuote}>{s.why}</p>
-        </Reveal>
       </div>
     </div>
   );

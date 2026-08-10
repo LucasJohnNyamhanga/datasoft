@@ -29,8 +29,9 @@ const icons: Record<string, React.ReactNode> = {
 // on it: the live traffic the visitor just watched flow between the two
 // nodes is the same infrastructure described here in plain terms, so the
 // grid reads as "here's everything that mockup was standing for" rather
-// than a generic feature list. Closes with a "why DataSoft" pull-quote,
-// standing in for the plain ServiceDetail panel this page no longer uses.
+// than a generic feature list. The "why DataSoft" beat now lives in its own
+// ServiceWhy section further down the page, standing in for the plain
+// ServiceDetail panel this page no longer uses.
 
 const HostingFeatures = () => {
   const { t } = useLanguage();
@@ -69,11 +70,6 @@ const HostingFeatures = () => {
             </Reveal>
           ))}
         </div>
-
-        <Reveal delay={180 + capabilities.length * 40} className={styles.closing}>
-          <span className={styles.closingEyebrow}>{s.whyHeading}</span>
-          <p className={styles.closingQuote}>{s.why}</p>
-        </Reveal>
       </div>
     </div>
   );

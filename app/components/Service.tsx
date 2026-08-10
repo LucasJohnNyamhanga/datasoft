@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa";
 import styles from "../styles/section.module.scss";
 
 type ServiceProps = {
@@ -33,7 +34,10 @@ const Service = ({
       {tag && <span className={styles.tag}>{tag}</span>}
       <h3 className={styles.title}>{header}</h3>
       <p className={styles.description}>{description}</p>
-      <span className={styles.learnMore}>{learnMore}</span>
+      <span className={styles.learnMore}>
+        {learnMore}
+        <FaArrowRight className={styles.learnMoreIcon} size={10} aria-hidden="true" />
+      </span>
     </Link>
   );
 };

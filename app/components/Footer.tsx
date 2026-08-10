@@ -5,6 +5,7 @@ import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import Styles from "../styles/footer.module.scss";
 import { useLanguage } from "../i18n/LanguageContext";
 import LanguageToggle from "./LanguageToggle";
+import NetworkPattern from "./NetworkPattern";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -12,6 +13,7 @@ const Footer = () => {
 
   return (
     <footer className={Styles.container}>
+      <NetworkPattern className={Styles.network} />
       <div className={Styles.top}>
         <div className={Styles.brand}>
           <div className={Styles.logo}>

@@ -3,21 +3,17 @@ import { useState } from "react";
 import styles from "../styles/faq.module.scss";
 import Reveal from "./Reveal";
 import { useLanguage } from "../i18n/LanguageContext";
-import type { ExtendedServiceKey } from "../i18n/translations";
+import { networkingDictionaries } from "../i18n/networking";
 
-type FAQProps = {
-  // Defaults to the homepage's generic FAQ; service pages pass their own
-  // service key so the questions match objections specific to that page
-  // instead of repeating what a visitor already saw on Home. Resolved via
-  // useLanguage (not passed as a static content object) so it stays in
-  // sync when the visitor toggles language. Networking uses NetworkFAQ
-  // instead, since its content lives in a separate dictionary file.
-  serviceKey?: ExtendedServiceKey;
-};
+// Networking's own FAQ — mirrors the shared FAQ component's markup exactly,
+// but sources copy from networkingDictionaries (Networking's own content
+// file) instead of translations.ts, matching how NetworkStats/NetworkProcess
+// /NetworkWhy already source their content separately from the other three
+// service pages.
 
-const FAQ = ({ serviceKey }: FAQProps) => {
-  const { t } = useLanguage();
-  const faq = (serviceKey ? t.services[serviceKey].faq : undefined) ?? t.faq;
+const NetworkFAQ = () => {
+  const { locale } = useLanguage();
+  const faq = networkingDictionaries[locale].faq;
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggle = (index: number) => {
@@ -51,8 +47,8 @@ const FAQ = ({ serviceKey }: FAQProps) => {
           <div className={styles.list}>
             {faq.items.map((item, index) => {
               const isOpen = openIndex === index;
-              const buttonId = `faq-button-${index}`;
-              const panelId = `faq-panel-${index}`;
+              const buttonId = `network-faq-button-${index}`;
+              const panelId = `network-faq-panel-${index}`;
 
               return (
                 <Reveal
@@ -106,4 +102,4 @@ const FAQ = ({ serviceKey }: FAQProps) => {
   );
 };
 
-export default FAQ;
+export default NetworkFAQ;

@@ -3,7 +3,7 @@
 .container {
   width: 100%;
   margin-top: -56px;
-  background: $gradient-maroon;
+  background: $gradient-navy;
   scroll-margin-top: var(--nav-height, 90px);
   clip-path: polygon(0 0, 50% 56px, 100% 0, 100% 100%, 0 100%);
 }
@@ -84,11 +84,9 @@
 }
 
 .formula {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.9rem;
+  position: relative;
   margin-top: $space-lg;
-  padding-top: $space-md;
+  padding: 2.25rem 2.5rem 2.75rem;
   border-top: 1px solid rgba($brass-dim, 0.5);
 }
 
@@ -101,13 +99,23 @@
   margin: 0;
 }
 
-.formulaMark {
-  flex-shrink: 0;
+.formulaMarkOpen,
+.formulaMarkClose {
+  position: absolute;
   display: inline-flex;
   color: $brass-dim;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   line-height: 1;
-  margin-top: 0.3rem;
+}
+
+.formulaMarkOpen {
+  top: 1.35rem;
+  left: 0;
+}
+
+.formulaMarkClose {
+  bottom: 1.15rem;
+  right: 0;
 }
 
 .formulaTerm {
@@ -370,10 +378,19 @@
 
   .formula {
     margin-top: $space-md;
-    gap: 0.6rem;
+    padding: 1.75rem 1.75rem 2.1rem;
   }
 
-  .formulaMark {
+  .formulaMarkOpen,
+  .formulaMarkClose {
     font-size: 1.1rem;
+  }
+
+  .formulaMarkOpen {
+    top: 1rem;
+  }
+
+  .formulaMarkClose {
+    bottom: 0.85rem;
   }
 }
