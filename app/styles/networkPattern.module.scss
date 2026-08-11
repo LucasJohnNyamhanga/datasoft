@@ -43,6 +43,15 @@
   }
 }
 
+// Set by NetworkPattern.tsx after a one-time hardwareConcurrency/deviceMemory/
+// saveData check — backdrop-filter is one of the most GPU-expensive properties
+// on low-end mobile compositors, so it's cut in half rather than dropped
+// outright (dropping it would flash the busier SVG detail underneath).
+.glass[data-low-power="true"] {
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
 // Depth layers — each drifts at a different rate off pointer position
 // (parallax) and carries its own defocus/glow ramp, so the pattern reads as
 // three planes in space rather than one flat sheet of dots.
@@ -115,6 +124,20 @@
 .layerFar .pulse {
   opacity: 0.5;
   filter: drop-shadow(0 0 2px rgba(191, 224, 255, 0.6));
+}
+
+// drop-shadow is the other expensive piece on low-end hardware: it's
+// recomputed on every paint while the scale-pulse keyframe runs, across
+// every near-layer node at once. Flat fills still read fine without it.
+.pattern[data-low-power="true"] {
+  .node,
+  .pulse {
+    filter: none;
+  }
+
+  .layerFar .link {
+    filter: none;
+  }
 }
 
 @keyframes flow {
