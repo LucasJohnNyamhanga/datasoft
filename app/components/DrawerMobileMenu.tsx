@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import Styles from "../styles/drawerMobile.module.scss";
 import { useLanguage } from "../i18n/LanguageContext";
 import LanguageToggle from "./LanguageToggle";
+import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF } from "../constants/contact";
 
 const SERVICE_SEGMENTS = ["Software", "Hosting", "Networking", "Graphics"];
 
@@ -114,7 +115,7 @@ export const MuiDrawer = () => {
 
           <div className={Styles.footer}>
             <div className={Styles.callLine}>
-              {t.nav.callUs} <a href="tel:+255767887999">+255 767 887 999</a>
+              {t.nav.callUs} <a href={CONTACT_PHONE_HREF}>{CONTACT_PHONE_DISPLAY}</a>
             </div>
             <LanguageToggle />
           </div>

@@ -1,11 +1,12 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaDumbbell } from "react-icons/fa";
 import Styles from "../styles/footer.module.scss";
 import { useLanguage } from "../i18n/LanguageContext";
 import LanguageToggle from "./LanguageToggle";
 import NetworkPattern from "./NetworkPattern";
+import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF } from "../constants/contact";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -34,6 +35,26 @@ const Footer = () => {
                 {service.header}
               </Link>
             ))}
+
+            <div className={Styles.appsGroup}>
+              <span className={Styles.appsLabel}>{t.footer.apps.heading}</span>
+              <span className={Styles.appName}>
+                <FaDumbbell size={11} aria-hidden="true" />
+                {t.footer.apps.kuafit.name}
+              </span>
+              <Link
+                href="/Applications/KuaFit/PrivacyPolicy"
+                className={`${Styles.body} ${Styles.appLink}`}
+              >
+                {t.footer.apps.kuafit.privacyPolicy}
+              </Link>
+              <Link
+                href="/Applications/KuaFit/TermsOfService"
+                className={`${Styles.body} ${Styles.appLink}`}
+              >
+                {t.footer.apps.kuafit.termsOfService}
+              </Link>
+            </div>
           </div>
 
           <div className={Styles.column}>
@@ -49,7 +70,7 @@ const Footer = () => {
             <div className={Styles.header}>{t.footer.briefUs}</div>
             <p className={`${Styles.body} ${Styles.emphasis}`}>{t.footer.talkBusiness}</p>
             <p className={Styles.body}>
-              <a href="tel:+255767887999">+255 767 887 999</a>
+              <a href={CONTACT_PHONE_HREF}>{CONTACT_PHONE_DISPLAY}</a>
             </p>
             <p className={Styles.body}>
               <a href="mailto:info@datasoft.co.tz">info@datasoft.co.tz</a>

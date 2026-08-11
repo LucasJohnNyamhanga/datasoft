@@ -7,6 +7,7 @@ import { FaPhoneAlt, FaArrowRight, FaChevronDown } from "react-icons/fa";
 import Styles from "../styles/navigation.module.scss";
 import { useLanguage } from "../i18n/LanguageContext";
 import LanguageToggle from "./LanguageToggle";
+import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF } from "../constants/contact";
 
 const SERVICE_SEGMENTS = ["Software", "Hosting", "Networking", "Graphics"];
 const HOME_SECTIONS = ["home", "services", "process", "idea"];
@@ -76,13 +77,13 @@ const Nav = () => {
       <div className={Styles.announce}>
         <div className={Styles.announceRow}>
           <a
-            href="tel:+255767887999"
+            href={CONTACT_PHONE_HREF}
             className={Styles.callLink}
-            aria-label={`${t.nav.callUs} +255 767 887 999`}
+            aria-label={`${t.nav.callUs} ${CONTACT_PHONE_DISPLAY}`}
           >
             <FaPhoneAlt className={Styles.callIcon} size={11} aria-hidden="true" />
             <span className={Styles.callText} aria-hidden="true">
-              {t.nav.callUs} <span className={Styles.callNumber}>+255 767 887 999</span>
+              {t.nav.callUs} <span className={Styles.callNumber}>{CONTACT_PHONE_DISPLAY}</span>
             </span>
           </a>
           <span className={Styles.divider} aria-hidden="true">

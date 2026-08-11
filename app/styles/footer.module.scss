@@ -96,6 +96,57 @@
   }
 }
 
+// Nested "Mifumo / KuaFit" product group, tucked inside the VIUNGO column
+// beneath the main nav links rather than spent as its own grid column —
+// one product today doesn't earn a fifth column, but it does earn its own
+// small hierarchy: a MIFUMO micro-label, the KuaFit product line, then its
+// two legal links set apart by size and indent so they read as children of
+// it, not siblings of the main nav links above.
+.appsGroup {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.1rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid $navy-line;
+}
+
+.appsLabel {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: $brass-dim;
+  margin-bottom: 0.6rem;
+}
+
+.appName {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: $ivory;
+  margin-bottom: 0.5rem;
+
+  svg {
+    color: $brass;
+    flex: none;
+  }
+}
+
+.appLink {
+  margin-left: 1.35rem;
+  font-size: 0.85rem;
+  opacity: 0.85;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
 .emphasis {
   font-family: $font-display;
   font-style: italic;

@@ -1,0 +1,138 @@
+@use "index" as *;
+
+.container {
+  position: relative;
+  width: 100%;
+  padding-top: var(--nav-height, 107px);
+  background-color: $ivory;
+  scroll-margin-top: var(--nav-height, 90px);
+}
+
+.frame {
+  width: 100%;
+  max-width: $content-max;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 4rem) $gutter clamp(2.75rem, 5vw, 3.5rem);
+}
+
+.breadcrumb {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $brass-dim;
+  margin: 0 0 1.5rem;
+
+  a {
+    color: $ink-soft;
+    transition: color 0.2s $ease-standard;
+
+    &:hover {
+      color: $brass-dim;
+    }
+  }
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: $hero-font-body;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: $ink-soft;
+  border: 1px solid $bone;
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  margin: 0 0 1.75rem;
+
+  svg {
+    color: $brass;
+    flex: none;
+  }
+}
+
+.headline {
+  font-family: $hero-font-display;
+  font-weight: 400;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: $ink;
+  margin: 0;
+  max-width: 20ch;
+}
+
+.line {
+  display: block;
+}
+
+.lineAccent {
+  font-style: italic;
+  color: $brass-dim;
+}
+
+.subheadline {
+  font-family: $hero-font-body;
+  font-weight: 400;
+  font-size: 1.08rem;
+  line-height: 1.6;
+  color: $ink-soft;
+  max-width: 52ch;
+  margin: 1.4rem 0 0;
+}
+
+.meta {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 2.25rem;
+}
+
+.updated {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: $ink-soft;
+}
+
+.switchPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: $ink;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid $brass-dim;
+  transition: color 0.2s $ease-standard, border-color 0.2s $ease-standard;
+
+  &:hover,
+  &:focus-visible {
+    color: $brass-dim;
+    border-color: $brass;
+  }
+}
+
+@media (max-width: 640px) {
+  .frame {
+    padding: 2.25rem 1.25rem 2.5rem;
+  }
+
+  .headline {
+    font-size: clamp(2rem, 9vw, 2.6rem);
+    max-width: none;
+  }
+}

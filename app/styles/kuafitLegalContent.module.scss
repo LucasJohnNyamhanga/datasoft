@@ -1,0 +1,234 @@
+@use "index" as *;
+
+.container {
+  width: 100%;
+  background-color: $bone;
+}
+
+.subContainer {
+  max-width: $content-max;
+  margin: 0 auto;
+  padding: $space-xl $gutter;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-lg;
+
+  @media (min-width: 900px) {
+    grid-template-columns: 18rem 1fr;
+    gap: $space-xl;
+    align-items: start;
+  }
+}
+
+// Jump-to-section index — sticky on desktop, same intro-sidebar slot FAQ
+// uses, but a plain nav list rather than an eyebrow/heading/CTA block since
+// its only job here is wayfinding through a long document.
+.toc {
+  @media (min-width: 900px) {
+    position: sticky;
+    top: calc(var(--nav-height, 90px) + 2.5rem);
+  }
+}
+
+.tocLabel {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: $brass-dim;
+  margin: 0 0 1.1rem;
+}
+
+.tocList {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba($ink, 0.14);
+
+  @media (min-width: 900px) {
+    max-height: calc(100vh - var(--nav-height, 90px) - 6rem);
+    overflow-y: auto;
+  }
+}
+
+.tocItem {
+  border-bottom: 1px solid rgba($ink, 0.14);
+}
+
+.tocLink {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.85rem 0;
+  font-family: $font-body;
+  font-weight: 500;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  color: $ink-soft;
+  transition: color 0.2s $ease-standard;
+
+  &:hover,
+  &:focus-visible {
+    color: $ink;
+  }
+}
+
+.tocIndex {
+  flex-shrink: 0;
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.72rem;
+  color: rgba($ink, 0.34);
+}
+
+.body {
+  min-width: 0;
+}
+
+.intro {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: $ink-soft;
+  max-width: 62ch;
+  margin: 0 0 $space-md;
+}
+
+.list {
+  border-top: 1px solid rgba($ink, 0.14);
+}
+
+// Scroll target lives on a zero-height wrapper around each item so the
+// item itself can keep normal flow spacing while the anchor still lands
+// clear of the fixed nav bar.
+.itemAnchor {
+  scroll-margin-top: calc(var(--nav-height, 90px) + 1.5rem);
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 2.75rem 1fr;
+  column-gap: 1.25rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid rgba($ink, 0.14);
+}
+
+// Fraunces display serif, never below headline size (Serif-Once Rule) —
+// the same treatment the portfolio's 01-04 numerals use, so this page's
+// numbering reads as the site's established device, not a new one.
+.index {
+  font-family: $font-display;
+  font-weight: 380;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  color: $brass-dim;
+}
+
+.itemTitle {
+  grid-column: 2;
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: $ink;
+  margin: 0 0 0.6rem;
+}
+
+.itemBody {
+  grid-column: 2;
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: $ink-soft;
+  margin: 0;
+  max-width: 68ch;
+}
+
+// Closing support card — an ivory-card with a hairline border (the site's
+// standard card treatment), not another navy register: DESIGN.md reserves
+// navy for Contact/Footer only, so this page's own "need help" moment stays
+// on the content room's own card language instead of borrowing that one.
+.support {
+  margin-top: $space-lg;
+  padding: $space-md;
+  background-color: $ivory-card;
+  border: 1px solid $bone;
+  border-radius: $radius-md;
+}
+
+.supportHeading {
+  font-family: $font-display;
+  font-weight: 420;
+  font-size: 1.3rem;
+  color: $ink;
+  margin: 0 0 0.5rem;
+}
+
+.supportBody {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: $ink-soft;
+  margin: 0 0 1.25rem;
+  max-width: 46ch;
+}
+
+.supportPhone {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: $ink;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid $brass-dim;
+  transition: color 0.25s $ease-standard, border-color 0.25s $ease-standard;
+
+  span[aria-hidden] {
+    transition: transform 0.25s $ease-standard;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: $brass-dim;
+    border-color: $brass;
+
+    span[aria-hidden] {
+      transform: translateX(4px);
+    }
+  }
+}
+
+.supportNumber {
+  color: $ink-soft;
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .subContainer {
+    padding: $space-lg $gutter;
+  }
+
+  .item {
+    grid-template-columns: 1fr;
+    row-gap: 0.5rem;
+  }
+
+  .index {
+    grid-column: 1;
+  }
+
+  .itemTitle,
+  .itemBody {
+    grid-column: 1;
+  }
+}

@@ -4,6 +4,8 @@
 // looks like it came from the same company as datasoft.co.tz.
 // Tokens mirror DESIGN.md exactly; keep them in sync if the site palette changes.
 
+import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF } from "../constants/contact";
+
 export const brand = {
   sapphireDeep: "#0D2C4E",
   sapphireRaised: "#163F6D",
@@ -182,7 +184,7 @@ export function renderEmailShell(opts: EmailShellOptions) {
                       <strong style="color:${brand.ivory};font-size:14px;">DataSoft Tanzania</strong><br />
                       Nyumba Na. 640, Barabara ya Medical Research,<br />
                       Kitangiri, Ilemela, Mwanza, Tanzania.<br />
-                      <a href="tel:+255767887999" style="color:${brand.brass};text-decoration:none;">+255 767 887 999</a>
+                      <a href="${CONTACT_PHONE_HREF}" style="color:${brand.brass};text-decoration:none;">${CONTACT_PHONE_DISPLAY}</a>
                       &nbsp;&middot;&nbsp;
                       <a href="mailto:info@datasoft.co.tz" style="color:${brand.brass};text-decoration:none;">info@datasoft.co.tz</a>
                       &nbsp;&middot;&nbsp;

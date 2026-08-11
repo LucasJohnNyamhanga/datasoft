@@ -4,6 +4,7 @@ import { FiArrowUp } from "react-icons/fi";
 import { BsWhatsapp } from "react-icons/bs";
 import styles from "../styles/goToTop.module.scss";
 import { useLanguage } from "../i18n/LanguageContext";
+import { CONTACT_WHATSAPP_HREF } from "../constants/contact";
 
 const GoToTop = () => {
   const { t } = useLanguage();
@@ -36,7 +37,7 @@ const GoToTop = () => {
       </button>
 
       <a
-        href="https://wa.me/255767887999"
+        href={CONTACT_WHATSAPP_HREF}
         target="_blank"
         rel="noopener noreferrer"
         className={styles.whatsapp}

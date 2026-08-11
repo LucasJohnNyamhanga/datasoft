@@ -332,6 +332,14 @@ const sw = {
     socialMedia: "MITANDAO YA KIJAMII",
     quickLinks: "VIUNGO",
     rights: "Haki Zote Zimehifadhiwa.",
+    apps: {
+      heading: "BIDHAA",
+      kuafit: {
+        name: "KuaFit",
+        privacyPolicy: "Sera ya Faragha",
+        termsOfService: "Masharti ya Huduma",
+      },
+    },
   },
   goToTop: {
     label: "Rudi Juu",
@@ -448,7 +456,7 @@ const sw = {
       {
         question: "Ni huduma gani hasa mnazotoa?",
         answer:
-          "Tunatoa huduma nne kuu: ukuzaji wa programu maalumu, ubunifu wa tovuti pamoja na uwekaji mtandaoni, usanifu wa mitandao ya kompyuta ya ofisini, na ubunifu wa michoro ya chapa. Kila huduma inaweza kusimama peke yake au kuunganishwa katika mradi mmoja.",
+          "Tunarahisisha utendaji wa kazi zako kwa mifumo ya kisasa inayojiendesha yenyewe kupitia ● Ukuzaji wa Programu Maalumu kwa mifumo thabiti na programu za simu ● Ubunifu wa Tovuti na Uhifadhi wa tovuti  ● Usanifu wa Mitandao ya Ofisini kwa miundombinu salama na yenye kasi ● Ubunifu wa Michoro ya Chapa kwa muonekano wa kitaalamu na wenye mguso wa kihisia. Unaweza kuchagua huduma moja au kuziunganisha zote nne kuwa mradi mmoja.",
       },
       {
         question: "Mradi wangu utachukua muda gani kukamilika?",
@@ -1246,6 +1254,14 @@ const en: Dict = {
     socialMedia: "SOCIAL MEDIA",
     quickLinks: "QUICK LINKS",
     rights: "All Rights Reserved.",
+    apps: {
+      heading: "PRODUCTS",
+      kuafit: {
+        name: "KuaFit",
+        privacyPolicy: "Privacy Policy",
+        termsOfService: "Terms of Service",
+      },
+    },
   },
   goToTop: {
     label: "Back to Top",
@@ -1362,7 +1378,7 @@ const en: Dict = {
       {
         question: "What services do you actually offer?",
         answer:
-          "We offer four core services: custom software development, website design and hosting, office computer networking, and brand/graphics design. Each one can stand alone or be combined into a single project.",
+          "We simplify your operations through modern, automated systems via ● Custom Software Development for robust systems and mobile apps ● Web Design & Hosting for a seamless online presence ● Office Networking for secure, high-speed infrastructure ● Brand Identity Design for a professional and emotionally engaging look.You can choose a single service or integrate all four into one comprehensive project to skyrocket your business digitally!",
       },
       {
         question: "How long does a project take to complete?",
