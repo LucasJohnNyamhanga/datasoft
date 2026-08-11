@@ -3,6 +3,7 @@ import Image from "next/image";
 import Service from "./Service";
 import styles from "../styles/whatWeDo.module.scss";
 import Reveal from "./Reveal";
+import NetworkPattern from "./NetworkPattern";
 import { useLanguage } from "../i18n/LanguageContext";
 import {
   FaLaptopCode,
@@ -23,8 +24,13 @@ const WhatWeDo = () => {
 
   return (
     <div id="services" className={styles.container}>
+      <NetworkPattern className={styles.network} />
+
       <div className={styles.subContainer}>
         <div className={styles.header}>
+          <Reveal as="p" className={styles.eyebrow}>
+            {t.whatWeDo.eyebrow}
+          </Reveal>
           <h2 className={styles.heading}>
             <Reveal as="span" className={styles.line}>
               {t.whatWeDo.headingLines[0]}
@@ -60,8 +66,8 @@ const WhatWeDo = () => {
                   <stop offset="1" stopColor="#c1432b" stopOpacity="0.1" />
                 </linearGradient>
                 <linearGradient id="wire-graphics" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stopColor="#c9455f" />
-                  <stop offset="1" stopColor="#c9455f" stopOpacity="0.1" />
+                  <stop offset="0" stopColor="#d4a017" />
+                  <stop offset="1" stopColor="#d4a017" stopOpacity="0.1" />
                 </linearGradient>
               </defs>
               <path
@@ -105,6 +111,7 @@ const WhatWeDo = () => {
                   header={service.header}
                   tag={service.tag}
                   accent={service.key}
+                  numeral={String(index + 1).padStart(2, "0")}
                   icon={icons[service.key]}
                   description={service.description}
                   link={service.link}

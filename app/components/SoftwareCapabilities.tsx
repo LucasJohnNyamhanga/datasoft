@@ -50,7 +50,12 @@ const SoftwareCapabilities = () => {
         <div className={styles.grid}>
           {capabilities.map((item, index) => (
             <Reveal key={item.key} delay={180 + index * 50} className={styles.card}>
-              <span className={styles.icon}>{icons[item.key]}</span>
+              <div className={styles.cardTop}>
+                <span className={styles.icon}>{icons[item.key]}</span>
+                <span className={styles.numeral} aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+              </div>
               <h3 className={styles.cardTitle}>{item.title}</h3>
               <p className={styles.cardDescription}>{item.description}</p>
             </Reveal>

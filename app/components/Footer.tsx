@@ -82,6 +82,10 @@ const Footer = () => {
         <span>DataSoft Tanzania &copy; {year}</span>
         <span>{t.footer.rights}</span>
       </div>
+
+      <div className={Styles.watermarkBand} aria-hidden="true">
+        <span className={Styles.watermark}>DataSoft</span>
+      </div>
     </footer>
   );
 };

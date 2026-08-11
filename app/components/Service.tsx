@@ -7,6 +7,7 @@ type ServiceProps = {
   header: string;
   tag?: string;
   accent?: string;
+  numeral: string;
   icon: React.ReactNode;
   description: string;
   link: string;
@@ -18,6 +19,7 @@ const Service = ({
   header,
   tag,
   accent,
+  numeral,
   icon,
   description,
   link,
@@ -30,7 +32,12 @@ const Service = ({
       data-accent={accent}
       className={`${styles.card} ${featured ? styles.featured : ""}`}
     >
-      <span className={styles.icon}>{icon}</span>
+      <div className={styles.top}>
+        <span className={styles.icon}>{icon}</span>
+        <span className={styles.numeral} aria-hidden="true">
+          {numeral}
+        </span>
+      </div>
       {tag && <span className={styles.tag}>{tag}</span>}
       <h3 className={styles.title}>{header}</h3>
       <p className={styles.description}>{description}</p>

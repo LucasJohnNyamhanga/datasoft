@@ -9,8 +9,6 @@
 
 .network {
   z-index: 0;
-  mask-image: radial-gradient(ellipse 65% 90% at 82% 0%, black, transparent 70%);
-  -webkit-mask-image: radial-gradient(ellipse 65% 90% at 82% 0%, black, transparent 70%);
 }
 
 .top {
@@ -145,6 +143,51 @@
   font-family: $font-body;
   font-size: 0.8rem;
   color: $brass-dim;
+}
+
+// Giant brand wordmark closing out the footer — the same "monumental
+// wordmark" device used by Laravel/Vercel/Stripe footers, reworked in
+// DataSoft's own sans (same Montserrat 700 as the nav/footer logotype) and
+// navy/gold palette so it reads as this brand's mark, not a borrowed one.
+// Rendered fully solid/legible (not a faint ghost) since it now owns a
+// dedicated band with nothing else to compete with for attention.
+//
+// Sizing is driven by container query width (cqw), not a vw/clamp guess:
+// 22.3cqw is the measured font-size at which "DataSoft" set in Montserrat
+// 700 at -0.02em tracking naturally spans ~99% of the container — no
+// SVG textLength stretch, no distorted glyphs, just the real font metrics
+// scaled to fit. Because the band's height is intrinsic (line-height of
+// that font-size, no fixed height/clamp), the footer's total height is
+// genuinely dynamic: it grows and shrinks continuously with viewport width
+// instead of snapping between clamp() breakpoints.
+.watermarkBand {
+  position: relative;
+  z-index: 0;
+  max-width: $content-max;
+  margin: 0 auto;
+  container-type: inline-size;
+  padding: $space-sm $gutter $space-md;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  text-align: center;
+}
+
+.watermark {
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  font-family: $font-body;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: 21vw; // fallback for browsers without container query units
+  font-size: 22.3cqw;
+  color: $brass-bright;
+  background: linear-gradient(180deg, $brass-bright 0%, $brass 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 32px rgba($brass, 0.25));
 }
 
 @media (max-width: 640px) {

@@ -7,25 +7,57 @@
   height: 100%;
   overflow: visible;
   pointer-events: none;
+  opacity: 0.5;
   --px: 0;
   --py: 0;
+}
+
+// Set by NetworkPattern.tsx once IntersectionObserver confirms the pattern
+// is scrolled off-screen — this component renders in up to 8 sections
+// across the site, so most instances are off-screen most of the time.
+// SMIL is paused separately via the native pauseAnimations() API (this
+// attribute doesn't reach it); this half covers the CSS keyframe animations.
+.pattern[data-paused="true"] {
+  .link,
+  .node {
+    animation-play-state: paused;
+  }
+}
+
+// Frosted glass over the pattern, not blur() on the pattern itself — the SVG
+// underneath keeps animating (parallax + pulses + line flow) every frame, so
+// a filter on that element would force a full re-rasterize each frame.
+// backdrop-filter blurs the composited pixels behind this static layer
+// instead, which is far cheaper to keep running continuously.
+.glass {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass {
+    background: rgba(10, 20, 35, 0.25);
+  }
 }
 
 // Depth layers — each drifts at a different rate off pointer position
 // (parallax) and carries its own defocus/glow ramp, so the pattern reads as
 // three planes in space rather than one flat sheet of dots.
 .layerFar {
-  transform: translate(calc(var(--px) * 3px), calc(var(--py) * 2px));
+  transform: translate(calc(var(--px) * 9px), calc(var(--py) * 6px));
   transition: transform 0.7s $ease-standard;
 }
 
 .layerMid {
-  transform: translate(calc(var(--px) * 7px), calc(var(--py) * 5px));
+  transform: translate(calc(var(--px) * 21px), calc(var(--py) * 15px));
   transition: transform 0.55s $ease-standard;
 }
 
 .layerNear {
-  transform: translate(calc(var(--px) * 14px), calc(var(--py) * 10px));
+  transform: translate(calc(var(--px) * 42px), calc(var(--py) * 30px));
   transition: transform 0.4s $ease-standard;
 }
 
@@ -43,6 +75,10 @@
   opacity: 0.32;
   stroke-width: 1;
   filter: blur(0.4px);
+  // Static — the far layer is dim/blurred background texture; the dash
+  // motion is barely perceptible there, not worth a per-frame stroke
+  // repaint (dashoffset animation isn't compositor-only like transform).
+  animation: none;
 }
 
 .layerNear .link {
@@ -62,9 +98,12 @@
   filter: blur(0.4px) drop-shadow(0 0 2px rgba(74, 144, 217, 0.3));
 }
 
+// Single drop-shadow instead of two stacked passes — each pass is a
+// separate rasterize, and this filter recomputes every frame while .node's
+// scale animation runs, so the near layer (busiest/most numerous) is where
+// that cost mattered most.
 .layerNear .node {
-  filter: drop-shadow(0 0 7px rgba(74, 144, 217, 0.85))
-    drop-shadow(0 0 16px rgba(74, 144, 217, 0.35));
+  filter: drop-shadow(0 0 10px rgba(74, 144, 217, 0.65));
 }
 
 // Small bright dots that ride each link's exact path via animateMotion —
@@ -76,15 +115,6 @@
 .layerFar .pulse {
   opacity: 0.5;
   filter: drop-shadow(0 0 2px rgba(191, 224, 255, 0.6));
-}
-
-// A soft light band that sweeps the full pattern like a radar pass —
-// mix-blend-mode: screen keeps it additive so it lifts the dark shell
-// without ever washing it out to flat white.
-.scan {
-  mix-blend-mode: screen;
-  opacity: 0;
-  animation: scan 7s ease-in-out infinite;
 }
 
 @keyframes flow {
@@ -103,30 +133,9 @@
   }
 }
 
-@keyframes scan {
-  0% {
-    transform: translateY(0);
-    opacity: 0;
-  }
-  12% {
-    opacity: 0.55;
-  }
-  50% {
-    opacity: 0.3;
-  }
-  88% {
-    opacity: 0.55;
-  }
-  100% {
-    transform: translateY(480px);
-    opacity: 0;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .link,
-  .node,
-  .scan {
+  .node {
     animation: none;
   }
 

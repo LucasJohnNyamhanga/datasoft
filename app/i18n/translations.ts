@@ -88,6 +88,7 @@ const sw = {
     mapCaption: "Biashara yako, ikijengwa mstari kwa mstari na DataSoft",
   },
   whatWeDo: {
+    eyebrow: "Tunachofanya Bora Zaidi",
     headingLines: [
       "Kasi, urahisi na ukuaji,",
       "bila maumivu ya kichwa ya kiteknolojia",
@@ -1004,6 +1005,7 @@ const en: Dict = {
     mapCaption: "Your business, built line by line by DataSoft",
   },
   whatWeDo: {
+    eyebrow: "What We Do Best",
     headingLines: [
       "Speed, simplicity, and growth,",
       "without the tech headaches",

@@ -10,8 +10,6 @@
 
 .network {
   z-index: 1;
-  mask-image: radial-gradient(ellipse 60% 80% at 78% 30%, black, transparent 70%);
-  -webkit-mask-image: radial-gradient(ellipse 60% 80% at 78% 30%, black, transparent 70%);
 }
 
 .subContainer {
@@ -69,23 +67,51 @@
   @media (min-width: 640px) {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .card {
   position: relative;
+  overflow: hidden;
   padding: 2rem;
   background: rgba(251, 246, 231, 0.04);
   border: 1px solid rgba(233, 223, 196, 0.14);
   border-radius: $radius-md;
   backdrop-filter: blur(6px);
   transition: border-color 0.25s $ease-standard, background 0.25s $ease-standard,
-    transform 0.25s $ease-standard;
+    transform 0.25s $ease-standard, box-shadow 0.25s $ease-standard;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 40%);
+  }
 
   &:hover {
     border-color: $brass-dim;
     background: rgba(251, 246, 231, 0.07);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 24px 44px -28px rgba(7, 16, 28, 0.6);
+
+    .icon {
+      box-shadow: 0 0 0 5px rgba($brass, 0.14);
+    }
   }
+}
+
+.cardTop {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
 }
 
 .icon {
@@ -94,11 +120,20 @@
   justify-content: center;
   width: 2.75rem;
   height: 2.75rem;
-  margin-bottom: 1.25rem;
   border: 1px solid $brass-dim;
-  border-radius: $radius-sm;
+  border-radius: 50%;
   color: $brass-bright;
   font-size: 1.1rem;
+  transition: box-shadow 0.35s $ease-standard;
+}
+
+.numeral {
+  font-family: $hero-font-display;
+  font-weight: 380;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  line-height: 1;
+  color: $brass-bright;
+  opacity: 0.3;
 }
 
 .cardTitle {
