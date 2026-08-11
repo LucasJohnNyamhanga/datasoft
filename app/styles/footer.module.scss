@@ -170,24 +170,43 @@
   overflow: hidden;
   pointer-events: none;
   user-select: none;
-  text-align: center;
+  text-align: right;
 }
 
-.watermark {
-  display: inline-block;
+// Shared type treatment for the "DataSoft" / "Tanzania" lockup — same
+// logotype font, weight, tracking, and gold-gradient fill on both lines
+// so they read as one mark, not two competing styles.
+%watermarkGold {
+  display: block;
   line-height: 1;
   white-space: nowrap;
   font-family: $font-body;
   font-weight: 700;
   letter-spacing: -0.02em;
-  font-size: 21vw; // fallback for browsers without container query units
-  font-size: 22.3cqw;
   color: $brass-bright;
   background: linear-gradient(180deg, $brass-bright 0%, $brass 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.watermark {
+  @extend %watermarkGold;
+  display: inline-block;
+  font-size: 21vw; // fallback for browsers without container query units
+  font-size: 22.3cqw;
   filter: drop-shadow(0 0 32px rgba($brass, 0.25));
+}
+
+// "Tanzania" locked under "DataSoft" at roughly a third of its size —
+// the classic wordmark/sub-mark ratio (e.g. "STRIPE  ATLAS") — right-aligned
+// so the pair reads as one lockup: DataSoft / Tanzania.
+.watermarkSubtitle {
+  @extend %watermarkGold;
+  margin-top: 0.4cqw;
+  font-size: 7vw; // fallback for browsers without container query units
+  font-size: 7.4cqw;
+  filter: drop-shadow(0 0 16px rgba($brass, 0.2));
 }
 
 @media (max-width: 640px) {

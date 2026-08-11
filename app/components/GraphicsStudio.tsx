@@ -150,7 +150,7 @@ const GraphicsStudio = ({ className = "" }: { className?: string }) => {
           <span className={styles.dotYellow} />
           <span className={styles.dotGreen} />
         </div>
-        <div className={styles.titleText}>kampeni-poster.psd — DataSoft Studio</div>
+        <div className={styles.titleText}>kampeni-poster.psd, DataSoft Studio</div>
         <div className={styles.titleSpacer} />
       </div>
 

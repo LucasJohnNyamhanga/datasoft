@@ -277,7 +277,7 @@ const BrandMock = () => (
 );
 
 const titles: Record<Kind, string> = {
-  system: "mfumo.biashara — dashibodi",
+  system: "mfumo.biashara, dashibodi",
   app: "duka-langu.app",
   website: "biasharayako.co.tz",
   brand: "datasoft-logo.psd",

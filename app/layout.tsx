@@ -14,15 +14,15 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "DataSoft Tanzania — Suluhisho za Teknolojia, Mwanza",
+  title: "DataSoft Tanzania, Suluhisho za Teknolojia Popote Ulipo",
 
   description:
-    "DataSoft ni nyumba ya kiteknolojia ya Mwanza inayogeuza mawazo ya biashara kuwa programu, tovuti, mitandao na miundo inayofanya kazi — kwa ustadi na umakini wa hali ya juu.",
+    "DataSoft ni nyumba ya kiteknolojia inayogeuza mawazo ya biashara kuwa programu, tovuti, mitandao na miundo inayofanya kazi, kwa ustadi na umakini wa hali ya juu, popote nchini Tanzania ulipo.",
 
   openGraph: {
-    title: "DataSoft Tanzania — Suluhisho za Teknolojia, Mwanza",
+    title: "DataSoft Tanzania, Suluhisho za Teknolojia Popote Ulipo",
     description:
-      "DataSoft ni nyumba ya kiteknolojia ya Mwanza inayogeuza mawazo ya biashara kuwa programu, tovuti, mitandao na miundo inayofanya kazi — kwa ustadi na umakini wa hali ya juu.",
+      "DataSoft ni nyumba ya kiteknolojia inayogeuza mawazo ya biashara kuwa programu, tovuti, mitandao na miundo inayofanya kazi, kwa ustadi na umakini wa hali ya juu, popote nchini Tanzania ulipo.",
     url: "https://www.datasoft.co.tz",
     siteName: "DataSoft Tanzania",
     images: [
@@ -76,6 +76,7 @@ export const metadata: Metadata = {
     "software development",
     "web hosting Tanzania",
     "Mwanza",
+    "huduma Tanzania nzima",
   ],
 
   authors: [{ name: "Lucas John" }],

@@ -239,7 +239,7 @@ export function renderProjectUpdateEmail(opts: ProjectUpdateEmailOptions) {
   const bodyHtml = `
     <p style="margin:0 0 18px;font-weight:600;font-size:16px;color:${brand.sapphireDeep};">Habari ${escapeHtml(clientName)},</p>
 
-    <p style="margin:0 0 16px;">Tunashukuru kwa kuchagua kufanya kazi na <strong>DataSoft Tanzania</strong>. Sisi ni nyumba ya kiteknolojia ya Mwanza inayogeuza mawazo ya biashara yako kuwa programu, tovuti, mitandao na miundo yanayofanya kazi kwa ustadi wa hali ya juu.</p>
+    <p style="margin:0 0 16px;">Tunashukuru kwa kuchagua kufanya kazi na <strong>DataSoft Tanzania</strong>. Sisi ni nyumba ya kiteknolojia inayogeuza mawazo ya biashara yako kuwa programu, tovuti, mitandao na miundo yanayofanya kazi kwa ustadi wa hali ya juu, popote ulipo Tanzania.</p>
 
     <p style="margin:0 0 16px;">${escapeHtml(
       message ??
@@ -255,7 +255,7 @@ export function renderProjectUpdateEmail(opts: ProjectUpdateEmailOptions) {
     </p>`;
 
   return renderEmailShell({
-    previewText: `Taarifa mpya ya ${projectLabel} — DataSoft Tanzania`,
+    previewText: `Taarifa mpya ya ${projectLabel}, DataSoft Tanzania`,
     eyebrow: "Taarifa ya Mradi",
     heading: "Kuna Maendeleo Mapya",
     headingAccent: "Kwenye Mradi Wako",

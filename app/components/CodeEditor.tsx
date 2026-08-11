@@ -277,7 +277,7 @@ const CodeEditor = ({ className = "", project = defaultProject }: CodeEditorProp
           <span className={styles.dotYellow} />
           <span className={styles.dotGreen} />
         </div>
-        <div className={styles.titleText}>{activeFile} — {project.windowSuffix}</div>
+        <div className={styles.titleText}>{activeFile}, {project.windowSuffix}</div>
         <div className={styles.titleSpacer} />
       </div>
 

@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import GoToTop from "./components/GoToTop";
 
 export const metadata: Metadata = {
-  title: "Ukurasa Haukupatikana — DataSoft Tanzania",
+  title: "Ukurasa Haukupatikana, DataSoft Tanzania",
   description: "Ukurasa unaoutafuta haupo. Rudi nyumbani kwenye DataSoft Tanzania.",
 };
 

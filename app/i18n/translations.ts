@@ -61,7 +61,7 @@ export type ServiceContent = {
 
 const sw = {
   meta: {
-    title: "DataSoft Tanzania — Suluhisho la Teknolojia",
+    title: "DataSoft Tanzania, Suluhisho la Teknolojia",
     description:
       "DataSoft ni kitovu cha kiteknolojia ambapo uendeshaji wa biashara hugeuzwa kuwa programu, tovuti, mitandao au mfumo unaofanya kazi kwa ustadi na umakini wa hali ya juu.",
   },
@@ -85,7 +85,8 @@ const sw = {
     ],
     ctaPrimary: "Anzisha Mradi Wako",
     ctaSecondary: "Ona Huduma Zetu",
-    mapCaption: "Biashara yako, ikijengwa mstari kwa mstari na DataSoft",
+    mapCaption:
+      "Biashara yako, popote ilipo, ikijengwa mstari kwa mstari na DataSoft",
   },
   whatWeDo: {
     eyebrow: "Tunachofanya Bora Zaidi",
@@ -138,11 +139,11 @@ const sw = {
   included: {
     eyebrow: "Kila Kitu Kimejumuishwa",
     headingLines: [
-      "Pumzika — kila kitu unachohitaji",
+      "Pumzika, kila kitu unachohitaji",
       "kiko kwenye ncha ya kidole chako.",
     ],
     intro:
-      "Kila mradi tunaoujenga huja na vipengele hivi vyote tayari vimewekwa, bila malipo ya ziada yaliyofichika — wewe zingatia biashara, sisi tunashughulikia teknolojia.",
+      "Kila mradi tunaoujenga huja na vipengele hivi vyote tayari vimewekwa, bila malipo ya ziada yaliyofichika. Wewe zingatia biashara, sisi tunashughulikia teknolojia.",
     items: [
       {
         key: "automation",
@@ -172,7 +173,7 @@ const sw = {
         key: "support",
         title: "Msaada Endelevu",
         description:
-          "Timu yetu ya Mwanza inabaki karibu nawe baada ya uzinduzi, tayari kusaidia pindi unapohitaji.",
+          "Timu yetu inabaki karibu nawe baada ya uzinduzi, popote ulipo, tayari kukusaidia pindi unapohitaji.",
       },
       {
         key: "backups",
@@ -228,13 +229,13 @@ const sw = {
     eyebrow: "Wasiliana Nasi",
     heading: "Tuambie Kuhusu Mradi Wako",
     intro:
-      "Majibu machache tu yanatusaidia kukupa ushauri sahihi mara ya kwanza — sio fomu ya kawaida, ni mwanzo wa mradi wako.",
+      "Majibu machache tu yanatusaidia kukupa ushauri sahihi mara ya kwanza. Hii si fomu ya kawaida, ni mwanzo wa mradi wako.",
     quoteFormula: {
       terms: ["Wazo Bora", "Timu Bora", "Mfumo Bunifu"],
       result: "Ushindi Wako",
     },
     trust: {
-      consultation: "Ushauri wa Kwanza — Bure",
+      consultation: "Ushauri wa Kwanza, Bure",
       prototype: "Mfano wa Kwanza (Prototype) Ndani ya Masaa 48",
       support: "Msaada Baada ya Uzinduzi",
       transparency: "Usalama Kamili kwenye utendaji wa mfumo",
@@ -246,7 +247,7 @@ const sw = {
         key: "projectType",
         question: "Mradi wako ni mpya au unaboresha uliopo?",
         reason:
-          "Hii hutusaidia kujua tuanzie wapi — kutoka mwanzo kabisa au kuboresha kilichopo.",
+          "Hii hutusaidia kujua tuanzie wapi, kutoka mwanzo kabisa au kuboresha kilichopo.",
         options: [
           { value: "new", label: "Mradi Mpya Kabisa" },
           { value: "upgrade", label: "Ninaboresha Uliopo" },
@@ -280,7 +281,7 @@ const sw = {
         key: "budget",
         question: "Bajeti yako inakadiriwa kiasi gani?",
         reason:
-          "Hakuna jibu 'baya' hapa wala sio kukubana, ni kutusaidia tusipendekeze kitu nje ya uwezo wako, au kidogo mno kwa lengo lako.",
+          "Hakuna jibu 'baya' hapa wala lengo sio kukubana, ni kutusaidia tusipendekeze kitu nje ya uwezo wako, au kidogo mno kwa lengo lako.",
         options: [
           { value: "under-500k", label: "Chini ya TZS 500,000" },
           { value: "500k-2m", label: "TZS 500,000 – 2,000,000" },
@@ -303,7 +304,7 @@ const sw = {
       },
     ],
     finalStep: {
-      title: "Hatua ya Mwisho — Taarifa Zako",
+      title: "Hatua ya Mwisho, Taarifa Zako",
       reason:
         "Ushauri wa kwanza ni bure. Timu yetu itawasiliana nawe ndani ya saa chache.",
     },
@@ -384,21 +385,21 @@ const sw = {
     eyebrow: "Ndani ya Studio Yetu",
     heading: "Chapa Yako, Ikijengwa Tabaka Kwa Tabaka",
     subheadline:
-      "Kutoka wazo la kwanza hadi bango tayari kuchapishwa — angalia jinsi kila tabaka la muundo wako linavyowekwa kwa umakini wa kitaalamu, si kwa violezo vya kawaida.",
+      "Kutoka wazo la kwanza hadi bango tayari kuchapishwa. Angalia jinsi kila tabaka la muundo wako linavyowekwa kwa umakini wa kitaalamu, si kwa violezo vya kawaida.",
     caption: "Bango la kampeni, likijengwa tabaka kwa tabaka na DataSoft",
   },
   testimonials: {
     eyebrow: "Wanachosema Wateja",
     heading: "Tunaaminiwa na Biashara, Mashirika na Taasisi",
     intro:
-      "Kutoka Kigoma hadi Mbeya, hawa ni baadhi ya wamiliki wa biashara na taasisi tunaowahudumia kila siku — hii ndiyo sababu wanaendelea kuchagua DataSoft.",
+      "Kutoka Kigoma hadi Mbeya, na kila mahali katikati, hawa ni baadhi ya wamiliki wa biashara na taasisi tunaowahudumia kila siku. Hii ndiyo sababu wanaendelea kuchagua DataSoft.",
     items: [
       {
         name: "Godwin Marko Shauri",
         role: "Mfanyabiashara",
         location: "Kasulu, Kigoma",
         quote:
-          "Tangu DataSoft wanijengee mfumo wa duka langu, nimeacha kuandika mauzo kwa mkono. Sasa naona kila kitu — bidhaa zilizouzwa, faida ya siku — kwa dakika moja tu. Kazi nzuri ya kweli!",
+          "Tangu DataSoft wanijengee mfumo wa duka langu, nimeacha kuandika mauzo kwa mkono. Sasa naona kila kitu, bidhaa zilizouzwa, faida ya siku, kwa dakika moja tu. Kazi nzuri ya kweli!",
       },
       {
         name: "Benson Godfrey",
@@ -452,28 +453,27 @@ const sw = {
       {
         question: "Mradi wangu utachukua muda gani kukamilika?",
         answer:
-          "Inategemea ukubwa wa mradi, lakini tunaweza kuanza kukujengea mfano wa kwanza (prototype) ndani ya masaa 48 baada ya mazungumzo yetu ya kwanza. Kila mradi hupitia hatua nne — Wazo, Muundo, Ujenzi na Uzinduzi — na tutakupa muda kamili baada ya kuelewa mahitaji yako.",
+          "Inategemea ukubwa wa mradi, lakini tunaweza kuanza kukujengea mfano wa kwanza (prototype) ndani ya masaa 48 baada ya mazungumzo yetu ya kwanza. Kila mradi hupitia hatua nne, Wazo, Muundo, Ujenzi na Uzinduzi. Tutakupa muda kamili baada ya kuelewa mahitaji yako.",
       },
       {
         question: "Gharama ya mradi ni kiasi gani?",
         answer:
-          "Kila mradi ni wa kipekee, hivyo bei hutegemea ukubwa na mahitaji yake. Fomu yetu ya mawasiliano hukuuliza wigo wa bajeti yako ili tuweze kukushauri kifurushi kinachokufaa — na ushauri wa kwanza ni bure kabisa.",
+          "Kila mradi ni wa kipekee, hivyo bei hutegemea ukubwa na mahitaji yake. Fomu yetu ya mawasiliano hukuuliza wigo wa bajeti yako ili tuweze kukushauri kifurushi kinachokufaa. Ushauri wa kwanza ni bure kabisa.",
       },
       {
         question: "Je, mnafanya kazi na wateja walio nje ya Mwanza?",
         answer:
-          "Ndiyo. Ingawa timu yetu ipo Mwanza, tunahudumia wateja kote Tanzania — kutoka Kigoma na Arusha hadi Dodoma na Mbeya — kupitia mawasiliano ya mtandaoni na simu, na tunasafiri panapohitajika kwa miradi ya mitandao ya ofisini.",
+          "Ndiyo, tunafanya kazi popote ulipo. Nyumbani kwetu ni Mwanza, lakini huduma zetu zinafika kote Tanzania, kutoka Kigoma na Arusha, hadi Dodoma na Mbeya, kupitia mawasiliano ya mtandaoni na simu, na tunasafiri panapohitajika kwa miradi ya mitandao ya ofisini.",
       },
       {
-        question:
-          "Sina muundo (design) yeyote tayari — je, mnaweza kunisaidia?",
+        question: "Sina muundo (design) yeyote tayari, je, mnaweza kunisaidia?",
         answer:
-          "Kabisa. Wakati wa kujaza fomu ya mawasiliano unaweza kutuambia kama huna muundo bado, na timu yetu itakushauri na kukubunia chaguo kutoka mwanzo — hauhitaji kuja na kila kitu tayari.",
+          "Kabisa. Wakati wa kujaza fomu ya mawasiliano unaweza kutuambia kama huna muundo bado, na timu yetu itakushauri na kukubunia chaguo kutoka mwanzo. Hauhitaji kuja na kila kitu tayari.",
       },
       {
         question: "Je, mtanisaidia baada ya tovuti au mfumo wangu kuzinduliwa?",
         answer:
-          "Ndiyo. Kila mradi tunaoujenga unakuja na msaada endelevu, ufuatiliaji wa upatikanaji (uptime), na nakala za akiba za mara kwa mara — timu yetu ya Mwanza inabaki karibu nawe kwa msaada wowote unaohitajika baada ya uzinduzi.",
+          "Ndiyo. Kila mradi tunaoujenga unakuja na msaada endelevu, ufuatiliaji wa upatikanaji (uptime), na nakala za akiba za mara kwa mara. Timu yetu inabaki karibu nawe, popote ulipo, kwa msaada wowote unaohitajika baada ya uzinduzi.",
       },
       {
         question: "Je, tovuti au mfumo wangu utakuwa salama?",
@@ -483,7 +483,7 @@ const sw = {
       {
         question: "Nitaanzaje mradi wangu na DataSoft?",
         answer:
-          "Jaza fomu yetu fupi ya mawasiliano hapo chini, au tupigie simu moja kwa moja. Maswali machache tu yanatosha kutusaidia kuelewa mradi wako, na timu yetu itawasiliana nawe ndani ya saa chache kuanza mazungumzo — bila malipo.",
+          "Jaza fomu yetu fupi ya mawasiliano hapo chini, tupigie simu, au tutumie ujumbe wakati wowote unaokufaa, tuko tayari kukusikiliza. Kuweka miadi hutupatia nafasi bora zaidi ya kukuhudumia, lakini hupaswi kusubiri hadi upate moja ili kuwasiliana nasi. Maswali machache tu yanatosha kutusaidia kuelewa mradi wako, na timu yetu itawasiliana nawe ndani ya saa chache kuanza mazungumzo, bila malipo.",
       },
     ],
   },
@@ -493,23 +493,23 @@ const sw = {
       eyebrow: "Ukuzaji wa Programu",
       title: "Programu Zilizoundwa Kwa Usahihi",
       subtitle:
-        "Tazama tukiijenga: maombi ya mkopo, alama za kikopo, ratiba za malipo — mfumo halisi tunaoujenga kwa wateja, ukiandikwa mstari kwa mstari mbele yako.",
+        "Tazama tukiijenga: maombi ya mkopo, alama za kikopo, ratiba za malipo. Mfumo halisi tunaoujenga kwa wateja, ukiandikwa mstari kwa mstari mbele yako.",
       headlineLines: [
         "Kutoka fomu za karatasi",
         "hadi mfumo unaojiendesha wenyewe.",
       ],
       intro:
-        "Kila biashara ina mtiririko wake wa kazi. Badala ya kukubandika mfumo wa kawaida, tunajenga programu inayofuata jinsi shirika lako linavyofanya kazi kwa uhalisia — iwe ni mfumo wa uendeshaji wa ndani, jukwaa la wateja, au programu ya simu.",
+        "Kila biashara ina mtiririko wake wa kazi. Badala ya kukubandika mfumo wa kawaida, tunajenga programu inayofuata jinsi shirika lako linavyofanya kazi kwa uhalisia, iwe ni mfumo wa uendeshaji wa ndani, jukwaa la wateja, au programu ya simu.",
       includesHeading: "Tunachojenga",
       includes: [
         "Mifumo maalumu ya uendeshaji wa biashara (ERP, usimamizi wa hisa, uhasibu)",
-        "Mifumo ya mikopo na fedha ndogo — maombi, alama za kikopo na ratiba za malipo",
+        "Mifumo ya mikopo na fedha ndogo, maombi, alama za kikopo na ratiba za malipo",
         "Majukwaa ya wavuti na programu za simu zenye data hai",
         "Uunganishaji na mifumo ya malipo na huduma za nje",
         "Matengenezo, uboreshaji na msaada wa kiufundi baada ya uzinduzi",
       ],
       whyHeading: "Kwa Nini DataSoft",
-      why: "Uzoefu wetu upo Mwanza — tunaelewa muktadha wa kibiashara wa Tanzania, changamoto za mitandao ya ndani, na jinsi mifumo inavyopaswa kufanya kazi kwa uhakika katika mazingira haya.",
+      why: "Uzoefu wetu unaonekana kwenye kila mradi tunaoushughulikia. Tunaelewa muktadha wa kibiashara wa Tanzania, changamoto za mitandao ya ndani, na jinsi mifumo inavyopaswa kufanya kazi kwa uhakika, popote biashara yako ilipo.",
       ctaLabel: "Anza Mradi wa Programu",
       secondaryCtaLabel: "Angalia Tunachojenga",
       ideCaption:
@@ -520,25 +520,25 @@ const sw = {
         "si tu skrini nzuri",
       ],
       capabilitiesIntro:
-        "Mfano ulioko juu — mfumo wa mkopo na fedha ndogo — ni sampuli tu. Uwezo huohuo unatumika kwenye kila mfumo tunaoujenga.",
+        "Mfano ulioko juu, mfumo wa mkopo na fedha ndogo, ni sampuli tu. Uwezo huohuo unatumika kwenye kila mfumo tunaoujenga.",
       capabilities: [
         {
           key: "credit",
           title: "Mifumo ya Mkopo na Alama za Kikopo",
           description:
-            "Maombi ya mkopo, uhakiki wa dhamana na uamuzi wa kuidhinisha — vyote vikifanya kazi kiotomatiki, kama ulivyoona kwenye programu hapo juu.",
+            "Maombi ya mkopo, uhakiki wa dhamana na uamuzi wa kuidhinisha, vyote vikifanya kazi kiotomatiki, kama ulivyoona kwenye programu hapo juu.",
         },
         {
           key: "dashboards",
           title: "Dashibodi za Wakati Halisi",
           description:
-            "Ona malipo, mapato na hatari zinapotokea, si mwishoni mwa mwezi — maamuzi yanafanywa kwa taarifa za sasa, si za zamani.",
+            "Ona malipo, mapato na hatari zinapotokea, si mwishoni mwa mwezi. Maamuzi yanafanywa kwa taarifa za sasa, si za zamani.",
         },
         {
           key: "payments",
           title: "Malipo na Vikumbusho vya Kiotomatiki",
           description:
-            "Ratiba za malipo, vikumbusho vya SMS na muunganiko na fedha za simu — wateja wanakumbushwa kabla ya tarehe, si baada.",
+            "Ratiba za malipo, vikumbusho vya SMS na muunganiko na fedha za simu. Wateja wanakumbushwa kabla ya tarehe, si baada.",
         },
         {
           key: "scale",
@@ -556,7 +556,7 @@ const sw = {
         {
           value: "Hatua 4",
           label:
-            "zilizopangwa — Wazo, Muundo, Ujenzi, Uzinduzi — kila mradi unapitia",
+            "zilizopangwa, Wazo, Muundo, Ujenzi, Uzinduzi, kila mradi unapitia",
         },
         {
           value: "100%",
@@ -573,12 +573,12 @@ const sw = {
           {
             title: "Wazo",
             description:
-              "Tunazungumza kuhusu mtiririko halisi wa kazi yako, changamoto zilizopo, na matokeo unayotarajia — kabla ya kuandika msimbo wowote.",
+              "Tunazungumza kuhusu mtiririko halisi wa kazi yako, changamoto zilizopo, na matokeo unayotarajia, kabla ya kuandika msimbo wowote.",
           },
           {
             title: "Muundo",
             description:
-              "Tunachora ramani ya mfumo — skrini, data na uhusiano kati yake — ili uone jinsi kitakavyofanya kazi kabla ya ujenzi kuanza.",
+              "Tunachora ramani ya mfumo, skrini, data na uhusiano kati yake, ili uone jinsi kitakavyofanya kazi kabla ya ujenzi kuanza.",
           },
           {
             title: "Ujenzi",
@@ -592,11 +592,11 @@ const sw = {
           },
         ],
         closing:
-          "Hakuna hatua inayorukwa — ndiyo maana mfumo wako unafanya kazi tangu siku ya kwanza.",
+          "Hakuna hatua inayorukwa. Ndiyo maana mfumo wako unafanya kazi tangu siku ya kwanza.",
       },
       whySectionHeading: "Mfumo Mbovu ni Gharama Iliyofichika",
       whyIntro:
-        "Kila saa inayotumika kuingiza data mara mbili, kila ripoti inayotengenezwa kwa mkono, kila uamuzi unaosubiri mtu aliye likizo — vyote ni gharama halisi ya mfumo usiofaa kazi yako.",
+        "Kila saa inayotumika kuingiza data mara mbili, kila ripoti inayotengenezwa kwa mkono, kila uamuzi unaosubiri mtu aliye likizo, vyote ni gharama halisi ya mfumo usiofaa kazi yako.",
       whyPoints: [
         "Excel zinazopotea, zenye toleo tofauti kwa kila mfanyakazi",
         "Ripoti zinazochukua siku kutengeneza kwa mkono kila mwezi",
@@ -626,7 +626,7 @@ const sw = {
           {
             question: "Je, mtanisaidia baada ya uzinduzi?",
             answer:
-              "Ndiyo, kila mfumo unakuja na matengenezo na msaada endelevu — timu yetu ya Mwanza inabaki karibu nawe.",
+              "Ndiyo, kila mfumo unakuja na matengenezo na msaada endelevu. Timu yetu inabaki karibu nawe, popote ulipo.",
           },
         ],
       },
@@ -647,8 +647,8 @@ const sw = {
         "Vyeti vya usalama (SSL) na ulinzi dhidi ya matatizo ya kawaida ya mtandao",
         "Usimamizi endelevu wa kikoa (domain) na sasisho za mfumo",
       ],
-      whyHeading: "Timu Iliyo Hapa, Si Kituo cha Mbali",
-      why: "Tovuti tunazozijenga zinahudumiwa na timu iliyo hapa hapa Mwanza, Tanzania. Haupo peke yako pindi tovuti yako inapohitaji msaada wa haraka, na hatuachi kufanya kazi baada ya uzinduzi.",
+      whyHeading: "Timu Iliyo Karibu, Popote Ulipo",
+      why: "Tovuti tunazozijenga zinahudumiwa na timu ya DataSoft, ikifika popote biashara yako ilipo. Huwi peke yako pindi tovuti yako inapohitaji msaada wa haraka, na hatuachi kufanya kazi baada ya uzinduzi.",
       ctaLabel: "Anza Mradi wa Tovuti",
       secondaryCtaLabel: "Ona Miundombinu Yetu",
       ideCaption:
@@ -711,7 +711,7 @@ const sw = {
         },
       ],
       flowLabels: {
-        windowTitle: "seva.datasoft.co.tz — hali ya mtandao",
+        windowTitle: "seva.datasoft.co.tz, hali ya mtandao",
         serverLabel: "Seva Yako",
         serverSub: "Tovuti + Data",
         cloudLabel: "DataSoft Cloud",
@@ -767,12 +767,12 @@ const sw = {
           },
         ],
         closing:
-          "Tovuti yako haikai kimya baada ya uzinduzi — tunabaki tukiiangalia kila siku.",
+          "Tovuti yako haikai kimya baada ya uzinduzi. Tunabaki tukiiangalia kila siku.",
       },
       whySectionHeading:
         "Tovuti Iliyokufa kwa Dakika Tano ni Wateja Waliopotea",
       whyIntro:
-        "Kila sekunde tovuti yako inachukua kufunguka, kila 'tovuti haipatikani' — ni fursa ya mauzo inayopotea kwenda kwa mshindani wako.",
+        "Kila sekunde tovuti yako inachukua kufunguka, kila 'tovuti haipatikani', ni fursa ya mauzo inayopotea kwenda kwa mshindani wako.",
       whyPoints: [
         "Tovuti inayoshuka usiku bila mtu kugundua mpaka asubuhi",
         "Cheti cha SSL kinachoisha bila kuonya mtu yeyote",
@@ -787,12 +787,12 @@ const sw = {
           {
             question: "Tovuti yangu itakuwa na kasi kiasi gani?",
             answer:
-              "Tunaboresha picha, misimbo na miundombinu ili ukurasa wako ufunguke haraka kila wakati — kasi ni sehemu ya muundo, si jambo la kuongezwa baadaye.",
+              "Tunaboresha picha, misimbo na miundombinu ili ukurasa wako ufunguke haraka kila wakati. Kasi ni sehemu ya mfumo, si jambo la kuongezwa baadaye.",
           },
           {
             question: "Nini kitatokea tovuti yangu ikishuka?",
             answer:
-              "Mfumo wetu unaangalia tovuti yako dakika kwa dakika. Tatizo likitokea, timu yetu ya Mwanza inaanza kulitatua mara moja, mara nyingi kabla hujaligundua.",
+              "Mfumo wetu unaangalia tovuti yako dakika kwa dakika. Tatizo likitokea, timu yetu inaanza kulitatua mara moja, popote ulipo, mara nyingi kabla hujaligundua.",
           },
           {
             question:
@@ -824,7 +824,7 @@ const sw = {
         "Ufuatiliaji na matengenezo endelevu ya miundombinu",
       ],
       whyHeading: "Kwa Nini DataSoft",
-      why: "Tunajenga mitandao inayoendana na ukubwa halisi wa ofisi yako — si zaidi ya inavyohitajika, wala si dhaifu kiasi cha kukuzuia kukua.",
+      why: "Tunajenga mitandao inayoendana na ukubwa halisi wa ofisi yako, si zaidi ya inavyohitajika, wala si dhaifu kiasi cha kukuzuia kukua.",
       ctaLabel: "Anza Mradi wa Mtandao",
     },
     graphics: {
@@ -835,7 +835,7 @@ const sw = {
         "Huu ndiyo muda mteja anaotumia kuamua kama chapa yako inaaminika, kutoka nembo hadi bango la kampeni, kila tabaka la michoro yetu inalenga sekunde hizo tatu.",
       headlineLines: ["Sekunde Tatu Kuvutia.", "Tunazitumia Vizuri."],
       intro:
-        "Muonekano wa chapa yako huzungumza kabla hata hujafungua mdomo. Tunaunda kazi za kisanii zenye mshikamano — nembo, vitambulisho vya chapa, na vifaa vya masoko — ambazo si tu nzuri kuangalia, bali zinauza, zinakumbukwa, na zinaendana na malengo yako ya kibiashara.",
+        "Muonekano wa chapa yako huzungumza kabla hata hujafungua mdomo. Tunaunda kazi za kisanii zenye mshikamano, nembo, vitambulisho vya chapa, na vifaa vya masoko, ambazo si tu nzuri kuangalia, bali zinauza, zinakumbukwa, na zinaendana na malengo yako ya kibiashara.",
       includesHeading: "Tunachobuni",
       includes: [
         "Nembo na vitambulisho kamili vya chapa (brand identity)",
@@ -844,7 +844,7 @@ const sw = {
         "Vifungashio na miundo ya bidhaa",
       ],
       whyHeading: "Kwa Nini DataSoft",
-      why: "Kila kazi ya ubunifu tunayoifanya inaanzia kwenye lengo lako la kibiashara, si kwenye mtindo wa mwaka huu tu — matokeo yanabaki na maana miaka mingi ijayo.",
+      why: "Kila kazi ya ubunifu tunayoifanya inaanzia kwenye lengo lako la kibiashara, si kwenye mtindo wa mwaka huu tu. Matokeo yanabaki na maana miaka mingi ijayo.",
       ctaLabel: "Anza Mradi wa Ubunifu",
       secondaryCtaLabel: "Ona Uwezo Wetu",
       capabilitiesEyebrow: "Uwezo Wetu",
@@ -856,7 +856,7 @@ const sw = {
           key: "branding",
           title: "Nembo na Vitambulisho vya Chapa",
           description:
-            "Tunaunda nembo na mfumo kamili wa chapa — rangi, fonti na miongozo — ili kila kinachotoka kwa jina lako kionekane kimoja na cha kuaminika.",
+            "Tunaunda nembo na mfumo kamili wa chapa, rangi, fonti na miongozo, ili kila kinachotoka kwa jina lako kionekane kimoja na cha kuaminika.",
         },
         {
           key: "print",
@@ -922,11 +922,11 @@ const sw = {
           },
         ],
         closing:
-          "Kila kazi inatokana na mazungumzo, si nadhani — ndiyo maana matokeo yanaendana na chapa yako.",
+          "Kila kazi inatokana na mazungumzo, si nadhani. Ndiyo maana matokeo yanaendana na chapa yako.",
       },
       whySectionHeading: "Muundo Usioendana ni Chapa Isiyoaminika",
       whyIntro:
-        "Nembo moja kwenye tovuti, nyingine kwenye vipeperushi, rangi tofauti kila mfanyakazi anapotengeneza slaidi — mteja anaona hilo kabla hajasoma neno lolote.",
+        "Nembo moja kwenye tovuti, nyingine kwenye vipeperushi, rangi tofauti kila mfanyakazi anapotengeneza slaidi. Mteja anaona hilo kabla hajasoma neno lolote.",
       whyPoints: [
         "Nembo zenye ubora tofauti zikitumika mahali tofauti",
         "Hakuna mwongozo wa chapa, hivyo kila mfanyakazi anabuni kwa mtindo wake",
@@ -946,7 +946,7 @@ const sw = {
           {
             question: "Ni marudio mangapi ya maoni yanayojumuishwa?",
             answer:
-              "Baada ya kuchagua dhana, tunaiboresha kwa maoni yako hatua kwa hatua mpaka ifikie kiwango unachokitaka — si toleo moja tu la mwisho.",
+              "Baada ya kuchagua dhana, tunaiboresha kwa maoni yako hatua kwa hatua mpaka ifikie kiwango unachokitaka, si toleo moja tu la mwisho.",
           },
           {
             question: "Je, nitapata faili za chanzo za muundo?",
@@ -957,7 +957,7 @@ const sw = {
             question:
               "Je, mnaweza kubuni kwa ajili ya kuchapisha na kidijitali kutoka chapa moja?",
             answer:
-              "Ndiyo. Mfumo mmoja wa chapa — rangi, fonti na miongozo — unatumika kwenye kila kipande, kutoka mabango ya kuchapisha hadi machapisho ya mitandao ya kijamii.",
+              "Ndiyo. Mfumo mmoja wa chapa, rangi, fonti na miongozo, unatumika kwenye kila kipande, kutoka mabango ya kuchapisha hadi machapisho ya mitandao ya kijamii.",
           },
         ],
       },
@@ -978,7 +978,7 @@ export type ExtendedServiceKey = "software" | "hosting" | "graphics";
 
 const en: Dict = {
   meta: {
-    title: "DataSoft Tanzania — Technology Solutions",
+    title: "DataSoft Tanzania, Technology Solutions",
     description:
       "DataSoft is a technological center turning business into working software, websites, networks or systems that are built with craft and precision.",
   },
@@ -1002,7 +1002,7 @@ const en: Dict = {
     ],
     ctaPrimary: "Start Your Project",
     ctaSecondary: "See Our Services",
-    mapCaption: "Your business, built line by line by DataSoft",
+    mapCaption: "Your business, wherever it is, built line by line by DataSoft",
   },
   whatWeDo: {
     eyebrow: "What We Do Best",
@@ -1054,15 +1054,15 @@ const en: Dict = {
   },
   included: {
     eyebrow: "Everything Included",
-    headingLines: ["Relax — everything you need,", "right at your fingertips."],
+    headingLines: ["Relax, everything you need,", "right at your fingertips."],
     intro:
-      "Every project we build comes with all of this already included, with no hidden extra costs — you focus on your business, we handle the technology.",
+      "Every project we build comes with all of this already included, with no hidden extra costs. You focus on your business, we handle the technology.",
     items: [
       {
         key: "automation",
         title: "Automation",
         description:
-          "Workflows that run themselves — alerts, reports and everyday tasks — so your team spends time on what matters most.",
+          "Workflows that run themselves, alerts, reports and everyday tasks, so your team spends time on what matters most.",
       },
       {
         key: "metrics",
@@ -1080,13 +1080,13 @@ const en: Dict = {
         key: "security",
         title: "Security & Speed",
         description:
-          "SSL certificates, protection against common threats, and high-performance infrastructure — without trade-offs.",
+          "SSL certificates, protection against common threats, and high-performance infrastructure, without trade-offs.",
       },
       {
         key: "support",
         title: "Ongoing Support",
         description:
-          "Our Mwanza-based team stays close after launch, ready to help whenever you need us.",
+          "Our team stays close after launch, wherever you are, ready to help whenever you need us.",
       },
       {
         key: "backups",
@@ -1098,7 +1098,7 @@ const en: Dict = {
         key: "scale",
         title: "Built to Scale",
         description:
-          "Our systems are built to grow alongside your business — from one user to thousands, without starting over.",
+          "Our systems are built to grow alongside your business, from one user to thousands, without starting over.",
       },
       {
         key: "uptime",
@@ -1142,16 +1142,16 @@ const en: Dict = {
     eyebrow: "Contact Us",
     heading: "Tell Us About Your Project",
     intro:
-      "A few quick answers help us give you the right advice from the start — this isn't just a form, it's the beginning of your project.",
+      "A few quick answers help us give you the right advice from the start. This isn't just a form, it's the beginning of your project.",
     quoteFormula: {
       terms: ["Great Idea", "Great Team", "Innovative System"],
       result: "Your Victory",
     },
     trust: {
-      consultation: "First Consultation — Free",
+      consultation: "First Consultation, Free",
       prototype: "First Prototype Ready Within 48 Hours",
       support: "Support After Launch",
-      transparency: "Full Transparency — No Surprises",
+      transparency: "Full Transparency, No Surprises",
     },
     progress: { step: "Step", of: "of" },
     back: "Back",
@@ -1161,7 +1161,7 @@ const en: Dict = {
         question:
           "Is your project brand new, or an upgrade to an existing one?",
         reason:
-          "This helps us know where to start — from scratch, or improving what you already have.",
+          "This helps us know where to start, from scratch, or improving what you already have.",
         options: [
           { value: "new", label: "Brand New Project" },
           { value: "upgrade", label: "Upgrading an Existing One" },
@@ -1218,7 +1218,7 @@ const en: Dict = {
       },
     ],
     finalStep: {
-      title: "Final Step — Your Details",
+      title: "Final Step, Your Details",
       reason:
         "The first consultation is free. Our team will reach out within a few hours.",
     },
@@ -1267,7 +1267,7 @@ const en: Dict = {
     eyebrow: "Our Capability",
     heading: "This Is What We Build",
     intro:
-      "Every business is unique, and every solution we build is shaped specifically for it. This isn't a project history — it's proof of what we know how to do well.",
+      "Every business is unique, and every solution we build is shaped specifically for it. This isn't a project history. It's proof of what we know how to do well.",
     items: [
       {
         title: "Business Operations Systems",
@@ -1299,21 +1299,21 @@ const en: Dict = {
     eyebrow: "Inside Our Studio",
     heading: "Your Brand, Built Layer by Layer",
     subheadline:
-      "From first sketch to a print-ready poster — watch how every layer of your design comes together with real craft, not stock templates.",
+      "From first sketch to a print-ready poster. Watch how every layer of your design comes together with real craft, not stock templates.",
     caption: "A campaign poster, being built layer by layer by DataSoft",
   },
   testimonials: {
     eyebrow: "What Clients Say",
     heading: "Trusted by Businesses, Organizations and Institutions",
     intro:
-      "From Kigoma to Mbeya, these are some of the business owners and institutions we serve every day — this is why they keep choosing DataSoft.",
+      "From Kigoma to Mbeya, and everywhere in between, these are some of the business owners and institutions we serve every day. This is why they keep choosing DataSoft.",
     items: [
       {
         name: "Godwin Marko Shauri",
         role: "Business Owner",
         location: "Kasulu, Kigoma",
         quote:
-          "Since DataSoft built my shop's system, I've stopped writing sales by hand. Now I see everything — items sold, the day's profit — in a single glance. Truly excellent work!",
+          "Since DataSoft built my shop's system, I've stopped writing sales by hand. Now I see everything, items sold, the day's profit, in a single glance. Truly excellent work!",
       },
       {
         name: "Benson Godfrey",
@@ -1367,27 +1367,27 @@ const en: Dict = {
       {
         question: "How long does a project take to complete?",
         answer:
-          "It depends on the size of the project, but we can start building your first prototype within 48 hours of our first conversation. Every project moves through four stages — Idea, Design, Build and Launch — and we'll give you a firm timeline once we understand your needs.",
+          "It depends on the size of the project, but we can start building your first prototype within 48 hours of our first conversation. Every project moves through four stages, Idea, Design, Build and Launch. We'll give you a firm timeline once we understand your needs.",
       },
       {
         question: "How much does a project cost?",
         answer:
-          "Every project is unique, so pricing depends on its size and requirements. Our contact form asks about your budget range so we can recommend the right package for you — and the first consultation is completely free.",
+          "Every project is unique, so pricing depends on its size and requirements. Our contact form asks about your budget range so we can recommend the right package for you. The first consultation is completely free.",
       },
       {
         question: "Do you work with clients outside Mwanza?",
         answer:
-          "Yes. While our team is based in Mwanza, we serve clients across Tanzania — from Kigoma and Arusha to Dodoma and Mbeya — through online and phone communication, and we travel on-site when a networking project requires it.",
+          "Yes, wherever you are. Our home is Mwanza, but our service reaches clients across Tanzania, from Kigoma and Arusha, to Dodoma and Mbeya, through online and phone communication, and we travel on-site when a networking project calls for it.",
       },
       {
-        question: "I don't have a design ready yet — can you still help?",
+        question: "I don't have a design ready yet, can you still help?",
         answer:
-          "Absolutely. Our contact form lets you tell us you don't have a design yet, and our team will guide you and put together options from scratch — you don't need to arrive with everything figured out.",
+          "Absolutely. Our contact form lets you tell us you don't have a design yet, and our team will guide you and put together options from scratch. You don't need to arrive with everything figured out.",
       },
       {
         question: "Will you support my website or system after launch?",
         answer:
-          "Yes. Every project we build comes with ongoing support, uptime monitoring and regular backups — our Mwanza-based team stays close by for whatever help you need after launch.",
+          "Yes. Every project we build comes with ongoing support, uptime monitoring and regular backups. Our team stays close by, wherever you are, for whatever help you need after launch.",
       },
       {
         question: "Will my website or system be secure?",
@@ -1397,7 +1397,7 @@ const en: Dict = {
       {
         question: "How do I start a project with DataSoft?",
         answer:
-          "Fill out our short contact form below, or call us directly. A handful of quick questions is all we need to understand your project, and our team will reach out within a few hours to start the conversation — at no cost.",
+          "Fill out our short contact form below, call us, or message us whenever suits you, we're ready to listen. Booking an appointment gives us the best chance to serve you well, but you don't need one just to reach out. A handful of quick questions is all we need to understand your project, and our team will reach out within a few hours to start the conversation, at no cost.",
       },
     ],
   },
@@ -1407,23 +1407,23 @@ const en: Dict = {
       eyebrow: "Software Development",
       title: "Software Built With Precision",
       subtitle:
-        "Watch us build it: loan approvals, credit scoring, repayment schedules — a real system we ship for clients, typed out line by line in front of you.",
+        "Watch us build it: loan approvals, credit scoring, repayment schedules. A real system we ship for clients, typed out line by line in front of you.",
       headlineLines: [
         "From paperwork and spreadsheets",
         "to a system that runs itself.",
       ],
       intro:
-        "Every business has its own workflow. Rather than fitting you into an off-the-shelf system, we build software that follows how your organization truly operates — whether that's an internal operations system, a customer platform, or a mobile app.",
+        "Every business has its own workflow. Rather than fitting you into an off-the-shelf system, we build software that follows how your organization truly operates, whether that's an internal operations system, a customer platform, or a mobile app.",
       includesHeading: "What We Build",
       includes: [
         "Custom business operations systems (ERP, inventory, accounting)",
-        "Loan and microfinance systems — applications, credit scoring and repayment schedules",
+        "Loan and microfinance systems, applications, credit scoring and repayment schedules",
         "Web platforms and mobile apps backed by live data",
         "Integrations with payment systems and third-party services",
         "Maintenance, upgrades and technical support after launch",
       ],
       whyHeading: "Why DataSoft",
-      why: "Our experience is rooted in Mwanza — we understand Tanzania's business context, local network realities, and what it takes for a system to run reliably in this environment.",
+      why: "Our experience shows in every project we take on. We understand Tanzania's business context, local network realities, and what it takes for a system to run reliably, wherever your business is.",
       ctaLabel: "Start a Software Project",
       secondaryCtaLabel: "See What We Build",
       ideCaption:
@@ -1434,25 +1434,25 @@ const en: Dict = {
         "not just a pretty screen",
       ],
       capabilitiesIntro:
-        "The example above — a loan and microfinance system — is just one sample. The same capability goes into every system we build.",
+        "The example above, a loan and microfinance system, is just one sample. The same capability goes into every system we build.",
       capabilities: [
         {
           key: "credit",
           title: "Loan & Credit Scoring Engines",
           description:
-            "Loan applications, collateral checks and approval decisions — all running automatically, exactly like the code you just watched build itself.",
+            "Loan applications, collateral checks and approval decisions, all running automatically, exactly like the code you just watched build itself.",
         },
         {
           key: "dashboards",
           title: "Real-Time Dashboards",
           description:
-            "See repayments, revenue and risk the moment they happen, not at month-end — decisions run on current data, not last week's.",
+            "See repayments, revenue and risk the moment they happen, not at month-end. Decisions run on current data, not last week's.",
         },
         {
           key: "payments",
           title: "Automated Payments & Reminders",
           description:
-            "Repayment schedules, SMS reminders and mobile money integrations — clients get reminded before the due date, not after.",
+            "Repayment schedules, SMS reminders and mobile money integrations. Clients get reminded before the due date, not after.",
         },
         {
           key: "scale",
@@ -1466,12 +1466,12 @@ const en: Dict = {
         {
           value: "4",
           label:
-            "structured stages — Idea, Design, Build, Launch — every project follows",
+            "structured stages, Idea, Design, Build, Launch, every project follows",
         },
         {
           value: "100%",
           label:
-            "custom-built — no template stretched to fit a workflow it wasn't made for",
+            "custom-built, no template stretched to fit a workflow it wasn't made for",
         },
       ],
       process: {
@@ -1483,12 +1483,12 @@ const en: Dict = {
           {
             title: "Idea",
             description:
-              "We talk through your actual workflow, the friction you're dealing with, and the outcome you need — before a single line of code gets written.",
+              "We talk through your actual workflow, the friction you're dealing with, and the outcome you need, before a single line of code gets written.",
           },
           {
             title: "Design",
             description:
-              "We map the system — screens, data and how they connect — so you can see how it will work before we start building.",
+              "We map the system, screens, data and how they connect, so you can see how it will work before we start building.",
           },
           {
             title: "Build",
@@ -1502,11 +1502,11 @@ const en: Dict = {
           },
         ],
         closing:
-          "No stage gets skipped — that's why what you get on day one actually works.",
+          "No stage gets skipped. That's why what you get on day one actually works.",
       },
       whySectionHeading: "Bad Software Is a Cost You Don't See on the Invoice",
       whyIntro:
-        "Every hour spent re-entering the same data, every report built by hand, every decision waiting on the one person who knows where the file is — that's the real cost of software that doesn't fit how you work.",
+        "Every hour spent re-entering the same data, every report built by hand, every decision waiting on the one person who knows where the file is, that's the real cost of software that doesn't fit how you work.",
       whyPoints: [
         "Spreadsheets that go missing, with a different version on everyone's laptop",
         "Reports that take days to assemble by hand every month",
@@ -1536,7 +1536,7 @@ const en: Dict = {
           {
             question: "Will you support the system after launch?",
             answer:
-              "Yes — every system comes with ongoing maintenance and support, and our Mwanza-based team stays close by.",
+              "Yes. Every system comes with ongoing maintenance and support, and our team stays close by, wherever you are.",
           },
         ],
       },
@@ -1546,7 +1546,7 @@ const en: Dict = {
       eyebrow: "Web Design & Hosting",
       title: "Websites With Standing, Always Online",
       subtitle:
-        "Beautiful, fast and secure websites — ready to grow alongside your business, every day.",
+        "Beautiful, fast and secure websites, ready to grow alongside your business, every day.",
       headlineLines: ["Your Website Never Sleeps.", "Neither Do We."],
       intro:
         "Your website is often the first place a customer meets your brand. We design refined, fast websites on a solid technical foundation, then keep them running online without disruption.",
@@ -1557,8 +1557,8 @@ const en: Dict = {
         "SSL security certificates and protection against common threats",
         "Ongoing domain management and platform updates",
       ],
-      whyHeading: "A Team That's Here, Not a Distant Call Center",
-      why: "The websites we build are supported by a team based right here in Mwanza, Tanzania — you're never on your own when your site needs urgent help, and we don't disappear after launch.",
+      whyHeading: "A Team That's Close, Wherever You Are",
+      why: "The websites we build are supported by the DataSoft team, reaching wherever your business is. You're never on your own when your site needs urgent help, and we don't disappear after launch.",
       ctaLabel: "Start a Website Project",
       secondaryCtaLabel: "See Our Infrastructure",
       ideCaption:
@@ -1569,7 +1569,7 @@ const en: Dict = {
         "Even While You Sleep.",
       ],
       capabilitiesIntro:
-        "Hosting isn't just buying space on a server — it's the whole system that keeps your website available, secure, and ready to grow. Here's everything we handle on your behalf, every day.",
+        "Hosting isn't just buying space on a server. It's the whole system that keeps your website available, secure, and ready to grow. Here's everything we handle on your behalf, every day.",
       capabilities: [
         {
           key: "uptime",
@@ -1581,7 +1581,7 @@ const en: Dict = {
           key: "security",
           title: "SSL & Security Protection",
           description:
-            "Every website gets an SSL certificate and protection against common online threats — your customers' data stays private.",
+            "Every website gets an SSL certificate and protection against common online threats. Your customers' data stays private.",
         },
         {
           key: "backups",
@@ -1599,13 +1599,13 @@ const en: Dict = {
           key: "scale",
           title: "Grows Alongside You",
           description:
-            "As your traffic grows, your infrastructure grows with it — no need to start over every time your business expands.",
+            "As your traffic grows, your infrastructure grows with it. No need to start over every time your business expands.",
         },
         {
           key: "support",
           title: "Real Support, Based in Tanzania",
           description:
-            "When your website needs help, you talk to a team based in Mwanza — not an overseas call center that doesn't know your context.",
+            "When your website needs help, you talk to a team based in Tanzania, not an overseas call center that doesn't know your context.",
         },
         {
           key: "domain",
@@ -1621,7 +1621,7 @@ const en: Dict = {
         },
       ],
       flowLabels: {
-        windowTitle: "server.datasoft.co.tz — network status",
+        windowTitle: "server.datasoft.co.tz, network status",
         serverLabel: "Your Server",
         serverSub: "Website + Data",
         cloudLabel: "DataSoft Cloud",
@@ -1671,15 +1671,15 @@ const en: Dict = {
           {
             title: "Monitor",
             description:
-              "We keep watching around the clock — backups, uptime checks, and issues resolved before you notice them.",
+              "We keep watching around the clock, backups, uptime checks, and issues resolved before you notice them.",
           },
         ],
         closing:
-          "Your website doesn't go quiet after launch — we keep watching it every day.",
+          "Your website doesn't go quiet after launch. We keep watching it every day.",
       },
       whySectionHeading: "Five Minutes of Downtime Is Customers Lost",
       whyIntro:
-        "Every extra second your site takes to load, every 'this site can't be reached' — is a sale that happens somewhere else instead.",
+        "Every extra second your site takes to load, every 'this site can't be reached', is a sale that happens somewhere else instead.",
       whyPoints: [
         "A site that goes down overnight with nobody noticing until morning",
         "An SSL certificate that quietly expires with no one warned",
@@ -1694,12 +1694,12 @@ const en: Dict = {
           {
             question: "How fast will my website be?",
             answer:
-              "We optimize images, code and infrastructure so your pages load quickly, every time — speed is part of the build, not an afterthought.",
+              "We optimize images, code and infrastructure so your pages load quickly, every time. Speed is part of the build, not an afterthought.",
           },
           {
             question: "What happens if my site goes down?",
             answer:
-              "Our systems watch your site minute by minute. If something goes wrong, our Mwanza-based team starts fixing it immediately, often before you notice.",
+              "Our systems watch your site minute by minute. If something goes wrong, our team starts fixing it immediately, wherever you are, often before you notice.",
           },
           {
             question: "Can you migrate my existing website to DataSoft?",
@@ -1730,7 +1730,7 @@ const en: Dict = {
         "Ongoing monitoring and infrastructure maintenance",
       ],
       whyHeading: "Why DataSoft",
-      why: "We build networks sized to your office's actual scale — never more than you need, and never too weak to let you grow.",
+      why: "We build networks sized to your office's actual scale, never more than you need, and never too weak to let you grow.",
       ctaLabel: "Start a Networking Project",
     },
     graphics: {
@@ -1738,10 +1738,10 @@ const en: Dict = {
       eyebrow: "Graphics Design",
       title: "Three Seconds to Impress. We Design for Them.",
       subtitle:
-        "That's how long a customer takes to judge whether your brand is trustworthy — from your logo to a campaign poster, every layer we design is built for that window.",
+        "That's how long a customer takes to judge whether your brand is trustworthy. From your logo to a campaign poster, every layer we design is built for that window.",
       headlineLines: ["Three Seconds to Impress.", "We Design for Them."],
       intro:
-        "How your brand looks speaks before you ever open your mouth. We create cohesive artistic work — logos, brand identities, and marketing materials — that isn't just beautiful to look at, but sells, sticks in memory, and stays aligned with your business goals.",
+        "How your brand looks speaks before you ever open your mouth. We create cohesive artistic work, logos, brand identities, and marketing materials, that isn't just beautiful to look at, but sells, sticks in memory, and stays aligned with your business goals.",
       includesHeading: "What We Design",
       includes: [
         "Logos and complete brand identity systems",
@@ -1750,7 +1750,7 @@ const en: Dict = {
         "Packaging and product design",
       ],
       whyHeading: "Why DataSoft",
-      why: "Every design project starts from your business goal, not this year's trend — the result still holds up years from now.",
+      why: "Every design project starts from your business goal, not this year's trend. The result still holds up years from now.",
       ctaLabel: "Start a Design Project",
       secondaryCtaLabel: "See Our Capabilities",
       capabilitiesEyebrow: "Our Capabilities",
@@ -1762,7 +1762,7 @@ const en: Dict = {
           key: "branding",
           title: "Logos & Brand Identity",
           description:
-            "We design logos and a full brand system — color, type and guidelines — so everything carrying your name reads as one consistent, trustworthy brand.",
+            "We design logos and a full brand system, color, type and guidelines, so everything carrying your name reads as one consistent, trustworthy brand.",
         },
         {
           key: "print",
@@ -1780,19 +1780,19 @@ const en: Dict = {
           key: "packaging",
           title: "Packaging & Product Design",
           description:
-            "We design packaging that sells — eye-catching on the shelf and memorable after the purchase.",
+            "We design packaging that sells, eye-catching on the shelf and memorable after the purchase.",
         },
       ],
       stats: [
         {
           value: "3s",
           label:
-            "the window a first impression has to land — every layer we design targets it",
+            "the window a first impression has to land, every layer we design targets it",
         },
         {
           value: "100%",
           label:
-            "original concepts — no stock template recycled across different clients",
+            "original concepts, no stock template recycled across different clients",
         },
         {
           value: "1",
@@ -1827,11 +1827,11 @@ const en: Dict = {
           },
         ],
         closing:
-          "Every piece starts from a conversation, not a guess — that's why the result actually fits your brand.",
+          "Every piece starts from a conversation, not a guess. That's why the result actually fits your brand.",
       },
       whySectionHeading: "Inconsistent Design Reads as an Unreliable Brand",
       whyIntro:
-        "One logo on the website, a slightly different one on the flyers, a new color every time someone builds a slide deck — customers notice before they read a single word.",
+        "One logo on the website, a slightly different one on the flyers, a new color every time someone builds a slide deck. Customers notice before they read a single word.",
       whyPoints: [
         "Logo files of inconsistent quality scattered across different folders",
         "No brand guide, so every employee designs slides their own way",
@@ -1851,7 +1851,7 @@ const en: Dict = {
           {
             question: "How many rounds of revisions are included?",
             answer:
-              "Once you pick a direction, we refine it against your feedback round by round until it's right — not just a single final pass.",
+              "Once you pick a direction, we refine it against your feedback round by round until it's right, not just a single final pass.",
           },
           {
             question: "Will I get the source design files?",
@@ -1862,7 +1862,7 @@ const en: Dict = {
             question:
               "Can you design for both print and digital from one brand?",
             answer:
-              "Yes. One brand system — color, type and guidelines — carries across every piece, from print posters to social media posts.",
+              "Yes. One brand system, color, type and guidelines, carries across every piece, from print posters to social media posts.",
           },
         ],
       },

@@ -85,6 +85,7 @@ const Footer = () => {
 
       <div className={Styles.watermarkBand} aria-hidden="true">
         <span className={Styles.watermark}>DataSoft</span>
+        <span className={Styles.watermarkSubtitle}>Tanzania</span>
       </div>
     </footer>
   );
