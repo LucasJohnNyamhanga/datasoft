@@ -154,20 +154,56 @@
 // standard card treatment), not another navy register: DESIGN.md reserves
 // navy for Contact/Footer only, so this page's own "need help" moment stays
 // on the content room's own card language instead of borrowing that one.
+// The CTA itself borrows the site's real primary-button spec (gradient-gold
+// fill, sapphire-deep text, uppercase tracking, brass glow on hover — see
+// the "Call Us" button in doYouHaveAnIdea.module.scss) rather than the bare
+// underlined text link this card used before, so the page's one conversion
+// moment reads with the same weight as every other CTA on the site.
 .support {
   margin-top: $space-lg;
-  padding: $space-md;
+  padding: 2.75rem 3rem;
   background-color: $ivory-card;
   border: 1px solid $bone;
   border-radius: $radius-md;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+
+.supportInfo {
+  min-width: 0;
+}
+
+.supportHeadingRow {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin: 0 0 0.65rem;
+}
+
+// Same circular brass-tinted badge language as the icon chip in the
+// trust row (doYouHaveAnIdea.module.scss) — a recurring device, not a
+// one-off shape.
+.supportIcon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: rgba($brass, 0.12);
+  border: 1px solid rgba($brass-dim, 0.4);
+  color: $brass-dim;
 }
 
 .supportHeading {
   font-family: $font-display;
   font-weight: 420;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  line-height: 1.2;
   color: $ink;
-  margin: 0 0 0.5rem;
+  margin: 0;
 }
 
 .supportBody {
@@ -176,46 +212,98 @@
   font-size: 0.98rem;
   line-height: 1.6;
   color: $ink-soft;
-  margin: 0 0 1.25rem;
-  max-width: 46ch;
+  margin: 0;
+  max-width: 42ch;
 }
 
-.supportPhone {
+.supportCta {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+  padding-left: 2.5rem;
+  border-left: 1px solid $bone;
+  text-align: right;
+}
+
+.supportCtaButton {
   display: inline-flex;
-  flex-direction: row;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.65rem;
+  padding: 1rem 2.25rem;
+  background: $gradient-gold;
+  color: $sapphire-deep;
   font-family: $font-body;
   font-weight: 600;
-  font-size: 0.95rem;
-  color: $ink;
-  padding-bottom: 0.3rem;
-  border-bottom: 1px solid $brass-dim;
-  transition: color 0.25s $ease-standard, border-color 0.25s $ease-standard;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: $radius-sm;
+  transition: background 0.25s $ease-standard, transform 0.25s $ease-standard,
+    box-shadow 0.25s $ease-standard;
 
-  span[aria-hidden] {
+  svg {
+    font-size: 0.72rem;
     transition: transform 0.25s $ease-standard;
   }
+}
 
-  &:hover,
-  &:focus-visible {
-    color: $brass-dim;
-    border-color: $brass;
+.supportCta:hover .supportCtaButton,
+.supportCta:focus-visible .supportCtaButton {
+  background: $gradient-gold-hover;
+  transform: translateY(-1px);
+  box-shadow: $glow-brass;
 
-    span[aria-hidden] {
-      transform: translateX(4px);
-    }
+  svg {
+    transform: translateX(3px);
   }
 }
 
 .supportNumber {
-  color: $ink-soft;
+  font-family: $font-body;
   font-weight: 500;
+  font-size: 0.85rem;
+  color: $ink-soft;
+}
+
+// The support band goes from a horizontal split (info left, divided CTA
+// right) to a stacked block before the two-column layout above it does,
+// since its divider and right-aligned button cramp sooner than the
+// section list does.
+@media (max-width: 760px) {
+  .support {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 2.25rem 1.75rem;
+    gap: 1.75rem;
+  }
+
+  .supportCta {
+    align-items: stretch;
+    padding-left: 0;
+    border-left: none;
+    padding-top: 1.75rem;
+    border-top: 1px solid $bone;
+    text-align: left;
+  }
+
+  .supportCtaButton {
+    justify-content: center;
+  }
+
+  .supportNumber {
+    text-align: center;
+  }
 }
 
 @media (max-width: 640px) {
   .subContainer {
     padding: $space-lg $gutter;
+  }
+
+  .support {
+    padding: 2rem 1.5rem;
   }
 
   .item {

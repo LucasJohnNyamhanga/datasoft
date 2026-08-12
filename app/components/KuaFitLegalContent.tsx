@@ -1,4 +1,5 @@
 "use client";
+import { FaArrowRight, FaPhoneAlt } from "react-icons/fa";
 import { useLanguage } from "../i18n/LanguageContext";
 import { kuafitDictionaries } from "../i18n/kuafit";
 import Reveal from "./Reveal";
@@ -64,12 +65,28 @@ const KuaFitLegalContent = ({ docKey }: KuaFitLegalContentProps) => {
             </div>
 
             <Reveal className={styles.support}>
-              <p className={styles.supportHeading}>{doc.contact.heading}</p>
-              <p className={styles.supportBody}>{doc.contact.body}</p>
-              <a href={kuafit.phoneHref} className={styles.supportPhone}>
-                {doc.contact.phoneLabel}
-                <span aria-hidden="true">&rarr;</span>
-                <span className={styles.supportNumber}>{kuafit.phone}</span>
+              <div className={styles.supportInfo}>
+                <div className={styles.supportHeadingRow}>
+                  <span className={styles.supportIcon} aria-hidden="true">
+                    <FaPhoneAlt size={14} />
+                  </span>
+                  <p className={styles.supportHeading}>{doc.contact.heading}</p>
+                </div>
+                <p className={styles.supportBody}>{doc.contact.body}</p>
+              </div>
+
+              <a
+                href={kuafit.phoneHref}
+                className={styles.supportCta}
+                aria-label={`${doc.contact.phoneLabel} ${kuafit.phone}`}
+              >
+                <span className={styles.supportCtaButton}>
+                  {doc.contact.phoneLabel}
+                  <FaArrowRight aria-hidden="true" />
+                </span>
+                <span className={styles.supportNumber} aria-hidden="true">
+                  {kuafit.phone}
+                </span>
               </a>
             </Reveal>
           </div>
