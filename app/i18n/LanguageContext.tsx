@@ -18,6 +18,12 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
   const [locale, setLocaleState] = useState<Locale>("sw");
 
   useEffect(() => {
+    const urlLang = new URLSearchParams(window.location.search).get("lang") as Locale | null;
+    if (urlLang === "sw" || urlLang === "en") {
+      setLocaleState(urlLang);
+      return;
+    }
+
     const stored = window.localStorage.getItem(STORAGE_KEY) as Locale | null;
     if (stored === "sw" || stored === "en") {
       setLocaleState(stored);
