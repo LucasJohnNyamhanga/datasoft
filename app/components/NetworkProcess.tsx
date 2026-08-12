@@ -3,7 +3,6 @@ import { useLanguage } from "../i18n/LanguageContext";
 import { networkingDictionaries } from "../i18n/networking";
 import styles from "../styles/networkProcess.module.scss";
 import Reveal from "./Reveal";
-import NetworkPattern from "./NetworkPattern";
 
 const NetworkProcess = () => {
   const { locale } = useLanguage();
@@ -11,7 +10,6 @@ const NetworkProcess = () => {
 
   return (
     <div id="process" className={styles.container}>
-      <NetworkPattern className={styles.network} />
       <div className={styles.subContainer}>
         <Reveal as="p" className={styles.eyebrow}>
           {n.process.eyebrow}

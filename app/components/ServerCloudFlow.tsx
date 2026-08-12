@@ -7,7 +7,7 @@ import styles from "../styles/serverCloudFlow.module.scss";
 // server on the left, DataSoft's cloud on the right, and two dashed
 // traffic lanes between them — brass for outgoing data, cobalt for
 // incoming — each carrying a stream of small animated packets. The dash
-// "flow" texture is CSS (matching NetworkPattern's technique); the
+// "flow" texture is CSS (a dashed stroke-dasharray animation); the
 // discrete packet dots ride the same curves via SMIL <animateMotion> so
 // they visibly travel the exact path rather than just implying motion.
 

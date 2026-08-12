@@ -1,7 +1,6 @@
 "use client";
 import styles from "../styles/softwareCapabilities.module.scss";
 import Reveal from "./Reveal";
-import NetworkPattern from "./NetworkPattern";
 import { useLanguage } from "../i18n/LanguageContext";
 import { FaMoneyBillWave, FaChartLine, FaBell, FaLayerGroup } from "react-icons/fa";
 
@@ -27,8 +26,6 @@ const SoftwareCapabilities = () => {
 
   return (
     <div id="capabilities" className={styles.container}>
-      <NetworkPattern className={styles.network} />
-
       <div className={styles.subContainer}>
         <div className={styles.header}>
           <Reveal as="p" className={styles.eyebrow}>

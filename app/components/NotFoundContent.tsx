@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { useLanguage } from "../i18n/LanguageContext";
 import styles from "../styles/notFound.module.scss";
-import NetworkPattern from "./NetworkPattern";
 import TechCore from "./TechCore";
 
 const NotFoundContent = () => {
@@ -10,7 +9,6 @@ const NotFoundContent = () => {
 
   return (
     <div className={styles.container}>
-      <NetworkPattern className={styles.pattern} />
       <div className={styles.scrim} />
 
       <div className={styles.frame}>

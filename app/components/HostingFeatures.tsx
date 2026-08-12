@@ -1,7 +1,6 @@
 "use client";
 import styles from "../styles/hostingFeatures.module.scss";
 import Reveal from "./Reveal";
-import NetworkPattern from "./NetworkPattern";
 import { useLanguage } from "../i18n/LanguageContext";
 import {
   FaSignal,
@@ -41,8 +40,6 @@ const HostingFeatures = () => {
 
   return (
     <div id="capabilities" className={styles.container}>
-      <NetworkPattern className={styles.network} />
-
       <div className={styles.subContainer}>
         <div className={styles.header}>
           <Reveal as="p" className={styles.eyebrow}>

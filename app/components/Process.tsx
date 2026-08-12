@@ -2,14 +2,12 @@
 import { useLanguage } from "../i18n/LanguageContext";
 import styles from "../styles/process.module.scss";
 import Reveal from "./Reveal";
-import NetworkPattern from "./NetworkPattern";
 
 const Process = () => {
   const { t } = useLanguage();
 
   return (
     <div id="process" className={styles.container}>
-      <NetworkPattern className={styles.network} />
       <div className={styles.subContainer}>
         <Reveal as="p" className={styles.eyebrow}>
           {t.process.eyebrow}
