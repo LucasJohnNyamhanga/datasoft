@@ -98,7 +98,7 @@ const sw: KuaFitContent = {
       },
       {
         title: "Haki na Chaguo Zako",
-        body: "Unaweza kupitia na kusasisha sehemu kubwa ya wasifu wako moja kwa moja ndani ya programu. Kuomba nakala ya taarifa zako, kusahihisha kitu, au kufuta akaunti yako kabisa, wasiliana na timu yetu ya usaidizi na tutashughulikia moja kwa moja.",
+        body: "Unaweza kupitia na kusasisha sehemu kubwa ya wasifu wako moja kwa moja ndani ya programu. Unaweza kufuta akaunti yako kabisa pamoja na taarifa zote zinazohusiana nayo wakati wowote kupitia Wasifu → Mipangilio → Futa Taarifa Zangu — bila haja ya kuwasiliana nasi. Kuomba nakala ya taarifa zako au kusahihisha kitu badala yake, wasiliana na timu yetu ya usaidizi na tutashughulikia moja kwa moja.",
       },
       {
         title: "Faragha ya Watoto",
@@ -232,7 +232,7 @@ const en: KuaFitContent = {
       },
       {
         title: "Your Rights & Choices",
-        body: "You can review and update most of your profile directly in the app. To request a copy of your data, correct something, or delete your account entirely, reach out to support and we will handle it directly.",
+        body: "You can review and update most of your profile directly in the app. You can permanently delete your account and all associated data at any time from Profile → Settings → Delete My Data — no need to contact us. To request a copy of your data or correct something instead, reach out to support and we will handle it directly.",
       },
       {
         title: "Children's Privacy",
