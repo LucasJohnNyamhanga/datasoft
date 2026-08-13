@@ -120,6 +120,8 @@ const WhatWeDo = () => {
           </div>
         </Reveal>
       </div>
+
+      <div className={styles.hexLattice} aria-hidden="true" />
     </div>
   );
 };

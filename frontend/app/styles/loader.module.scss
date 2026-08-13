@@ -1,17 +1,33 @@
 @use "index" as *;
 
 .loaderWait {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0;
+  gap: 0.55rem;
+}
+
+.spinnerIcon {
+  flex-shrink: 0;
+  animation: spin 0.85s linear infinite;
 }
 
 .sms {
   font-family: $font-body;
   font-weight: 600;
   font-size: 0.8rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinnerIcon {
+    animation: none;
+  }
 }

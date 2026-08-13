@@ -8,10 +8,10 @@ const LoaderWait = ({ sms }: dataType) => {
   return (
     <div className={Styles.loaderWait}>
       <svg
-        width="33"
-        height="33"
+        className={Styles.spinnerIcon}
+        width="16"
+        height="16"
         viewBox="0 0 16 16"
-        color="#120D09"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -47,15 +47,7 @@ const LoaderWait = ({ sms }: dataType) => {
             <stop offset="1" stopColor="currentColor" stopOpacity="0.5" />
           </linearGradient>
         </defs>
-        <animateTransform
-          from="0 0 0"
-          to="360 0 0"
-          attributeName="transform"
-          type="rotate"
-          repeatCount="indefinite"
-          dur="1300ms"
-        />
-      </svg>{" "}
+      </svg>
       <div className={Styles.sms}>{sms}</div>
     </div>
   );

@@ -1,15 +1,38 @@
 @use "index" as *;
 
 .container {
+  position: relative;
   width: 100%;
   background: linear-gradient(to bottom, $ivory 0%, $ivory 88%, rgba($navy-deep, 0.07) 100%);
   scroll-margin-top: var(--nav-height, 90px);
 }
 
 .subContainer {
+  position: relative;
+  z-index: 2;
   max-width: $content-max;
   margin: 0 auto;
   padding: $space-xl $gutter;
+}
+
+.circuitBand {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 240px;
+  opacity: 0.16;
+  pointer-events: none;
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
+}
+
+.circuitBandInner {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%3E%3Cg%20fill='none'%20stroke='%236b4226'%20stroke-width='1.6'%20stroke-opacity='0.85'%3E%3Cpath%20d='M10%2010H40V35'/%3E%3Cpath%20d='M60%205V30H90'/%3E%3Cpath%20d='M15%2055H45V85'/%3E%3Cpath%20d='M65%2060H95V90'/%3E%3Cpath%20d='M5%2070V95H30'/%3E%3C/g%3E%3Cg%20fill='%236b4226'%20fill-opacity='0.85'%3E%3Ccircle%20cx='10'%20cy='10'%20r='2.2'/%3E%3Ccircle%20cx='40'%20cy='35'%20r='2.2'/%3E%3Ccircle%20cx='60'%20cy='5'%20r='2.2'/%3E%3Ccircle%20cx='90'%20cy='30'%20r='2.2'/%3E%3Ccircle%20cx='15'%20cy='55'%20r='2.2'/%3E%3Ccircle%20cx='45'%20cy='85'%20r='2.2'/%3E%3Ccircle%20cx='65'%20cy='60'%20r='2.2'/%3E%3Ccircle%20cx='95'%20cy='90'%20r='2.2'/%3E%3Ccircle%20cx='5'%20cy='70'%20r='2.2'/%3E%3Ccircle%20cx='30'%20cy='95'%20r='2.2'/%3E%3Ccircle%20cx='40'%20cy='10'%20r='3.2'/%3E%3Ccircle%20cx='45'%20cy='55'%20r='3.2'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 100px 100px;
 }
 
 .eyebrow {

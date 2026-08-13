@@ -284,9 +284,6 @@ const Contact = () => {
               <h3 className={styles.feedbackTitle}>{t.contact.failure.title}</h3>
               <p className={styles.feedbackBody}>{t.contact.failure.body}</p>
               <div className={styles.feedbackActions}>
-                <button type="button" className={styles.button} onClick={retry}>
-                  {t.contact.failure.retry}
-                </button>
                 <a href={CONTACT_PHONE_HREF} className={styles.ghostLink}>
                   <FaPhone />
                   {CONTACT_PHONE_DISPLAY}
@@ -301,6 +298,9 @@ const Contact = () => {
                   {t.contact.failure.whatsapp}
                 </a>
               </div>
+              <button type="button" className={styles.button} onClick={retry}>
+                {t.contact.failure.retry}
+              </button>
             </div>
           ) : (
             <>
@@ -478,15 +478,22 @@ const Contact = () => {
                         {t.contact.back}
                       </button>
 
-                      {loading ? (
-                        <div className={`${styles.button} ${styles.loading}`}>
-                          <Loader sms={t.contact.sending} />
-                        </div>
-                      ) : (
-                        <button type="submit" className={styles.button}>
+                      <button
+                        type="submit"
+                        className={styles.button}
+                        disabled={loading}
+                        aria-busy={loading}
+                      >
+                        <span className={styles.buttonLabel}>
                           {t.contact.submit}
-                        </button>
-                      )}
+                        </span>
+                        <span className={styles.buttonSpinner} aria-hidden="true">
+                          <Loader sms={t.contact.sending} />
+                        </span>
+                      </button>
+                      <span className={styles.srOnly} role="status">
+                        {loading ? t.contact.sending : ""}
+                      </span>
                     </div>
                   </form>
                 </div>
@@ -494,6 +501,10 @@ const Contact = () => {
             </>
           )}
         </Reveal>
+      </div>
+
+      <div className={styles.halftoneBand} aria-hidden="true">
+        <div className={styles.halftoneBandInner} />
       </div>
     </div>
   );

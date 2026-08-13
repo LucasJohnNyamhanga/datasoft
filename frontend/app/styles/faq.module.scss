@@ -1,15 +1,41 @@
 @use "index" as *;
 
 .container {
+  position: relative;
   width: 100%;
   background-color: $bone;
   scroll-margin-top: var(--nav-height, 90px);
 }
 
 .subContainer {
+  position: relative;
+  z-index: 2;
   max-width: $content-max;
   margin: 0 auto;
   padding: $space-xl $gutter;
+}
+
+.diagonalBand {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 240px;
+  opacity: 0.16;
+  pointer-events: none;
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
+}
+
+.diagonalBandInner {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba($brass-dim, 0.5) 0 1px,
+    transparent 1px 14px
+  );
 }
 
 .layout {

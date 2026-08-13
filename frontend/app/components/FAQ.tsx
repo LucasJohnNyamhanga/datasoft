@@ -102,6 +102,10 @@ const FAQ = ({ serviceKey }: FAQProps) => {
           </div>
         </div>
       </div>
+
+      <div className={styles.diagonalBand} aria-hidden="true">
+        <div className={styles.diagonalBandInner} />
+      </div>
     </div>
   );
 };

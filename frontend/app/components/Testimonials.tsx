@@ -67,6 +67,10 @@ const Testimonials = () => {
           ))}
         </div>
       </div>
+
+      <div className={styles.mazeBand} aria-hidden="true">
+        <div className={styles.mazeBandInner} />
+      </div>
     </div>
   );
 };

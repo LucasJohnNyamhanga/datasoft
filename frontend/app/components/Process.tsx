@@ -34,7 +34,9 @@ const Process = () => {
         </Reveal>
       </div>
 
-      <div className={styles.lattice} />
+      <div className={styles.lattice}>
+        <div className={styles.latticeInner} />
+      </div>
     </div>
   );
 };

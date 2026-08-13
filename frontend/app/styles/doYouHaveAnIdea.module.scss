@@ -1,6 +1,7 @@
 @use "index" as *;
 
 .container {
+  position: relative;
   width: 100%;
   margin-top: -56px;
   background: $gradient-navy;
@@ -9,6 +10,8 @@
 }
 
 .subContainer {
+  position: relative;
+  z-index: 2;
   max-width: $content-max;
   margin: 0 auto;
   padding: calc(#{$space-xl} + 2rem) $gutter $space-xl;
@@ -20,6 +23,26 @@
     grid-template-columns: 1fr 1fr;
     gap: $space-xl;
   }
+}
+
+.halftoneBand {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 240px;
+  opacity: 0.16;
+  pointer-events: none;
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
+}
+
+.halftoneBandInner {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba($brass-bright, 0.9) 1.2px, transparent 1.6px);
+  background-size: 16px 16px;
 }
 
 .intro {
@@ -333,6 +356,7 @@
 }
 
 .button {
+  position: relative;
   align-self: flex-start;
   margin-top: 0.5rem;
   display: inline-flex;
@@ -357,11 +381,58 @@
     transform: translateY(-1px);
     box-shadow: $glow-brass;
   }
+
+  &:disabled {
+    cursor: progress;
+    pointer-events: none;
+  }
+
+  &:disabled:hover {
+    transform: none;
+    box-shadow: none;
+  }
 }
 
-.loading {
-  cursor: progress;
-  opacity: 0.85;
+// Submit button only: reserve enough width for the longer "sending" label so
+// the label-to-spinner crossfade below never changes the button's box size.
+.finalActions .button {
+  min-width: 13.5rem;
+}
+
+.buttonLabel {
+  display: inline-flex;
+  align-items: center;
+  transition: opacity 0.2s $ease-standard, transform 0.2s $ease-standard;
+}
+
+.button:disabled .buttonLabel {
+  opacity: 0;
+  transform: translateY(2px);
+}
+
+.buttonSpinner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.94);
+  transition: opacity 0.25s $ease-standard, transform 0.25s $ease-standard;
+  pointer-events: none;
+}
+
+.button:disabled .buttonSpinner {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .buttonLabel,
+  .buttonSpinner {
+    transition: opacity 0.15s linear;
+    transform: none !important;
+  }
 }
 
 .errorText {

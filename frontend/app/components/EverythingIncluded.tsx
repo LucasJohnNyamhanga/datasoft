@@ -66,6 +66,10 @@ const EverythingIncluded = () => {
           ))}
         </div>
       </div>
+
+      <div className={styles.meshBand} aria-hidden="true">
+        <div className={styles.meshBandInner} />
+      </div>
     </div>
   );
 };

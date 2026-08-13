@@ -1,15 +1,38 @@
 @use "index" as *;
 
 .container {
+  position: relative;
   width: 100%;
   background: $ivory;
   scroll-margin-top: var(--nav-height, 90px);
 }
 
 .subContainer {
+  position: relative;
+  z-index: 2;
   max-width: $content-max;
   margin: 0 auto;
   padding: $space-xl $gutter;
+}
+
+.mazeBand {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 240px;
+  opacity: 0.16;
+  pointer-events: none;
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
+}
+
+.mazeBandInner {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%3E%3Cpath%20d='M0%2015H30V40H60V20H100'%20stroke='%236b4226'%20stroke-width='1.6'%20fill='none'%20stroke-opacity='0.8'/%3E%3Cpath%20d='M0%2020H20V55H50'%20stroke='%236b4226'%20stroke-width='1.6'%20fill='none'%20stroke-opacity='0.8'/%3E%3Cpath%20d='M15%20100V75H45V60'%20stroke='%236b4226'%20stroke-width='1.6'%20fill='none'%20stroke-opacity='0.8'/%3E%3Cpath%20d='M15%200H40V25'%20stroke='%236b4226'%20stroke-width='1.6'%20fill='none'%20stroke-opacity='0.8'/%3E%3Cpath%20d='M70%200V20H90V50H70V80'%20stroke='%236b4226'%20stroke-width='1.6'%20fill='none'%20stroke-opacity='0.8'/%3E%3Cpath%20d='M100%2065H80V85H60'%20stroke='%236b4226'%20stroke-width='1.6'%20fill='none'%20stroke-opacity='0.8'/%3E%3C/svg%3E");
+  background-size: 100px 100px;
 }
 
 .eyebrow {

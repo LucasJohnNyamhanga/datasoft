@@ -44,6 +44,10 @@ const WhatWeHaveDone = () => {
           ))}
         </div>
       </div>
+
+      <div className={styles.circuitBand} aria-hidden="true">
+        <div className={styles.circuitBandInner} />
+      </div>
     </div>
   );
 };
