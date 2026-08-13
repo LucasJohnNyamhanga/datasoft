@@ -332,6 +332,18 @@
     margin-bottom: 0.65rem;
   }
 
+  .fieldLabel {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    width: fit-content;
+  }
+
+  .fieldFlag {
+    color: $rust;
+    font-size: 0.85em;
+  }
+
   input,
   textarea {
     background: transparent;

@@ -6,6 +6,7 @@ import {
   FaArrowLeft,
   FaBoltLightning,
   FaCircleCheck,
+  FaEnvelope,
   FaHeadset,
   FaPhone,
   FaShieldHalved,
@@ -13,6 +14,8 @@ import {
 } from "react-icons/fa6";
 import { API_BASE_URL } from "../constants/api";
 import {
+  CONTACT_EMAIL_DISPLAY,
+  CONTACT_EMAIL_HREF,
   CONTACT_PHONE_DISPLAY,
   CONTACT_PHONE_HREF,
   CONTACT_WHATSAPP_HREF,
@@ -87,7 +90,7 @@ const Contact = () => {
         : name === "email"
           ? !isEmail(value) && !isPhoneLike(value)
           : name === "orgName"
-            ? value.length === 0
+            ? false
             : value.length < 10;
 
     return invalid ? errorMessageFor(name) : undefined;
@@ -271,6 +274,17 @@ const Contact = () => {
                   <span className={styles.feedbackMetaValue}>{details.email}</span>
                 </p>
               )}
+              <p className={styles.feedbackMeta}>{t.contact.success.reachUs}</p>
+              <div className={styles.feedbackActions}>
+                <a href={CONTACT_PHONE_HREF} className={styles.ghostLink}>
+                  <FaPhone />
+                  {CONTACT_PHONE_DISPLAY}
+                </a>
+                <a href={CONTACT_EMAIL_HREF} className={styles.ghostLink}>
+                  <FaEnvelope />
+                  {CONTACT_EMAIL_DISPLAY}
+                </a>
+              </div>
               <button type="button" className={styles.button} onClick={resetForm}>
                 {t.contact.success.reset}
               </button>
@@ -370,7 +384,16 @@ const Contact = () => {
                     <div
                       className={`${styles.inputBox} ${errors.fullName ? styles.hasError : ""}`}
                     >
-                      <label htmlFor="fullName">{t.contact.fields.fullName}</label>
+                      <label htmlFor="fullName" className={styles.fieldLabel}>
+                        {t.contact.fields.fullName}
+                        {errors.fullName && (
+                          <FaTriangleExclamation
+                            className={styles.fieldFlag}
+                            role="img"
+                            aria-label={t.contact.requiredFlag}
+                          />
+                        )}
+                      </label>
                       <input
                         id="fullName"
                         ref={fieldRefs.fullName}
@@ -378,7 +401,7 @@ const Contact = () => {
                         type="text"
                         value={details.fullName}
                         name="fullName"
-                        placeholder={t.contact.placeholder}
+                        placeholder={t.contact.fieldPlaceholders.fullName}
                         onChange={handleFieldChange}
                         onBlur={handleFieldBlur}
                         autoComplete="off"
@@ -395,7 +418,16 @@ const Contact = () => {
                     <div
                       className={`${styles.inputBox} ${errors.email ? styles.hasError : ""}`}
                     >
-                      <label htmlFor="email">{t.contact.fields.contact}</label>
+                      <label htmlFor="email" className={styles.fieldLabel}>
+                        {t.contact.fields.contact}
+                        {errors.email && (
+                          <FaTriangleExclamation
+                            className={styles.fieldFlag}
+                            role="img"
+                            aria-label={t.contact.requiredFlag}
+                          />
+                        )}
+                      </label>
                       <input
                         id="email"
                         ref={fieldRefs.email}
@@ -403,7 +435,7 @@ const Contact = () => {
                         type="text"
                         value={details.email}
                         name="email"
-                        placeholder={t.contact.placeholder}
+                        placeholder={t.contact.fieldPlaceholders.contact}
                         onChange={handleFieldChange}
                         onBlur={handleFieldBlur}
                         autoComplete="off"
@@ -420,15 +452,23 @@ const Contact = () => {
                     <div
                       className={`${styles.inputBox} ${errors.orgName ? styles.hasError : ""}`}
                     >
-                      <label htmlFor="orgName">{t.contact.fields.orgName}</label>
+                      <label htmlFor="orgName" className={styles.fieldLabel}>
+                        {t.contact.fields.orgName}
+                        {errors.orgName && (
+                          <FaTriangleExclamation
+                            className={styles.fieldFlag}
+                            role="img"
+                            aria-label={t.contact.requiredFlag}
+                          />
+                        )}
+                      </label>
                       <input
                         id="orgName"
                         ref={fieldRefs.orgName}
-                        required
                         type="text"
                         value={details.orgName}
                         name="orgName"
-                        placeholder={t.contact.placeholder}
+                        placeholder={t.contact.fieldPlaceholders.orgName}
                         onChange={handleFieldChange}
                         onBlur={handleFieldBlur}
                         autoComplete="off"
@@ -445,7 +485,16 @@ const Contact = () => {
                     <div
                       className={`${styles.inputBox} ${errors.project ? styles.hasError : ""}`}
                     >
-                      <label htmlFor="project">{t.contact.fields.project}</label>
+                      <label htmlFor="project" className={styles.fieldLabel}>
+                        {t.contact.fields.project}
+                        {errors.project && (
+                          <FaTriangleExclamation
+                            className={styles.fieldFlag}
+                            role="img"
+                            aria-label={t.contact.requiredFlag}
+                          />
+                        )}
+                      </label>
                       <textarea
                         id="project"
                         ref={fieldRefs.project}
@@ -453,7 +502,7 @@ const Contact = () => {
                         rows={5}
                         required
                         value={details.project}
-                        placeholder={t.contact.placeholder}
+                        placeholder={t.contact.fieldPlaceholders.project}
                         autoComplete="off"
                         spellCheck={false}
                         onChange={handleFieldChange}

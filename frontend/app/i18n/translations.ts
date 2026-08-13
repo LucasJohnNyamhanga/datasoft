@@ -311,10 +311,16 @@ const sw = {
     fields: {
       fullName: "Jina Kamili",
       contact: "Namba ya Simu au Barua Pepe",
-      orgName: "Jina la lako au Shirika",
+      orgName: "Jina la Shirika (Hiari)",
       project: "Maelezo ya Mradi",
     },
-    placeholder: "Tafadhali jaza sehemu hii",
+    fieldPlaceholders: {
+      fullName: "mfano: Lucas John Nyamhanga",
+      contact: "mfano: 0712 345 678 au wewe@barua.com",
+      orgName: "mfano: Kuafit Gym",
+      project: "mfano: Nahitaji tovuti ya kuuza bidhaa mtandaoni na malipo ya papo hapo",
+    },
+    requiredFlag: "Tafadhali jaza sehemu hii",
     submit: "Tuma Ujumbe",
     sending: "Inatuma Ujumbe",
     successMessage: "Ujumbe wako umetumwa. Tutawasiliana nawe hivi karibuni.",
@@ -326,9 +332,10 @@ const sw = {
       project: "Tafadhali tuandikie maelezo zaidi kuhusu mradi wako.",
     },
     success: {
-      title: "Ombi Lako Limepokelewa",
-      body: "Asante, {name}. Tumepokea maelezo ya mradi wako na timu yetu itawasiliana nawe hivi karibuni.",
+      title: "Poa Sana! Ombi Lako Limepokelewa",
+      body: "Asante sana, {name}, kwa kutuamini! Tumepokea maelezo ya mradi wako kwa furaha, na timu yetu tayari inaanza kuyachambua. Tutawasiliana nawe ndani ya saa chache ili tuanze safari ya kulifanya wazo lako liwe kweli.",
       replyNote: "Tutakujibu kupitia",
+      reachUs: "Unataka kuzungumza sasa hivi? Tupigie au tuandikie moja kwa moja:",
       reset: "Tuma Ombi Jingine",
     },
     failure: {
@@ -1253,10 +1260,16 @@ const en: Dict = {
     fields: {
       fullName: "Full Name",
       contact: "Phone Number or Email",
-      orgName: "Organisation Name",
+      orgName: "Organisation Name (Optional)",
       project: "Project Details",
     },
-    placeholder: "Please fill out this field",
+    fieldPlaceholders: {
+      fullName: "e.g. Mesiana Marco Shauri",
+      contact: "e.g. 0712 345 678 or you@email.com",
+      orgName: "e.g. Kuafit Gym",
+      project: "e.g. I need an online store with instant checkout for my boutique",
+    },
+    requiredFlag: "Please fill out this field",
     submit: "Send Message",
     sending: "Sending Message",
     successMessage: "Your message has been sent. We'll be in touch soon.",
@@ -1268,9 +1281,10 @@ const en: Dict = {
       project: "Please tell us a bit more about your project.",
     },
     success: {
-      title: "Request Received",
-      body: "Thank you, {name}. We've received your project details and our team will be in touch shortly.",
+      title: "You're In! Request Received",
+      body: "Thank you, {name}, for trusting us! We've received your project details and our team is already reviewing them. We'll be in touch within a few hours to start bringing your idea to life.",
       replyNote: "We'll reply to",
+      reachUs: "Want to talk sooner? Reach us directly:",
       reset: "Send Another Request",
     },
     failure: {
