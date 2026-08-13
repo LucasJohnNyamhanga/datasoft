@@ -11,6 +11,7 @@ import {
   FaShieldHalved,
   FaTriangleExclamation,
 } from "react-icons/fa6";
+import { API_BASE_URL } from "../constants/api";
 import {
   CONTACT_PHONE_DISPLAY,
   CONTACT_PHONE_HREF,
@@ -159,7 +160,7 @@ const Contact = () => {
 
     try {
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/contact`,
+        `${API_BASE_URL}/api/contact`,
         { ...details, ...answers },
         config,
       );

@@ -3,7 +3,16 @@
 .container {
   position: relative;
   width: 100%;
-  background: $gradient-navy;
+  background-image:
+    conic-gradient(
+      from 0deg at 0 0,
+      rgba($brass, 0.14) 0 25%,
+      transparent 0 50%,
+      rgba($brass, 0.14) 0 75%,
+      transparent 0
+    ),
+    $gradient-navy;
+  background-size: 22px 22px, auto;
   overflow: hidden;
 }
 
