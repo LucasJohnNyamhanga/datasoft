@@ -318,7 +318,8 @@ const sw = {
       fullName: "mfano: Lucas John Nyamhanga",
       contact: "mfano: 0712 345 678 au wewe@barua.com",
       orgName: "mfano: Kuafit Gym",
-      project: "mfano: Nahitaji tovuti ya kuuza bidhaa mtandaoni na malipo ya papo hapo",
+      project:
+        "mfano: Nahitaji tovuti ya kuuza bidhaa mtandaoni na malipo ya papo hapo",
     },
     requiredFlag: "Tafadhali jaza sehemu hii",
     submit: "Tuma Ujumbe",
@@ -333,9 +334,10 @@ const sw = {
     },
     success: {
       title: "Poa Sana! Ombi Lako Limepokelewa",
-      body: "Asante sana, {name}, kwa kutuamini! Tumepokea maelezo ya mradi wako kwa furaha, na timu yetu tayari inaanza kuyachambua. Tutawasiliana nawe ndani ya saa chache ili tuanze safari ya kulifanya wazo lako liwe kweli.",
+      body: "Asante sana {name}, tumepokea maelezo ya mradi wako kwa furaha, na timu yetu tayari inaanza kuyachambua. Tutawasiliana nawe ndani ya saa chache ili tuanze safari ya kulifanya wazo lako liwe kweli.",
       replyNote: "Tutakujibu kupitia",
-      reachUs: "Unataka kuzungumza sasa hivi? Tupigie au tuandikie moja kwa moja:",
+      reachUs:
+        "Unataka kuzungumza sasa hivi? Tupigie au tuandikie moja kwa moja:",
       reset: "Tuma Ombi Jingine",
     },
     failure: {
@@ -1267,7 +1269,8 @@ const en: Dict = {
       fullName: "e.g. Mesiana Marco Shauri",
       contact: "e.g. 0712 345 678 or you@email.com",
       orgName: "e.g. Kuafit Gym",
-      project: "e.g. I need an online store with instant checkout for my boutique",
+      project:
+        "e.g. I need an online store with instant checkout for my boutique",
     },
     requiredFlag: "Please fill out this field",
     submit: "Send Message",
@@ -1282,7 +1285,7 @@ const en: Dict = {
     },
     success: {
       title: "You're In! Request Received",
-      body: "Thank you, {name}, for trusting us! We've received your project details and our team is already reviewing them. We'll be in touch within a few hours to start bringing your idea to life.",
+      body: "Thank you {name}, we've received your project details and our team is already reviewing them. We'll be in touch within a few hours to start bringing your idea to life.",
       replyNote: "We'll reply to",
       reachUs: "Want to talk sooner? Reach us directly:",
       reset: "Send Another Request",
