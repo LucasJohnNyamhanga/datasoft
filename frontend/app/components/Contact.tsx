@@ -377,6 +377,7 @@ const Contact = () => {
                         type="text"
                         value={details.fullName}
                         name="fullName"
+                        placeholder={t.contact.placeholder}
                         onChange={handleFieldChange}
                         onBlur={handleFieldBlur}
                         autoComplete="off"
@@ -401,6 +402,7 @@ const Contact = () => {
                         type="text"
                         value={details.email}
                         name="email"
+                        placeholder={t.contact.placeholder}
                         onChange={handleFieldChange}
                         onBlur={handleFieldBlur}
                         autoComplete="off"
@@ -425,6 +427,7 @@ const Contact = () => {
                         type="text"
                         value={details.orgName}
                         name="orgName"
+                        placeholder={t.contact.placeholder}
                         onChange={handleFieldChange}
                         onBlur={handleFieldBlur}
                         autoComplete="off"
@@ -449,6 +452,7 @@ const Contact = () => {
                         rows={5}
                         required
                         value={details.project}
+                        placeholder={t.contact.placeholder}
                         autoComplete="off"
                         spellCheck={false}
                         onChange={handleFieldChange}
