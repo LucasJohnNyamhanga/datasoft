@@ -318,6 +318,25 @@ const sw = {
     sending: "Inatuma Ujumbe",
     successMessage: "Ujumbe wako umetumwa. Tutawasiliana nawe hivi karibuni.",
     errorMessage: "Imeshindikana kutuma ujumbe. Tafadhali jaribu tena baadaye.",
+    errors: {
+      fullName: "Tafadhali jaza jina lako kamili.",
+      contact: "Tafadhali jaza namba sahihi ya simu au barua pepe.",
+      orgName: "Tafadhali jaza jina la kampuni au shirika lako.",
+      project: "Tafadhali tuandikie maelezo zaidi kuhusu mradi wako.",
+    },
+    success: {
+      title: "Ombi Lako Limepokelewa",
+      body: "Asante, {name}. Tumepokea maelezo ya mradi wako na timu yetu itawasiliana nawe hivi karibuni.",
+      replyNote: "Tutakujibu kupitia",
+      reset: "Tuma Ombi Jingine",
+    },
+    failure: {
+      title: "Imeshindikana Kutuma Ujumbe",
+      body: "Samahani, kuna hitilafu ya kiufundi kwa sasa. Tafadhali jaribu tena, au wasiliana nasi moja kwa moja.",
+      retry: "Jaribu Tena",
+      call: "Piga Simu",
+      whatsapp: "WhatsApp",
+    },
   },
   footer: {
     visitUs: "TUTEMBELEE",
@@ -1240,6 +1259,25 @@ const en: Dict = {
     sending: "Sending Message",
     successMessage: "Your message has been sent. We'll be in touch soon.",
     errorMessage: "Failed to send message. Please try again later.",
+    errors: {
+      fullName: "Please enter your full name.",
+      contact: "Please enter a valid phone number or email.",
+      orgName: "Please enter your company or organisation name.",
+      project: "Please tell us a bit more about your project.",
+    },
+    success: {
+      title: "Request Received",
+      body: "Thank you, {name}. We've received your project details and our team will be in touch shortly.",
+      replyNote: "We'll reply to",
+      reset: "Send Another Request",
+    },
+    failure: {
+      title: "Message Failed to Send",
+      body: "Sorry, something went wrong on our end. Please try again, or reach us directly.",
+      retry: "Try Again",
+      call: "Call Us",
+      whatsapp: "WhatsApp",
+    },
   },
   footer: {
     visitUs: "VISIT US",

@@ -364,6 +364,163 @@
   opacity: 0.85;
 }
 
+.errorText {
+  margin: 0.5rem 0 0;
+  font-family: $font-body;
+  font-weight: 500;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: $rust;
+  animation: errorTextIn 0.25s $ease-standard both;
+}
+
+.hasError {
+  input,
+  textarea {
+    border-bottom-color: $rust;
+  }
+}
+
+// Post-submit confirmation / failure state — replaces the wizard in place so
+// the visitor never loses the panel they were just filling in.
+.feedbackPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem 0;
+  animation: feedbackIn 0.6s $ease-standard both;
+}
+
+.feedbackIcon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  animation: feedbackIconIn 0.6s $ease-standard both;
+  animation-delay: 0.1s;
+}
+
+.feedbackIconSuccess {
+  color: $cobalt-bright;
+}
+
+.feedbackIconError {
+  color: $rust;
+}
+
+.feedbackTitle {
+  font-family: $font-display;
+  font-weight: 420;
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  line-height: 1.2;
+  color: $ivory;
+  margin: 0 0 0.75rem;
+}
+
+.feedbackBody {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: $bone;
+  max-width: 38ch;
+  margin: 0;
+}
+
+.feedbackMeta {
+  font-family: $font-body;
+  font-weight: 500;
+  font-size: 0.82rem;
+  color: $ink-soft;
+  margin: 1rem 0 0;
+}
+
+.feedbackMetaValue {
+  color: $cobalt-bright;
+  font-weight: 600;
+}
+
+.feedbackPanel .button {
+  align-self: center;
+  margin-top: 2rem;
+}
+
+.feedbackActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.ghostLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 1rem 1.5rem;
+  background: transparent;
+  border: 1px solid rgba($brass-dim, 0.55);
+  border-radius: $radius-sm;
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $ivory;
+  text-decoration: none;
+  transition: border-color 0.2s $ease-standard, color 0.2s $ease-standard;
+
+  svg {
+    font-size: 0.85rem;
+  }
+
+  &:hover {
+    border-color: $brass;
+    color: $brass-bright;
+  }
+}
+
+@keyframes feedbackIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes feedbackIconIn {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes errorTextIn {
+  from {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feedbackPanel,
+  .feedbackIcon,
+  .errorText {
+    animation: none;
+  }
+}
+
 @media (max-width: 640px) {
   .container {
     margin-top: -28px;
@@ -392,5 +549,19 @@
       left: 0.75rem;
       font-size: 5.5rem;
     }
+  }
+
+  .feedbackPanel .button {
+    align-self: stretch;
+    width: 100%;
+  }
+
+  .feedbackActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ghostLink {
+    justify-content: center;
   }
 }
