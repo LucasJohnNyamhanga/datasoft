@@ -11,9 +11,13 @@ export const SITE_NAME = "DataSoft Tanzania";
 // which reads ?lang= after mount), but that's the same URL bots resolve
 // for the English variant, so metadata/JSON-LD generated server-side needs
 // to key off this same query param to actually match what gets rendered.
-export type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
+export type SearchParams = Promise<{
+  [key: string]: string | string[] | undefined;
+}>;
 
-export async function resolveSearchLocale(searchParams: SearchParams): Promise<Locale> {
+export async function resolveSearchLocale(
+  searchParams: SearchParams,
+): Promise<Locale> {
   const { lang } = await searchParams;
   const value = Array.isArray(lang) ? lang[0] : lang;
   return value === "en" ? "en" : "sw";
@@ -37,7 +41,7 @@ export const ORGANIZATION_JSON_LD = {
   "@type": "LocalBusiness",
   "@id": `${SITE_URL}/#organization`,
   name: SITE_NAME,
-  alternateName: "DataSoft",
+  alternateName: "DataSoft Tanzania",
   url: SITE_URL,
   logo: `${SITE_URL}/brainas.svg`,
   image: `${SITE_URL}/brainas.svg`,
