@@ -60,20 +60,16 @@
   }
 }
 
+// Static, not hovered — these are informational cards with no link or
+// click target, so (per the same reasoning as the home Hero's stat rail)
+// they don't get a hover-lift that would imply they're clickable.
 .step {
   position: relative;
   padding: 2rem 1.75rem 1.9rem;
   background-color: $obsidian;
   border: 1px solid $fog-border;
   border-radius: $radius-md * 2;
-  box-shadow: 0 18px 32px -26px rgba(0, 0, 0, 0.35);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-
-  &:hover {
-    transform: translateY(-3px);
-    border-color: $deep-signal;
-    box-shadow: 0 22px 40px -24px rgba(0, 0, 0, 0.45);
-  }
+  box-shadow: $shadow-soft;
 }
 
 .number {

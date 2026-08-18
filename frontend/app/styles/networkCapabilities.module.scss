@@ -62,19 +62,13 @@
   }
 }
 
+// Static, not hovered — informational tiles with no link or click target.
 .card {
   padding: $space-md;
   background-color: $carbon-plate;
   border: 1px solid $fog-border;
   border-radius: $radius-md;
-  transition: border-color 0.25s $ease-standard, transform 0.25s $ease-standard,
-    box-shadow 0.25s $ease-standard;
-
-  &:hover {
-    border-color: $signal-blue;
-    transform: translateY(-2px);
-    box-shadow: 0 20px 32px -24px rgba(0, 0, 0, 0.28);
-  }
+  box-shadow: $shadow-soft;
 }
 
 .icon {

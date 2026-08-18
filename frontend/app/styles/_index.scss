@@ -97,6 +97,16 @@ $gutter: clamp(1.25rem, 5vw, 6rem);
 $ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
 $glow-accent: 0 0 40px rgba(106, 228, 255, 0.22); // Spectral Cyan glow
 
+// Elevation — shadows tinted toward Abyss Navy rather than pure black, so a
+// "lifted" card reads as a material shift within the same color family
+// instead of a generic flat drop-shadow smudge.
+$shadow-soft: 0 14px 30px -20px rgba(4, 8, 18, 0.55);
+$shadow-elevated: 0 24px 48px -22px rgba(4, 8, 18, 0.65);
+// Shared "floating device shell" shadow — reused identically across every
+// service page's terminal/topology/editor mockup so they all sit on the
+// same tinted lift instead of a generic black smudge.
+$shadow-device: 0 40px 70px -32px rgba(4, 8, 18, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
 // Gradients — built only from the palette above, used to add richness/flow
 // to large flat surfaces (shells, buttons, the closing register).
 $gradient-shell: linear-gradient(165deg, #{$carbon-plate} 0%, #{$void-canvas} 60%);

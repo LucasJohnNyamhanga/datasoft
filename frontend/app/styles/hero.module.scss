@@ -118,6 +118,11 @@
     background: #ffffff;
     transform: translateY(-1px);
   }
+
+  &:active {
+    background: $cloud-mist;
+    transform: translateY(0) scale(0.97);
+  }
 }
 
 .outlineButton {
@@ -128,6 +133,10 @@
   &:hover {
     color: $ice-blue;
     border-color: $ice-blue;
+  }
+
+  &:active {
+    transform: scale(0.97);
   }
 }
 
@@ -147,13 +156,13 @@
   container-type: inline-size;
   background: $carbon-plate;
   border: 1px solid rgba($fog-border, 0.14);
-  border-radius: 20px;
+  border-radius: $radius-md;
   padding: 1.5rem;
 }
 
 .statFeatured {
   background: linear-gradient(165deg, rgba(112, 220, 211, 0.16), $carbon-plate 55%);
-  border-color: $phosphor-mint;
+  border-color: rgba($phosphor-mint, 0.35);
 }
 
 .statTop {
@@ -178,7 +187,7 @@
 
 .statFeatured .statIcon {
   background: rgba(112, 220, 211, 0.14);
-  border-color: $phosphor-mint;
+  border-color: rgba($phosphor-mint, 0.4);
   color: $phosphor-mint;
 }
 

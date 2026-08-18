@@ -8,7 +8,7 @@
 
   &.scrolled {
     border-bottom-color: $steel-border;
-    box-shadow: 0 12px 30px -18px rgba(0, 0, 0, 0.6);
+    box-shadow: $shadow-soft;
   }
 }
 
@@ -121,7 +121,8 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   white-space: nowrap;
-  transition: border-color 0.25s $ease-standard, color 0.25s $ease-standard;
+  transition: border-color 0.25s $ease-standard, color 0.25s $ease-standard,
+    transform 0.25s $ease-standard;
 
   &:hover {
     border-color: $signal-blue;
@@ -130,6 +131,10 @@
     .formIcon {
       transform: translateX(3px);
     }
+  }
+
+  &:active {
+    transform: scale(0.96);
   }
 }
 
@@ -251,7 +256,7 @@
   background-color: $carbon-plate;
   border: 1px solid $steel-border;
   border-radius: $radius-md;
-  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.6);
+  box-shadow: $shadow-elevated;
   opacity: 0;
   pointer-events: none;
   visibility: hidden;

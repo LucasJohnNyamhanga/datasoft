@@ -123,7 +123,7 @@
   background-color: $obsidian;
   border: 1px solid $fog-border;
   border-radius: 999px;
-  box-shadow: 0 8px 20px -12px rgba(0, 0, 0, 0.3);
+  box-shadow: $shadow-soft;
 }
 
 .hubTitle {

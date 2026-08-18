@@ -157,6 +157,10 @@
     transform: translateY(-1px);
     box-shadow: $glow-accent;
   }
+
+  &:active {
+    transform: translateY(0) scale(0.97);
+  }
 }
 
 .outlineButton {
@@ -167,6 +171,10 @@
   &:hover {
     border-color: $deep-signal;
     color: $signal-blue;
+  }
+
+  &:active {
+    transform: scale(0.97);
   }
 }
 

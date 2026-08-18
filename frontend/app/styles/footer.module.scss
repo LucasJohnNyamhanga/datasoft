@@ -179,11 +179,17 @@
     border: 1px solid $steel-border;
     border-radius: $radius-sm;
     color: $ash;
-    transition: border-color 0.2s $ease-standard, color 0.2s $ease-standard;
+    transition: border-color 0.2s $ease-standard, color 0.2s $ease-standard,
+      transform 0.2s $ease-standard;
 
     &:hover {
       border-color: $signal-blue;
       color: $signal-blue;
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(0) scale(0.94);
     }
   }
 }

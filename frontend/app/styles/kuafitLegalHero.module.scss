@@ -141,6 +141,10 @@
     color: $signal-blue;
     border-color: $signal-blue;
   }
+
+  &:active {
+    opacity: 0.75;
+  }
 }
 
 @media (max-width: 640px) {

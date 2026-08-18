@@ -87,8 +87,8 @@ const Hero = () => {
         </div>
 
         <Reveal className={styles.stats} delay={280}>
-          {t.hero.stats.map((stat, i) => (
-            <div key={stat.key} className={`${styles.stat} ${i === 0 ? styles.statFeatured : ""}`}>
+          {t.hero.stats.map((stat) => (
+            <div key={stat.key} className={`${styles.stat} ${styles.statFeatured}`}>
               <div className={styles.statTop}>
                 <span className={styles.statIcon}>{STAT_ICONS[stat.key]}</span>
                 <span className={styles.statHeader}>{stat.header}</span>

@@ -268,6 +268,11 @@
   &:hover {
     border-color: $signal-blue;
     background: rgba($pure-white, 0.08);
+    transform: translateX(2px);
+  }
+
+  &:active {
+    transform: translateX(2px) scale(0.98);
   }
 }
 
@@ -302,6 +307,10 @@
 
   &:hover {
     color: $ice-blue;
+  }
+
+  &:active {
+    color: $signal-blue;
   }
 }
 
@@ -392,6 +401,10 @@
     background: $gradient-accent-hover;
     transform: translateY(-1px);
     box-shadow: $glow-accent;
+  }
+
+  &:active {
+    transform: translateY(0) scale(0.97);
   }
 
   &:disabled {
@@ -551,7 +564,8 @@
   text-transform: uppercase;
   color: $pure-white;
   text-decoration: none;
-  transition: border-color 0.2s $ease-standard, color 0.2s $ease-standard;
+  transition: border-color 0.2s $ease-standard, color 0.2s $ease-standard,
+    transform 0.2s $ease-standard;
 
   svg {
     font-size: 0.85rem;
@@ -560,6 +574,10 @@
   &:hover {
     border-color: $signal-blue;
     color: $ice-blue;
+  }
+
+  &:active {
+    transform: scale(0.97);
   }
 }
 

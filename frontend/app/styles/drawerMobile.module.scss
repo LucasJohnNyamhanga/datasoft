@@ -58,7 +58,7 @@
   color: $pure-white;
   width: 82vw;
   max-width: 340px;
-  box-shadow: -12px 0 40px rgba(0, 0, 0, 0.35);
+  box-shadow: -12px 0 40px rgba(4, 8, 18, 0.45);
   transform: translateX(100%);
   visibility: hidden;
   transition: transform 0.35s $ease-standard, visibility 0.35s $ease-standard;
@@ -97,6 +97,10 @@
   &:hover {
     color: $signal-blue;
     padding-left: 0.4rem;
+  }
+
+  &:active {
+    color: $ice-blue;
   }
 }
 

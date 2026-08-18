@@ -73,6 +73,9 @@
   }
 }
 
+// Static, not hovered — informational tiles with no link or click target,
+// so they don't get a hover-lift that would suggest they're clickable
+// (same reasoning as the home Hero's stat rail).
 .card {
   position: relative;
   overflow: hidden;
@@ -81,8 +84,7 @@
   border: 1px solid rgba(217, 218, 229, 0.14);
   border-radius: $radius-md;
   backdrop-filter: blur(6px);
-  transition: border-color 0.25s $ease-standard, background 0.25s $ease-standard,
-    transform 0.25s $ease-standard, box-shadow 0.25s $ease-standard;
+  box-shadow: $shadow-soft;
 
   &::before {
     content: "";
@@ -91,17 +93,6 @@
     z-index: 0;
     pointer-events: none;
     background: linear-gradient(160deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 40%);
-  }
-
-  &:hover {
-    border-color: $deep-signal;
-    background: rgba(240, 240, 240, 0.07);
-    transform: translateY(-3px);
-    box-shadow: 0 24px 44px -28px rgba(0, 0, 0, 0.6);
-
-    .icon {
-      box-shadow: 0 0 0 5px rgba($signal-blue, 0.14);
-    }
   }
 }
 
@@ -124,7 +115,6 @@
   border-radius: 50%;
   color: $ice-blue;
   font-size: 1.1rem;
-  transition: box-shadow 0.35s $ease-standard;
 }
 
 .numeral {

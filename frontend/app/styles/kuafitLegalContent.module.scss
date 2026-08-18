@@ -75,6 +75,10 @@
   &:focus-visible {
     color: $pure-white;
   }
+
+  &:active {
+    color: $signal-blue;
+  }
 }
 
 .tocIndex {
@@ -258,6 +262,10 @@
   svg {
     transform: translateX(3px);
   }
+}
+
+.supportCta:active .supportCtaButton {
+  transform: translateY(0) scale(0.97);
 }
 
 .supportNumber {

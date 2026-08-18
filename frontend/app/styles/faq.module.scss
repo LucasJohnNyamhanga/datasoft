@@ -115,6 +115,10 @@
       transform: translateX(4px);
     }
   }
+
+  &:active {
+    opacity: 0.75;
+  }
 }
 
 .list {
@@ -135,13 +139,20 @@
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  padding: 1.5rem 0;
+  padding: 1.5rem 1rem;
+  margin: 0 -1rem;
   background: none;
   border: none;
+  border-radius: $radius-sm;
   cursor: pointer;
   text-align: left;
   font: inherit;
   color: inherit;
+  transition: background 0.25s $ease-standard;
+
+  &:hover {
+    background: rgba($pure-white, 0.03);
+  }
 
   &:hover .question {
     color: $signal-blue;
@@ -149,6 +160,10 @@
 
   &:hover .toggle span {
     background-color: $signal-blue;
+  }
+
+  &:active {
+    background: rgba($pure-white, 0.05);
   }
 
   &:focus-visible {

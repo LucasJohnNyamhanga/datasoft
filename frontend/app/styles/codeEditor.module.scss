@@ -31,7 +31,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   backdrop-filter: blur(20px) saturate(150%);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
   border: 1px solid var(--ide-border);
-  box-shadow: 0 40px 70px -32px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: $shadow-device;
   isolation: isolate;
 }
 

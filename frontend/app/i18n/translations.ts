@@ -94,38 +94,38 @@ const sw = {
         key: "control",
         header: "Hesabu",
         value: "100%",
-        label: "Udhibiti wa Fedha na Ripoti",
+        label: "Fuatilia Kila Shilingi, Papo kwa Papo",
       },
 
       {
         key: "peace",
         header: "Muda Wote",
         value: "24/7",
-        label: "Amani ya Akili na Muda",
+        label: "Angalia Biashara Yako Popote Ulipo",
       },
       {
         key: "payments",
         header: "Malipo",
         value: "Papo Hapo",
-        label: "Malipo kwa Njia ya Mtandao",
+        label: "Pokea Malipo Bila Kuwafuatilia Wateja",
       },
       {
         key: "backups",
         header: "Taarifa",
         value: "Salama",
-        label: "Taarifa Zinahifadhiwa",
+        label: "Taarifa Zako Haziwezi Kupotea",
       },
       {
         key: "automation",
         header: "Ufanisi",
         value: "Otomatiki",
-        label: "Mfumo Unajiendesha Wenyewe",
+        label: "Inajiendesha, Bila Uwepo Wewe",
       },
       {
         key: "errors",
         header: "Usalama",
         value: "100%",
-        label: "Kuondoa Makosa na Wizi",
+        label: "Komesha Hasara za Makosa na Wizi",
       },
     ],
   },
@@ -579,8 +579,7 @@ const sw = {
         },
         {
           value: "100%",
-          label:
-            "mfumo maalumu ulioundwa kwa ajili ya biashara yako tu kwa kuangalia mahitaji yako na nini biashara yako inachokihitaji",
+          label: "mfumo maalumu ulioundwa kwa ajili ya biashara yako",
         },
       ],
       process: {
@@ -905,7 +904,7 @@ const sw = {
         {
           value: "100%",
           label:
-            "dhana za kipekee iliyo maalumukwa ajili yako, hakuna kikolezo cha jumla kinachotumika kwa wateja wote",
+            "dhana za kipekee ziliyzundwa kwa ajili yako, hakuna kikolezo cha jumla kinachotumika kwa wateja wote",
         },
         {
           value: "Mfumo Pekee",
@@ -1030,38 +1029,38 @@ const en: Dict = {
         key: "control",
         header: "Accounting",
         value: "100%",
-        label: "Financial Control & Reporting",
+        label: "Every Shilling Tracked, In Real Time",
       },
 
       {
         key: "peace",
         header: "Always On",
         value: "24/7",
-        label: "Peace of Mind & Time",
+        label: "Check In From Anywhere, Any Time",
       },
       {
         key: "payments",
         header: "Payments",
         value: "Instant",
-        label: "Online Payments",
+        label: "Get Paid Without Chasing Anyone",
       },
       {
         key: "backups",
         header: "Data",
         value: "Secure",
-        label: "Automatic Backups",
+        label: "Never Lose a Record Again",
       },
       {
         key: "automation",
         header: "Efficiency",
         value: "Automated",
-        label: "Self-Managing System",
+        label: "Runs Itself, Even When You Don't",
       },
       {
         key: "errors",
         header: "Security",
         value: "100%",
-        label: "Eliminating Errors & Theft",
+        label: "No More Losses to Theft or Mistakes",
       },
     ],
   },
