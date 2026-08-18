@@ -119,7 +119,7 @@ const sw = {
         key: "automation",
         header: "Ufanisi",
         value: "Otomatiki",
-        label: "Inajiendesha, Bila Uwepo Wewe",
+        label: "Inajiendesha, Bila Uwepo Wako",
       },
       {
         key: "errors",
