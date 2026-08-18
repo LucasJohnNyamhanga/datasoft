@@ -3,9 +3,9 @@
 // The Graphics service page gets its own hero â€” structurally identical to
 // the homepage Hero and SoftwareHero (copy left, live studio panel right)
 // so the page family reads as one system, with its own breadcrumb since,
-// unlike the homepage, this page sits one level deep. Same radial-glow
-// atmosphere as the homepage Hero, so this "secondary hero" reads with the
-// same lit-from-behind lift instead of sitting flat on bare void-canvas.
+// unlike the homepage, this page sits one level deep. The glow is pulled
+// off-center rather than centered â€” a stage-light asymmetry that suits a
+// design studio better than the homepage's calm, balanced version.
 
 .container {
   position: relative;
@@ -20,7 +20,7 @@
   content: "";
   position: absolute;
   top: -12%;
-  left: 50%;
+  left: 20%;
   width: min(76rem, 140vw);
   aspect-ratio: 1;
   transform: translateX(-50%);

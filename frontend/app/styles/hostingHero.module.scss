@@ -3,9 +3,9 @@
 // The Hosting service page gets its own hero â€” structurally identical to
 // the homepage Hero and SoftwareHero (copy left, live device panel right)
 // so all three read as one family, with its own breadcrumb since, unlike
-// the homepage, this page sits one level deep. Same radial-glow atmosphere
-// as the homepage Hero, so this "secondary hero" reads with the same
-// lit-from-behind lift instead of sitting flat on bare void-canvas.
+// the homepage, this page sits one level deep. Two glows instead of one â€”
+// redundancy made visible, echoing the uptime/backups/failover pitch this
+// page is actually making.
 
 .container {
   position: relative;
@@ -19,12 +19,22 @@
 .container::before {
   content: "";
   position: absolute;
-  top: -12%;
-  left: 50%;
-  width: min(76rem, 140vw);
+  top: -14%;
+  left: 4%;
+  width: min(52rem, 100vw);
   aspect-ratio: 1;
-  transform: translateX(-50%);
-  background: radial-gradient(circle, rgba($phosphor-mint, 0.16) 0%, rgba($signal-blue, 0.1) 45%, transparent 75%);
+  background: radial-gradient(circle, rgba($phosphor-mint, 0.2) 0%, transparent 72%);
+  pointer-events: none;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  bottom: -22%;
+  right: 2%;
+  width: min(46rem, 90vw);
+  aspect-ratio: 1;
+  background: radial-gradient(circle, rgba($signal-blue, 0.14) 0%, transparent 72%);
   pointer-events: none;
 }
 

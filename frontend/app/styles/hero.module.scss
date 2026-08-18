@@ -9,6 +9,9 @@
   overflow: hidden;
 }
 
+// Homepage carries the umbrella message across every service, so its glow
+// stays dead-center and symmetric — the calm, canonical anchor the service
+// pages' more directional treatments read as variations of.
 .container::before {
   content: "";
   position: absolute;
@@ -47,13 +50,38 @@
   text-align: center;
 }
 
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: $hero-void-body;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: $ash;
+  border: 1px solid $fog-border;
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  margin: 0 0 1.5rem;
+}
+
+.eyebrowDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $phosphor-mint;
+  flex: none;
+}
+
 .headline {
-  font-family: $hero-void-display;
+  font-family: $hero-headline-serif;
+  font-optical-sizing: auto;
   font-weight: 600;
   font-size: clamp(1.9rem, 4.4vw, 3.75rem);
   line-height: 1.2;
   letter-spacing: -0.01em;
-  color: $cloud-mist;
+  color: #ffffff;
   max-width: 22ch;
   margin: 0 0 1.75rem;
 }

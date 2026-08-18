@@ -3,9 +3,9 @@
 // The Networking page's own hero â€” mirrors the homepage Hero's split
 // layout so the "IDE-style device panel" language carries over directly,
 // with a breadcrumb reinstated so wayfinding back to Home still works.
-// Same radial-glow atmosphere as the homepage Hero, so this "secondary
-// hero" reads with the same lit-from-behind lift instead of sitting flat
-// on bare void-canvas.
+// The glow is a diagonal mesh wash rather than a single radial source â€”
+// this is the one page where "mesh" is the literal subject, not just a
+// figure of speech.
 
 .container {
   position: relative;
@@ -19,12 +19,11 @@
 .container::before {
   content: "";
   position: absolute;
-  top: -12%;
-  left: 50%;
-  width: min(76rem, 140vw);
-  aspect-ratio: 1;
-  transform: translateX(-50%);
-  background: radial-gradient(circle, rgba($phosphor-mint, 0.16) 0%, rgba($signal-blue, 0.1) 45%, transparent 75%);
+  inset: -8% -8% 40% -8%;
+  background: $gradient-mesh;
+  opacity: 0.14;
+  mask-image: radial-gradient(ellipse 70% 65% at 50% 15%, #000 0%, transparent 78%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 65% at 50% 15%, #000 0%, transparent 78%);
   pointer-events: none;
 }
 

@@ -31,6 +31,12 @@ $hero-font-body: $font-body;
 $hero-void-display: $font-display;
 $hero-void-body: $font-body;
 
+// Homepage hero headline only (app/components/Hero.tsx) — Fraunces, a
+// warm-contrast display serif, self-hosted via next/font/google in
+// app/layout.tsx (--font-fraunces). Every other heading site-wide, including
+// the other service-page heroes, stays on $font-display (Cal Sans).
+$hero-headline-serif: var(--font-fraunces), Georgia, "Times New Roman", serif;
+
 // Surfaces — two section-level tiers ($void-canvas / $carbon-plate) that
 // alternate down the page so consecutive sections are never the same tone,
 // plus $obsidian as a third, still-lighter tier for a card nested inside a

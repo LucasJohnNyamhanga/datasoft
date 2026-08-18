@@ -61,6 +61,11 @@ const Hero = () => {
     <div id="home" className={styles.container}>
       <div className={styles.frame}>
         <div className={styles.copy}>
+          <Reveal as="p" className={styles.eyebrow}>
+            <span className={styles.eyebrowDot} />
+            {t.hero.eyebrow}
+          </Reveal>
+
           <Reveal as="h1" className={styles.headline}>
             {t.hero.headlinePrefix}{" "}
             <span className={styles.rotator}>

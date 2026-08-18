@@ -3,9 +3,9 @@
 // The Software service page gets its own hero â€” structurally identical to
 // the homepage Hero (copy left, live IDE panel right) so the two pages
 // read as one family, with its own breadcrumb since, unlike the homepage,
-// this page sits one level deep. Same radial-glow atmosphere as the
-// homepage Hero, so this "secondary hero" reads with the same
-// lit-from-behind lift instead of sitting flat on bare void-canvas.
+// this page sits one level deep. Where the homepage glow stays ambient,
+// this one carries a faint blueprint grid â€” literal to "systems built with
+// rigor," the page's actual subject matter.
 
 .container {
   position: relative;
@@ -19,12 +19,25 @@
 .container::before {
   content: "";
   position: absolute;
-  top: -12%;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba($cloud-mist, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba($cloud-mist, 0.06) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: radial-gradient(ellipse 65% 70% at 50% 10%, #000 0%, transparent 78%);
+  -webkit-mask-image: radial-gradient(ellipse 65% 70% at 50% 10%, #000 0%, transparent 78%);
+  pointer-events: none;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  top: -16%;
   left: 50%;
-  width: min(76rem, 140vw);
+  width: min(50rem, 120vw);
   aspect-ratio: 1;
   transform: translateX(-50%);
-  background: radial-gradient(circle, rgba($phosphor-mint, 0.16) 0%, rgba($signal-blue, 0.1) 45%, transparent 75%);
+  background: radial-gradient(circle, rgba($phosphor-mint, 0.14) 0%, transparent 72%);
   pointer-events: none;
 }
 

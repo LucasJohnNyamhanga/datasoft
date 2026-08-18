@@ -5,6 +5,21 @@
   width: 100%;
   background: $carbon-plate;
   scroll-margin-top: var(--nav-height, 90px);
+  overflow: hidden;
+}
+
+// Diagonal mesh wash (same device as NetworkingHero) rather than a single
+// radial glow — faded in from the top via the mask so it reads as ambient
+// wash behind the sticky intro, not a spotlight competing with the list.
+.container::before {
+  content: "";
+  position: absolute;
+  inset: -8% -8% 55% -8%;
+  background: $gradient-mesh;
+  opacity: 0.12;
+  mask-image: radial-gradient(ellipse 65% 60% at 22% 0%, #000 0%, transparent 78%);
+  -webkit-mask-image: radial-gradient(ellipse 65% 60% at 22% 0%, #000 0%, transparent 78%);
+  pointer-events: none;
 }
 
 .subContainer {

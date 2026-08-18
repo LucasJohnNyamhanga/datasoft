@@ -8,6 +8,21 @@
   scroll-margin-top: var(--nav-height, 90px);
 }
 
+// Off-center spotlight (same device as GraphicsHero) rather than a
+// centered glow — pulls the eye toward the "Uwezo Wetu" heading instead of
+// sitting dead-center behind the whole card grid.
+.container::before {
+  content: "";
+  position: absolute;
+  top: -14%;
+  left: 18%;
+  width: min(60rem, 130vw);
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba($signal-blue, 0.16) 0%, transparent 72%);
+  pointer-events: none;
+}
+
 .network {
   z-index: 1;
 }

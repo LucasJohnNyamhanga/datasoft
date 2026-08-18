@@ -58,7 +58,7 @@ export const ORGANIZATION_JSON_LD = {
     "@type": "Country",
     name: "Tanzania",
   },
-  sameAs: [] as string[],
+  sameAs: ["https://www.instagram.com/datasofttanzania/"] as string[],
 } as const;
 
 type FaqItem = { question: string; answer: string };

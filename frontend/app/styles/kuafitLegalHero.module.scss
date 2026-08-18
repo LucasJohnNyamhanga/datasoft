@@ -9,9 +9,9 @@
   overflow: hidden;
 }
 
-// Same radial-glow atmosphere as the homepage Hero, so this legal-page
-// header reads with the same lit-from-behind lift instead of sitting flat
-// on bare void-canvas.
+// Legal copy earns trust through restraint, not energy — centered and
+// symmetric like the homepage, not the asymmetric/directional treatments
+// the service pages use to signal their own personality.
 .container::before {
   content: "";
   position: absolute;

@@ -1,7 +1,7 @@
 import "./styles/globals.scss";
 import Navigation from "./components/Navigation";
 import { LanguageProvider } from "./i18n/LanguageContext";
-import { Geist, Cal_Sans } from "next/font/google";
+import { Geist, Cal_Sans, Fraunces } from "next/font/google";
 import JsonLd from "./components/JsonLd";
 import { ORGANIZATION_JSON_LD, SITE_URL } from "./lib/seo";
 
@@ -21,6 +21,17 @@ const calSans = Cal_Sans({
   subsets: ["latin"],
   variable: "--font-calsans",
   weight: "400",
+  display: "swap",
+});
+
+// Homepage hero headline only — a warm-contrast display serif, kept separate
+// from Cal Sans (which still carries every other heading site-wide).
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+  weight: "variable",
+  style: ["normal"],
+  axes: ["opsz"],
   display: "swap",
 });
 
@@ -123,7 +134,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="sw" className={`${geist.variable} ${calSans.variable}`}>
+    <html lang="sw" className={`${geist.variable} ${calSans.variable} ${fraunces.variable}`}>
       <head>
         <JsonLd data={ORGANIZATION_JSON_LD} />
       </head>

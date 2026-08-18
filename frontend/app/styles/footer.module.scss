@@ -1,5 +1,8 @@
 ﻿@use "index" as *;
 
+// Two glows, same device used by HostingHero — one mint, one blue, echoing
+// the pair of accents (logo mint, links/headers blue) the footer itself
+// carries, rather than the homepage Hero's single centered glow.
 .container {
   position: relative;
   width: 100%;
@@ -14,6 +17,28 @@
     $carbon-plate;
   background-size: 22px 22px, auto;
   overflow: hidden;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: -18%;
+  left: -6%;
+  width: min(40rem, 90vw);
+  aspect-ratio: 1;
+  background: radial-gradient(circle, rgba($phosphor-mint, 0.16) 0%, transparent 72%);
+  pointer-events: none;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  bottom: -22%;
+  right: -4%;
+  width: min(44rem, 90vw);
+  aspect-ratio: 1;
+  background: radial-gradient(circle, rgba($signal-blue, 0.14) 0%, transparent 72%);
+  pointer-events: none;
 }
 
 .network {
@@ -46,7 +71,7 @@
   gap: 0.65rem;
 
   span {
-    font-family: $font-body;
+    font-family: $font-display;
     font-weight: 700;
     font-size: 1.3rem;
     color: $phosphor-mint;
@@ -236,7 +261,19 @@
   overflow: hidden;
   pointer-events: none;
   user-select: none;
-  text-align: right;
+  display: flex;
+  justify-content: center;
+}
+
+// Shrink-to-fit box sized to its widest line ("DataSoft"), so the pair
+// centers as one lockup within .watermarkBand while "Tanzania" keeps its
+// own edge flush against "DataSoft"'s edge (align-items: flex-end) — same
+// relative position as before, just no longer pinned to the band's own
+// right edge.
+.watermarkGroup {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 // Shared type treatment for the "DataSoft" / "Tanzania" lockup â€” same
@@ -246,7 +283,7 @@
   display: block;
   line-height: 1;
   white-space: nowrap;
-  font-family: $font-body;
+  font-family: $font-display;
   font-weight: 700;
   letter-spacing: -0.02em;
   color: $ice-blue;
