@@ -1054,7 +1054,7 @@ const en: Dict = {
         key: "automation",
         header: "Efficiency",
         value: "Automated",
-        label: "Runs Itself, Even When You Don't",
+        label: "Runs itself, without your presence.",
       },
       {
         key: "errors",
