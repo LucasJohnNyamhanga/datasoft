@@ -632,6 +632,11 @@ const sw = {
               "Tunaweza kukujengea mfano wa kwanza unaobofya (prototype) ndani ya masaa 48 baada ya mazungumzo yetu ya kwanza. Muda kamili wa mradi unategemea ukubwa wake, na tutakupa ratiba kamili baada ya kuelewa mahitaji yako.",
           },
           {
+            question: "Je, mnaweza kujenga programu ya simu (mobile app) pia?",
+            answer:
+              "Ndiyo. Mifumo mingi tunayoijenga huja na programu ya simu inayotumia data hai ile ile, kwa mfano programu ya wateja kando ya dashibodi ya usimamizi. Tunajenga kwa iOS na Android.",
+          },
+          {
             question: "Je, mnaweza kuboresha mfumo niliokuwa nao tayari?",
             answer:
               "Ndiyo. Tunaweza kuongeza vipengele vipya, kuboresha kasi, au kuunganisha mfumo wako uliopo na huduma nyingine badala ya kuanza kutoka mwanzo.",
@@ -956,6 +961,11 @@ const sw = {
         intro: "Majibu ya haraka kabla ya kuanza mradi wako wa chapa.",
         contactPrompt: "Bado una swali kuhusu muundo wako? Wasiliana nasi",
         items: [
+          {
+            question: "Muundo wangu utachukua muda gani kukamilika?",
+            answer:
+              "Inategemea ukubwa wa mradi, lakini nembo rahisi huchukua siku chache tu, wakati mfumo kamili wa chapa (nembo, miongozo, vifaa vya masoko) huchukua wiki moja hadi mbili. Tutakupa muda kamili baada ya hatua ya Ugunduzi.",
+          },
           {
             question: "Nitapata dhana ngapi za kuchagua?",
             answer:
@@ -1564,6 +1574,11 @@ const en: Dict = {
               "We can have a clickable first prototype ready within 48 hours of our first conversation. Full project timelines depend on scope, and we'll give you a complete schedule once we understand your requirements.",
           },
           {
+            question: "Do you build mobile apps too?",
+            answer:
+              "Yes. Most of the systems we build come with a companion mobile app running on the same live data, for example a customer-facing app alongside an admin dashboard. We build for both iOS and Android.",
+          },
+          {
             question: "Can you improve a system I already have?",
             answer:
               "Yes. We can add new features, improve performance, or connect your existing system to other services instead of starting from scratch.",
@@ -1883,6 +1898,11 @@ const en: Dict = {
         intro: "Quick answers before you start your brand's project.",
         contactPrompt: "Still have a question about your design? Get in touch",
         items: [
+          {
+            question: "How long will my design take to complete?",
+            answer:
+              "It depends on the project's scope. A standalone logo can be ready in a few days, while a full brand identity system, logo, guidelines, marketing materials, typically takes one to two weeks. We'll give you a firm timeline after the Discover stage.",
+          },
           {
             question: "How many concepts do I get to choose from?",
             answer:
