@@ -1,20 +1,27 @@
 @use "index" as *;
 
 // Same dark sapphire glass "device" chrome as the Hero's CodeEditor window —
-// reused here so the four capability mockups read as the site's one
-// recurring signature visual device rather than four one-off illustrations.
-
-$mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monospace;
+// reused here for the outer shell (blur, layered navy surfaces, hairline
+// borders) but rebuilt as a real SaaS product shell (icon sidebar, app
+// header with notifications/avatar, live-sync footer) instead of a
+// developer tool, so the four capability mockups read as four dashboards a
+// client could actually be handed rather than a code editor.
 
 .window {
-  --ide-bg: #{rgba($sapphire-deep, 0.82)};
-  --ide-bg-raised: #{rgba($sapphire-raised, 0.6)};
-  --ide-bg-editor: #{rgba($sapphire-deep, 0.5)};
-  --ide-border: #{rgba($bone, 0.14)};
-  --ide-text: #cfe0f2;
-  --ide-text-dim: #{rgba(#cfe0f2, 0.45)};
-  --ide-accent: #{$cobalt-bright};
-  --ide-accent-2: #{$brass-bright};
+  // Three navy-blue surface tiers (darkest to lightest) instead of one flat
+  // fill, so the chrome reads as real layered glass — the same Abyss/Tide
+  // relationship the Hero's CodeEditor window uses, plus one extra
+  // "obsidian" tier here for a nested/lifted panel.
+  --ide-bg: #{rgba($void-canvas, 0.88)};
+  --ide-bg-raised: #{rgba($carbon-plate, 0.68)};
+  --ide-bg-editor: #{rgba($void-canvas, 0.58)};
+  --ide-bg-lifted: #{rgba($obsidian, 0.6)};
+  --ide-border: #{rgba($fog-border, 0.16)};
+  --ide-text: #{$cloud-mist};
+  --ide-text-dim: #{rgba($cloud-mist, 0.45)};
+  --ide-accent: #{$phosphor-mint};
+  --ide-accent-2: #{$ice-blue};
+  --ide-accent-dim: #{$deep-signal};
 
   position: absolute;
   inset: 0;
@@ -28,7 +35,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   backdrop-filter: blur(20px) saturate(150%);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
   border: 1px solid var(--ide-border);
-  box-shadow: 0 40px 70px -32px rgba(7, 16, 28, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 40px 70px -32px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   isolation: isolate;
 }
 
@@ -38,68 +45,212 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 38%);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 38%),
+    radial-gradient(circle at 88% 6%, rgba($ice-blue, 0.22) 0%, rgba($ice-blue, 0) 42%);
 }
+
+// ---- App header (app icon, name, notifications, avatar) -----------------
 
 .titleBar {
   position: relative;
   z-index: 1;
   display: flex;
   align-items: center;
+  gap: 0.55rem;
   flex: none;
-  height: 2.35rem;
-  padding: 0 0.9rem;
+  height: 2.7rem;
+  padding: 0 0.75rem;
   background: var(--ide-bg-raised);
   border-bottom: 1px solid var(--ide-border);
 }
 
-.trafficLights {
+.appIconTile {
+  flex: none;
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  flex: none;
+  justify-content: center;
+  width: 1.55rem;
+  height: 1.55rem;
+  color: $void-canvas;
+  background: $gradient-accent;
+  border-radius: $radius-sm;
+  box-shadow: 0 3px 8px -3px rgba(0, 0, 0, 0.5);
+
+  svg {
+    width: 0.85rem;
+    height: 0.85rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
 }
 
-.dotRed,
-.dotYellow,
-.dotGreen {
-  width: 0.62rem;
-  height: 0.62rem;
-  border-radius: 50%;
-  opacity: 0.9;
-}
-
-.dotRed {
-  background: #ff5f57;
-}
-.dotYellow {
-  background: #febc2e;
-}
-.dotGreen {
-  background: #28c840;
-}
-
-.titleText {
-  flex: 1;
-  text-align: center;
-  font-family: $mono;
-  font-size: 0.68rem;
-  letter-spacing: 0.02em;
-  color: var(--ide-text-dim);
+.appName {
+  min-width: 0;
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: -0.01em;
+  color: var(--ide-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .titleSpacer {
-  width: 3.6rem;
-  flex: none;
+  flex: 1;
+  min-width: 0.5rem;
 }
+
+.headerBell {
+  position: relative;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--ide-text-dim);
+
+  svg {
+    width: 0.8rem;
+    height: 0.8rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+.headerAvatar {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: 0.5rem;
+  letter-spacing: 0.01em;
+  color: var(--ide-accent-2);
+  background: linear-gradient(155deg, rgba($phosphor-mint, 0.3), rgba($ice-blue, 0.3));
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+}
+
+// ---- Sidebar (persistent icon rail, real dashboard nav) ------------------
 
 .body {
   position: relative;
   z-index: 1;
   flex: 1;
   min-height: 0;
+  display: flex;
+}
+
+.sidebar {
+  flex: none;
+  width: 2.05rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.65rem 0;
+  background: var(--ide-bg-raised);
+  border-right: 1px solid var(--ide-border);
+}
+
+.sidebarIcon {
+  position: relative;
+  flex: none;
+  width: 1.02rem;
+  height: 1.02rem;
+  color: var(--ide-text-dim);
+  opacity: 0.75;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+.sidebarIconActive {
+  position: relative;
+  color: var(--ide-accent-2);
+  opacity: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -0.65rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 1.05rem;
+    border-radius: 1px;
+    background: var(--ide-accent-2);
+  }
+}
+
+.bodyContent {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
   padding: clamp(1rem, 3vw, 1.5rem);
   display: flex;
+}
+
+// ---- Live-sync footer (replaces a code editor's lint/branch status bar) --
+
+.syncBar {
+  position: relative;
+  z-index: 1;
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  height: 1.7rem;
+  padding: 0 0.75rem;
+  background: var(--ide-bg-raised);
+  border-top: 1px solid var(--ide-border);
+  font-family: $font-body;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--ide-text-dim);
+  overflow: hidden;
+}
+
+.syncDot {
+  flex: none;
+  width: 0.36rem;
+  height: 0.36rem;
+  border-radius: 50%;
+  background: var(--ide-accent);
+  box-shadow: 0 0 0 3px rgba($phosphor-mint, 0.16);
+  animation: pulseDot 1.8s ease-in-out infinite;
+}
+
+.syncText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .sidebar {
+    display: none;
+  }
 }
 
 // ---- System / dashboard mock -------------------------------------------
@@ -107,7 +258,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
 .sysBody {
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 0.6rem;
   width: 100%;
   min-height: 0;
 }
@@ -120,12 +271,42 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
 .statTile {
   flex: 1;
   display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  padding: 0.55rem 0.7rem;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.42rem 0.7rem;
   background: var(--ide-bg-raised);
   border: 1px solid var(--ide-border);
   border-radius: $radius-sm;
+}
+
+.statIconChip {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--ide-accent-2);
+  background: linear-gradient(155deg, rgba($phosphor-mint, 0.22), rgba($ice-blue, 0.22));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: $radius-sm;
+
+  svg {
+    width: 0.85rem;
+    height: 0.85rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+.statTileBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+  min-width: 0;
 }
 
 .statValue {
@@ -143,9 +324,94 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   color: var(--ide-text-dim);
 }
 
+.statTrend {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 0.16rem;
+  padding: 0.08rem 0.34rem 0.08rem 0.26rem;
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: 0.54rem;
+  letter-spacing: 0.01em;
+  border-radius: 999px;
+}
+
+.statTrendUp {
+  color: var(--ide-accent);
+  background: rgba(112, 220, 211, 0.14);
+}
+
+.statTrendDown {
+  color: $signal-red;
+  background: rgba($signal-red, 0.14);
+}
+
+.statTrendIcon {
+  width: 0.48rem;
+  height: 0.48rem;
+  fill: currentColor;
+  flex: none;
+}
+
+// ---- Monthly-target ring tile ------------------------------------------
+
+.ringTile {
+  flex: 0.9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.22rem;
+  padding: 0.4rem 0.5rem;
+  background: var(--ide-bg-lifted);
+  border: 1px solid var(--ide-border);
+  border-radius: $radius-sm;
+
+  .statLabel {
+    text-align: center;
+  }
+}
+
+.ringGraphic {
+  position: relative;
+  width: 1.8rem;
+  height: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.ringSvg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.ringTrack {
+  fill: none;
+  stroke: var(--ide-border);
+  stroke-width: 3;
+}
+
+.ringProgress {
+  fill: none;
+  stroke: var(--ide-accent-2);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.ringValue {
+  position: absolute;
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: 0.46rem;
+  color: var(--ide-text);
+}
+
 .sysTable {
-  flex: 1;
-  min-height: 0;
+  flex: none;
   display: flex;
   flex-direction: column;
   background: var(--ide-bg-editor);
@@ -159,7 +425,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   display: grid;
   grid-template-columns: 1.1fr 1.2fr 1fr;
   gap: 0.4rem;
-  padding: 0.45rem 0.7rem;
+  padding: 0.36rem 0.7rem;
   font-family: $font-body;
   font-size: 0.66rem;
 }
@@ -181,18 +447,66 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
     border-bottom: none;
   }
 
-  span {
+  > span {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
 }
 
+.sysClient {
+  display: flex;
+  align-items: center;
+  gap: 0.32rem;
+  min-width: 0;
+}
+
+.avatarChip {
+  flex: none;
+  width: 1.05rem;
+  height: 1.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: 0.4rem;
+  color: var(--ide-accent-2);
+  background: linear-gradient(155deg, rgba($phosphor-mint, 0.22), rgba($ice-blue, 0.22));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+
+.sysClientName {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .sysStatus {
   display: flex;
   align-items: center;
-  gap: 0.35rem;
   color: var(--ide-text-dim);
+}
+
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.14rem 0.44rem;
+  font-weight: 600;
+  border-radius: 999px;
+}
+
+.statusPillDone {
+  color: var(--ide-accent);
+  background: rgba($phosphor-mint, 0.14);
+}
+
+.statusPillActive {
+  color: var(--ide-accent-2);
+  background: rgba($ice-blue, 0.16);
 }
 
 .liveDot {
@@ -200,23 +514,59 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   width: 0.35rem;
   height: 0.35rem;
   border-radius: 50%;
-  background: var(--ide-accent);
+  background: var(--ide-accent-2);
   animation: pulseDot 1.6s ease-in-out infinite;
 }
 
-.sparkline {
+// ---- Sales trend chart (line + area, replaces the flat sparkline) -----
+
+.chartPanel {
   flex: none;
-  height: 2.4rem;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
   gap: 0.3rem;
-  padding: 0 0.1rem;
 }
 
-.sparkBar {
-  flex: 1;
-  border-radius: 2px 2px 0 0;
-  background: linear-gradient(to top, var(--ide-accent-2), rgba($brass-bright, 0.35));
+.chartHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chartTitle {
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.6rem;
+  color: var(--ide-text-dim);
+}
+
+.chartSvg {
+  width: 100%;
+  height: 2.15rem;
+  overflow: visible;
+}
+
+.chartGrid {
+  stroke: var(--ide-border);
+  stroke-width: 0.5;
+}
+
+.chartArea {
+  opacity: 0.9;
+}
+
+.chartLine {
+  stroke: var(--ide-accent-2);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.chartDot {
+  fill: var(--ide-accent-2);
+  stroke: var(--ide-bg);
+  stroke-width: 1.4;
 }
 
 // ---- App / phone mock ----------------------------------------------------
@@ -229,99 +579,122 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   justify-content: center;
 }
 
-.codeGhost {
+// A softly blurred, out-of-focus dashboard panel behind the phone — depth
+// of field rather than a flat placeholder, and dashboard-shaped rather than
+// a code editor, so it reinforces the section's own theme.
+.dashGhost {
   position: absolute;
   inset: 0;
   z-index: 0;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1rem;
   background: var(--ide-bg-editor);
   border: 1px solid var(--ide-border);
-  border-radius: $radius-sm;
-  overflow: hidden;
+  border-radius: $radius-md;
+  filter: blur(1.5px);
+  opacity: 0.55;
 }
 
-.codeGhostBar {
-  flex: none;
+.dashGhostStats {
   display: flex;
-  align-items: center;
-  gap: 0.28rem;
-  padding: 0.4rem 0.55rem;
+  gap: 0.6rem;
+}
+
+.dashGhostStat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.14rem;
+  padding: 0.4rem 0.6rem;
   background: var(--ide-bg-raised);
-  border-bottom: 1px solid var(--ide-border);
+  border: 1px solid var(--ide-border);
+  border-radius: $radius-sm;
 }
 
-.ghostDot {
-  width: 0.32rem;
-  height: 0.32rem;
-  border-radius: 50%;
-  background: var(--ide-text-dim);
-  opacity: 0.6;
-}
-
-.codeGhostBody {
-  flex: 1;
-  min-height: 0;
-  padding: 0.6rem 0.7rem;
-  font-family: $mono;
-  font-size: clamp(0.5rem, 1.4vw, 0.6rem);
-  line-height: 1.7;
-  overflow: hidden;
-}
-
-.codeGhostLine {
-  display: flex;
-}
-
-.codeGhostLineNumber {
-  flex: none;
-  width: 1.1rem;
-  text-align: right;
-  margin-right: 0.6rem;
-  color: var(--ide-text-dim);
-  opacity: 0.5;
-  user-select: none;
-}
-
-.codeGhostText {
-  white-space: pre;
+.dashGhostStatValue {
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: 0.62rem;
   color: var(--ide-text);
-  opacity: 0.85;
 }
 
-.kw {
-  color: var(--ide-accent);
+.dashGhostStatLabel {
+  font-family: $font-body;
+  font-weight: 500;
+  font-size: 0.46rem;
+  letter-spacing: 0.02em;
+  color: var(--ide-text-dim);
 }
 
-.type {
-  color: var(--ide-accent-2);
+.dashGhostChart {
+  width: 100%;
+  height: 2.4rem;
+  overflow: visible;
 }
 
-.str {
-  color: #7ec699;
+.dashGhostArea {
+  fill: var(--ide-accent-2);
+  opacity: 0.18;
+}
+
+.dashGhostLine {
+  stroke: var(--ide-accent-2);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
 }
 
 .phone {
   position: relative;
   z-index: 1;
-  width: 50%;
-  max-width: 9.5rem;
-  aspect-ratio: 9 / 18.5;
+  width: 58%;
+  max-width: 10.75rem;
+  aspect-ratio: 9 / 16.5;
   padding: 0.4rem;
-  background: linear-gradient(160deg, #2c313b 0%, #12151a 100%);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 1.5rem;
-  box-shadow: 0 22px 38px -20px rgba(7, 16, 28, 0.7), inset 0 0 0 1px rgba(0, 0, 0, 0.35);
+  background: linear-gradient(160deg, #3a3f4a 0%, $carbon-plate 22%, $void-canvas 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1.65rem;
+  box-shadow: 0 24px 44px -20px rgba(0, 0, 0, 0.72), inset 0 0 0 1px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 
-.phoneButton {
+// Titanium-style side controls sitting on the frame edge, like a real
+// device rather than a single generic nub.
+.phoneVolumeUp,
+.phoneVolumeDown,
+.phonePower {
   position: absolute;
-  top: 20%;
-  right: -2px;
-  width: 2px;
-  height: 11%;
   border-radius: 2px 0 0 2px;
-  background: rgba(255, 255, 255, 0.22);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.08));
+  box-shadow: -1px 0 2px rgba(0, 0, 0, 0.35);
+}
+
+.phoneVolumeUp,
+.phoneVolumeDown {
+  left: -2px;
+  width: 2px;
+  height: 9%;
+}
+
+.phoneVolumeUp {
+  top: 17%;
+}
+
+.phoneVolumeDown {
+  top: 28%;
+}
+
+.phonePower {
+  right: -2px;
+  left: auto;
+  top: 21%;
+  width: 2px;
+  height: 13%;
+  border-radius: 0 2px 2px 0;
+  box-shadow: 1px 0 2px rgba(0, 0, 0, 0.35);
 }
 
 .phoneScreen {
@@ -330,61 +703,359 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 0.6rem 0.5rem 0.55rem;
-  background: var(--ide-bg-editor);
-  border-radius: 1.05rem;
+  padding: 0.4rem 0.42rem 0.32rem;
+  background: linear-gradient(175deg, var(--ide-bg-editor) 0%, var(--ide-bg) 100%);
+  border-radius: 1.25rem;
   overflow: hidden;
 }
 
-.phoneNotch {
-  flex: none;
-  align-self: center;
-  width: 1.7rem;
-  height: 0.24rem;
-  margin-bottom: 0.45rem;
+.phoneIsland {
+  position: absolute;
+  top: 0.32rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  width: 2.1rem;
+  height: 0.42rem;
   border-radius: 999px;
-  background: rgba(0, 0, 0, 0.5);
+  background: #06070a;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 
-.phoneHeader {
+.phoneStatusBar {
+  flex: none;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.1rem;
+}
+
+.phoneClock {
   font-family: $font-body;
   font-weight: 700;
-  font-size: 0.62rem;
+  font-size: 0.42rem;
+  letter-spacing: 0.01em;
   color: var(--ide-text);
-  text-align: center;
 }
 
-.phoneList {
-  flex: 1;
-  min-height: 0;
+.phoneStatusIcons {
   display: flex;
-  flex-direction: column;
-  gap: 0.32rem;
-  margin-top: 0.55rem;
+  align-items: center;
+  gap: 0.18rem;
+  color: var(--ide-text);
 }
 
-.phoneRow {
+.signalIcon,
+.wifiIcon {
+  width: 0.56rem;
+  height: 0.42rem;
+  flex: none;
+}
+
+.signalIcon rect {
+  fill: currentColor;
+}
+
+.wifiIcon path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.3;
+  stroke-linecap: round;
+}
+
+.wifiIcon circle {
+  fill: currentColor;
+}
+
+.batteryIcon {
+  position: relative;
+  flex: none;
+  width: 0.85rem;
+  height: 0.42rem;
+  padding: 0.05rem;
+  border: 0.6px solid currentColor;
+  border-radius: 2px;
+  opacity: 0.95;
+}
+
+.batteryIcon::after {
+  content: "";
+  position: absolute;
+  top: 30%;
+  right: -0.14rem;
+  width: 0.09rem;
+  height: 40%;
+  border-radius: 0 1px 1px 0;
+  background: currentColor;
+}
+
+.batteryFill {
+  display: block;
+  width: 80%;
+  height: 100%;
+  background: currentColor;
+  border-radius: 0.5px;
+}
+
+.phoneAppHeader {
+  flex: none;
   display: flex;
   align-items: center;
   gap: 0.3rem;
-  padding: 0.28rem 0.3rem;
-  background: var(--ide-bg-raised);
-  border-radius: 3px;
+  margin-top: 0.4rem;
 }
 
-.phoneDot {
+.phoneAppIcon {
   flex: none;
-  width: 0.4rem;
-  height: 0.4rem;
-  border-radius: 2px;
-  background: var(--ide-accent-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.95rem;
+  height: 0.95rem;
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: 0.44rem;
+  color: var(--ide-accent-2);
+  background: linear-gradient(155deg, rgba($phosphor-mint, 0.28), rgba($ice-blue, 0.28));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.32rem;
+}
+
+.phoneAppTitle {
+  flex: 1;
+  min-width: 0;
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: 0.56rem;
+  color: var(--ide-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.phoneBell {
+  position: relative;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.95rem;
+  height: 0.95rem;
+  background: var(--ide-bg-raised);
+  border: 1px solid var(--ide-border);
+  border-radius: 50%;
+
+  svg {
+    width: 0.44rem;
+    height: 0.44rem;
+    fill: none;
+    stroke: var(--ide-text-dim);
+    stroke-width: 1.3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+.bellDot {
+  position: absolute;
+  top: -0.02rem;
+  right: -0.02rem;
+  width: 0.22rem;
+  height: 0.22rem;
+  border-radius: 50%;
+  background: $signal-red;
+  border: 1px solid var(--ide-bg-editor);
+}
+
+.phoneStatCard {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  margin-top: 0.42rem;
+  padding: 0.4rem 0.5rem;
+  background: var(--ide-bg-lifted);
+  border: 1px solid var(--ide-border);
+  border-radius: $radius-sm;
+}
+
+.phoneStatCardText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  min-width: 0;
+}
+
+.phoneStatCardLabel {
+  font-family: $font-body;
+  font-weight: 500;
+  font-size: 0.4rem;
+  letter-spacing: 0.02em;
+  color: var(--ide-text-dim);
+}
+
+.phoneStatCardValue {
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: 0.6rem;
+  color: var(--ide-text);
+}
+
+.phoneSparkline {
+  flex: none;
+  width: 40%;
+  height: 1.4rem;
+  overflow: visible;
+}
+
+.phoneSparklineLine {
+  stroke: var(--ide-accent-2);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.phoneSparklineDot {
+  fill: var(--ide-accent-2);
+  stroke: var(--ide-bg-raised);
+  stroke-width: 1.2;
+}
+
+.phoneList {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.24rem;
+  margin-top: 0.42rem;
+  overflow: hidden;
+}
+
+.phoneCartBar {
+  flex: none;
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.36rem 0.5rem;
+  background: linear-gradient(155deg, rgba($phosphor-mint, 0.16), rgba($ice-blue, 0.1));
+  border: 1px solid var(--ide-border);
+  border-radius: $radius-sm;
+}
+
+.phoneCartIcon {
+  position: relative;
+  flex: none;
+  width: 0.85rem;
+  height: 0.85rem;
+  color: var(--ide-accent-2);
+
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+.phoneCartBadge {
+  position: absolute;
+  top: -0.18rem;
+  right: -0.18rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0.36rem;
+  height: 0.36rem;
+  padding: 0 0.05rem;
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: 0.28rem;
+  color: $void-canvas;
+  background: $signal-red;
+  border: 1px solid var(--ide-bg-editor);
+  border-radius: 999px;
+}
+
+.phoneCartText {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.04rem;
+}
+
+.phoneCartLabel {
+  font-family: $font-body;
+  font-weight: 500;
+  font-size: 0.38rem;
+  letter-spacing: 0.02em;
+  color: var(--ide-text-dim);
+}
+
+.phoneCartValue {
+  font-family: $font-body;
+  font-weight: 700;
+  font-size: 0.52rem;
+  color: var(--ide-text);
+}
+
+.phoneCartArrow {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.62rem;
+  height: 0.62rem;
+  font-size: 0.5rem;
+  font-weight: 700;
+  color: $void-canvas;
+  background: $gradient-accent;
+  border-radius: 50%;
+}
+
+.phoneRow {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 0.32rem;
+  padding: 0.26rem 0.34rem;
+  background: var(--ide-bg-raised);
+  border: 1px solid var(--ide-border);
+  border-radius: 0.4rem;
+}
+
+.phoneRowIcon {
+  flex: none;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 0.24rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.phoneRowIcon0 {
+  background: linear-gradient(155deg, rgba($ice-blue, 0.55), rgba($ice-blue, 0.15));
+}
+
+.phoneRowIcon1 {
+  background: linear-gradient(155deg, rgba($phosphor-mint, 0.55), rgba($phosphor-mint, 0.15));
+}
+
+.phoneRowIcon2 {
+  background: linear-gradient(155deg, rgba($verdant-edge, 0.5), rgba($verdant-edge, 0.14));
 }
 
 .phoneName {
   flex: 1;
   min-width: 0;
   font-family: $font-body;
-  font-size: 0.5rem;
+  font-size: 0.48rem;
   color: var(--ide-text);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -395,22 +1066,69 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   flex: none;
   font-family: $font-body;
   font-weight: 600;
-  font-size: 0.47rem;
+  font-size: 0.44rem;
   color: var(--ide-text-dim);
 }
 
-.phoneCta {
+.phoneAddBtn {
   flex: none;
-  margin-top: 0.5rem;
-  padding: 0.4rem;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.62rem;
+  height: 0.62rem;
   font-family: $font-body;
   font-weight: 700;
-  font-size: 0.55rem;
-  letter-spacing: 0.03em;
-  color: $sapphire-deep;
-  background: $gradient-gold;
+  font-size: 0.46rem;
+  line-height: 1;
+  color: $void-canvas;
+  background: $gradient-accent;
+  border-radius: 50%;
+}
+
+.phoneTabBar {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 0.4rem;
+  padding-top: 0.32rem;
+  border-top: 1px solid var(--ide-border);
+}
+
+.tabIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.72rem;
+  height: 0.72rem;
+  color: var(--ide-text-dim);
+  opacity: 0.75;
+}
+
+.tabIconActive {
+  color: var(--ide-accent-2);
+  opacity: 1;
+}
+
+.tabIconSvg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.phoneHomeIndicator {
+  flex: none;
+  align-self: center;
+  width: 1.9rem;
+  height: 0.16rem;
+  margin-top: 0.3rem;
   border-radius: 999px;
+  background: rgba(255, 255, 255, 0.3);
 }
 
 // ---- Website mock ---------------------------------------------------------
@@ -466,8 +1184,8 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   font-weight: 700;
   font-size: 0.46rem;
   letter-spacing: 0.03em;
-  color: $sapphire-deep;
-  background: $gradient-gold;
+  color: $void-canvas;
+  background: $gradient-accent;
   border-radius: 999px;
   white-space: nowrap;
 }
@@ -535,8 +1253,8 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   font-weight: 700;
   font-size: 0.5rem;
   letter-spacing: 0.03em;
-  color: $sapphire-deep;
-  background: $gradient-gold;
+  color: $void-canvas;
+  background: $gradient-accent;
   border-radius: 999px;
 }
 
@@ -545,7 +1263,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   flex: 0.85;
   border-radius: $radius-sm;
   overflow: hidden;
-  background: linear-gradient(155deg, #{$navy-raised} 0%, #{$navy-deep} 55%, #{$sapphire-deep} 100%);
+  background: linear-gradient(155deg, #{$carbon-plate} 0%, #{$void-canvas} 55%, #{$void-canvas} 100%);
 }
 
 .webHeroImage::before {
@@ -565,7 +1283,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   font-size: 0.4rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: $sapphire-deep;
+  color: $void-canvas;
   background: var(--ide-accent-2);
   border-radius: 999px;
 }
@@ -580,10 +1298,10 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   align-items: center;
   gap: 0.1rem;
   padding: 0.5rem 0.7rem;
-  background: var(--ide-bg-raised);
+  background: var(--ide-bg-lifted);
   border: 1px solid var(--ide-border);
   border-radius: $radius-sm;
-  box-shadow: 0 14px 26px -16px rgba(7, 16, 28, 0.6);
+  box-shadow: 0 14px 26px -16px rgba(0, 0, 0, 0.6);
 }
 
 .webScore {
@@ -668,8 +1386,8 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba($brass-bright, 0.4) 0%,
-    rgba($cobalt-bright, 0.2) 45%,
+    rgba($ice-blue, 0.4) 0%,
+    rgba($phosphor-mint, 0.2) 45%,
     transparent 72%
   );
   filter: blur(7px);
@@ -680,7 +1398,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   width: 100%;
   height: 100%;
   overflow: visible;
-  filter: drop-shadow(0 6px 12px rgba(7, 16, 28, 0.5));
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.5));
   animation: brainFloat 5.5s ease-in-out infinite;
 }
 
@@ -726,11 +1444,11 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   gap: 0.3rem;
   width: 4rem;
   padding: 0.55rem;
-  background: var(--ide-bg-raised);
+  background: var(--ide-bg-lifted);
   border: 1px solid var(--ide-border);
   border-radius: $radius-sm;
   transform: rotate(-6deg);
-  box-shadow: 0 16px 28px -18px rgba(7, 16, 28, 0.6);
+  box-shadow: 0 16px 28px -18px rgba(0, 0, 0, 0.6);
 }
 
 .cardLine {
@@ -745,11 +1463,11 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   0%,
   100% {
     opacity: 1;
-    box-shadow: 0 0 0 0 rgba(74, 144, 217, 0.5);
+    box-shadow: 0 0 0 0 rgba(166, 229, 242, 0.5);
   }
   50% {
     opacity: 0.6;
-    box-shadow: 0 0 0 3px rgba(74, 144, 217, 0);
+    box-shadow: 0 0 0 3px rgba(166, 229, 242, 0);
   }
 }
 
@@ -775,6 +1493,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
 
 @media (prefers-reduced-motion: reduce) {
   .liveDot,
+  .syncDot,
   .brainMark,
   .logoMark::before {
     animation: none;

@@ -3,7 +3,7 @@
 .container {
   position: relative;
   width: 100%;
-  background: $gradient-shell;
+  background: $carbon-plate;
   overflow: hidden;
   scroll-margin-top: var(--nav-height, 90px);
 }
@@ -20,7 +20,8 @@
   height: 240px;
   opacity: 0.16;
   pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24.2'%20height='42'%3E%3Cg%20fill='none'%20stroke='%23d4a017'%20stroke-width='1.4'%20stroke-opacity='0.9'%3E%3Cpolygon%20points='12.1,-7%2012.1,7%200,14%20-12.1,7%20-12.1,-7%200,-14'/%3E%3Cpolygon%20points='36.3,-7%2036.3,7%2024.2,14%2012.1,7%2012.1,-7%2024.2,-14'/%3E%3Cpolygon%20points='12.1,35%2012.1,49%200,56%20-12.1,49%20-12.1,35%200,28'/%3E%3Cpolygon%20points='36.3,35%2036.3,49%2024.2,56%2012.1,49%2012.1,35%2024.2,28'/%3E%3Cpolygon%20points='24.2,14%2024.2,28%2012.1,35%200,28%200,14%2012.1,7'/%3E%3C/g%3E%3C/svg%3E");
+  overflow: hidden;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24.2'%20height='42'%3E%3Cg%20fill='none'%20stroke='%230092e4'%20stroke-width='1.4'%20stroke-opacity='0.9'%3E%3Cpolygon%20points='12.1,-7%2012.1,7%200,14%20-12.1,7%20-12.1,-7%200,-14'/%3E%3Cpolygon%20points='36.3,-7%2036.3,7%2024.2,14%2012.1,7%2012.1,-7%2024.2,-14'/%3E%3Cpolygon%20points='12.1,35%2012.1,49%200,56%20-12.1,49%20-12.1,35%200,28'/%3E%3Cpolygon%20points='36.3,35%2036.3,49%2024.2,56%2012.1,49%2012.1,35%2024.2,28'/%3E%3Cpolygon%20points='24.2,14%2024.2,28%2012.1,35%200,28%200,14%2012.1,7'/%3E%3C/g%3E%3C/svg%3E");
   background-size: 24.2px 42px;
   mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
@@ -44,7 +45,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: $brass;
+  color: $signal-blue;
   margin: 0 0 1rem;
 }
 
@@ -54,7 +55,7 @@
   font-size: clamp(1.9rem, 4vw, 3.1rem);
   line-height: 1.16;
   letter-spacing: -0.01em;
-  color: $ivory;
+  color: $pure-white;
   margin: 0;
   max-width: 22ch;
 }
@@ -68,7 +69,7 @@
   font-weight: 400;
   font-size: 1.0625rem;
   line-height: 1.65;
-  color: $bone;
+  color: $ash;
   max-width: 52ch;
   margin: 1.25rem 0 0;
 }
@@ -91,7 +92,7 @@
 .dotGrid {
   position: absolute;
   inset: -25%;
-  background-image: radial-gradient(circle, rgba($bone, 0.16) 1px, transparent 1.5px);
+  background-image: radial-gradient(circle, rgba($fog-border, 0.16) 1px, transparent 1.5px);
   background-size: 22px 22px;
   transform: rotate(-4deg) skewX(6deg) scale(1.3);
 }
@@ -119,17 +120,17 @@
   align-items: center;
   gap: 0.55rem;
   padding: 0.35rem 0.9rem 0.35rem 0.4rem;
-  background-color: $ivory-card;
-  border: 1px solid $bone;
+  background-color: $obsidian;
+  border: 1px solid $fog-border;
   border-radius: 999px;
-  box-shadow: 0 8px 20px -12px rgba(23, 32, 26, 0.3);
+  box-shadow: 0 8px 20px -12px rgba(0, 0, 0, 0.3);
 }
 
 .hubTitle {
   font-family: $font-body;
   font-weight: 700;
   font-size: 0.78rem;
-  color: $ink;
+  color: $pure-white;
   margin: 0;
   line-height: 1.2;
 }
@@ -140,7 +141,7 @@
   font-size: 0.62rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: $ink-soft;
+  color: $ash;
   margin: 0;
   line-height: 1.2;
 }

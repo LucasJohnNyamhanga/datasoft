@@ -3,7 +3,7 @@
 .toggle {
   display: inline-flex;
   align-items: center;
-  border: 1px solid $brass-dim;
+  border: 1px solid $deep-signal;
   border-radius: $radius-md;
   overflow: hidden;
   flex-shrink: 0;
@@ -12,7 +12,7 @@
     appearance: none;
     background: transparent;
     border: none;
-    color: $brass;
+    color: $signal-blue;
     font-family: $font-body;
     font-weight: 600;
     font-size: 0.7rem;
@@ -22,32 +22,32 @@
     transition: background-color 0.2s $ease-standard, color 0.2s $ease-standard;
 
     &:hover {
-      color: $brass-bright;
+      color: $ice-blue;
     }
   }
 
   .active {
-    background-color: $brass;
-    color: $sapphire-deep;
+    background-color: $signal-blue;
+    color: $void-canvas;
 
     &:hover {
-      color: $sapphire-deep;
+      color: $void-canvas;
     }
   }
 
   &.light {
-    border-color: $bone;
+    border-color: $fog-border;
 
     button {
-      color: $coffee;
+      color: $graphite;
     }
 
     .active {
-      background-color: $ink;
-      color: $ivory;
+      background-color: $pure-white;
+      color: $pure-white;
 
       &:hover {
-        color: $ivory;
+        color: $pure-white;
       }
     }
   }

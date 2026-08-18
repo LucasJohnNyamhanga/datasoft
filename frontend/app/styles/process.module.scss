@@ -3,7 +3,7 @@
 .container {
   position: relative;
   width: 100%;
-  background: $gradient-shell;
+  background: $void-canvas;
   overflow: hidden;
   scroll-margin-top: var(--nav-height, 90px);
 }
@@ -26,7 +26,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: $brass;
+  color: $signal-blue;
   margin: 0 0 1rem;
 }
 
@@ -35,7 +35,7 @@
   font-weight: 420;
   font-size: clamp(1.75rem, 3.2vw, 2.75rem);
   line-height: 1.1;
-  color: $ivory;
+  color: $pure-white;
   margin: 0;
   max-width: 20ch;
 }
@@ -45,7 +45,7 @@
   font-weight: 400;
   font-size: 1.0625rem;
   line-height: 1.65;
-  color: $bone;
+  color: $ash;
   max-width: 60ch;
   margin: 1.5rem 0 0;
 }
@@ -71,7 +71,21 @@
 .step {
   position: relative;
   padding-top: 1.75rem;
-  border-top: 1px solid $sapphire-line;
+  border-top: 1px solid $steel-border;
+
+  // A node on the connecting rail — reads the four steps as one linked
+  // flow rather than four unrelated cards.
+  &::before {
+    content: "";
+    position: absolute;
+    top: -3.5px;
+    left: 0;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: $phosphor-mint;
+    box-shadow: 0 0 10px rgba($phosphor-mint, 0.55);
+  }
 }
 
 .number {
@@ -79,7 +93,7 @@
   font-family: $font-display;
   font-weight: 600;
   font-size: 1.75rem;
-  color: $cobalt-bright;
+  color: $phosphor-mint;
   margin-bottom: 1.5rem;
 }
 
@@ -87,7 +101,7 @@
   font-family: $font-body;
   font-weight: 600;
   font-size: 1.15rem;
-  color: $ivory;
+  color: $pure-white;
   margin: 0 0 0.85rem;
 }
 
@@ -96,7 +110,7 @@
   font-weight: 400;
   font-size: 0.9375rem;
   line-height: 1.6;
-  color: $bone;
+  color: $ash;
   margin: 0;
 }
 
@@ -105,7 +119,7 @@
   font-style: italic;
   font-weight: 400;
   font-size: 1.25rem;
-  color: $brass-bright;
+  color: $ice-blue;
   max-width: 42ch;
   margin: $space-lg 0 0;
 }
@@ -119,8 +133,8 @@
   opacity: 0.16;
   pointer-events: none;
   overflow: hidden;
-  mask-image: linear-gradient(to right, transparent 0%, black 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
 }
 
 .latticeInner {

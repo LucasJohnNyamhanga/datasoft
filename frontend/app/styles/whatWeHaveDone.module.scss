@@ -3,7 +3,7 @@
 .container {
   position: relative;
   width: 100%;
-  background: linear-gradient(to bottom, $ivory 0%, $ivory 88%, rgba($navy-deep, 0.07) 100%);
+  background: $carbon-plate;
   scroll-margin-top: var(--nav-height, 90px);
 }
 
@@ -31,7 +31,7 @@
 .circuitBandInner {
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%3E%3Cg%20fill='none'%20stroke='%236b4226'%20stroke-width='1.6'%20stroke-opacity='0.85'%3E%3Cpath%20d='M10%2010H40V35'/%3E%3Cpath%20d='M60%205V30H90'/%3E%3Cpath%20d='M15%2055H45V85'/%3E%3Cpath%20d='M65%2060H95V90'/%3E%3Cpath%20d='M5%2070V95H30'/%3E%3C/g%3E%3Cg%20fill='%236b4226'%20fill-opacity='0.85'%3E%3Ccircle%20cx='10'%20cy='10'%20r='2.2'/%3E%3Ccircle%20cx='40'%20cy='35'%20r='2.2'/%3E%3Ccircle%20cx='60'%20cy='5'%20r='2.2'/%3E%3Ccircle%20cx='90'%20cy='30'%20r='2.2'/%3E%3Ccircle%20cx='15'%20cy='55'%20r='2.2'/%3E%3Ccircle%20cx='45'%20cy='85'%20r='2.2'/%3E%3Ccircle%20cx='65'%20cy='60'%20r='2.2'/%3E%3Ccircle%20cx='95'%20cy='90'%20r='2.2'/%3E%3Ccircle%20cx='5'%20cy='70'%20r='2.2'/%3E%3Ccircle%20cx='30'%20cy='95'%20r='2.2'/%3E%3Ccircle%20cx='40'%20cy='10'%20r='3.2'/%3E%3Ccircle%20cx='45'%20cy='55'%20r='3.2'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%3E%3Cg%20fill='none'%20stroke='%230092e4'%20stroke-width='1.6'%20stroke-opacity='0.85'%3E%3Cpath%20d='M10%2010H40V35'/%3E%3Cpath%20d='M60%205V30H90'/%3E%3Cpath%20d='M15%2055H45V85'/%3E%3Cpath%20d='M65%2060H95V90'/%3E%3Cpath%20d='M5%2070V95H30'/%3E%3C/g%3E%3Cg%20fill='%230092e4'%20fill-opacity='0.85'%3E%3Ccircle%20cx='10'%20cy='10'%20r='2.2'/%3E%3Ccircle%20cx='40'%20cy='35'%20r='2.2'/%3E%3Ccircle%20cx='60'%20cy='5'%20r='2.2'/%3E%3Ccircle%20cx='90'%20cy='30'%20r='2.2'/%3E%3Ccircle%20cx='15'%20cy='55'%20r='2.2'/%3E%3Ccircle%20cx='45'%20cy='85'%20r='2.2'/%3E%3Ccircle%20cx='65'%20cy='60'%20r='2.2'/%3E%3Ccircle%20cx='95'%20cy='90'%20r='2.2'/%3E%3Ccircle%20cx='5'%20cy='70'%20r='2.2'/%3E%3Ccircle%20cx='30'%20cy='95'%20r='2.2'/%3E%3Ccircle%20cx='40'%20cy='10'%20r='3.2'/%3E%3Ccircle%20cx='45'%20cy='55'%20r='3.2'/%3E%3C/g%3E%3C/svg%3E");
   background-size: 100px 100px;
 }
 
@@ -41,7 +41,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: $coffee;
+  color: $graphite;
   margin: 0 0 1rem;
 }
 
@@ -50,7 +50,7 @@
   font-weight: 420;
   font-size: clamp(1.75rem, 3.2vw, 2.75rem);
   line-height: 1.1;
-  color: $ink;
+  color: $pure-white;
   margin: 0;
   max-width: 22ch;
 }
@@ -60,7 +60,7 @@
   font-weight: 400;
   font-size: 1.0625rem;
   line-height: 1.65;
-  color: $ink-soft;
+  color: $ash;
   max-width: 60ch;
   margin: 1.5rem 0 0;
 }
@@ -76,7 +76,7 @@
   flex-direction: column-reverse;
   gap: 2rem;
   padding: $space-lg 0;
-  border-top: 1px solid $bone;
+  border-top: 1px solid $fog-border;
 
   &:first-child {
     border-top: none;
@@ -88,6 +88,9 @@
   position: relative;
   width: 100%;
   aspect-ratio: 4 / 3;
+  // Below ~405px wide, 4/3 shrinks faster than the dashboard mock's
+  // (mostly fixed-size) content — floor the height so its table never clips.
+  min-height: 23rem;
 }
 
 .copy {
@@ -100,7 +103,7 @@
   font-family: $hero-font-display;
   font-weight: 380;
   font-size: clamp(1.75rem, 3vw, 2.25rem);
-  color: $brass-dim;
+  color: $deep-signal;
   opacity: 0.5;
   line-height: 1;
   margin: 0 0 0.75rem;
@@ -110,7 +113,7 @@
   font-family: $font-body;
   font-weight: 600;
   font-size: clamp(1.15rem, 2vw, 1.4rem);
-  color: $ink;
+  color: $pure-white;
   margin: 0 0 0.85rem;
 }
 
@@ -119,7 +122,7 @@
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.65;
-  color: $ink-soft;
+  color: $ash;
   max-width: 42ch;
   margin: 0 0 1.25rem;
 }
@@ -138,8 +141,8 @@
   font-weight: 600;
   font-size: 0.7rem;
   letter-spacing: 0.04em;
-  color: $coffee;
-  background-color: rgba(107, 66, 38, 0.08);
+  color: $graphite;
+  background-color: rgba(174, 174, 183, 0.08);
   padding: 0.35rem 0.7rem;
   border-radius: $radius-sm;
 }

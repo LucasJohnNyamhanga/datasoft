@@ -15,7 +15,7 @@
     display: block;
     width: 100%;
     height: 2px;
-    background-color: $brass;
+    background-color: $signal-blue;
     transition: transform 0.35s $ease-standard, opacity 0.35s $ease-standard;
     transform-origin: center;
   }
@@ -37,7 +37,7 @@
   position: fixed;
   inset: 0;
   z-index: 1200;
-  background-color: rgba(13, 44, 78, 0.55);
+  background-color: rgba(0, 0, 0, 0.55);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s $ease-standard;
@@ -55,7 +55,7 @@
   bottom: 0;
   z-index: 1201;
   background: $gradient-shell;
-  color: $ivory;
+  color: $pure-white;
   width: 82vw;
   max-width: 340px;
   box-shadow: -12px 0 40px rgba(0, 0, 0, 0.35);
@@ -89,13 +89,13 @@
   font-size: 0.95rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: $bone;
+  color: $ash;
   padding: 1rem 0;
-  border-bottom: 1px solid $sapphire-line;
+  border-bottom: 1px solid $steel-border;
   transition: color 0.2s $ease-standard, padding-left 0.2s $ease-standard;
 
   &:hover {
-    color: $brass;
+    color: $signal-blue;
     padding-left: 0.4rem;
   }
 }
@@ -107,14 +107,14 @@
   font-size: 0.68rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba($bone, 0.5);
+  color: rgba($fog-border, 0.5);
 }
 
 .subLink {
   padding: 0.75rem 0 0.75rem 0.9rem;
   font-size: 0.82rem;
   border-bottom: none;
-  border-left: 1px solid $sapphire-line;
+  border-left: 1px solid $steel-border;
 
   &:hover {
     padding-left: 1.3rem;
@@ -122,7 +122,7 @@
 }
 
 .linkActive {
-  color: $brass-bright;
+  color: $ice-blue;
   pointer-events: none;
 
   &:hover {
@@ -139,10 +139,10 @@
 
   .callLine {
     font-size: 0.85rem;
-    color: $bone;
+    color: $ash;
 
     a {
-      color: $brass;
+      color: $signal-blue;
     }
   }
 }

@@ -2,9 +2,9 @@
 
 .container {
   width: 100%;
-  background-color: $ivory-card;
-  border-top: 1px solid $bone;
-  border-bottom: 1px solid $bone;
+  background-color: $carbon-plate;
+  border-top: 1px solid $fog-border;
+  border-bottom: 1px solid $fog-border;
 }
 
 .subContainer {
@@ -26,12 +26,12 @@
   flex-direction: column;
   gap: 0.5rem;
   padding: 1rem 0;
-  border-top: 1px solid $bone;
+  border-top: 1px solid $fog-border;
 
   @media (min-width: 768px) {
     padding: 0 0 0 $space-lg;
     border-top: none;
-    border-left: 1px solid $bone;
+    border-left: 1px solid $fog-border;
 
     &:first-child {
       padding-left: 0;
@@ -45,7 +45,7 @@
   font-weight: 420;
   font-size: clamp(1.5rem, 2.6vw, 2.25rem);
   line-height: 1.15;
-  color: $brass-dim;
+  color: $deep-signal;
 }
 
 .label {
@@ -53,6 +53,6 @@
   font-weight: 400;
   font-size: 0.95rem;
   line-height: 1.5;
-  color: $ink-soft;
+  color: $ash;
   max-width: 32ch;
 }

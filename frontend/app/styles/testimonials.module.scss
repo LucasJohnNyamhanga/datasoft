@@ -3,7 +3,7 @@
 .container {
   position: relative;
   width: 100%;
-  background: $ivory;
+  background: $void-canvas;
   scroll-margin-top: var(--nav-height, 90px);
 }
 
@@ -31,7 +31,7 @@
 .mazeBandInner {
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%3E%3Cpath%20d='M0%2015H30V40H60V20H100'%20stroke='%236b4226'%20stroke-width='1.6'%20fill='none'%20stroke-opacity='0.8'/%3E%3Cpath%20d='M0%2020H20V55H50'%20stroke='%236b4226'%20stroke-width='1.6'%20fill='none'%20stroke-opacity='0.8'/%3E%3Cpath%20d='M15%20100V75H45V60'%20stroke='%236b4226'%20stroke-width='1.6'%20fill='none'%20stroke-opacity='0.8'/%3E%3Cpath%20d='M15%200H40V25'%20stroke='%236b4226'%20stroke-width='1.6'%20fill='none'%20stroke-opacity='0.8'/%3E%3Cpath%20d='M70%200V20H90V50H70V80'%20stroke='%236b4226'%20stroke-width='1.6'%20fill='none'%20stroke-opacity='0.8'/%3E%3Cpath%20d='M100%2065H80V85H60'%20stroke='%236b4226'%20stroke-width='1.6'%20fill='none'%20stroke-opacity='0.8'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%3E%3Cpath%20d='M0%2015H30V40H60V20H100'%20stroke='%230092e4'%20stroke-width='1.6'%20fill='none'%20stroke-opacity='0.8'/%3E%3Cpath%20d='M0%2020H20V55H50'%20stroke='%230092e4'%20stroke-width='1.6'%20fill='none'%20stroke-opacity='0.8'/%3E%3Cpath%20d='M15%20100V75H45V60'%20stroke='%230092e4'%20stroke-width='1.6'%20fill='none'%20stroke-opacity='0.8'/%3E%3Cpath%20d='M15%200H40V25'%20stroke='%230092e4'%20stroke-width='1.6'%20fill='none'%20stroke-opacity='0.8'/%3E%3Cpath%20d='M70%200V20H90V50H70V80'%20stroke='%230092e4'%20stroke-width='1.6'%20fill='none'%20stroke-opacity='0.8'/%3E%3Cpath%20d='M100%2065H80V85H60'%20stroke='%230092e4'%20stroke-width='1.6'%20fill='none'%20stroke-opacity='0.8'/%3E%3C/svg%3E");
   background-size: 100px 100px;
 }
 
@@ -41,7 +41,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: $coffee;
+  color: $graphite;
   margin: 0 0 1rem;
 }
 
@@ -50,7 +50,7 @@
   font-weight: 420;
   font-size: clamp(1.75rem, 3.2vw, 2.75rem);
   line-height: 1.1;
-  color: $ink;
+  color: $pure-white;
   margin: 0;
   max-width: 26ch;
 }
@@ -60,7 +60,7 @@
   font-weight: 400;
   font-size: 1.0625rem;
   line-height: 1.65;
-  color: $ink-soft;
+  color: $ash;
   max-width: 60ch;
   margin: 1.5rem 0 0;
 }
@@ -78,15 +78,15 @@
   break-inside: avoid;
   margin: 0 0 1.5rem;
   padding: $space-md;
-  background-color: $ivory-card;
-  border: 1px solid $bone;
+  background-color: $carbon-plate;
+  border: 1px solid $fog-border;
   border-radius: $radius-md;
   overflow: hidden;
 }
 
 .featured {
-  border-color: $brass-dim;
-  box-shadow: inset 3px 0 0 $brass;
+  border-color: $deep-signal;
+  box-shadow: inset 3px 0 0 $signal-blue;
 }
 
 .quoteMark {
@@ -97,7 +97,7 @@
   font-weight: 380;
   font-size: clamp(3rem, 6vw, 4.5rem);
   line-height: 1;
-  color: $brass-dim;
+  color: $deep-signal;
   opacity: 0.14;
   pointer-events: none;
 }
@@ -109,7 +109,7 @@
 }
 
 .star {
-  color: $brass;
+  color: $signal-blue;
   font-size: 0.85rem;
   line-height: 1;
 }
@@ -120,7 +120,7 @@
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.65;
-  color: $ink;
+  color: $pure-white;
   margin: 0 0 $space-md;
 }
 
@@ -142,9 +142,9 @@
   width: 2.75rem;
   height: 2.75rem;
   border-radius: 50%;
-  background-color: rgba(212, 160, 23, 0.12);
-  border: 1px solid $brass-dim;
-  color: $coffee;
+  background-color: rgba(0, 146, 228, 0.12);
+  border: 1px solid $deep-signal;
+  color: $graphite;
   font-family: $font-body;
   font-weight: 700;
   font-size: 0.85rem;
@@ -160,14 +160,14 @@
   font-family: $font-body;
   font-weight: 600;
   font-size: 0.9375rem;
-  color: $ink;
+  color: $pure-white;
 }
 
 .role {
   font-family: $font-body;
   font-weight: 400;
   font-size: 0.8125rem;
-  color: $ink-soft;
+  color: $ash;
 }
 
 @media (min-width: 640px) {

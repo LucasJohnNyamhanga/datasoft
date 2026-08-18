@@ -1,21 +1,21 @@
 @use "index" as *;
 @use "sass:color";
 
-// A Photoshop-style IDE card — same dark sapphire glass "device" chrome as
-// codeEditor.module.scss, but the accent register leans on brand gold
-// (rather than cobalt) since this window represents creative/brand work.
+// A Photoshop-style IDE card — same dark void glass "device" chrome as
+// codeEditor.module.scss, but the accent register leans on ice-blue
+// (rather than phosphor-mint) since this window represents creative/brand work.
 
 $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monospace;
 
 .window {
-  --ide-bg: #{rgba($sapphire-deep, 0.82)};
-  --ide-bg-raised: #{rgba($sapphire-raised, 0.6)};
-  --ide-bg-editor: #{rgba($sapphire-deep, 0.5)};
-  --ide-border: #{rgba($bone, 0.14)};
-  --ide-text: #cfe0f2;
-  --ide-text-dim: #{rgba(#cfe0f2, 0.45)};
-  --ide-accent: #{$brass-bright};
-  --ide-accent-2: #{$cobalt-bright};
+  --ide-bg: #{rgba($void-canvas, 0.82)};
+  --ide-bg-raised: #{rgba($carbon-plate, 0.6)};
+  --ide-bg-editor: #{rgba($void-canvas, 0.5)};
+  --ide-border: #{rgba($fog-border, 0.14)};
+  --ide-text: #{$cloud-mist};
+  --ide-text-dim: #{rgba($cloud-mist, 0.45)};
+  --ide-accent: #{$ice-blue};
+  --ide-accent-2: #{$phosphor-mint};
 
   position: absolute;
   inset: 0;
@@ -29,7 +29,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   backdrop-filter: blur(20px) saturate(150%);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
   border: 1px solid var(--ide-border);
-  box-shadow: 0 40px 70px -32px rgba(7, 16, 28, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 40px 70px -32px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   isolation: isolate;
 }
 
@@ -157,7 +157,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
 }
 
 .toolActive {
-  color: $sapphire-deep;
+  color: $void-canvas;
   background: var(--ide-accent);
   border-radius: $radius-sm;
   padding: 0.2rem;
@@ -238,7 +238,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
 .posterBg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(165deg, #{color.adjust($navy-deep, $lightness: 6%)} 0%, $navy-deep 55%, #{color.adjust($navy-deep, $lightness: -8%)} 100%);
+  background: linear-gradient(165deg, #{color.adjust($void-canvas, $lightness: 6%)} 0%, $void-canvas 55%, #{color.adjust($void-canvas, $lightness: -8%)} 100%);
 }
 
 .posterPhoto {
@@ -248,7 +248,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   width: 46%;
   height: 58%;
   border-radius: 6px;
-  background: linear-gradient(155deg, rgba(240, 197, 80, 0.35), rgba(13, 44, 78, 0.55));
+  background: linear-gradient(155deg, rgba(112, 220, 211, 0.35), rgba(0, 146, 228, 0.55));
   border: 1px solid rgba(255, 255, 255, 0.16);
 }
 
@@ -262,8 +262,8 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: $brass-bright;
-  color: $sapphire-deep;
+  background: $ice-blue;
+  color: $void-canvas;
   font-family: $font-body;
   font-weight: 700;
   font-size: 0.55rem;
@@ -292,7 +292,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
     content: "";
     position: absolute;
     inset: 0;
-    border: 1px dashed rgba(240, 197, 80, 0.75);
+    border: 1px dashed rgba(166, 229, 242, 0.75);
     border-radius: 2px;
     animation: selectionPulse 1.6s ease-in-out infinite;
   }
@@ -304,7 +304,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   font-size: 0.42rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: $brass-bright;
+  color: $ice-blue;
 }
 
 .posterHeadline {
@@ -333,8 +333,8 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  background: $brass-bright;
-  color: $sapphire-deep;
+  background: $ice-blue;
+  color: $void-canvas;
   font-family: $font-body;
   font-weight: 700;
   font-size: 0.4rem;
@@ -356,7 +356,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   padding: 0.4rem 0.9rem;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.95);
-  color: $navy-deep;
+  color: $void-canvas;
   font-family: $font-body;
   font-weight: 700;
   font-size: 0.46rem;
@@ -368,7 +368,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   width: 0.4rem;
   height: 0.4rem;
   background: #fff;
-  border: 1px solid $sapphire-deep;
+  border: 1px solid $void-canvas;
 
   &[data-pos="tl"] {
     top: -0.2rem;
@@ -479,7 +479,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
 }
 
 .layerRowActive {
-  background: rgba(240, 197, 80, 0.14);
+  background: rgba(166, 229, 242, 0.14);
   box-shadow: inset 2px 0 0 var(--ide-accent);
 }
 
@@ -508,17 +508,17 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   background: #fff;
 }
 .thumb-price {
-  background: $brass-bright;
+  background: $ice-blue;
 }
 .thumb-headline {
-  background: linear-gradient(155deg, $brass-bright, $cobalt-bright);
+  background: linear-gradient(155deg, $ice-blue, $phosphor-mint);
 }
 .thumb-logo {
-  background: $brass-bright;
+  background: $ice-blue;
   border-radius: 50%;
 }
 .thumb-photo {
-  background: linear-gradient(155deg, rgba(240, 197, 80, 0.6), rgba(13, 44, 78, 0.8));
+  background: linear-gradient(155deg, rgba(112, 220, 211, 0.6), rgba(0, 146, 228, 0.8));
 }
 
 .layerLabel {
@@ -568,7 +568,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   background: var(--ide-accent);
   font-family: $mono;
   font-size: 0.58rem;
-  color: $sapphire-deep;
+  color: $void-canvas;
 }
 
 .statusLeft,

@@ -2,20 +2,20 @@
 
 .container {
   width: 100%;
-  background-color: $sapphire-deep;
+  background-color: $void-canvas;
   border-bottom: 1px solid transparent;
   transition: border-color 0.3s $ease-standard, box-shadow 0.3s $ease-standard;
 
   &.scrolled {
-    border-bottom-color: $sapphire-line;
+    border-bottom-color: $steel-border;
     box-shadow: 0 12px 30px -18px rgba(0, 0, 0, 0.6);
   }
 }
 
 .announce {
   width: 100%;
-  background-color: $sapphire-raised;
-  border-bottom: 1px solid $sapphire-line;
+  background-color: $carbon-plate;
+  border-bottom: 1px solid $steel-border;
 }
 
 .announceRow {
@@ -38,12 +38,12 @@
 
   &:hover {
     .callIcon {
-      color: $brass-bright;
-      filter: drop-shadow(0 0 6px rgba($brass, 0.5));
+      color: $ice-blue;
+      filter: drop-shadow(0 0 6px rgba($signal-blue, 0.5));
     }
 
     .callText {
-      color: $ivory;
+      color: $pure-white;
 
       &::after {
         transform: scaleX(1);
@@ -51,13 +51,13 @@
     }
 
     .callNumber {
-      color: $brass-bright;
+      color: $ice-blue;
     }
   }
 }
 
 .callIcon {
-  color: $brass;
+  color: $signal-blue;
   transition: color 0.25s $ease-standard, filter 0.25s $ease-standard;
 }
 
@@ -67,7 +67,7 @@
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.02em;
-  color: $bone;
+  color: $ash;
   transition: color 0.25s $ease-standard;
 
   &::after {
@@ -77,7 +77,7 @@
     bottom: 0;
     height: 1px;
     width: 100%;
-    background-color: $brass;
+    background-color: $signal-blue;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.25s $ease-standard;
@@ -85,7 +85,7 @@
 }
 
 .callNumber {
-  color: $brass;
+  color: $signal-blue;
   font-weight: 600;
   font-variant-numeric: tabular-nums;
   transition: color 0.25s $ease-standard;
@@ -98,14 +98,14 @@
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.02em;
-  color: rgba($bone, 0.55);
+  color: rgba($fog-border, 0.55);
   white-space: nowrap;
 }
 
 .dividerLine {
   width: 1px;
   height: 10px;
-  background-color: $sapphire-line;
+  background-color: $steel-border;
 }
 
 .formLink {
@@ -113,9 +113,9 @@
   align-items: center;
   gap: 0.45rem;
   padding: 0.38rem 0.95rem;
-  border: 1px solid $brass-dim;
+  border: 1px solid $deep-signal;
   border-radius: $radius-sm;
-  color: $ivory;
+  color: $pure-white;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -124,8 +124,8 @@
   transition: border-color 0.25s $ease-standard, color 0.25s $ease-standard;
 
   &:hover {
-    border-color: $brass;
-    color: $brass-bright;
+    border-color: $signal-blue;
+    color: $ice-blue;
 
     .formIcon {
       transform: translateX(3px);
@@ -165,7 +165,7 @@
     font-family: $font-body;
     font-weight: 700;
     font-size: 1.4rem;
-    color: $cobalt-bright;
+    color: $phosphor-mint;
   }
 }
 
@@ -186,7 +186,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: $bone;
+  color: $ash;
   padding-bottom: 4px;
   transition: color 0.25s $ease-standard;
 
@@ -197,14 +197,14 @@
     bottom: 0;
     height: 1px;
     width: 100%;
-    background-color: $brass;
+    background-color: $signal-blue;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.25s $ease-standard;
   }
 
   &:hover {
-    color: $ivory;
+    color: $pure-white;
 
     &::after {
       transform: scaleX(1);
@@ -213,7 +213,7 @@
 }
 
 .linkActive {
-  color: $ivory;
+  color: $pure-white;
 
   &::after {
     transform: scaleX(1);
@@ -248,8 +248,8 @@
   transform: translate(-50%, -6px);
   min-width: 220px;
   padding: 0.5rem;
-  background-color: $sapphire-raised;
-  border: 1px solid $sapphire-line;
+  background-color: $carbon-plate;
+  border: 1px solid $steel-border;
   border-radius: $radius-md;
   box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.6);
   opacity: 0;
@@ -275,18 +275,18 @@
   font-size: 0.72rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: $bone;
+  color: $ash;
   white-space: nowrap;
   transition: background-color 0.2s $ease-standard, color 0.2s $ease-standard;
 
   &:hover {
-    background-color: rgba($brass, 0.12);
-    color: $ivory;
+    background-color: rgba($signal-blue, 0.12);
+    color: $pure-white;
   }
 }
 
 .dropdownItemActive {
-  color: $brass-bright;
+  color: $ice-blue;
   pointer-events: none;
 }
 

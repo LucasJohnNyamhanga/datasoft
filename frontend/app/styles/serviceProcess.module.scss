@@ -1,8 +1,8 @@
-@use "index" as *;
+﻿@use "index" as *;
 
 .container {
   width: 100%;
-  background-color: $ivory;
+  background-color: $carbon-plate;
   scroll-margin-top: var(--nav-height, 90px);
 }
 
@@ -18,7 +18,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: $brass-dim;
+  color: $signal-blue;
   margin: 0 0 1rem;
 }
 
@@ -27,7 +27,7 @@
   font-weight: 420;
   font-size: clamp(1.75rem, 3.2vw, 2.75rem);
   line-height: 1.1;
-  color: $ink;
+  color: $pure-white;
   margin: 0;
   max-width: 26ch;
 }
@@ -37,7 +37,7 @@
   font-weight: 400;
   font-size: 1.0625rem;
   line-height: 1.65;
-  color: $ink-soft;
+  color: $ash;
   max-width: 60ch;
   margin: 1.5rem 0 0;
 }
@@ -63,16 +63,16 @@
 .step {
   position: relative;
   padding: 2rem 1.75rem 1.9rem;
-  background-color: $ivory-card;
-  border: 1px solid $bone;
+  background-color: $obsidian;
+  border: 1px solid $fog-border;
   border-radius: $radius-md * 2;
-  box-shadow: 0 18px 32px -26px rgba(23, 32, 26, 0.35);
+  box-shadow: 0 18px 32px -26px rgba(0, 0, 0, 0.35);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 
   &:hover {
     transform: translateY(-3px);
-    border-color: $brass-dim;
-    box-shadow: 0 22px 40px -24px rgba(23, 32, 26, 0.45);
+    border-color: $deep-signal;
+    box-shadow: 0 22px 40px -24px rgba(0, 0, 0, 0.45);
   }
 }
 
@@ -83,12 +83,12 @@
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  background: linear-gradient(155deg, $brass-bright, $brass-dim);
+  background: linear-gradient(155deg, $ice-blue, $deep-signal);
   font-family: $font-display;
   font-weight: 600;
   font-size: 1.0625rem;
-  color: $ivory;
-  box-shadow: 0 10px 18px -8px rgba(138, 107, 18, 0.55);
+  color: $pure-white;
+  box-shadow: 0 10px 18px -8px rgba(6, 119, 212, 0.55);
   margin-bottom: 1.5rem;
 }
 
@@ -96,7 +96,7 @@
   font-family: $font-body;
   font-weight: 600;
   font-size: 1.15rem;
-  color: $ink;
+  color: $pure-white;
   margin: 0 0 0.85rem;
 }
 
@@ -105,7 +105,7 @@
   font-weight: 400;
   font-size: 0.9375rem;
   line-height: 1.6;
-  color: $ink-soft;
+  color: $ash;
   margin: 0;
 }
 
@@ -114,7 +114,7 @@
   font-style: italic;
   font-weight: 400;
   font-size: 1.25rem;
-  color: $brass-dim;
+  color: $signal-blue;
   max-width: 46ch;
   margin: $space-lg 0 0;
 }

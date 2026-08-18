@@ -4,77 +4,87 @@
   position: relative;
   width: 100%;
   padding-top: var(--nav-height, 107px);
-  background-color: $ivory;
+  background-color: $void-canvas;
   scroll-margin-top: var(--nav-height, 90px);
+  overflow: hidden;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: -12%;
+  left: 50%;
+  width: min(76rem, 140vw);
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(112, 220, 211, 0.16) 0%, rgba(0, 146, 228, 0.1) 45%, transparent 75%);
+  pointer-events: none;
 }
 
 .frame {
+  position: relative;
   width: 100%;
-  max-width: 46rem;
+  max-width: $content-max;
   margin: 0 auto;
   padding: clamp(3rem, 7vw, 5.5rem) $gutter clamp(3.5rem, 7vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// Headline/subhead/actions keep a readable measure of their own, centered
+// inside the full-width frame — the same "narrow header inside a wide
+// section" shape every other section on the page uses (see whatWeDo's
+// .header, max-width: 42rem inside its own $content-max container), so
+// widening the hero to the page's content width doesn't stretch the prose.
+.copy {
+  width: 100%;
+  max-width: 46rem;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
-.copy {
-  width: 100%;
-  min-width: 0;
-}
-
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  font-family: $hero-font-body;
-  font-weight: 700;
-  font-size: 0.72rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: $ink-soft;
-  border: 1px solid $bone;
-  border-radius: 999px;
-  padding: 0.45rem 1.1rem;
+.headline {
+  font-family: $hero-void-display;
+  font-weight: 600;
+  font-size: clamp(1.9rem, 4.4vw, 3.75rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: $cloud-mist;
+  max-width: 22ch;
   margin: 0 0 1.75rem;
 }
 
-.eyebrowDot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: $brass;
-  flex: none;
+.rotator {
+  display: inline-grid;
+  vertical-align: bottom;
+  color: $phosphor-mint;
 }
 
-.headline {
-  font-family: $hero-font-display;
-  font-weight: 400;
-  font-size: clamp(2.4rem, 5.5vw, 3.75rem);
-  line-height: 1.06;
-  letter-spacing: -0.01em;
-  color: $ink;
-  margin: 0;
+.rw {
+  grid-area: 1 / 1;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.45s $ease-standard, transform 0.45s $ease-standard;
+  white-space: nowrap;
 }
 
-.line {
-  display: block;
-}
-
-.lineAccent {
-  font-style: italic;
-  color: $brass-dim;
+.rwActive {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .subheadline {
-  font-family: $hero-font-body;
+  font-family: $hero-void-body;
   font-weight: 400;
   font-size: 1.08rem;
   line-height: 1.6;
-  color: $ink-soft;
+  color: $ash;
   max-width: 46ch;
-  margin: 1.4rem auto 0;
+  margin: 0 0 2rem;
 }
 
 .actions {
@@ -83,7 +93,6 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  margin-top: 2.25rem;
 }
 
 .primaryButton,
@@ -91,61 +100,125 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.95rem 2.2rem;
-  font-family: $hero-font-body;
-  font-weight: 700;
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  padding: 0.9rem 2rem;
+  font-family: $hero-void-body;
+  font-weight: 600;
+  font-size: 0.9rem;
   border-radius: 999px;
   transition: background 0.25s $ease-standard, border-color 0.25s $ease-standard,
-    color 0.25s $ease-standard, transform 0.25s $ease-standard, box-shadow 0.25s $ease-standard;
+    color 0.25s $ease-standard, transform 0.25s $ease-standard;
 }
 
 .primaryButton {
-  background: $gradient-gold;
-  color: $ink;
+  background: $cloud-mist;
+  color: $void-canvas;
   border: 1px solid transparent;
 
   &:hover {
-    background: $gradient-gold-hover;
+    background: #ffffff;
     transform: translateY(-1px);
-    box-shadow: $glow-brass;
   }
 }
 
 .outlineButton {
-  background-color: transparent;
-  color: $ink;
-  border: 1px solid $ink;
+  background: transparent;
+  color: $signal-blue;
+  border: 1px solid $signal-blue;
 
   &:hover {
-    border-color: $brass-dim;
-    color: $brass-dim;
+    color: $ice-blue;
+    border-color: $ice-blue;
   }
 }
 
-.panelWrap {
+// Six stat tiles — spans the full content width as one deliberate "proof
+// rail" beneath the copy, rather than a card grid that only fills a third
+// of the page like it did when the frame was capped at 50rem.
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
   width: 100%;
-  max-width: 38rem;
-  margin: clamp(3rem, 6vw, 4rem) 0 0;
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+  text-align: left;
 }
 
-.panel {
-  position: relative;
-  aspect-ratio: 8 / 5;
+.stat {
+  container-type: inline-size;
+  background: $carbon-plate;
+  border: 1px solid rgba($fog-border, 0.14);
+  border-radius: 20px;
+  padding: 1.5rem;
 }
 
-.panelCaption {
-  font-family: $hero-font-body;
+.statFeatured {
+  background: linear-gradient(165deg, rgba(112, 220, 211, 0.16), $carbon-plate 55%);
+  border-color: $phosphor-mint;
+}
+
+.statTop {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.statIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: $obsidian;
+  border: 1px solid $steel-border;
+  color: $signal-blue;
+}
+
+.statFeatured .statIcon {
+  background: rgba(112, 220, 211, 0.14);
+  border-color: $phosphor-mint;
+  color: $phosphor-mint;
+}
+
+.statHeader {
+  font-family: $hero-void-body;
   font-weight: 600;
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: $ink-soft;
-  opacity: 0.8;
-  text-align: center;
-  margin: 1rem 0 0;
+  font-size: 0.9rem;
+  color: $cloud-mist;
+}
+
+.statFeatured .statHeader {
+  color: $phosphor-mint;
+}
+
+.statValue {
+  display: block;
+  font-family: $hero-void-display;
+  font-weight: 600;
+  font-size: clamp(1.35rem, 5.5cqi, 2rem);
+  line-height: 1.05;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: break-word;
+}
+
+.statFeatured .statValue {
+  color: $phosphor-mint;
+}
+
+.statLabel {
+  display: -webkit-box;
+  font-family: $hero-void-body;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: $graphite;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 @media (max-width: 640px) {
@@ -154,7 +227,7 @@
   }
 
   .headline {
-    font-size: clamp(2.1rem, 9vw, 2.75rem);
+    font-size: clamp(1.7rem, 8vw, 2.4rem);
   }
 
   .actions {
@@ -163,44 +236,38 @@
     width: 100%;
   }
 
-  .primaryButton,
-  .outlineButton {
-    text-align: center;
-  }
-
-  .panel {
-    aspect-ratio: 4 / 3;
+  .stats {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 641px) and (max-width: 860px) {
+  .stats {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+@media (min-width: 1180px) {
   .frame {
-    max-width: $content-max;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: clamp(3rem, 5vw, 6rem);
-    text-align: left;
-    padding: clamp(4rem, 8vw, 6.5rem) $gutter clamp(4rem, 8vw, 6.5rem);
+    padding: clamp(3rem, 6vw, 4.5rem) $gutter clamp(4rem, 7vw, 5.5rem);
   }
 
   .copy {
-    flex: 1 1 26rem;
-    max-width: 34rem;
+    max-width: 50rem;
   }
 
-  .subheadline {
-    margin-left: 0;
-    margin-right: auto;
+  // At the hero's full content width, six cards in one row read as a
+  // deliberate metrics rail instead of two cramped rows of three.
+  .stats {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.85rem;
   }
 
-  .actions {
-    justify-content: flex-start;
+  .stat {
+    padding: 1.15rem 1.1rem;
   }
 
-  .panelWrap {
-    flex: 1 1 30rem;
-    max-width: 34rem;
-    margin-top: 0;
+  .statTop {
+    margin-bottom: 0.85rem;
   }
 }

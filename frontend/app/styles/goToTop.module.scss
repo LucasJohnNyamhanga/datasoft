@@ -10,10 +10,10 @@
   bottom: 2.25rem;
   right: 2rem;
   z-index: 900;
-  background-color: $sapphire-deep;
-  border: 1px solid $brass-dim;
+  background-color: $void-canvas;
+  border: 1px solid $deep-signal;
   border-radius: 50%;
-  color: $brass;
+  color: $signal-blue;
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
@@ -22,8 +22,8 @@
     border-color 0.25s $ease-standard, visibility 0.25s;
 
   &:hover {
-    border-color: $brass;
-    box-shadow: $glow-brass;
+    border-color: $signal-blue;
+    box-shadow: $glow-accent;
   }
 
   &.show {
@@ -47,7 +47,7 @@
   z-index: 900;
   background-color: $whatsapp-green;
   border-radius: 50%;
-  color: $ivory;
+  color: $pure-white;
   transition: transform 0.2s $ease-standard, background-color 0.2s $ease-standard;
 
   &:hover {

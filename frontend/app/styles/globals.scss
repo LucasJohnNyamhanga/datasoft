@@ -1,65 +1,27 @@
 @use "index" as *;
 
-@font-face {
-  font-family: "Montserrat";
-  font-weight: 300;
-  font-display: swap;
-  src: url("/fonts/montserrat/montserrat_light_300-webfont.woff2")
-      format("woff2"),
-    url("/fonts/montserrat/montserrat_light_300-webfont.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Montserrat";
-  font-weight: 400;
-  font-display: swap;
-  src: url("/fonts/montserrat/montserrat_regular_400-webfont.woff2")
-      format("woff2"),
-    url("/fonts/montserrat/montserrat_regular_400-webfont.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Montserrat";
-  font-weight: 500;
-  font-display: swap;
-  src: url("/fonts/montserrat/montserrat_medium_500-webfont.woff2")
-      format("woff2"),
-    url("/fonts/montserrat/montserrat_medium_500-webfont.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Montserrat";
-  font-weight: 600;
-  font-display: swap;
-  src: url("/fonts/montserrat/montserrat_semibold_600-webfont.woff2")
-      format("woff2"),
-    url("/fonts/montserrat/montserrat_semibold_600-webfont.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Montserrat";
-  font-weight: 700;
-  font-display: swap;
-  src: url("/fonts/montserrat/montserrat_bold_700-webfont.woff2")
-      format("woff2"),
-    url("/fonts/montserrat/montserrat_bold_700-webfont.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Montserrat";
-  font-weight: 800;
-  font-display: swap;
-  src: url("/fonts/montserrat/montserrat_extrabold_800-webfont.woff2")
-      format("woff2"),
-    url("/fonts/montserrat/montserrat_extrabold_800-webfont.woff")
-      format("woff");
-}
+// Montserrat/Fraunces self-hosted files retired — Geist + Cal Sans are
+// loaded via next/font/google in app/layout.tsx instead.
 
 :root {
-  --scrollbar-track: #{$sapphire-deep};
-  --scrollbar-thumb: #{$brass-dim};
+  // Client-supplied token spec (2026-08-18) — source of truth for the
+  // Abyss/Tide/Spectral/Yield palette pivot; Sass variables in _index.scss
+  // hold matching literal values for compile-time color math.
+  --color-abyss-navy: #17202e;
+  --color-tide-card: #202a3e;
+  --color-spectral-cyan: #6ae4ff;
+  --color-bone-white: #ffffff;
+  --color-carbon-black: #000000;
+  --color-fog-gray: #cdd0d6;
+  --color-horizon-glow: #298acb;
+  --gradient-horizon-glow: radial-gradient(circle, rgb(8, 33, 143) 40%, rgb(41, 138, 203) 100%);
+  --color-yield-gradient: #00d1ff;
+  --gradient-yield-gradient: linear-gradient(73.6deg, rgb(52, 237, 179) 2.11%, rgb(0, 209, 255));
+
+  --scrollbar-track: #{$void-canvas};
+  --scrollbar-thumb: #{$deep-signal};
   --nav-height: 126px;
-  color-scheme: dark light;
+  color-scheme: dark;
 }
 
 html {
@@ -70,8 +32,8 @@ html {
 
 html,
 body {
-  background-color: $ivory;
-  color: $ink;
+  background-color: $void-canvas;
+  color: $cloud-mist;
   padding: 0;
   margin: 0;
   width: 100%;
@@ -126,12 +88,12 @@ a {
 }
 
 ::selection {
-  background: $brass;
-  color: $sapphire-deep;
+  background: $signal-blue;
+  color: $pure-white;
 }
 
 :focus-visible {
-  outline: 2px solid $brass;
+  outline: 2px solid $signal-blue;
   outline-offset: 3px;
 }
 

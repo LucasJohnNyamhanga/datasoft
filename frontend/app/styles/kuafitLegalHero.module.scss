@@ -1,14 +1,31 @@
-@use "index" as *;
+﻿@use "index" as *;
 
 .container {
   position: relative;
   width: 100%;
   padding-top: var(--nav-height, 107px);
-  background-color: $ivory;
+  background-color: $void-canvas;
   scroll-margin-top: var(--nav-height, 90px);
+  overflow: hidden;
+}
+
+// Same radial-glow atmosphere as the homepage Hero, so this legal-page
+// header reads with the same lit-from-behind lift instead of sitting flat
+// on bare void-canvas.
+.container::before {
+  content: "";
+  position: absolute;
+  top: -12%;
+  left: 50%;
+  width: min(76rem, 140vw);
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba($phosphor-mint, 0.16) 0%, rgba($signal-blue, 0.1) 45%, transparent 75%);
+  pointer-events: none;
 }
 
 .frame {
+  position: relative;
   width: 100%;
   max-width: $content-max;
   margin: 0 auto;
@@ -26,15 +43,15 @@
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: $brass-dim;
+  color: $signal-blue;
   margin: 0 0 1.5rem;
 
   a {
-    color: $ink-soft;
+    color: $ash;
     transition: color 0.2s $ease-standard;
 
     &:hover {
-      color: $brass-dim;
+      color: $signal-blue;
     }
   }
 }
@@ -48,14 +65,14 @@
   font-size: 0.72rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: $ink-soft;
-  border: 1px solid $bone;
+  color: $ash;
+  border: 1px solid $fog-border;
   border-radius: 999px;
   padding: 0.45rem 1.1rem;
   margin: 0 0 1.75rem;
 
   svg {
-    color: $brass;
+    color: $signal-blue;
     flex: none;
   }
 }
@@ -66,7 +83,7 @@
   font-size: clamp(2.2rem, 5vw, 3.4rem);
   line-height: 1.08;
   letter-spacing: -0.01em;
-  color: $ink;
+  color: $pure-white;
   margin: 0;
   max-width: 20ch;
 }
@@ -77,7 +94,7 @@
 
 .lineAccent {
   font-style: italic;
-  color: $brass-dim;
+  color: $deep-signal;
 }
 
 .subheadline {
@@ -85,7 +102,7 @@
   font-weight: 400;
   font-size: 1.08rem;
   line-height: 1.6;
-  color: $ink-soft;
+  color: $ash;
   max-width: 52ch;
   margin: 1.4rem 0 0;
 }
@@ -104,7 +121,7 @@
   font-weight: 600;
   font-size: 0.78rem;
   letter-spacing: 0.04em;
-  color: $ink-soft;
+  color: $ash;
 }
 
 .switchPill {
@@ -114,15 +131,15 @@
   font-family: $font-body;
   font-weight: 600;
   font-size: 0.82rem;
-  color: $ink;
+  color: $pure-white;
   padding-bottom: 0.2rem;
-  border-bottom: 1px solid $brass-dim;
+  border-bottom: 1px solid $deep-signal;
   transition: color 0.2s $ease-standard, border-color 0.2s $ease-standard;
 
   &:hover,
   &:focus-visible {
-    color: $brass-dim;
-    border-color: $brass;
+    color: $signal-blue;
+    border-color: $signal-blue;
   }
 }
 

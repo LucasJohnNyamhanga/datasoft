@@ -36,18 +36,18 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 1.5px solid rgba(212, 160, 23, 0.55);
-  box-shadow: 0 0 22px rgba(212, 160, 23, 0.25);
+  border: 1.5px solid rgba(0, 146, 228, 0.55);
+  box-shadow: 0 0 22px rgba(0, 146, 228, 0.25);
 }
 
 .ringTwo .ring {
-  border-color: rgba(74, 144, 217, 0.55);
-  box-shadow: 0 0 22px rgba(74, 144, 217, 0.25);
+  border-color: rgba(112, 220, 211, 0.55);
+  box-shadow: 0 0 22px rgba(112, 220, 211, 0.25);
 }
 
 .ringThree .ring {
-  border-color: rgba(240, 197, 80, 0.45);
-  box-shadow: 0 0 18px rgba(240, 197, 80, 0.2);
+  border-color: rgba(166, 229, 242, 0.45);
+  box-shadow: 0 0 18px rgba(166, 229, 242, 0.2);
 }
 
 .electron {
@@ -58,14 +58,14 @@
   height: 9px;
   margin: -4.5px 0 0 -4.5px;
   border-radius: 50%;
-  background: $brass-bright;
-  box-shadow: 0 0 10px 3px rgba(240, 197, 80, 0.8);
+  background: $ice-blue;
+  box-shadow: 0 0 10px 3px rgba(166, 229, 242, 0.8);
   animation: orbit 6s linear infinite;
 }
 
 .ringTwo .electron {
-  background: $cobalt-bright;
-  box-shadow: 0 0 10px 3px rgba(74, 144, 217, 0.85);
+  background: $phosphor-mint;
+  box-shadow: 0 0 10px 3px rgba(112, 220, 211, 0.85);
   animation-duration: 7.5s;
   animation-direction: reverse;
 }
@@ -82,8 +82,8 @@
   height: 34px;
   margin: -17px 0 0 -17px;
   border-radius: 50%;
-  background: radial-gradient(circle at 34% 30%, $brass-bright 0%, $cobalt-bright 55%, $cobalt 100%);
-  box-shadow: 0 0 46px 14px rgba(240, 197, 80, 0.35), 0 0 90px 30px rgba(74, 144, 217, 0.2);
+  background: radial-gradient(circle at 34% 30%, $ice-blue 0%, $phosphor-mint 55%, $phosphor-mint 100%);
+  box-shadow: 0 0 46px 14px rgba(166, 229, 242, 0.35), 0 0 90px 30px rgba(112, 220, 211, 0.2);
   animation: breathe 3.6s ease-in-out infinite;
 }
 
@@ -94,7 +94,7 @@
   width: 70%;
   height: 24px;
   transform: translateX(-50%);
-  background: radial-gradient(ellipse at center, rgba(240, 197, 80, 0.28) 0%, rgba(240, 197, 80, 0) 72%);
+  background: radial-gradient(ellipse at center, rgba(112, 220, 211, 0.28) 0%, rgba(112, 220, 211, 0) 72%);
   filter: blur(2px);
 }
 

@@ -1,15 +1,24 @@
 import "./styles/globals.scss";
 import Navigation from "./components/Navigation";
 import { LanguageProvider } from "./i18n/LanguageContext";
-import { Fraunces } from "next/font/google";
+import { Geist, Cal_Sans } from "next/font/google";
 
 import type { Metadata } from "next";
 
-const fraunces = Fraunces({
+const geist = Geist({
   subsets: ["latin"],
-  variable: "--font-fraunces",
-  weight: ["300", "400", "500", "600"],
+  variable: "--font-geist",
+  weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
+  display: "swap",
+});
+
+// Cal Sans ships one static weight (400) — any 600 requested in SCSS is
+// browser-synthesized (faux bold), which is normal for this typeface.
+const calSans = Cal_Sans({
+  subsets: ["latin"],
+  variable: "--font-calsans",
+  weight: "400",
   display: "swap",
 });
 
@@ -90,7 +99,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="sw" className={fraunces.variable}>
+    <html lang="sw" className={`${geist.variable} ${calSans.variable}`}>
       <head />
 
       <body>
@@ -107,5 +116,5 @@ export const viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
-  colorScheme: "light"
+  colorScheme: "dark"
 };
