@@ -51,20 +51,20 @@ const WhatWeDo = () => {
             >
               <defs>
                 <linearGradient id="wire-software" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stopColor="#d4a017" />
-                  <stop offset="1" stopColor="#d4a017" stopOpacity="0.1" />
+                  <stop offset="0" stopColor="#6ae4ff" />
+                  <stop offset="1" stopColor="#6ae4ff" stopOpacity="0.1" />
                 </linearGradient>
                 <linearGradient id="wire-hosting" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stopColor="#2e6fb8" />
-                  <stop offset="1" stopColor="#2e6fb8" stopOpacity="0.1" />
+                  <stop offset="0" stopColor="#34edb3" />
+                  <stop offset="1" stopColor="#34edb3" stopOpacity="0.1" />
                 </linearGradient>
                 <linearGradient id="wire-networking" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stopColor="#c1432b" />
-                  <stop offset="1" stopColor="#c1432b" stopOpacity="0.1" />
+                  <stop offset="0" stopColor="#00d1ff" />
+                  <stop offset="1" stopColor="#00d1ff" stopOpacity="0.1" />
                 </linearGradient>
                 <linearGradient id="wire-graphics" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stopColor="#d4a017" />
-                  <stop offset="1" stopColor="#d4a017" stopOpacity="0.1" />
+                  <stop offset="0" stopColor="#6ae4ff" />
+                  <stop offset="1" stopColor="#6ae4ff" stopOpacity="0.1" />
                 </linearGradient>
               </defs>
               <path

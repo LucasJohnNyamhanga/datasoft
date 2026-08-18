@@ -1,95 +1,82 @@
-// DataSoft Tanzania — brand-true design tokens.
-// The palette pairs a professional sapphire-blue shell with gold and a
-// near-black navy closing register, refined into a cohesive, premium,
-// all-blue system. See DESIGN.md at the project root.
+// DataSoft Tanzania — "abyss / spectral" design tokens.
+// Site-wide dark developer-tool register in the Lido/Aave/Curve DeFi-terminal
+// family: two navy-blue surface tiers that alternate section-by-section (no
+// two adjacent sections share a tone), a spectral-cyan interactive accent,
+// and a teal-to-cyan "yield" gradient reserved for exactly one featured
+// moment per view. Retired the earlier sapphire/gold/ivory system (user
+// decision, 2026-08-17: roll the Hero's dark pivot out to the whole site;
+// 2026-08-18: canvas lightened off near-black onto a true navy, and the two
+// surface tiers now alternate section-by-section instead of both reading as
+// "the same dark"; 2026-08-18 palette pivot: retired the signal-blue/
+// phosphor-mint void-terminal palette for the client-supplied Abyss/Tide/
+// Spectral/Yield token set below — same architecture, new hues. The CSS
+// custom properties in globals.scss `:root` are the source of truth for the
+// eight supplied tokens; the Sass variables below hold matching literal
+// values so color.adjust()/darken()/lighten() keep working at compile time.
 
 @use "sass:color";
 
-// Typography
-$font-display: var(--font-fraunces), Georgia, serif;
-$font-body: "Montserrat", sans-serif;
+// Typography — Geist (body/UI) + Cal Sans (display), both self-hosted via
+// next/font/google in app/layout.tsx (--font-geist / --font-calsans).
+// Cal Sans ships one static weight (400); any 600 requested here is
+// browser-synthesized, which is normal for this typeface.
+$font-display: var(--font-calsans), ui-sans-serif, system-ui, sans-serif;
+$font-body: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
 
-// The exact font files used in the approved "Option B" hero mockup (fetched
-// directly from Google Fonts, same source next/font and the site's
-// self-hosted Montserrat both draw from, but pinned here byte-for-byte so
-// display copy matches the mockup exactly rather than relying on next/font's
-// own weight selection). Shared across any section that needs that same
-// display register (currently Hero and WhatWeDo).
-@font-face {
-  font-family: "Fraunces Hero";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/fonts/hero/fraunces-hero-400.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Fraunces Hero";
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/fonts/hero/fraunces-hero-italic.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Montserrat Hero";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/fonts/hero/montserrat-hero-400.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Montserrat Hero";
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("/fonts/hero/montserrat-hero-600.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Montserrat Hero";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("/fonts/hero/montserrat-hero-700.woff2") format("woff2");
-}
+// Historically separate aliases (a self-hosted "Hero" pin, then a
+// void-scoped pin) — both now just point at the one real display/body pair
+// above so existing call sites don't need touching.
+$hero-font-display: $font-display;
+$hero-font-body: $font-body;
+$hero-void-display: $font-display;
+$hero-void-body: $font-body;
 
-$hero-font-display: "Fraunces Hero", #{$font-display};
-$hero-font-body: "Montserrat Hero", #{$font-body};
+// Surfaces — two section-level tiers ($void-canvas / $carbon-plate) that
+// alternate down the page so consecutive sections are never the same tone,
+// plus $obsidian as a third, still-lighter tier for a card nested inside a
+// $carbon-plate section. Same navy-blue family throughout (not neutral
+// grey/black) so the dominant site color reads as blue at a glance.
+// $void-canvas = Abyss Navy, $carbon-plate = Tide Card (client token spec,
+// 2026-08-18) — spectral-cyan below stays reserved for interactive use.
+$void-canvas: #17202e; // Abyss Navy — Section tier A, page canvas/card surfaces, page default, Hero
+$carbon-plate: #202a3e; // Tide Card — Section tier B, elevated surfaces (nested cards, button bg, section containers)
+$obsidian: color.adjust($carbon-plate, $lightness: 6%); // nested-card tier inside a B section (one step lighter than carbon-plate)
+// Carbon Black hairlines — deliberately low-contrast on the dark canvas
+// ("invisible structural lines that define cards without lifting them off
+// the page," per token spec): structure reads from the Abyss/Tide surface-
+// tier change first, the hairline is a barely-there seam on top of that.
+$steel-border: rgba(0, 0, 0, 0.55); // structural dividers, nav separators
+$fog-border: rgba(0, 0, 0, 0.7); // card hairlines — a touch more opaque where a card needs to read standalone
 
-// Shell register (deep sapphire blue) — nav, hero, process, service hero
-$sapphire-deep: #0d2c4e;
-$sapphire-raised: #163f6d;
-$sapphire-line: #2c5a8c;
+// Text
+$pure-white: #ffffff; // Bone White — primary text, filled-button fill, high-contrast labels
+$cloud-mist: color.adjust(#cdd0d6, $lightness: 8%); // secondary text, soft fills — Fog Gray lifted slightly for higher-emphasis secondary copy
+$ash: #cdd0d6; // Fog Gray — body copy secondary, muted helper text
+$graphite: color.adjust(#cdd0d6, $lightness: -15%); // tertiary/subdued labels — Fog Gray dimmed
 
-// Accent (refined gold) — every CTA, active state, link underline, icon stroke
-$brass: #d4a017;
-$brass-bright: #f0c550;
-$brass-dim: #8a6b12;
+// The one interactive accent — every CTA, link, active state, icon stroke.
+$signal-blue: #6ae4ff; // Spectral Cyan
+$ice-blue: color.adjust(#6ae4ff, $lightness: 8%); // accent bright/hover state
+$deep-signal: color.adjust(#6ae4ff, $lightness: -22%); // accent resting/dim state, form focus
 
-// Signature brand blue — logotype, success state, hero spotlight glow
-$cobalt: #2e6fb8;
-$cobalt-bright: #4a90d9;
+// Reserved highlight — logotype, success state, exactly one "featured"
+// card/panel per view. Not a general-purpose second accent. Pinned to the
+// Yield Gradient's teal anchor (rgb(52, 237, 179)) so the one-off highlight
+// and the accent gradient read as one family.
+$phosphor-mint: #34edb3;
+
+// Supporting hues, used sparingly (syntax highlighting, decorative wires)
+$verdant-edge: color.adjust(#34edb3, $lightness: -12%, $saturation: -10%);
+
+// The one addition beyond the supplied void token set: the reference had no
+// error/destructive color, and the Contact form + a couple of bullet
+// accents need one that reads as "wrong," not "action" or "success."
+$signal-red: #e5484d;
 
 // WhatsApp's own brand green — reserved for the WhatsApp affordance only,
 // never used as a DataSoft palette color elsewhere.
 $whatsapp-green: #25d366;
 $whatsapp-green-bright: #2fe073;
-
-// Closing register (near-black midnight navy) — contact + footer, DataSoft's
-// "brief us" register. Same blue family as the sapphire shell, but pushed
-// darker/more desaturated so the register still reads as distinct from nav/hero.
-$navy-deep: #071427;
-$navy-raised: #0f2340;
-$navy-line: #1f3f66;
-
-// Room register (warm cream) — content rooms, cards, forms
-$ivory: #fbf6e7;
-$ivory-card: #ffffff;
-$bone: #e9dfc4;
-$ink: #17201a;
-$ink-soft: #59645c;
-
-// Rare tertiary accent (tags only)
-$coffee: #6b4226;
-$rust: #c1432b;
 
 // Shape
 $radius-sm: 4px;
@@ -108,26 +95,29 @@ $gutter: clamp(1.25rem, 5vw, 6rem);
 
 // Motion
 $ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
-$glow-brass: 0 0 40px rgba(212, 160, 23, 0.22);
+$glow-accent: 0 0 40px rgba(106, 228, 255, 0.22); // Spectral Cyan glow
 
 // Gradients — built only from the palette above, used to add richness/flow
-// to large flat surfaces (shells, buttons, the navy register).
-$gradient-shell: linear-gradient(165deg, #{$sapphire-raised} 0%, #{$sapphire-deep} 60%);
-$gradient-gold: linear-gradient(135deg, #{$brass-bright} 0%, #{$brass} 65%);
-$gradient-gold-hover: linear-gradient(135deg, #{color.adjust($brass-bright, $lightness: 4%)} 0%, #{$brass-bright} 65%);
-$gradient-navy: linear-gradient(165deg, #{$navy-raised} 0%, #{$navy-deep} 55%, #{color.adjust($navy-deep, $lightness: -4%)} 100%);
+// to large flat surfaces (shells, buttons, the closing register).
+$gradient-shell: linear-gradient(165deg, #{$carbon-plate} 0%, #{$void-canvas} 60%);
 
-// Hero-only: a professional "spotlight" gradient — a cobalt glow rising out
-// of the deep sapphire shell — used nowhere else so the hero keeps a
-// distinct, first-viewport-only signature.
-$gradient-hero: radial-gradient(
+// Yield Gradient (client token spec, 2026-08-18) — teal-to-cyan sweep, the
+// site's one accent gradient for CTAs, highlights, and hover states.
+$gradient-accent: var(--gradient-yield-gradient, linear-gradient(73.6deg, rgb(52, 237, 179) 2.11%, rgb(0, 209, 255)));
+$gradient-accent-hover: linear-gradient(73.6deg, #{color.adjust(#34edb3, $lightness: 6%)} 2.11%, #{color.adjust(#00d1ff, $lightness: 6%)} 100%);
+$gradient-closing: linear-gradient(165deg, #{$carbon-plate} 0%, #{$void-canvas} 55%, #{color.adjust($void-canvas, $lightness: -2%)} 100%);
+
+// Horizon Glow (client token spec, 2026-08-18) — a radial atmosphere behind
+// first-viewport content (Hero, 404) for a lit-from-behind feel, positioned
+// off-center and faded into $void-canvas at the edge so it reads as ambient
+// light rather than a hard-edged disc.
+$gradient-glow: radial-gradient(
   circle at 26% 18%,
-  #{$cobalt-bright} 0%,
-  #{$cobalt} 24%,
-  #{$sapphire-deep} 62%,
-  #{color.adjust($sapphire-deep, $lightness: -7%)} 100%
+  rgba(41, 138, 203, 0.4) 0%,
+  rgba(8, 33, 143, 0.45) 40%,
+  #{$void-canvas} 78%
 );
 
-// Gold flowing into the closing navy register — used to color the
+// Spectral Cyan flowing into the Yield Gradient's teal — used to color the
 // carved-lattice ornament patterns.
-$gradient-mesh: linear-gradient(135deg, #{$brass-bright} 0%, #{$brass} 45%, #{$navy-deep} 100%);
+$gradient-mesh: linear-gradient(135deg, #{$ice-blue} 0%, #{$signal-blue} 45%, #{$phosphor-mint} 100%);

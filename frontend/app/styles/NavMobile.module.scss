@@ -2,13 +2,13 @@
 
 .container {
   width: 100%;
-  background-color: $sapphire-deep;
-  border-bottom: 1px solid $sapphire-line;
+  background-color: $void-canvas;
+  border-bottom: 1px solid $steel-border;
 }
 
 .announce {
-  background-color: $sapphire-raised;
-  border-bottom: 1px solid $sapphire-line;
+  background-color: $carbon-plate;
+  border-bottom: 1px solid $steel-border;
   padding: 0.5rem 1rem;
   display: flex;
   flex-wrap: wrap;
@@ -24,7 +24,7 @@
 }
 
 .callIcon {
-  color: $brass;
+  color: $signal-blue;
 }
 
 .callNumber {
@@ -32,13 +32,13 @@
   font-size: 0.75rem;
   font-weight: 600;
   font-variant-numeric: tabular-nums;
-  color: $bone;
+  color: $ash;
 }
 
 .dividerLine {
   width: 1px;
   height: 10px;
-  background-color: $sapphire-line;
+  background-color: $steel-border;
 }
 
 .formLink {
@@ -46,9 +46,9 @@
   align-items: center;
   gap: 0.4rem;
   padding: 0.3rem 0.75rem;
-  border: 1px solid $brass-dim;
+  border: 1px solid $deep-signal;
   border-radius: $radius-sm;
-  color: $ivory;
+  color: $pure-white;
   font-family: $font-body;
   font-size: 0.75rem;
   font-weight: 600;
@@ -56,13 +56,13 @@
   text-transform: uppercase;
 
   &:active {
-    border-color: $brass;
-    color: $brass-bright;
+    border-color: $signal-blue;
+    color: $ice-blue;
   }
 }
 
 .formIcon {
-  color: $brass;
+  color: $signal-blue;
 }
 
 .bar {
@@ -84,7 +84,7 @@
     font-family: $font-body;
     font-weight: 700;
     font-size: 1.2rem;
-    color: $cobalt-bright;
+    color: $phosphor-mint;
   }
 }
 

@@ -7,8 +7,8 @@
   padding-top: var(--nav-height, 107px);
   padding-bottom: $space-lg;
   overflow: hidden;
-  background: radial-gradient(ellipse 60% 140px at 50% 100%, rgba($cobalt-bright, 0.4) 0%, rgba($cobalt-bright, 0) 100%),
-    $gradient-hero;
+  background: radial-gradient(ellipse 60% 140px at 50% 100%, rgba($phosphor-mint, 0.4) 0%, rgba($phosphor-mint, 0) 100%),
+    $gradient-glow;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,9 +27,9 @@
   z-index: 2;
   background: radial-gradient(
     circle at 50% 38%,
-    rgba(13, 44, 78, 0.2) 0%,
-    rgba(13, 44, 78, 0.72) 68%,
-    rgba(13, 44, 78, 0.92) 100%
+    rgba(7, 7, 7, 0.2) 0%,
+    rgba(7, 7, 7, 0.72) 68%,
+    rgba(7, 7, 7, 0.92) 100%
   );
 }
 
@@ -109,7 +109,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: $brass;
+  color: $signal-blue;
   margin: 0 0 1rem;
 }
 
@@ -119,7 +119,7 @@
   font-size: clamp(2.1rem, 4.5vw, 3.25rem);
   line-height: 1.08;
   letter-spacing: -0.01em;
-  color: $ivory;
+  color: $pure-white;
   margin: 0;
 }
 
@@ -129,7 +129,7 @@
 
 .lineItalic {
   font-style: italic;
-  color: $brass-bright;
+  color: $ice-blue;
 }
 
 .message {
@@ -144,7 +144,7 @@
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.6;
-    color: $bone;
+    color: $ash;
     margin: 0;
   }
 }
@@ -158,8 +158,8 @@
   align-items: center;
   justify-content: center;
   padding: 0.9rem 2.25rem;
-  background: $gradient-gold;
-  color: $sapphire-deep;
+  background: $gradient-accent;
+  color: $void-canvas;
   font-family: $font-body;
   font-weight: 600;
   font-size: 0.78rem;
@@ -170,9 +170,9 @@
     box-shadow 0.25s $ease-standard;
 
   &:hover {
-    background: $gradient-gold-hover;
+    background: $gradient-accent-hover;
     transform: translateY(-1px);
-    box-shadow: $glow-brass;
+    box-shadow: $glow-accent;
   }
 }
 

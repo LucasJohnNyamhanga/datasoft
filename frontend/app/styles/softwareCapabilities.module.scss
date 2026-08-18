@@ -3,7 +3,7 @@
 .container {
   position: relative;
   width: 100%;
-  background: $gradient-shell;
+  background: $void-canvas;
   overflow: hidden;
   scroll-margin-top: var(--nav-height, 90px);
 }
@@ -30,7 +30,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: $brass;
+  color: $signal-blue;
   margin: 0 0 1rem;
 }
 
@@ -39,7 +39,7 @@
   font-weight: 420;
   font-size: clamp(1.75rem, 3.2vw, 2.75rem);
   line-height: 1.1;
-  color: $ivory;
+  color: $pure-white;
   margin: 0;
   max-width: 22ch;
 }
@@ -53,7 +53,7 @@
   font-weight: 400;
   font-size: 1.0625rem;
   line-height: 1.65;
-  color: $bone;
+  color: $ash;
   max-width: 56ch;
   margin: 1.25rem 0 0;
 }
@@ -77,8 +77,8 @@
   position: relative;
   overflow: hidden;
   padding: 2rem;
-  background: rgba(251, 246, 231, 0.04);
-  border: 1px solid rgba(233, 223, 196, 0.14);
+  background: rgba(240, 240, 240, 0.04);
+  border: 1px solid rgba(217, 218, 229, 0.14);
   border-radius: $radius-md;
   backdrop-filter: blur(6px);
   transition: border-color 0.25s $ease-standard, background 0.25s $ease-standard,
@@ -94,13 +94,13 @@
   }
 
   &:hover {
-    border-color: $brass-dim;
-    background: rgba(251, 246, 231, 0.07);
+    border-color: $deep-signal;
+    background: rgba(240, 240, 240, 0.07);
     transform: translateY(-3px);
-    box-shadow: 0 24px 44px -28px rgba(7, 16, 28, 0.6);
+    box-shadow: 0 24px 44px -28px rgba(0, 0, 0, 0.6);
 
     .icon {
-      box-shadow: 0 0 0 5px rgba($brass, 0.14);
+      box-shadow: 0 0 0 5px rgba($signal-blue, 0.14);
     }
   }
 }
@@ -120,9 +120,9 @@
   justify-content: center;
   width: 2.75rem;
   height: 2.75rem;
-  border: 1px solid $brass-dim;
+  border: 1px solid $deep-signal;
   border-radius: 50%;
-  color: $brass-bright;
+  color: $ice-blue;
   font-size: 1.1rem;
   transition: box-shadow 0.35s $ease-standard;
 }
@@ -132,7 +132,7 @@
   font-weight: 380;
   font-size: clamp(1.1rem, 2vw, 1.4rem);
   line-height: 1;
-  color: $brass-bright;
+  color: $ice-blue;
   opacity: 0.3;
 }
 
@@ -141,7 +141,7 @@
   font-weight: 420;
   font-size: 1.2rem;
   line-height: 1.25;
-  color: $ivory;
+  color: $pure-white;
   margin: 0 0 0.75rem;
 }
 
@@ -150,7 +150,7 @@
   font-weight: 400;
   font-size: 0.9375rem;
   line-height: 1.65;
-  color: $bone;
+  color: $ash;
   margin: 0;
 }
 

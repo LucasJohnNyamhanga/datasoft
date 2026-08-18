@@ -1,20 +1,20 @@
 @use "index" as *;
 
-// Same dark sapphire glass "device" chrome as CodeEditor/CapabilityShowcase —
+// Same dark void glass "device" chrome as CodeEditor/CapabilityShowcase —
 // reused here so this reads as the site's one recurring signature visual
 // device rather than a one-off illustration.
 
 $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monospace;
 
 .window {
-  --ide-bg: #{rgba($sapphire-deep, 0.82)};
-  --ide-bg-raised: #{rgba($sapphire-raised, 0.6)};
-  --ide-bg-editor: #{rgba($sapphire-deep, 0.5)};
-  --ide-border: #{rgba($bone, 0.14)};
-  --ide-text: #cfe0f2;
-  --ide-text-dim: #{rgba(#cfe0f2, 0.45)};
-  --ide-accent: #{$cobalt-bright};
-  --ide-accent-2: #{$brass-bright};
+  --ide-bg: #{rgba($void-canvas, 0.82)};
+  --ide-bg-raised: #{rgba($carbon-plate, 0.6)};
+  --ide-bg-editor: #{rgba($void-canvas, 0.5)};
+  --ide-border: #{rgba($fog-border, 0.14)};
+  --ide-text: #{$cloud-mist};
+  --ide-text-dim: #{rgba($cloud-mist, 0.45)};
+  --ide-accent: #{$phosphor-mint};
+  --ide-accent-2: #{$ice-blue};
 
   position: absolute;
   inset: 0;
@@ -28,7 +28,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   backdrop-filter: blur(20px) saturate(150%);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
   border: 1px solid var(--ide-border);
-  box-shadow: 0 40px 70px -32px rgba(7, 16, 28, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 40px 70px -32px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   isolation: isolate;
 }
 
@@ -117,7 +117,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
 .dotGrid {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(207, 224, 242, 0.14) 1px, transparent 1.5px);
+  background-image: radial-gradient(circle, rgba(240, 240, 240, 0.14) 1px, transparent 1.5px);
   background-size: 20px 20px;
 }
 
@@ -150,12 +150,12 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
 
 .packetOut {
   fill: var(--ide-accent-2);
-  filter: drop-shadow(0 0 2.5px rgba(240, 197, 80, 0.9));
+  filter: drop-shadow(0 0 2.5px rgba(166, 229, 242, 0.9));
 }
 
 .packetIn {
   fill: var(--ide-accent);
-  filter: drop-shadow(0 0 2.5px rgba(74, 144, 217, 0.9));
+  filter: drop-shadow(0 0 2.5px rgba(112, 220, 211, 0.9));
 }
 
 .flowTag {
@@ -237,7 +237,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   background: var(--ide-bg-raised);
   border: 1px solid var(--ide-border);
   border-radius: 3px;
-  box-shadow: 0 10px 24px -14px rgba(7, 16, 28, 0.7);
+  box-shadow: 0 10px 24px -14px rgba(0, 0, 0, 0.7);
 }
 
 .rackUnit {
@@ -278,7 +278,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   position: relative;
   width: clamp(3.6rem, 10vw, 4.6rem);
   height: clamp(1.9rem, 5.2vw, 2.4rem);
-  filter: drop-shadow(0 8px 18px rgba(74, 144, 217, 0.35));
+  filter: drop-shadow(0 8px 18px rgba(112, 220, 211, 0.35));
 }
 
 .cloudPuffLeft,
@@ -288,7 +288,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   width: 60%;
   height: 78%;
   border-radius: 50%;
-  background: linear-gradient(155deg, $cobalt-bright 0%, $cobalt 100%);
+  background: linear-gradient(155deg, $phosphor-mint 0%, $signal-blue 100%);
 }
 
 .cloudPuffLeft {
@@ -307,7 +307,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   bottom: 0;
   height: 55%;
   border-radius: 999px;
-  background: linear-gradient(155deg, $cobalt-bright 0%, $cobalt 100%);
+  background: linear-gradient(155deg, $phosphor-mint 0%, $signal-blue 100%);
 }
 
 // ---- Status bar -----------------------------------------------------------
@@ -324,7 +324,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   background: var(--ide-accent);
   font-family: $mono;
   font-size: 0.58rem;
-  color: $sapphire-deep;
+  color: $void-canvas;
 }
 
 .statusLeft,
@@ -346,7 +346,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   width: 0.4rem;
   height: 0.4rem;
   border-radius: 50%;
-  background: $sapphire-deep;
+  background: $void-canvas;
   animation: pulseDot 1.6s ease-in-out infinite;
 }
 
@@ -372,11 +372,11 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   0%,
   100% {
     opacity: 1;
-    box-shadow: 0 0 0 0 rgba(13, 44, 78, 0.4);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.4);
   }
   50% {
     opacity: 0.55;
-    box-shadow: 0 0 0 3px rgba(13, 44, 78, 0);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0);
   }
 }
 

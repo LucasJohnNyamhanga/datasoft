@@ -3,7 +3,7 @@
 .container {
   position: relative;
   width: 100%;
-  background: $gradient-shell;
+  background: $void-canvas;
   overflow: hidden;
   scroll-margin-top: var(--nav-height, 90px);
 }
@@ -30,7 +30,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: $brass;
+  color: $signal-blue;
   margin: 0 0 1rem;
 }
 
@@ -39,7 +39,7 @@
   font-weight: 420;
   font-size: clamp(1.75rem, 3.2vw, 2.75rem);
   line-height: 1.1;
-  color: $ivory;
+  color: $pure-white;
   margin: 0;
   max-width: 22ch;
 }
@@ -53,7 +53,7 @@
   font-weight: 400;
   font-size: 1.0625rem;
   line-height: 1.65;
-  color: $bone;
+  color: $ash;
   max-width: 56ch;
   margin: 1.25rem 0 0;
 }
@@ -76,16 +76,16 @@
 .card {
   position: relative;
   padding: 1.85rem;
-  background: rgba(251, 246, 231, 0.04);
-  border: 1px solid rgba(233, 223, 196, 0.14);
+  background: rgba(240, 240, 240, 0.04);
+  border: 1px solid rgba(217, 218, 229, 0.14);
   border-radius: $radius-md;
   backdrop-filter: blur(6px);
   transition: border-color 0.25s $ease-standard, background 0.25s $ease-standard,
     transform 0.25s $ease-standard;
 
   &:hover {
-    border-color: $brass-dim;
-    background: rgba(251, 246, 231, 0.07);
+    border-color: $deep-signal;
+    background: rgba(240, 240, 240, 0.07);
     transform: translateY(-2px);
   }
 }
@@ -97,9 +97,9 @@
   width: 2.75rem;
   height: 2.75rem;
   margin-bottom: 1.25rem;
-  border: 1px solid $brass-dim;
+  border: 1px solid $deep-signal;
   border-radius: $radius-sm;
-  color: $brass-bright;
+  color: $ice-blue;
   font-size: 1.1rem;
 }
 
@@ -108,7 +108,7 @@
   font-weight: 420;
   font-size: 1.15rem;
   line-height: 1.25;
-  color: $ivory;
+  color: $pure-white;
   margin: 0 0 0.75rem;
 }
 
@@ -117,7 +117,7 @@
   font-weight: 400;
   font-size: 0.9rem;
   line-height: 1.6;
-  color: $bone;
+  color: $ash;
   margin: 0;
 }
 

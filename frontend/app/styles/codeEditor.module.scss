@@ -1,23 +1,23 @@
 @use "index" as *;
 
-// A VS Code–style IDE card — dark, sapphire-tinted glass rather than a flat
+// A VS Code–style IDE card — dark, void-tinted glass rather than a flat
 // opaque panel: translucent layers, backdrop blur, and a soft top highlight
-// so the whole window reads as frosted glass sitting above the ivory hero,
+// so the whole window reads as frosted glass floating above the dark canvas,
 // while staying legible enough to read as a real editor.
 
 $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monospace;
 
 .window {
-  --ide-bg: #{rgba($sapphire-deep, 0.82)};
-  --ide-bg-raised: #{rgba($sapphire-raised, 0.6)};
-  --ide-bg-editor: #{rgba($sapphire-deep, 0.5)};
-  --ide-border: #{rgba($bone, 0.14)};
-  --ide-text: #cfe0f2;
-  --ide-text-dim: #{rgba(#cfe0f2, 0.45)};
-  --ide-accent: #{$cobalt-bright};
-  --ide-accent-2: #{$brass-bright};
-  --ide-string: #7ec699;
-  --ide-comment: #{rgba(#8fa8c9, 0.8)};
+  --ide-bg: #{rgba($void-canvas, 0.82)};
+  --ide-bg-raised: #{rgba($carbon-plate, 0.6)};
+  --ide-bg-editor: #{rgba($void-canvas, 0.5)};
+  --ide-border: #{rgba($fog-border, 0.14)};
+  --ide-text: #{$cloud-mist};
+  --ide-text-dim: #{rgba($cloud-mist, 0.45)};
+  --ide-accent: #{$phosphor-mint};
+  --ide-accent-2: #{$ice-blue};
+  --ide-string: #{$verdant-edge};
+  --ide-comment: #{rgba($graphite, 0.7)};
 
   position: absolute;
   inset: 0;
@@ -31,7 +31,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   backdrop-filter: blur(20px) saturate(150%);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
   border: 1px solid var(--ide-border);
-  box-shadow: 0 40px 70px -32px rgba(7, 16, 28, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 40px 70px -32px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   isolation: isolate;
 }
 
@@ -147,7 +147,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   padding: 0 0.15rem;
   border-radius: 999px;
   background: var(--ide-accent);
-  color: $sapphire-deep;
+  color: $void-canvas;
   font-family: $mono;
   font-size: 0.55rem;
   font-weight: 700;
@@ -221,7 +221,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
 }
 
 .treeRowActive {
-  background: rgba(74, 144, 217, 0.16);
+  background: rgba(112, 220, 211, 0.16);
   color: var(--ide-text);
   box-shadow: inset 2px 0 0 var(--ide-accent);
 }
@@ -449,7 +449,7 @@ $mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", monosp
   background: var(--ide-accent);
   font-family: $mono;
   font-size: 0.58rem;
-  color: $sapphire-deep;
+  color: $void-canvas;
 }
 
 .statusLeft,

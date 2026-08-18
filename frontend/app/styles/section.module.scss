@@ -3,8 +3,8 @@
 // Same frosted-glass card recipe as SoftwareCapabilities's "Uwezo Wetu" /
 // "Mifumo inayobeba biashara yako" section — reused here so the home
 // services grid reads as one glass-on-shell language with the rest of the
-// site, and collapsed onto the single gold accent (no per-service rainbow
-// hues) per DESIGN.md's One Accent Rule.
+// site, and collapsed onto the single signal-blue accent (no per-service
+// rainbow hues) per the One Accent Rule.
 
 .card {
   position: relative;
@@ -14,8 +14,8 @@
   height: 100%;
   overflow: hidden;
   padding: 2rem;
-  background: rgba(251, 246, 231, 0.04);
-  border: 1px solid rgba(233, 223, 196, 0.14);
+  background: rgba(240, 240, 240, 0.04);
+  border: 1px solid rgba(217, 218, 229, 0.2);
   border-radius: $radius-md;
   backdrop-filter: blur(6px);
   transform: perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0);
@@ -33,13 +33,13 @@
   }
 
   &:hover {
-    border-color: $brass-dim;
-    background: rgba(251, 246, 231, 0.07);
+    border-color: $deep-signal;
+    background: rgba(240, 240, 240, 0.07);
     transform: perspective(900px) rotateX(2deg) rotateY(-2deg) translateY(-4px);
-    box-shadow: 0 24px 44px -28px rgba(7, 16, 28, 0.6);
+    box-shadow: 0 24px 44px -28px rgba(0, 0, 0, 0.6);
 
     .icon {
-      box-shadow: 0 0 0 5px rgba($brass, 0.16);
+      box-shadow: 0 0 0 5px rgba($signal-blue, 0.16);
     }
 
     .learnMore::after {
@@ -53,11 +53,11 @@
 }
 
 .featured {
-  border-color: rgba($brass, 0.4);
-  box-shadow: 0 0 0 1px rgba($brass, 0.16), $glow-brass;
+  border-color: rgba($signal-blue, 0.4);
+  box-shadow: 0 0 0 1px rgba($signal-blue, 0.16), $glow-accent;
 
   &:hover {
-    border-color: $brass;
+    border-color: $signal-blue;
   }
 }
 
@@ -77,10 +77,10 @@
   justify-content: center;
   width: 2.75rem;
   height: 2.75rem;
-  background: rgba($brass, 0.1);
-  border: 1px solid $brass-dim;
+  background: rgba($signal-blue, 0.1);
+  border: 1px solid $deep-signal;
   border-radius: 50%;
-  color: $brass-bright;
+  color: $ice-blue;
   font-size: 1.1rem;
   transition: box-shadow 0.35s $ease-standard;
 }
@@ -90,7 +90,7 @@
   font-weight: 380;
   font-size: clamp(1.1rem, 2vw, 1.4rem);
   line-height: 1;
-  color: $brass-bright;
+  color: $ice-blue;
   opacity: 0.3;
 }
 
@@ -105,7 +105,7 @@
   font-size: 0.68rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: $brass-bright;
+  color: $ice-blue;
   margin: 0 0 0.6rem;
 
   &::before {
@@ -125,7 +125,7 @@
   font-weight: 420;
   font-size: 1.2rem;
   line-height: 1.25;
-  color: $ivory;
+  color: $pure-white;
   margin: 0 0 0.75rem;
 }
 
@@ -136,7 +136,7 @@
   font-weight: 400;
   font-size: 0.9375rem;
   line-height: 1.65;
-  color: $bone;
+  color: $ash;
   margin: 0 0 $space-md;
   flex-grow: 1;
 }
@@ -152,7 +152,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: $brass-bright;
+  color: $ice-blue;
 
   &::after {
     content: "";
@@ -161,7 +161,7 @@
     bottom: -4px;
     height: 1px;
     width: 100%;
-    background-color: $brass-bright;
+    background-color: $ice-blue;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.25s $ease-standard;

@@ -1,4 +1,4 @@
-@use "index" as *;
+﻿@use "index" as *;
 
 .container {
   position: relative;
@@ -6,12 +6,12 @@
   background-image:
     conic-gradient(
       from 0deg at 0 0,
-      rgba($brass, 0.14) 0 25%,
+      rgba($signal-blue, 0.14) 0 25%,
       transparent 0 50%,
-      rgba($brass, 0.14) 0 75%,
+      rgba($signal-blue, 0.14) 0 75%,
       transparent 0
     ),
-    $gradient-navy;
+    $carbon-plate;
   background-size: 22px 22px, auto;
   overflow: hidden;
 }
@@ -36,7 +36,7 @@
   gap: 1rem;
   padding-bottom: $space-md;
   margin-bottom: $space-md;
-  border-bottom: 1px solid $navy-line;
+  border-bottom: 1px solid $steel-border;
 }
 
 .logo {
@@ -49,7 +49,7 @@
     font-family: $font-body;
     font-weight: 700;
     font-size: 1.3rem;
-    color: $cobalt-bright;
+    color: $phosphor-mint;
   }
 }
 
@@ -78,7 +78,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: $brass;
+  color: $signal-blue;
   margin-bottom: 1rem;
 }
 
@@ -88,25 +88,25 @@
   font-weight: 400;
   font-size: 0.95rem;
   line-height: 1.6;
-  color: $bone;
+  color: $ash;
   margin: 0 0 0.35rem;
   transition: color 0.2s $ease-standard;
 
   &:hover {
-    color: $brass-bright;
+    color: $ice-blue;
   }
 
   a {
     transition: color 0.2s $ease-standard;
 
     &:hover {
-      color: $brass-bright;
+      color: $ice-blue;
     }
   }
 }
 
 // Nested "Mifumo / KuaFit" product group, tucked inside the VIUNGO column
-// beneath the main nav links rather than spent as its own grid column —
+// beneath the main nav links rather than spent as its own grid column â€”
 // one product today doesn't earn a fifth column, but it does earn its own
 // small hierarchy: a MIFUMO micro-label, the KuaFit product line, then its
 // two legal links set apart by size and indent so they read as children of
@@ -116,7 +116,7 @@
   flex-direction: column;
   margin-top: 1.1rem;
   padding-top: 1.1rem;
-  border-top: 1px solid $navy-line;
+  border-top: 1px solid $steel-border;
 }
 
 .appsLabel {
@@ -125,7 +125,7 @@
   font-size: 0.66rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: $brass-dim;
+  color: $signal-blue;
   margin-bottom: 0.6rem;
 }
 
@@ -137,11 +137,11 @@
   font-family: $font-body;
   font-weight: 600;
   font-size: 0.9rem;
-  color: $ivory;
+  color: $pure-white;
   margin-bottom: 0.5rem;
 
   svg {
-    color: $brass;
+    color: $signal-blue;
     flex: none;
   }
 }
@@ -161,7 +161,7 @@
   font-style: italic;
   font-weight: 400;
   font-size: 1.1rem;
-  color: $ivory;
+  color: $pure-white;
   margin-bottom: 0.85rem;
 }
 
@@ -176,14 +176,14 @@
     justify-content: center;
     width: 2.5rem;
     height: 2.5rem;
-    border: 1px solid $navy-line;
+    border: 1px solid $steel-border;
     border-radius: $radius-sm;
-    color: $bone;
+    color: $ash;
     transition: border-color 0.2s $ease-standard, color 0.2s $ease-standard;
 
     &:hover {
-      border-color: $brass;
-      color: $brass;
+      border-color: $signal-blue;
+      color: $signal-blue;
     }
   }
 }
@@ -194,7 +194,7 @@
   max-width: $content-max;
   margin: 0 auto;
   padding: 1.25rem $gutter;
-  border-top: 1px solid $navy-line;
+  border-top: 1px solid $steel-border;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -202,10 +202,10 @@
   justify-content: space-between;
   font-family: $font-body;
   font-size: 0.8rem;
-  color: $brass-dim;
+  color: $signal-blue;
 }
 
-// Giant brand wordmark closing out the footer — the same "monumental
+// Giant brand wordmark closing out the footer â€” the same "monumental
 // wordmark" device used by Laravel/Vercel/Stripe footers, reworked in
 // DataSoft's own sans (same Montserrat 700 as the nav/footer logotype) and
 // navy/gold palette so it reads as this brand's mark, not a borrowed one.
@@ -214,7 +214,7 @@
 //
 // Sizing is driven by container query width (cqw), not a vw/clamp guess:
 // 22.3cqw is the measured font-size at which "DataSoft" set in Montserrat
-// 700 at -0.02em tracking naturally spans ~99% of the container — no
+// 700 at -0.02em tracking naturally spans ~99% of the container â€” no
 // SVG textLength stretch, no distorted glyphs, just the real font metrics
 // scaled to fit. Because the band's height is intrinsic (line-height of
 // that font-size, no fixed height/clamp), the footer's total height is
@@ -233,7 +233,7 @@
   text-align: right;
 }
 
-// Shared type treatment for the "DataSoft" / "Tanzania" lockup — same
+// Shared type treatment for the "DataSoft" / "Tanzania" lockup â€” same
 // logotype font, weight, tracking, and gold-gradient fill on both lines
 // so they read as one mark, not two competing styles.
 %watermarkGold {
@@ -243,8 +243,8 @@
   font-family: $font-body;
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: $brass-bright;
-  background: linear-gradient(180deg, $brass-bright 0%, $brass 100%);
+  color: $ice-blue;
+  background: linear-gradient(180deg, $ice-blue 0%, $signal-blue 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -255,18 +255,18 @@
   display: inline-block;
   font-size: 21vw; // fallback for browsers without container query units
   font-size: 22.3cqw;
-  filter: drop-shadow(0 0 32px rgba($brass, 0.25));
+  filter: drop-shadow(0 0 32px rgba($signal-blue, 0.25));
 }
 
-// "Tanzania" locked under "DataSoft" at roughly a third of its size —
-// the classic wordmark/sub-mark ratio (e.g. "STRIPE  ATLAS") — right-aligned
+// "Tanzania" locked under "DataSoft" at roughly a third of its size â€”
+// the classic wordmark/sub-mark ratio (e.g. "STRIPE  ATLAS") â€” right-aligned
 // so the pair reads as one lockup: DataSoft / Tanzania.
 .watermarkSubtitle {
   @extend %watermarkGold;
   margin-top: 0.4cqw;
   font-size: 7vw; // fallback for browsers without container query units
   font-size: 7.4cqw;
-  filter: drop-shadow(0 0 16px rgba($brass, 0.2));
+  filter: drop-shadow(0 0 16px rgba($signal-blue, 0.2));
 }
 
 @media (max-width: 640px) {

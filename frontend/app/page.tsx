@@ -2,7 +2,6 @@ import styles from "./styles/page.module.scss";
 
 import Hero from "./components/Hero";
 import WhatWeDo from "./components/WhatWeDo";
-import EverythingIncluded from "./components/EverythingIncluded";
 import Process from "./components/Process";
 import WhatWeHaveDone from "./components/WhatWeHaveDone";
 import Testimonials from "./components/Testimonials";
@@ -16,7 +15,6 @@ export default function Home() {
     <main className={styles.main}>
       <Hero />
       <WhatWeDo />
-      <EverythingIncluded />
       <Process />
       <WhatWeHaveDone />
       <Testimonials />

@@ -1,9 +1,9 @@
-@use "index" as *;
+﻿@use "index" as *;
 
 .container {
   position: relative;
   width: 100%;
-  background-color: $bone;
+  background: $carbon-plate;
   scroll-margin-top: var(--nav-height, 90px);
 }
 
@@ -33,7 +33,7 @@
   inset: 0;
   background-image: repeating-linear-gradient(
     45deg,
-    rgba($brass-dim, 0.5) 0 1px,
+    rgba($deep-signal, 0.5) 0 1px,
     transparent 1px 14px
   );
 }
@@ -63,7 +63,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: $brass-dim;
+  color: $signal-blue;
   margin: 0 0 1rem;
 }
 
@@ -72,7 +72,7 @@
   font-weight: 420;
   font-size: clamp(1.75rem, 3.2vw, 2.75rem);
   line-height: 1.1;
-  color: $ink;
+  color: $pure-white;
   margin: 0;
   max-width: 16ch;
 }
@@ -82,7 +82,7 @@
   font-weight: 400;
   font-size: 1.0625rem;
   line-height: 1.65;
-  color: $ink-soft;
+  color: $ash;
   margin: 1.25rem 0 0;
   max-width: 32ch;
 }
@@ -95,10 +95,10 @@
   font-family: $font-body;
   font-weight: 600;
   font-size: 0.9375rem;
-  color: $ink;
+  color: $pure-white;
   text-decoration: none;
   padding-bottom: 0.3rem;
-  border-bottom: 1px solid $brass-dim;
+  border-bottom: 1px solid $deep-signal;
   transition: color 0.25s $ease-standard, border-color 0.25s $ease-standard;
 
   .arrow {
@@ -108,8 +108,8 @@
 
   &:hover,
   &:focus-visible {
-    color: $brass-dim;
-    border-color: $brass;
+    color: $signal-blue;
+    border-color: $signal-blue;
 
     .arrow {
       transform: translateX(4px);
@@ -118,11 +118,11 @@
 }
 
 .list {
-  border-top: 1px solid rgba($ink, 0.14);
+  border-top: 1px solid rgba($pure-white, 0.14);
 }
 
 .item {
-  border-bottom: 1px solid rgba($ink, 0.14);
+  border-bottom: 1px solid rgba($pure-white, 0.14);
 }
 
 .itemHeading {
@@ -144,15 +144,15 @@
   color: inherit;
 
   &:hover .question {
-    color: $brass-dim;
+    color: $signal-blue;
   }
 
   &:hover .toggle span {
-    background-color: $brass;
+    background-color: $signal-blue;
   }
 
   &:focus-visible {
-    outline: 2px solid $brass;
+    outline: 2px solid $signal-blue;
     outline-offset: 4px;
   }
 }
@@ -164,7 +164,7 @@
   font-weight: 600;
   font-size: 0.8rem;
   letter-spacing: 0.05em;
-  color: rgba($ink, 0.32);
+  color: rgba($pure-white, 0.32);
 }
 
 .question {
@@ -173,7 +173,7 @@
   font-weight: 600;
   font-size: 1.05rem;
   line-height: 1.4;
-  color: $ink;
+  color: $pure-white;
   transition: color 0.25s $ease-standard;
 }
 
@@ -187,7 +187,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    background-color: $brass-dim;
+    background-color: $deep-signal;
     transition: transform 0.3s $ease-standard, background-color 0.25s $ease-standard;
 
     &:first-child {
@@ -227,7 +227,7 @@
   font-weight: 400;
   font-size: 0.95rem;
   line-height: 1.7;
-  color: $ink-soft;
+  color: $ash;
   margin: 0;
   padding: 0 0 1.75rem 3rem;
   max-width: 56ch;

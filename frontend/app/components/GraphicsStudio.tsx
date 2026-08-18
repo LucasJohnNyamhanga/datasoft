@@ -120,7 +120,7 @@ const layers: LayerRow[] = [
   { name: "Picha ya Bidhaa", thumb: "photo", visible: true, locked: true },
 ];
 
-const swatches = ["#f0c550", "#d4a017", "#591421", "#0d2c4e", "#fbf6e7"];
+const swatches = ["#34edb3", "#6ae4ff", "#00d1ff", "#000000", "#ffffff"];
 
 const rulerTicksH = Array.from({ length: 20 }, (_, i) => i);
 const rulerTicksV = Array.from({ length: 12 }, (_, i) => i);

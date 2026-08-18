@@ -77,16 +77,57 @@ const sw = {
     languageLabel: "Lugha",
   },
   hero: {
-    eyebrow: "DataSoft Tanzania",
-    headlineLines: ["Teknolojia moja.", "Uwezekano usio na kikomo."],
-
+    headlinePrefix: "Biashara yako inaweza kukua bila wewe, kupitia",
+    rotatingWords: [
+      "mfumo wa biashara",
+      "tovuti ya biashara",
+      "aplikesheni ya simu",
+      "mtandao wa intaneti",
+    ],
     subheadline: [
-      "Kutoka wazo hadi utekelezaji, tunajenga suluhisho za kidigitali zinazorahisisha kazi na kuharakisha ukuaji wa biashara.",
+      "Tunageuza changamoto zako za kiutendaji kuwa hatua za haraka na zinazo suluhishwa, kupitia mifumo inayojiendesha yenyewe.",
     ],
     ctaPrimary: "Anzisha Mradi Wako",
     ctaSecondary: "Ona Huduma Zetu",
-    mapCaption:
-      "Biashara yako, popote ilipo, ikijengwa mstari kwa mstari na DataSoft",
+    stats: [
+      {
+        key: "control",
+        header: "Hesabu",
+        value: "100%",
+        label: "Udhibiti wa Fedha na Ripoti",
+      },
+
+      {
+        key: "peace",
+        header: "Muda Wote",
+        value: "24/7",
+        label: "Amani ya Akili na Muda",
+      },
+      {
+        key: "payments",
+        header: "Malipo",
+        value: "Papo Hapo",
+        label: "Malipo kwa Njia ya Mtandao",
+      },
+      {
+        key: "backups",
+        header: "Taarifa",
+        value: "Salama",
+        label: "Taarifa Zinahifadhiwa",
+      },
+      {
+        key: "automation",
+        header: "Ufanisi",
+        value: "Otomatiki",
+        label: "Mfumo Unajiendesha Wenyewe",
+      },
+      {
+        key: "errors",
+        header: "Usalama",
+        value: "100%",
+        label: "Kuondoa Makosa na Wizi",
+      },
+    ],
   },
   whatWeDo: {
     eyebrow: "Tunachofanya Bora Zaidi",
@@ -135,65 +176,6 @@ const sw = {
       },
     ],
     learnMore: "Soma Zaidi",
-  },
-  included: {
-    eyebrow: "Kila Kitu Kimejumuishwa",
-    headingLines: [
-      "Pumzika, kila kitu unachohitaji",
-      "kiko kwenye ncha ya kidole chako.",
-    ],
-    intro:
-      "Kila mradi tunaoujenga huja na vipengele hivi vyote tayari vimewekwa, bila malipo ya ziada yaliyofichika. Wewe zingatia biashara, sisi tunashughulikia teknolojia.",
-    items: [
-      {
-        key: "automation",
-        title: "Otomatiki",
-        description:
-          "Mfumo unaoweza kujiendesha wenyewe huku ukikupa taarifa, ripoti na hatua za kila siku na kuifanya timu yako ipate muda zaidi kufanya mambo muhimu zaidi ya uendeshaji na kutoa fursa ya kukua bila mipaka.",
-      },
-      {
-        key: "metrics",
-        title: "Ufuatiliaji na Takwimu",
-        description:
-          "Dashibodi na ripoti za wakati halisi zinazokuonyesha jinsi biashara yako inavyofanya kazi, kila siku.",
-      },
-      {
-        key: "payments",
-        title: "Malipo kwa Njia ya Mtandaoni",
-        description:
-          "Muunganiko wa njia za malipo za simu na benki, ili wateja wako walipe kwa urahisi popote walipo.",
-      },
-      {
-        key: "security",
-        title: "Usalama na Kasi",
-        description:
-          "Vyeti vya SSL, ulinzi dhidi ya matatizo ya kawaida ya mtandao, na miundombinu ya kasi ya hali ya juu bila kuathiri kazi zako.",
-      },
-      {
-        key: "support",
-        title: "Msaada Endelevu",
-        description:
-          "Timu yetu inabaki karibu nawe baada ya uzinduzi, popote ulipo, tayari kukusaidia pindi unapohitaji.",
-      },
-      {
-        key: "backups",
-        title: "Taarifa Zinahifadhiwa",
-        description:
-          "Taarifa zako muhimu huhifadhiwa moja kwa moja ili usipate tabu kuzitafuta wakati wa kazi hata kama tatizo likitokea.",
-      },
-      {
-        key: "scale",
-        title: "Ukuaji Endelevu",
-        description:
-          "Mifumo yetu huundwa kukua sambamba na biashara yako, kutoka mtumiaji mmoja hadi maelfu bila kuanza upya.",
-      },
-      {
-        key: "uptime",
-        title: "Upatikanaji wa Uhakika",
-        description:
-          "Ufuatiliaji wa muda wote wa mtandao, ili tovuti na mfumo wako ubaki hai bila usumbufu pale unapouhitaji.",
-      },
-    ],
   },
   process: {
     eyebrow: "Jinsi Tunavyofanya Kazi",
@@ -1031,15 +1013,57 @@ const en: Dict = {
     languageLabel: "Language",
   },
   hero: {
-    eyebrow: "DataSoft Tanzania",
-    headlineLines: ["One technology.", "Limitless possibilities."],
-
+    headlinePrefix: "Your business can grow without you, through",
+    rotatingWords: [
+      "business system",
+      "business website",
+      "a mobile app",
+      "the internet",
+    ],
     subheadline: [
-      "From idea to implementation, we build digital solutions that simplify work and accelerate business growth.",
+      "We turn your operational challenges into quick and resolvable actions, through automated systems.",
     ],
     ctaPrimary: "Start Your Project",
     ctaSecondary: "See Our Services",
-    mapCaption: "Your business, wherever it is, built line by line by DataSoft",
+    stats: [
+      {
+        key: "control",
+        header: "Accounting",
+        value: "100%",
+        label: "Financial Control & Reporting",
+      },
+
+      {
+        key: "peace",
+        header: "Always On",
+        value: "24/7",
+        label: "Peace of Mind & Time",
+      },
+      {
+        key: "payments",
+        header: "Payments",
+        value: "Instant",
+        label: "Online Payments",
+      },
+      {
+        key: "backups",
+        header: "Data",
+        value: "Secure",
+        label: "Automatic Backups",
+      },
+      {
+        key: "automation",
+        header: "Efficiency",
+        value: "Automated",
+        label: "Self-Managing System",
+      },
+      {
+        key: "errors",
+        header: "Security",
+        value: "100%",
+        label: "Eliminating Errors & Theft",
+      },
+    ],
   },
   whatWeDo: {
     eyebrow: "What We Do Best",
@@ -1088,62 +1112,6 @@ const en: Dict = {
       },
     ],
     learnMore: "Learn More",
-  },
-  included: {
-    eyebrow: "Everything Included",
-    headingLines: ["Relax, everything you need,", "right at your fingertips."],
-    intro:
-      "Every project we build comes with all of this already included, with no hidden extra costs. You focus on your business, we handle the technology.",
-    items: [
-      {
-        key: "automation",
-        title: "Automation",
-        description:
-          "Workflows that run themselves, alerts, reports and everyday tasks, so your team spends time on what matters most.",
-      },
-      {
-        key: "metrics",
-        title: "Metrics & Monitoring",
-        description:
-          "Real-time dashboards and reporting that show you exactly how your business is performing, every day.",
-      },
-      {
-        key: "payments",
-        title: "Online Payments",
-        description:
-          "Mobile money and bank payment integrations, so your customers can pay easily wherever they are.",
-      },
-      {
-        key: "security",
-        title: "Security & Speed",
-        description:
-          "SSL certificates, protection against common threats, and high-performance infrastructure, without trade-offs.",
-      },
-      {
-        key: "support",
-        title: "Ongoing Support",
-        description:
-          "Our team stays close after launch, wherever you are, ready to help whenever you need us.",
-      },
-      {
-        key: "backups",
-        title: "Automatic Backups",
-        description:
-          "Your important data is backed up automatically and regularly, so nothing is lost if something goes wrong.",
-      },
-      {
-        key: "scale",
-        title: "Built to Scale",
-        description:
-          "Our systems are built to grow alongside your business, from one user to thousands, without starting over.",
-      },
-      {
-        key: "uptime",
-        title: "Reliable Uptime",
-        description:
-          "Monitored, dependable hosting that keeps your website and systems running without disruption.",
-      },
-    ],
   },
   process: {
     eyebrow: "How We Work",

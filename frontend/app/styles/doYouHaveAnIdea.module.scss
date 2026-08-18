@@ -1,10 +1,10 @@
-@use "index" as *;
+﻿@use "index" as *;
 
 .container {
   position: relative;
   width: 100%;
   margin-top: -56px;
-  background: $gradient-navy;
+  background: $void-canvas;
   scroll-margin-top: var(--nav-height, 90px);
   clip-path: polygon(0 0, 50% 56px, 100% 0, 100% 100%, 0 100%);
 }
@@ -41,7 +41,7 @@
 .halftoneBandInner {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba($brass-bright, 0.9) 1.2px, transparent 1.6px);
+  background-image: radial-gradient(rgba($ice-blue, 0.9) 1.2px, transparent 1.6px);
   background-size: 16px 16px;
 }
 
@@ -56,7 +56,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: $brass;
+  color: $signal-blue;
   margin: 0 0 1rem;
 }
 
@@ -65,7 +65,7 @@
   font-weight: 420;
   font-size: clamp(1.75rem, 3.2vw, 2.75rem);
   line-height: 1.1;
-  color: $ivory;
+  color: $pure-white;
   margin: 0;
 }
 
@@ -74,7 +74,7 @@
   font-weight: 400;
   font-size: 1.0625rem;
   line-height: 1.65;
-  color: $bone;
+  color: $ash;
   max-width: 46ch;
   margin: 1.5rem 0 0;
 }
@@ -91,14 +91,14 @@
   align-items: center;
   gap: 0.45rem;
   padding: 0.45rem 0.85rem;
-  background: rgba($ivory, 0.08);
-  border: 1px solid rgba($brass-dim, 0.5);
+  background: rgba($pure-white, 0.08);
+  border: 1px solid rgba($deep-signal, 0.5);
   border-radius: 999px;
   font-family: $font-body;
   font-weight: 600;
   font-size: 0.72rem;
   letter-spacing: 0.02em;
-  color: $brass-bright;
+  color: $ice-blue;
 
   svg {
     flex-shrink: 0;
@@ -111,8 +111,8 @@
   overflow: hidden;
   margin-top: $space-lg;
   padding: 2.75rem 2.75rem 3rem;
-  background: rgba($navy-raised, 0.45);
-  border: 1px solid rgba($brass-dim, 0.35);
+  background: rgba($carbon-plate, 0.45);
+  border: 1px solid rgba($deep-signal, 0.35);
   border-radius: $radius-md;
 
   &::before {
@@ -123,7 +123,7 @@
     font-family: $font-display;
     font-size: 9rem;
     line-height: 1;
-    color: rgba($brass, 0.14);
+    color: rgba($signal-blue, 0.14);
     pointer-events: none;
   }
 }
@@ -157,7 +157,7 @@
   font-weight: 400;
   font-size: clamp(1.375rem, 2.8vw, 1.875rem);
   line-height: 1.3;
-  color: $ivory;
+  color: $pure-white;
 }
 
 .formulaOperator {
@@ -165,11 +165,11 @@
   font-style: italic;
   font-weight: 400;
   font-size: clamp(1.1rem, 2vw, 1.4rem);
-  color: $brass-dim;
+  color: $signal-blue;
 }
 
 .formulaEquals {
-  color: $brass-bright;
+  color: $ice-blue;
   font-weight: 600;
 }
 
@@ -178,8 +178,8 @@
   font-style: italic;
   font-weight: 600;
   font-size: clamp(1.625rem, 3.4vw, 2.25rem);
-  color: $brass-bright;
-  text-shadow: $glow-brass;
+  color: $ice-blue;
+  text-shadow: $glow-accent;
 }
 
 .contactForm {
@@ -199,14 +199,14 @@
 .progressBar {
   flex: 1;
   height: 4px;
-  background: rgba($ivory, 0.14);
+  background: rgba($pure-white, 0.14);
   border-radius: 999px;
   overflow: hidden;
 }
 
 .progressFill {
   height: 100%;
-  background: $gradient-gold;
+  background: $gradient-accent;
   border-radius: 999px;
   transition: width 0.35s $ease-standard;
 }
@@ -218,7 +218,7 @@
   font-size: 0.7rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: $brass-dim;
+  color: $signal-blue;
   white-space: nowrap;
 }
 
@@ -232,7 +232,7 @@
   font-weight: 420;
   font-size: clamp(1.2rem, 2vw, 1.5rem);
   line-height: 1.25;
-  color: $ivory;
+  color: $pure-white;
   margin: 0 0 0.6rem;
 }
 
@@ -241,7 +241,7 @@
   font-weight: 400;
   font-size: 0.9rem;
   line-height: 1.55;
-  color: $bone;
+  color: $ash;
   margin: 0 0 1.5rem;
 }
 
@@ -254,27 +254,27 @@
 .optionButton {
   text-align: left;
   padding: 0.9rem 1.1rem;
-  background: rgba($ivory, 0.04);
-  border: 1px solid rgba($brass-dim, 0.45);
+  background: rgba($pure-white, 0.04);
+  border: 1px solid rgba($deep-signal, 0.45);
   border-radius: $radius-sm;
   font-family: $font-body;
   font-weight: 500;
   font-size: 0.95rem;
-  color: $ivory;
+  color: $pure-white;
   cursor: pointer;
   transition: border-color 0.2s $ease-standard, background 0.2s $ease-standard,
     transform 0.2s $ease-standard;
 
   &:hover {
-    border-color: $brass;
-    background: rgba($ivory, 0.08);
+    border-color: $signal-blue;
+    background: rgba($pure-white, 0.08);
   }
 }
 
 .optionSelected {
-  border-color: $brass;
-  background: rgba($brass, 0.16);
-  color: $brass-bright;
+  border-color: $signal-blue;
+  background: rgba($signal-blue, 0.16);
+  color: $ice-blue;
   font-weight: 600;
 }
 
@@ -292,7 +292,7 @@
   font-size: 0.78rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: $brass-dim;
+  color: $signal-blue;
   cursor: pointer;
   transition: color 0.2s $ease-standard;
 
@@ -301,7 +301,7 @@
   }
 
   &:hover {
-    color: $brass-bright;
+    color: $ice-blue;
   }
 }
 
@@ -328,7 +328,7 @@
     font-size: 0.75rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: $brass-dim;
+    color: $signal-blue;
     margin-bottom: 0.65rem;
   }
 
@@ -340,7 +340,7 @@
   }
 
   .fieldFlag {
-    color: $rust;
+    color: $signal-red;
     font-size: 0.85em;
   }
 
@@ -348,21 +348,21 @@
   textarea {
     background: transparent;
     border: none;
-    border-bottom: 1px solid $brass-dim;
+    border-bottom: 1px solid $deep-signal;
     padding: 0.6rem 0.1rem;
     font-family: $font-body;
     font-size: 1rem;
-    color: $ivory;
+    color: $pure-white;
     outline: none;
     resize: vertical;
     transition: border-color 0.2s $ease-standard, border-width 0.2s $ease-standard;
 
     &::placeholder {
-      color: $ink-soft;
+      color: $ash;
     }
 
     &:focus {
-      border-bottom: 2px solid $brass;
+      border-bottom: 2px solid $signal-blue;
     }
   }
 }
@@ -375,8 +375,8 @@
   align-items: center;
   justify-content: center;
   padding: 1rem 2.25rem;
-  background: $gradient-gold;
-  color: $sapphire-deep;
+  background: $gradient-accent;
+  color: $void-canvas;
   border: none;
   font-family: $font-body;
   font-weight: 600;
@@ -389,9 +389,9 @@
     box-shadow 0.25s $ease-standard;
 
   &:hover {
-    background: $gradient-gold-hover;
+    background: $gradient-accent-hover;
     transform: translateY(-1px);
-    box-shadow: $glow-brass;
+    box-shadow: $glow-accent;
   }
 
   &:disabled {
@@ -453,18 +453,18 @@
   font-weight: 500;
   font-size: 0.8rem;
   line-height: 1.4;
-  color: $rust;
+  color: $signal-red;
   animation: errorTextIn 0.25s $ease-standard both;
 }
 
 .hasError {
   input,
   textarea {
-    border-bottom-color: $rust;
+    border-bottom-color: $signal-red;
   }
 }
 
-// Post-submit confirmation / failure state — replaces the wizard in place so
+// Post-submit confirmation / failure state â€” replaces the wizard in place so
 // the visitor never loses the panel they were just filling in.
 .feedbackPanel {
   display: flex;
@@ -483,11 +483,11 @@
 }
 
 .feedbackIconSuccess {
-  color: $cobalt-bright;
+  color: $phosphor-mint;
 }
 
 .feedbackIconError {
-  color: $rust;
+  color: $signal-red;
 }
 
 .feedbackTitle {
@@ -495,7 +495,7 @@
   font-weight: 420;
   font-size: clamp(1.35rem, 2.2vw, 1.75rem);
   line-height: 1.2;
-  color: $ivory;
+  color: $pure-white;
   margin: 0 0 0.75rem;
 }
 
@@ -504,7 +504,7 @@
   font-weight: 400;
   font-size: 0.98rem;
   line-height: 1.65;
-  color: $bone;
+  color: $ash;
   max-width: 38ch;
   margin: 0;
 }
@@ -513,12 +513,12 @@
   font-family: $font-body;
   font-weight: 500;
   font-size: 0.82rem;
-  color: $ink-soft;
+  color: $ash;
   margin: 1rem 0 0;
 }
 
 .feedbackMetaValue {
-  color: $cobalt-bright;
+  color: $phosphor-mint;
   font-weight: 600;
 }
 
@@ -542,14 +542,14 @@
   gap: 0.55rem;
   padding: 1rem 1.5rem;
   background: transparent;
-  border: 1px solid rgba($brass-dim, 0.55);
+  border: 1px solid rgba($deep-signal, 0.55);
   border-radius: $radius-sm;
   font-family: $font-body;
   font-weight: 600;
   font-size: 0.8rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: $ivory;
+  color: $pure-white;
   text-decoration: none;
   transition: border-color 0.2s $ease-standard, color 0.2s $ease-standard;
 
@@ -558,8 +558,8 @@
   }
 
   &:hover {
-    border-color: $brass;
-    color: $brass-bright;
+    border-color: $signal-blue;
+    color: $ice-blue;
   }
 }
 
