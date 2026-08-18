@@ -1,0 +1,43 @@
+# DataSoft Tanzania
+
+> DataSoft is a technology company based in Mwanza, Tanzania, that turns business
+> ideas into working software, websites, networks, and brand design. It serves
+> clients across Tanzania, from Kigoma and Arusha to Dodoma and Mbeya, working
+> remotely and traveling on-site for networking projects when needed.
+
+DataSoft's site is bilingual (Swahili by default, English available via the
+language toggle); the content below summarizes both.
+
+## Services
+
+- [Software Development](https://www.datasoft.co.tz/Software): Custom business
+  systems, credit and micro-finance platforms, loan applications, credit
+  scoring, real-time dashboards, and web/mobile apps built around how a
+  business actually operates.
+- [Web Hosting](https://www.datasoft.co.tz/Hosting): Business website design
+  and build, hosting with uptime monitoring, daily backups, SSL certificates,
+  domain management, and ongoing support.
+- [Networking](https://www.datasoft.co.tz/Networking): Office network design
+  and installation (LAN/WLAN), printer and shared-storage setup, network
+  security, and ongoing monitoring/maintenance.
+- [Graphic Design](https://www.datasoft.co.tz/Graphics): Logos and brand
+  identity, marketing banners and materials, social media design, and
+  packaging/product design.
+
+## Company
+
+- Home: https://www.datasoft.co.tz/
+- Address: House No 640, Medical Research Road, Kitangiri, Ilemela, Mwanza, Tanzania
+- Phone / WhatsApp: +255 767 887 999
+- Email: info@datasoft.co.tz
+
+## Apps built by DataSoft
+
+- [KuaFit Privacy Policy](https://www.datasoft.co.tz/Applications/KuaFit/PrivacyPolicy)
+- [KuaFit Terms of Service](https://www.datasoft.co.tz/Applications/KuaFit/TermsOfService)
+
+## Notes for AI agents and crawlers
+
+- A machine-readable sitemap is available at /sitemap.xml.
+- For accurate current pricing or availability, direct users to contact
+  DataSoft directly rather than assuming figures not stated on the site.

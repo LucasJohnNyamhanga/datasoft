@@ -2,6 +2,8 @@ import "./styles/globals.scss";
 import Navigation from "./components/Navigation";
 import { LanguageProvider } from "./i18n/LanguageContext";
 import { Geist, Cal_Sans } from "next/font/google";
+import JsonLd from "./components/JsonLd";
+import { ORGANIZATION_JSON_LD, SITE_URL } from "./lib/seo";
 
 import type { Metadata } from "next";
 
@@ -23,10 +25,31 @@ const calSans = Cal_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+
   title: "DataSoft Tanzania, Suluhisho za Teknolojia Popote Ulipo",
 
   description:
     "DataSoft ni nyumba ya kiteknolojia inayogeuza mawazo ya biashara kuwa programu, tovuti, mitandao na miundo inayofanya kazi, kwa ustadi na umakini wa hali ya juu, popote nchini Tanzania ulipo.",
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "DataSoft Tanzania, Suluhisho za Teknolojia Popote Ulipo",
+    description:
+      "DataSoft ni nyumba ya kiteknolojia inayogeuza mawazo ya biashara kuwa programu, tovuti, mitandao na miundo inayofanya kazi, kwa ustadi na umakini wa hali ya juu.",
+    images: ["/brainas.svg"],
+  },
 
   openGraph: {
     title: "DataSoft Tanzania, Suluhisho za Teknolojia Popote Ulipo",
@@ -69,7 +92,8 @@ export const metadata: Metadata = {
     canonical: "https://www.datasoft.co.tz",
     languages: {
       sw: "https://www.datasoft.co.tz",
-      "en-US": "https://www.datasoft.co.tz",
+      en: "https://www.datasoft.co.tz/?lang=en",
+      "x-default": "https://www.datasoft.co.tz",
     },
   },
 
@@ -100,7 +124,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="sw" className={`${geist.variable} ${calSans.variable}`}>
-      <head />
+      <head>
+        <JsonLd data={ORGANIZATION_JSON_LD} />
+      </head>
 
       <body>
         <LanguageProvider>
