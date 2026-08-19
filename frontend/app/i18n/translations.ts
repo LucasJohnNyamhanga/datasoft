@@ -78,7 +78,7 @@ const sw = {
   },
   hero: {
     eyebrow: "DataSoft Tanzania",
-    headlinePrefix: "Teknolojia Moja. Ukuaji Usio na Kikomo, Kupitia",
+    headlinePrefix: "Acha Kutegemea Nguvukazi. Tumia",
     rotatingWords: [
       "Mfumo wa Biashara",
       "Tovuti ya Biashara",
@@ -86,7 +86,7 @@ const sw = {
       "Mtandao wa Intaneti",
     ],
     subheadline: [
-      "Tunageuza changamoto za biashara kuwa mifumo bunifu inayokusaidia kufanya zaidi, kukua kwa ufanisi na kufungua fursa mpya.",
+      "Kila kazi inayotegemea mtu inaweza kusimama, kucheleweshwa, kupunguzwa ukuaji, au kuto kukamilishwa. Tunabadilisha hilo kuwa mfumo mmoja unaojiendesha wenyewe wenye kukupa uhakika.",
     ],
     ctaPrimary: "Anzisha Mradi Wako",
     ctaSecondary: "Ona Huduma Zetu",
@@ -1024,7 +1024,7 @@ const en: Dict = {
   },
   hero: {
     eyebrow: "DataSoft Tanzania",
-    headlinePrefix: "One Technology. Limitless Growth, Through",
+    headlinePrefix: "Stop Relying on Manpower. Use",
     rotatingWords: [
       "Business System",
       "Business Website",
@@ -1032,7 +1032,7 @@ const en: Dict = {
       "The Internet",
     ],
     subheadline: [
-      "We turn business challenges into innovative systems that help you do more, grow efficiently, and unlock new opportunities.",
+      "Every task that depends on a person can stall, be delayed, grow slower, or go unfinished. We turn that into one system that runs itself and gives you certainty.",
     ],
     ctaPrimary: "Start Your Project",
     ctaSecondary: "See Our Services",
